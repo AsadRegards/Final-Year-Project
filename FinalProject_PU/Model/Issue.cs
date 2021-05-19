@@ -19,7 +19,11 @@ namespace FinalProject_PU.Model
 
         public int amount_collected { get; set; }
 
+        public int isWorkingStarted { get; set; }
 
+        public string issueFlag { get; set; }
+
+        public string issueType { get; set; }
         public string issueStatement
         {
             get; set;
