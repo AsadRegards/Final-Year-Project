@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+    <ImageView
+        android:src="@drawable/headissue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:id="@+id/textviewhead"
+        android:layout_centerHorizontal="true"
+       
+         />
+    <ImageView
+        android:src="@drawable/icnstatushe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/imggoback"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/textviewhead"
+       
+         />
+    <ImageView
+        android:src="@drawable/issueimgg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgissuev"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imglinehead"
+         />
+    <Refractored.Controls.CircleImageView
+        android:src="@drawable/profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/imgissuev"
+        android:id="@id/imgProfile"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+         />
+
+    <TextView
+        android:text="Nabeel Khan"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgissuev"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/imgProfile"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/tvname" />
+
+    <TextView
+        android:text="10-2-2021"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvname"
+        android:textSize="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/tvtime" />
+
+    <TextView
+        android:text="Open Road Spill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvtime"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:maxLines="3"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="60dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/tvinfo" />
+    <ImageView
+        android:src="@drawable/btnviewmap"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgvieonmap"
+        android:layout_below="@+id/tvinfo"
+         />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close"
+        android:src="@drawable/cclose"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+       />
+
+
+</RelativeLayout>

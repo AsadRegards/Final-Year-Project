@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+        <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+     
+        android:layout_marginTop="50dp"
+        android:id="@+id/lise"
+        />
+
+    <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="318dp"
+        android:layout_marginStart="50dp"
+        android:layout_height="wrap_content"
+     
+        android:layout_marginTop="50dp"
+        android:id="@+id/lwise"
+        />
+   
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tev1"
+        android:text="@string/FoundVehicle_head"
+        android:textColor="#3c46e4"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    
+  
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/next_FoundVehicle"
+        android:src="@drawable/iconnext"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="320dp"/>
+    <Refractored.Controls.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/iconsss"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ffffff"
+        android:id="@+id/circleImageView_FoundVehicle"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Name"
+        android:layout_below="@id/lise"
+        android:textSize="15dp"
+        android:id="@+id/FoundVehicle_tvusername"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/FoundVehicle_infor"
+        android:layout_below="@+id/FoundVehicle_tvusername"
+        android:textSize="12dp"
+        android:id="@+id/FoundVehicle_tv"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"/>
+
+    <ImageView
+        android:src="@drawable/vehicle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/FoundVehicle_tvusername"
+        android:id="@+id/FoundVehicle_image"
+           />
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FoundVehicle_Plateno"
+        android:text="@string/MissingVehicle2_plateno"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/FoundVehicle_image"
+        android:textColor="#858585"/>
+     <ImageView
+        android:src="@drawable/plateno"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/FoundVehicle_Plateno"
+        android:id="@+id/imgPlateno" />
+    <EditText
+        android:inputType="phone"
+        android:layout_width="250dp"
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="148dp"
+        android:layout_below="@+id/FoundVehicle_image"
+        android:layout_height="50dp"
+        
+        android:id="@+id/FoundVehicle_edtPlateno" />
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FoundVehicle_Date_tv"
+        android:text="Found Date"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/FoundVehicle_Plateno"
+        android:textColor="#858585"/>
+     <ImageView
+        android:src="@drawable/date"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/FoundVehicle_Date_tv"
+        android:id="@+id/imgDate" />
+    <EditText
+        android:inputType="datetime"
+        android:layout_width="250dp"
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="148dp"
+        android:layout_below="@+id/FoundVehicle_edtPlateno"
+        android:layout_height="50dp"
+        
+        android:id="@+id/FoundVehicle_edtDate" />
+
+
+   
+    <ImageView
+        android:src="@drawable/iconhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentBottom="true"
+        android:id="@+id/iconHome"
+           />
+
+    <ImageView
+        android:src="@drawable/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="559dp"
+        android:id="@+id/line2"
+         />
+    <ImageView
+        android:src="@drawable/iconfunds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconFunds"
+         />
+    <ImageView
+        android:src="@drawable/iconnotifcation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconNotifications"
+         />
+ <ImageView
+        android:src="@drawable/iconlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconMap"
+         />
+ <ImageView
+        android:src="@drawable/iconsetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconSettings"
+         />
+    <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="559dp"
+        android:id="@+id/line"
+         />
+</RelativeLayout>

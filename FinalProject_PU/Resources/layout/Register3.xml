@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglogin">
+    <ImageView
+        android:src="@drawable/iconwhitecomplete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="310dp"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="@string/Register"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textView1" />
+    
+    <ImageView
+        android:src="@drawable/asset2"
+        android:layout_width="400dp"
+        android:layout_height="352dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imageView2" />
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="@string/Password"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:textColor="#858585"/>
+
+     <ImageView
+        android:src="@drawable/pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imgemail" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:text="@string/C_Password"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView2"
+        android:textColor="#858585"/>    
+
+   <ImageView
+        android:src="@drawable/pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imgpass"/>
+
+       
+    
+
+    
+
+    
+
+
+    <ImageView
+        android:src="@drawable/group237"
+        android:layout_width="87dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="240dp"
+        android:layout_below="@+id/imageView1"
+        android:id="@+id/imglogin" />
+     <!-- Loading Indicator for overall screen   -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:src="@drawable/spinnerloadfinal"/>
+
+     <!-- Loading Indicator for login click button    -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view_button"
+        android:layout_width="87dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="240dp"
+        android:layout_below="@+id/imageView1"
+        android:visibility="gone"
+        app:src="@drawable/spinnerbutfinal"/>
+
+     <ImageView
+        android:src="@drawable/asset1"
+        android:layout_width="360dp"
+        android:layout_height="237dp"
+        android:paddingBottom="40dp"
+        android:layout_below="@+id/imglogin"
+        android:id="@+id/imageViewdown" />
+    <ImageView
+        android:src="@drawable/group2388"
+        android:layout_width="229dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imglogin"
+        android:id="@+id/imageView9" />
+
+     <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:id="@+id/textInputLayout2" 
+         >
+
+     <android.support.design.widget.TextInputEditText
+        android:inputType="textPassword"
+        android:layout_width="250dp"
+        android:layout_marginTop="75dp"
+        android:textColor="#000000"
+        android:textColorHint="#858585"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_below="@+id/textView1"
+        android:layout_height="50dp"
+        android:id="@+id/edtPassreg" />
+
+        </android.support.design.widget.TextInputLayout>
+
+     <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="155dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/textInputLayout3" 
+         >
+
+        <android.support.design.widget.TextInputEditText
+        android:inputType="textPassword"
+        android:layout_width="250dp"
+        android:layout_marginTop="165dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        android:layout_marginStart="70dp"
+        android:layout_below="@+id/textView1"
+        android:layout_height="50dp"
+        android:id="@+id/edtConfirmPassreg"/>
+
+        </android.support.design.widget.TextInputLayout>
+    
+
+     
+
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        
+        android:id="@+id/imgbackgo"
+       
+         />
+     <ImageView
+        android:src="@drawable/notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/notification_100px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/usericon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="10dp"
+
+        android:id="@+id/usericon"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:id="@+id/username"
+        android:layout_below="@+id/imgheadaccounts"
+       
+        />
+    <ImageView
+        android:src="@drawable/contribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/usericon"
+        android:id="@+id/imgContribution"
+       
+         />
+    <ImageView
+        android:src="@drawable/locationtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgLocation"
+        android:layout_below="@+id/imgContribution"
+         />
+       <ImageView
+        android:src="@drawable/allnotify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgAll"
+        android:layout_below="@+id/imgLocation"
+         />
+    <Switch
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:id="@+id/switch1"
+        android:layout_below="@+id/username"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"/>
+    <Switch
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:id="@+id/switch2"
+        android:layout_below="@+id/switch1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="95dp"/>
+    <Switch
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:id="@+id/switch3"
+        android:layout_below="@+id/switch2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="95dp"/>
+</RelativeLayout>

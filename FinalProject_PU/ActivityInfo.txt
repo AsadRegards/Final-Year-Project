@@ -1,0 +1,81 @@
+﻿Layout ******** WORK*****************************************Activities
+********************POTHOLE SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> is pothole covered in water or not screen << createissue3.cs
+create issue 4 >> size of road << createissue4.cs
+create issue 5 >> traffic on the road << createissue5.cs
+create issue 6 >> position of potholw with respect to issue << createissue6.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup.cs
+**************************************************************
+
+********************BROKEN WIRES SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> is pole blocking road<< BrokenWires.cs 
+create issue 4 >> size of road << BrokenWires2.cs
+create issue 5 >> traffic on the road << BrokenWires3.cs
+
+Issue location  >> select the location of the issue from map << Issuelocationpickup_BrokenWires.cs
+**************************************************************
+
+********************DEBRIS SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> is debris covered blocking road<< Debris.cs 
+create issue 4 >> size of road << Debris2.cs
+create issue 5 >> traffic on the road << Debris3.cs
+create issue 6 >> position of debris with respect to issue << Debris4.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_Debris.cs
+**************************************************************
+
+********************FOUND VEHICLE SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> Missing Vehicle or Found Vehicle<< MissingVehicle.cs
+create issue 4 >> Plate no and Found Date << FoundVehcile.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_FoundVehicle.cs, FoundVehicle2.cs
+**************************************************************
+
+********************Garbage SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> is garbage covered blocking road<< Garbage.cs 
+create issue 4 >> size of road << Garbage2.cs
+create issue 5 >> traffic on the road << Garbage3.cs
+create issue 6 >> position of debris with respect to issue << Garbage4.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_Garbage.cs
+**************************************************************
+
+
+********************Manhole SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> is manhole overflow with water<< Manhole.cs 
+create issue 4 >> size of road << Manhole2.cs
+create issue 5 >> traffic on the road << Manhole3.cs
+create issue 6 >> position of debris with respect to issue << Manhole4.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_Manhole.cs
+**************************************************************
+
+********************Missing Vehicle SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> Missing Vehicle or Found Vehicle<< MissingVehicle.cs
+create issue 4 >> Plate no and Missing Date << MissingVehicle2.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_MissingVehicle.cs, MissingVehicle3.cs
+**************************************************************
+
+********************Planting Campign SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 4 >>I will water Date and time << PlantingCampaign2.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_PlantingCampaign.cs, PlantingCampaign1.cs
+**************************************************************
+
+*******************Rain Water Accumulation  SCREEEN**************************
+create issue >> capture image or upload photo of issue    << createissue.cs
+create issue 2 >> select the type of issue. << createissue2.cs
+create issue 3 >> Vehicle can pass ?<< Rainwater.cs
+Issue location  >> select the location of the issue from map << Issuelocationpickup_Rainwater.cs
+**************************************************************

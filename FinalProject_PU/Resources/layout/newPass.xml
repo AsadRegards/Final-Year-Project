@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+   
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:text="New Password"
+        android:textColor="#3c46e4"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:layout_width="186dp"
+        android:layout_height="242dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iimg3"
+        android:layout_below="@+id/ttv1"
+        android:src="@drawable/grop282"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"/>
+    
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/img2"
+        android:src="@drawable/blueemptyicon"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="310dp"/>
+    
+ 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newpass"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/iimg3"
+        android:textSize="20dp"
+        android:textColor="#858585"
+        android:id="@+id/tv2"/>
+    
+    <ImageView
+        android:src="@drawable/pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/tv2"
+         />
+            
+
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/c_pass"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/textInputLayout5"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:textColor="#858585"
+        android:id="@+id/tv5"/>
+
+    <ImageView
+        android:src="@drawable/pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/tv5"
+         />
+
+
+    
+    <ImageView
+        android:layout_width="319dp"
+        android:layout_height="49dp"
+        android:src="@drawable/group2281"
+        android:layout_below="@+id/tv5"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgbtn"/>
+    <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/iimg3"
+        android:id="@+id/textInputLayout5" 
+         >
+
+         <android.support.design.widget.TextInputEditText
+         android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/eddt1"
+        android:textColor="#0078e3"
+        android:textColorHint="#858585"
+        android:layout_marginStart="50dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:layout_below="@+id/tv2"
+        android:textSize="25dp"
+        
+         />
+
+        
+        </android.support.design.widget.TextInputLayout>
+    
+
+    
+            <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv5"
+        android:id="@+id/textInputLayout6" 
+         >
+
+         <android.support.design.widget.TextInputEditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/eddt5"
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        android:layout_marginStart="40dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:layout_below="@+id/tv5"
+        android:textSize="25dp"
+         />
+
+           android:id="@+id/imgbtn"/>
+        <!-- Loading Indicator for overall screen   -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:src="@drawable/spinnerloadfinal"/>
+
+
+        
+        </android.support.design.widget.TextInputLayout>
+    
+</RelativeLayout>

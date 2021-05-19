@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglogin">
+    <ImageView
+        android:src="@drawable/iconwhitecomplete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="310dp"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="@string/Login"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textView1" />
+    
+    
+    <ImageView
+        android:src="@drawable/asset2"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView2"
+        android:paddingBottom="80dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="@string/Email"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:textColor="#858585"/>
+
+    <EditText
+        android:inputType="textEmailAddress"
+        android:layout_width="250dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="160dp"
+        android:layout_below="@+id/textView1"
+        android:layout_height="50dp"
+        android:id="@+id/edtEmail" />
+
+
+    <ImageView
+        android:src="@drawable/email"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imgemail" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:text="@string/Password"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView2"
+        android:textColor="#858585"/>
+    <ImageView
+        android:src="@drawable/pass"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imgpass"/>
+    
+   
+    
+    <TextView
+        android:text="@string/Forgot"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="#858585"
+        android:layout_below="@id/imgpass"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="170dp"
+        android:id="@+id/tvForgotPass" />
+    <ImageView
+        android:src="@drawable/group237"
+        android:layout_width="87dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/tvForgotPass"
+        android:id="@+id/imglogin" />
+     <!-- Loading Indicator for overall screen   -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:src="@drawable/spinnerloadfinal"/>
+
+     <!-- Loading Indicator for login click button    -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view_button"
+        android:layout_width="87dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_below="@+id/tvForgotPass"
+        android:visibility="gone"
+        app:src="@drawable/spinnerbutfinal"/>
+
+   
+    <ImageView
+        android:src="@drawable/asset1"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"  
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvForgotPass"
+        android:layout_marginTop="15dp"
+        android:id="@+id/imageViewdown" />
+    <ImageView
+        android:src="@drawable/group251"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/imglogin"
+        android:id="@+id/imageView9" />
+   
+    
+
+
+     <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:id="@+id/textInputLayout1" >
+         
+
+     <android.support.design.widget.TextInputEditText
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:id="@+id/editpass"    
+        android:inputType="textPassword"
+        android:layout_marginTop="155dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:layout_marginStart="70dp"
+        android:layout_below="@+id/textView1"
+         />
+
+        
+     </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>
+

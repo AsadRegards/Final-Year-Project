@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+    <ImageView
+        android:src="@drawable/statushead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:id="@+id/textviewhead"
+        android:layout_centerHorizontal="true"
+       
+         />
+    <ImageView
+        android:src="@drawable/icnstatushe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/imggoback"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/textviewhead"
+       
+         />
+    <ImageView
+        android:src="@drawable/issueimgg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgissuev"
+       
+        android:layout_below="@+id/imglinehead"
+         />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close"
+        android:src="@drawable/cclose"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+       />
+    <TextView
+        android:text="2400 Rs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgissuev"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/textCollected" />
+
+    <TextView
+        android:text=" collected from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgissuev"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/textCollected"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/text" />
+    <TextView
+        android:text=" 2500 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgissuev"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/text"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/textEstimated" />
+    <TextView
+        android:text="Working started :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/text_Working" />
+    <TextView
+        android:text="Yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_toRightOf="@+id/text_Working"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:id="@+id/tv_WorkingStatus" />
+    <TextView
+        android:text="Resolved :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Working"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/textResolved"
+            
+        />
+    <TextView
+        android:text="Yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_Working"
+        android:layout_toRightOf="@+id/textResolved"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:id="@+id/tvResolvedStatus" />
+    <TextView
+        android:text="Top Contributor :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvResolvedStatus"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/TopContributor" />
+
+    <Refractored.Controls.CircleImageView
+        android:src="@drawable/profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/TopContributor"
+        android:id="@id/imgProfile"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+         />
+
+    <TextView
+        android:text="Nabeel Khan"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TopContributor"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/imgProfile"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:textStyle="normal"
+        android:id="@+id/tvname" />
+
+
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="8dp"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    android:scrollbars="horizontal|none">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8f8"
+    >
+
+
+
+
+        <ImageView
+            android:src="@drawable/pothole1"
+            android:layout_width="265dp"
+            android:layout_height="197dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="140dp"
+            android:id="@+id/imgIssue" />
+        <ImageView
+            android:layout_width="265dp"
+            android:layout_height="197dp"
+            
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="140dp"
+            android:visibility="visible"
+            
+            android:scrollbars="horizontal"
+            android:id="@+id/imageView1"
+            android:scaleType="centerCrop"
+            android:contentDescription="description"
+            tools:ignore="MissingDimension,Suspicious0dp" />
+
+        <ImageView
+            android:src="@drawable/belowbg"
+            android:layout_width="265dp"
+            android:layout_height="251dp"
+            android:layout_marginTop="313dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imgbelowPath"
+         />
+        <Refractored.Controls.CircleImageView
+            android:src="@drawable/profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginStart="65dp"
+            android:id="@+id/imgProfile"
+         />
+        
+        <TextView
+            android:text="Nabeel Khan"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="140dp"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:textStyle="normal"
+            android:id="@+id/tvname" />
+
+        <TextView
+            android:text="24m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:layout_marginStart="140dp"
+            android:textSize="10dp"
+            android:layout_marginTop="40dp"
+            android:textColor="#fff"
+            android:textStyle="normal"
+            android:id="@+id/tvtime" />
+        
+
+
+        <TextView
+            android:text="Open Road Spill"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:textSize="20dp"
+            
+            android:layout_centerHorizontal="true"
+            android:maxLines="3"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="#fff"
+            android:textStyle="normal"
+            android:id="@+id/tvinfo" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

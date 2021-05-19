@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">FinalProject_PU</string>
+  <string name="action_settings">Settings</string>
+  
+  <string name="Login">Login</string>
+  <string name="Forgot">Forgot Password ?</string>
+  
+  <string name="Email">Email</string>
+  <string name="Password">Password</string>
+  <string name="Name">Name</string>
+  <string name="C_Password">Confirm Password</string>
+  <string name="DOB">Date Of Birth</string>
+  <string name="Contact">Contact</string>
+  <string name="Create">Create Issue</string>
+  <string name="issueinfo">
+    Choose your option and select images to identify the issue
+  </string>
+  <string name="infoprob">select the text for your problem.</string>
+  <string name="createissue3">
+    Is this pothole Covered in water? i.e. Is it
+    difficult for people to recognize this pothole?
+  </string>
+  <string name="debris_text">
+    please select the picture which
+    best describe the size of debris
+    and how much area it is covering?
+  </string>
+  <string name="MissingVehicle_Head">Missing Vehicle</string>
+  <string name="MissingVehicle-infor">
+    please select the appropriate
+    option
+  </string>
+  <string name="MissingVehicle2_infor">
+    please enter your vehicle
+    Number and when it gone
+    missing?
+
+  </string>
+  <string name="MissingVehicle2_plateno">Plate Number</string>
+  <string name="MissingVehicle2_date">Missing Date</string>
+  <string name="FoundVehicle_date">Found Date</string>
+  <string name="FoundVehicle_head">Found Vehicle</string>
+  <string name="VehicleLocation">
+    Please select the location
+    where your vehicle gone missing?
+  </string>
+  <string name="MissingVehicle3_text">
+    Please select the location
+    where your vehicle gone missing?
+  </string>
+  <string name="FoundVehicle2_text">
+    Please enter the plate number
+    and how long this vehicle
+    has been on location?
+  </string>
+  <string name="Garbage_text">
+    please select the picture which
+  best describe the size of garbage
+  and how much area it is covering?</string>
+  <string name="Garbage_Head">Garbage</string>
+  <string name="debris_head">Debris</string>
+  <string name="brokenwires">
+    Is this Broken pole blocking the
+    half road or full road? please select
+    the correct picture.
+  </string>
+  <string name="FoundVehicle_infor">
+    Please enter the plate number
+    and how long this vehicle
+    has been on location?
+  </string>
+  <string name="headingBrokenWires">Broken Wires</string>
+  <string name="createissue4">
+    How wide is the road on which this issue exist?
+    Please select the option which best describes
+    the road size
+  </string>
+  <string name="createissue5">
+    Please select the traffic condition on the road in
+    rush hours?
+    select the image which best represent the traffic
+  </string>
+  <string name="createissue6">
+    How wide is the road on which this issue exist?
+    Please select the option which best describes
+    the road size
+  </string>
+  <string name="Manhole1">
+    is this manhole overflowing with water or not?
+    Please select the appropriate option.
+  </string>
+  <string name="PlantingCampignissue1_text">
+    Select the location where you have
+    started the planting campaign.
+  </string>
+  <string name="PlantingCampignissue2_text">
+    Please create the schedule to water 
+    plant? we will notify you 
+    and nearby user at that time.
+  </string>
+  <string-array name="spinner1_PlantingCampign2">
+    <item>Everyday</item>
+  <item>Every Alternate Day</item>
+  </string-array>
+
+  <string name="I_Will_Water">I will water</string>
+  <string name="at">at</string>
+  <string name="guideline">Please read the Planting Campaign guideline</string>
+  <string name="Profile">Profile Picture</string>
+  <string name="RegisterdEmail" >Enter Your Registered Email</string>
+
+  <string name="OTP">OTP</string>
+  <string name="Upload">Upload from gallery</string>
+  <string name="EmailVerify">Verify Email</string>
+  <string name="Settings">Settings</string>
+
+  <string name="HeadForgot">Forgot Password</string>
+  <string name="enterpass">Enter Current Password</string>
+  <string name="newpass">Enter New Password</string>
+  <string name="c_pass">Confirm Password</string>
+  
+
+  <string name="Register">Register</string>
+
+  <string name="Location">Location</string>
+
+
+  <string name="EmailVerifyText">We have sent you an email with an OTP to complete Registration, please enter the OTP to continue.</string>
+  <string name="Location1">First select home location where you are living for managing best routes for you.</string>
+  <string name="Location2">Enter your work location so we can guide better routes for you.</string>
+</resources>

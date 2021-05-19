@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+        <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="318dp"
+        android:layout_height="wrap_content"
+     
+        android:layout_marginTop="50dp"
+        android:id="@+id/lise"
+        />
+
+    <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="318dp"
+        android:layout_marginStart="50dp"
+        android:layout_height="wrap_content"
+     
+        android:layout_marginTop="50dp"
+        android:id="@+id/lwise"
+        />
+   
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tev1"
+        android:text="@string/Create"
+        android:textColor="#3c46e4"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    
+   
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/Manhole1_btnnext"
+        android:src="@drawable/iconnext"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="320dp"/>
+    <Refractored.Controls.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/iconsss"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ffffff"
+        android:id="@+id/circleImageView_Manhole1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Name"
+        android:layout_below="@id/lise"
+        android:textSize="15dp"
+        android:id="@+id/Manhole1_tvusername"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Manhole1"
+        android:layout_below="@+id/Manhole1_tvusername"
+        android:textSize="12dp"
+        android:id="@+id/Manhole1_tv"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:src="@drawable/issue_manhole1"
+        android:layout_width="202dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/Manhole1_tvusername"
+        android:id="@+id/iconIssue1"
+           />
+
+   
+     <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="85dp"
+        android:layout_below="@+id/Manhole1_tv"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/Manhole1_radiobtn1" />
+        <ImageView
+        android:src="@drawable/issue_manhole2"
+        android:layout_width="202dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="180dp"
+        android:layout_below="@+id/Manhole1_radiobtn1"
+        android:id="@+id/iconIssue2"
+           />
+
+
+     <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="155dp"
+        android:layout_marginStart="255dp"
+        android:layout_below="@+id/Manhole1_radiobtn1"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/Manhole1_radiobtn2" />
+    <ImageView
+        android:src="@drawable/iconhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_alignParentBottom="true"
+        android:id="@+id/iconHome"
+           />
+
+    <ImageView
+        android:src="@drawable/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="559dp"
+        android:id="@+id/line2"
+         />
+    <ImageView
+        android:src="@drawable/iconfunds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconFunds"
+         />
+    <ImageView
+        android:src="@drawable/iconnotifcation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconNotifications"
+         />
+ <ImageView
+        android:src="@drawable/iconlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconMap"
+         />
+ <ImageView
+        android:src="@drawable/iconsetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconSettings"
+         />
+    <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="559dp"
+        android:id="@+id/line"
+         />
+</RelativeLayout>

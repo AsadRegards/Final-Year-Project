@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView1"
+        android:scrollbars="horizontal|none"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+    />
+        <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    <ImageView
+        android:src="@drawable/groupissue"
+        android:layout_width="343dp"
+        android:layout_height="92dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/imgwriteIssue" />
+
+    <Refractored.Controls.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginStart="60dp"
+        android:src="@drawable/iconsss"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ffffff"
+        android:id="@+id/circleImageView1"
+        />
+
+
+           
+
+
+</RelativeLayout>
+    </RelativeLayout>

@@ -1,0 +1,974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7864037D-C3C0-4D8B-8E4C-8CC1736359D5}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{122416d6-6b49-4ee2-a1e8-b825f31c79fe}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalProject_PU</RootNamespace>
+    <AssemblyName>FinalProject_PU</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>True</Deterministic>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
+    <MandroidI18n>
+    </MandroidI18n>
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
+    <AndroidSupportedAbis />
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountFragmentSettings.cs" />
+    <Compile Include="AdsFragmentSettings.cs" />
+    <Compile Include="BrokenWires.cs" />
+    <Compile Include="BrokenWires2.cs" />
+    <Compile Include="BrokenWires3.cs" />
+    <Compile Include="ChPass_fragmentSettings.cs" />
+    <Compile Include="ChPhno_fragmentSettings.cs" />
+    <Compile Include="ChUsrname_fragmentsettings.cs" />
+    <Compile Include="ContributeFund.cs" />
+    <Compile Include="Control\Account.cs" />
+    <Compile Include="Control\DataOper.cs" />
+    <Compile Include="Control\Funds.cs" />
+    <Compile Include="Control\InputValidation.cs" />
+    <Compile Include="Control\IssueController.cs" />
+    <Compile Include="Control\IssueOper.cs" />
+    <Compile Include="Control\UserInfoHolder.cs" />
+    <Compile Include="CreateIssue.cs" />
+    <Compile Include="createissue2.cs" />
+    <Compile Include="createissue3.cs" />
+    <Compile Include="createissue4.cs" />
+    <Compile Include="createissue5.cs" />
+    <Compile Include="createissue6.cs" />
+    <Compile Include="Debris.cs" />
+    <Compile Include="Debris2.cs" />
+    <Compile Include="Debris3.cs" />
+    <Compile Include="Debris4.cs" />
+    <Compile Include="DirectionFragment.cs" />
+    <Compile Include="EmailVerifyActivity.cs" />
+    <Compile Include="ForgotPassActivity.cs" />
+    <Compile Include="FoundVehicle.cs" />
+    <Compile Include="FoundVehicle2.cs" />
+    <Compile Include="DirectionMapFragment.cs" />
+    <Compile Include="FragmentHomeActivity.cs" />
+    <Compile Include="FundsActivity.cs" />
+    <Compile Include="FundsFragment.cs" />
+    <Compile Include="Garbage.cs" />
+    <Compile Include="Garbage2.cs" />
+    <Compile Include="Garbage3.cs" />
+    <Compile Include="Garbage4.cs" />
+    <Compile Include="Helper\Data.cs" />
+    <Compile Include="Helper\Funds_RecylerViewAdapter.cs" />
+    <Compile Include="Helper\NotificationData.cs" />
+    <Compile Include="Helper\Notification_RecylcerViewAdapter.cs" />
+    <Compile Include="Helper\RecyclerViewAdapter.cs" />
+    <Compile Include="IssueFragment.cs" />
+    <Compile Include="Issuelocationpickup_Debris.cs" />
+    <Compile Include="Issuelocationpickup_MissingVehicle.cs" />
+    <Compile Include="Issuelocationpickup_FoundVehicle.cs" />
+    <Compile Include="Issuelocationpickup_Garbage.cs" />
+    <Compile Include="Issuelocationpickup_Manhole.cs" />
+    <Compile Include="IssueLocationpickup_PlantingCampaign.cs" />
+    <Compile Include="IssueLocationPickup_Pothole.cs" />
+    <Compile Include="Issuelocationpickup_Rainwater.cs" />
+    <Compile Include="Issuelocatrionpickup_BrokenWires.cs" />
+    <Compile Include="IWifiAccess.cs" />
+    <Compile Include="LocationActivity.cs" />
+    <Compile Include="LocationsActivity.cs" />
+    <Compile Include="Location_pickup_home.cs" />
+    <Compile Include="Location_pickup_job.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="HomeActivity.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Manhole1.cs" />
+    <Compile Include="Manhole2.cs" />
+    <Compile Include="Manhole3.cs" />
+    <Compile Include="Manhole4.cs" />
+    <Compile Include="MapActivity.cs" />
+    <Compile Include="MapFunctions\DirectionParser.cs" />
+    <Compile Include="MapFunctions\GeocodingParser.cs" />
+    <Compile Include="MapFunctions\MapFunctionHelper.cs" />
+    <Compile Include="MissingVehicle.cs" />
+    <Compile Include="MissingVehicle2.cs" />
+    <Compile Include="MissingVehicle3.cs" />
+    <Compile Include="Model\Brokenpole.cs" />
+    <Compile Include="Model\Debris.cs" />
+    <Compile Include="Model\Garbage.cs" />
+    <Compile Include="Model\Issue.cs" />
+    <Compile Include="Model\Manhole.cs" />
+    <Compile Include="Model\Missingvehicle.cs" />
+    <Compile Include="Model\OpenForFundsIssues.cs" />
+    <Compile Include="Model\Planting.cs" />
+    <Compile Include="Model\Pothole.cs" />
+    <Compile Include="Model\Rainwater.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="MyAdsFragmentSettings.cs" />
+    <Compile Include="Newpassword.cs" />
+    <Compile Include="NotificationFragmentSettings.cs" />
+    <Compile Include="NotificationsActivity.cs" />
+    <Compile Include="NotificationsSettings.cs" />
+    <Compile Include="OTPVerify.cs" />
+    <Compile Include="PhotoUploading.cs" />
+    <Compile Include="PlantingCampaign1.cs" />
+    <Compile Include="PlantingCampaign2.cs" />
+    <Compile Include="PushNotification\MainClass.cs" />
+    <Compile Include="PushNotification\MessagingService.cs" />
+    <Compile Include="Rainwater.cs" />
+    <Compile Include="Register1Activity.cs" />
+    <Compile Include="Register2Activity.cs" />
+    <Compile Include="Register3Activity.cs" />
+    <Compile Include="notificationfragment.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsActivity.cs" />
+    <Compile Include="SignUpFinal.cs" />
+    <Compile Include="testActivity.cs" />
+    <Compile Include="UserFund.cs" />
+    <Compile Include="ViewIssueFund.cs" />
+    <Compile Include="ViewStatusFund.cs" />
+    <Compile Include="View\ViewFunctions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Quicksand_Dash.otf" />
+    <AndroidAsset Include="Assets\Quicksand-Bold.otf" />
+    <AndroidAsset Include="Assets\Quicksand-Light.otf" />
+    <AndroidAsset Include="Assets\Quicksand-Regular.otf" />
+    <GoogleServicesJson Include="google-services.json" />
+    <None Include="Resources\drawable\icons8\App5.zip" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\layout-w360dp-h640dp-port-xhdpi-v28\" />
+    <Folder Include="Resources\layout-w360dp-h640dp-xxhdpi-v28\" />
+    <Folder Include="Resources\layout-w480dp-h853dp-port-hdpi-v28\" />
+    <Folder Include="Resources\layout-xhdpi\" />
+    <Folder Include="Resources\layout-xxhdpi\" />
+    <Folder Include="Resources\layout-xxxhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFitTextView-Xamarin.Android">
+      <Version>0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Karamunting.Android.HotBitmapGG.RingProgressBar">
+      <Version>1.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Karamunting.Android.Intuit.Sdp">
+      <Version>1.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Karamunting.Android.MohammedAlaa.GifLoading">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Lsjwzh.MaterialLoadingProgressBar.Xamarin.Android">
+      <Version>0.5.6</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Refractored.Controls.CircleImageView">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Tasks">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Maps.Utils">
+      <Version>0.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Browser">
+      <Version>1.2.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4">
+      <Version>1.0.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
+      <Version>2.2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Bindings.MaterialDateTimePicker">
+      <Version>2.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Firebase.Messaging">
+      <Version>120.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>4.8.0.1687</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.Android.Material">
+      <Version>1.1.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.Android.Places">
+      <Version>1.1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.Dagger">
+      <Version>2.27.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Base">
+      <Version>117.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Basement">
+      <Version>117.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Location">
+      <Version>117.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Maps">
+      <Version>117.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Tasks">
+      <Version>117.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\photoupload.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Register1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Register2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Register3.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Home.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Location.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\LoginActivity.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Accountprofile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Asset1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Asset2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BelowBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BGLOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\CLOCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\DOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Downbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FundsScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Group237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Group2388.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Group251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconFunds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconNotifcation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\IconSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Issue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Line2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LOGOo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\OnlyLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Pothole1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Rectangle69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Splashh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Threedot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Verify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Home.png" />
+    <AndroidResource Include="Resources\drawable\HomeLoca.png" />
+    <AndroidResource Include="Resources\drawable\JobLoca.png" />
+    <AndroidResource Include="Resources\drawable\Grouphome.png" />
+    <AndroidResource Include="Resources\drawable\Groupwork.png" />
+    <AndroidResource Include="Resources\drawable\Asset4.png" />
+    <AndroidResource Include="Resources\drawable\Group277.png" />
+    <AndroidResource Include="Resources\drawable\Group275.png" />
+    <AndroidResource Include="Resources\drawable\Group276.png" />
+    <AndroidResource Include="Resources\drawable\Group2771.png" />
+    <AndroidResource Include="Resources\drawable\Asset3.png" />
+    <AndroidResource Include="Resources\layout\ActivityMain.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\appiconfinal.png" />
+    <AndroidResource Include="Resources\drawable\IIiconsFUNDS.png" />
+    <AndroidResource Include="Resources\drawable\Group281HOME.png" />
+    <AndroidResource Include="Resources\drawable\Group2279.png" />
+    <AndroidResource Include="Resources\drawable\Group2280.png" />
+    <AndroidResource Include="Resources\drawable\Group2282.png" />
+    <AndroidResource Include="Resources\drawable\Group2281.png" />
+    <AndroidResource Include="Resources\drawable\IconEMaill.png" />
+    <AndroidResource Include="Resources\drawable\Group2283.png" />
+    <AndroidResource Include="Resources\drawable\WhiteIcon.png" />
+    <AndroidResource Include="Resources\drawable\WhiteLogo.png" />
+    <AndroidResource Include="Resources\drawable\BlackIcon.png" />
+    <AndroidResource Include="Resources\drawable\BlackLogo.png" />
+    <AndroidResource Include="Resources\drawable\BlueLogo.png" />
+    <AndroidResource Include="Resources\drawable\BlueIcon.png" />
+    <AndroidResource Include="Resources\drawable\LogoBlue.png" />
+    <AndroidResource Include="Resources\drawable\IconBlue.png" />
+    <AndroidResource Include="Resources\drawable\IconWhite.png" />
+    <AndroidResource Include="Resources\drawable\BlueEmptyICon.png" />
+    <AndroidResource Include="Resources\drawable\IconWhiteComplete.png" />
+    <AndroidResource Include="Resources\drawable\GroupFunds.png" />
+    <AndroidResource Include="Resources\drawable\Group1284.png" />
+    <AndroidResource Include="Resources\drawable\Group3285.png" />
+    <AndroidResource Include="Resources\drawable\Group3286.png" />
+    <AndroidResource Include="Resources\drawable\GroupIssue.png" />
+    <AndroidResource Include="Resources\drawable\Iconsss.png" />
+    <AndroidResource Include="Resources\drawable\FilledNotifications.png" />
+    <AndroidResource Include="Resources\drawable\FilledLocation.png" />
+    <AndroidResource Include="Resources\drawable\Grop282.png" />
+    <AndroidResource Include="Resources\drawable\Settingss.png" />
+    <AndroidResource Include="Resources\drawable\spayments.png" />
+    <AndroidResource Include="Resources\drawable\Saccounts.png" />
+    <AndroidResource Include="Resources\drawable\slogout.png" />
+    <AndroidResource Include="Resources\drawable\smyads.png" />
+    <AndroidResource Include="Resources\drawable\Snotifications.png" />
+    <AndroidResource Include="Resources\drawable\Issimg.png" />
+    <AndroidResource Include="Resources\drawable\Iss1.png" />
+    <AndroidResource Include="Resources\drawable\Iss2.png" />
+    <AndroidResource Include="Resources\drawable\Iss3.png" />
+    <AndroidResource Include="Resources\drawable\Iss4.png" />
+    <AndroidResource Include="Resources\drawable\Iss5.png" />
+    <AndroidResource Include="Resources\drawable\Iss6.png" />
+    <AndroidResource Include="Resources\drawable\Iss7.png" />
+    <AndroidResource Include="Resources\drawable\Iss8.png" />
+    <AndroidResource Include="Resources\drawable\NEXT.png" />
+    <AndroidResource Include="Resources\drawable\Ellipse1.png" />
+    <AndroidResource Include="Resources\drawable\Group306.png" />
+    <AndroidResource Include="Resources\drawable\Group310.png" />
+    <AndroidResource Include="Resources\drawable\Group324.png" />
+    <AndroidResource Include="Resources\drawable\IconNext.png" />
+    <AndroidResource Include="Resources\drawable\IconBack.png" />
+    <AndroidResource Include="Resources\drawable\Group375.png" />
+    <AndroidResource Include="Resources\drawable\Group502.png" />
+    <AndroidResource Include="Resources\drawable\Group4100.png" />
+    <AndroidResource Include="Resources\drawable\Group318ot.png" />
+    <AndroidResource Include="Resources\drawable\Group324oth.png" />
+    <AndroidResource Include="Resources\drawable\Issue5HeavyTraffic.png" />
+    <AndroidResource Include="Resources\drawable\Issue5lighttraffic.png" />
+    <AndroidResource Include="Resources\drawable\Issue5Moderate.png" />
+    <AndroidResource Include="Resources\drawable\Issue6314.png" />
+    <AndroidResource Include="Resources\drawable\Issue6315.png" />
+    <AndroidResource Include="Resources\drawable\Issue6323.png" />
+    <AndroidResource Include="Resources\drawable\AddLocation.png" />
+    <AndroidResource Include="Resources\drawable\myspinner.gif" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\appiconfinal.png" />
+    <Content Include="ActivityInfo.txt" />
+    <AndroidResource Include="Resources\drawable\date.png" />
+    <AndroidResource Include="Resources\drawable\DebrisFullRoad.png" />
+    <AndroidResource Include="Resources\drawable\DebrisHalfRoad.png" />
+    <AndroidResource Include="Resources\drawable\DebrisSideRoad.png" />
+    <AndroidResource Include="Resources\drawable\ElectricpoleFullRoad.png" />
+    <AndroidResource Include="Resources\drawable\ElectricpoleHalfRoad.png" />
+    <AndroidResource Include="Resources\drawable\GarbageFullRoad.png" />
+    <AndroidResource Include="Resources\drawable\GarbageHalfRoad.png" />
+    <AndroidResource Include="Resources\drawable\GarbageSideRoad.png" />
+    <AndroidResource Include="Resources\drawable\HomeLocationIcon.png" />
+    <AndroidResource Include="Resources\drawable\AllVehicle.png" />
+    <AndroidResource Include="Resources\drawable\FoundVehicle.png" />
+    <AndroidResource Include="Resources\drawable\HighVehicle.png" />
+    <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\Group304.png" />
+    <AndroidResource Include="Resources\drawable\LEOL.png" />
+    <AndroidResource Include="Resources\drawable\IcnHome.png" />
+    <AndroidResource Include="Resources\drawable\IcnLocation.png" />
+    <AndroidResource Include="Resources\drawable\IcnNotification.png" />
+    <AndroidResource Include="Resources\drawable\IcnSettings.png" />
+    <AndroidResource Include="Resources\drawable\BGQW.png" />
+    <AndroidResource Include="Resources\drawable\Accounts.png" />
+    <AndroidResource Include="Resources\drawable\AllNotify.png" />
+    <AndroidResource Include="Resources\drawable\BackGo.png" />
+    <AndroidResource Include="Resources\drawable\Bdgt.png" />
+    <AndroidResource Include="Resources\drawable\Changepassicon.png" />
+    <AndroidResource Include="Resources\drawable\ChangePassword.png" />
+    <AndroidResource Include="Resources\drawable\ChangePh.png" />
+    <AndroidResource Include="Resources\drawable\ChangeUsername.png" />
+    <AndroidResource Include="Resources\drawable\ChUsername.png" />
+    <AndroidResource Include="Resources\drawable\Contribution.png" />
+    <AndroidResource Include="Resources\drawable\CP.png" />
+    <AndroidResource Include="Resources\drawable\CPN.png" />
+    <AndroidResource Include="Resources\drawable\CreateNewAd.png" />
+    <AndroidResource Include="Resources\drawable\CrtAds.png" />
+    <AndroidResource Include="Resources\drawable\EnterUrl.png" />
+    <AndroidResource Include="Resources\drawable\HeadMyAds.png" />
+    <AndroidResource Include="Resources\drawable\IcnAds.png" />
+    <AndroidResource Include="Resources\drawable\IcnFunds.png" />
+    <AndroidResource Include="Resources\drawable\IcnIcn.png" />
+    <AndroidResource Include="Resources\drawable\donate.png" />
+    <AndroidResource Include="Resources\drawable\Contribute.png" />
+    <AndroidResource Include="Resources\drawable\AllVehicleCopy.png" />
+    <AndroidResource Include="Resources\drawable\BankTranferICN.png" />
+    <AndroidResource Include="Resources\drawable\BankTransfer.png" />
+    <AndroidResource Include="Resources\drawable\BtnViewMap.png" />
+    <AndroidResource Include="Resources\drawable\Car.JPG" />
+    <AndroidResource Include="Resources\drawable\CClose.png" />
+    <AndroidResource Include="Resources\drawable\Center.png" />
+    <AndroidResource Include="Resources\drawable\CreditCard.png" />
+    <AndroidResource Include="Resources\drawable\EasyPaisa.png" />
+    <AndroidResource Include="Resources\drawable\Fast.png" />
+    <AndroidResource Include="Resources\drawable\FFundsIcn.png" />
+    <AndroidResource Include="Resources\drawable\FundsHead.png" />
+    <AndroidResource Include="Resources\drawable\Group148.png" />
+    <AndroidResource Include="Resources\drawable\HeadContribute.png" />
+    <AndroidResource Include="Resources\drawable\HeadIssue.png" />
+    <AndroidResource Include="Resources\drawable\HeadNotifications.png" />
+    <AndroidResource Include="Resources\drawable\HeadPU.png" />
+    <AndroidResource Include="Resources\drawable\HeadSettings.png" />
+    <AndroidResource Include="Resources\drawable\IBankTransfer.png" />
+    <AndroidResource Include="Resources\drawable\IcnContribute.png" />
+    <AndroidResource Include="Resources\drawable\IcnContributeFund.png" />
+    <AndroidResource Include="Resources\drawable\IcnGoLast.png" />
+    <AndroidResource Include="Resources\drawable\IcnReport.png" />
+    <AndroidResource Include="Resources\drawable\IcnStatus.png" />
+    <AndroidResource Include="Resources\drawable\IcnStatusHe.png" />
+    <AndroidResource Include="Resources\drawable\IcnVieMap.png" />
+    <AndroidResource Include="Resources\drawable\IcnViewUpdated.png" />
+    <AndroidResource Include="Resources\drawable\IcnContributeUpdated.png" />
+    <AndroidResource Include="Resources\drawable\IcnStatusUpdated.png" />
+    <AndroidResource Include="Resources\drawable\greenDot.png" />
+    <AndroidResource Include="Resources\drawable\greendot1.png" />
+    <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
+    <Content Include="Resources\drawable\icons8\Abc.jpg" />
+    <Content Include="Resources\drawable\icons8\Accountprofile.png" />
+    <Content Include="Resources\drawable\icons8\Asset 3.png" />
+    <Content Include="Resources\drawable\icons8\Asset 4.png" />
+    <Content Include="Resources\drawable\icons8\Asset1.png" />
+    <Content Include="Resources\drawable\icons8\Asset2.png" />
+    <Content Include="Resources\drawable\icons8\bank without background.png" />
+    <Content Include="Resources\drawable\icons8\card without background.png" />
+    <Content Include="Resources\drawable\icons8\Cartoon Logo, Cartoon Avatar, Cartoon Portrait, Cartoon Drawing, Portrait Illustration, Portrait.png" />
+    <Content Include="Resources\drawable\icons8\CLOCK.png" />
+    <Content Include="Resources\drawable\icons8\Draw cartoon avatar from your photo into social media profile picture in 10 hour by Warfields.jpg" />
+    <Content Include="Resources\drawable\icons8\How to Fix Your Potholes.jpg" />
+    <Content Include="Resources\drawable\icons8\Icon.png" />
+    <Content Include="Resources\drawable\icons8\icons8-account-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-bell-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-calendar-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-camera-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-cancel-96 %281%29.png" />
+    <Content Include="Resources\drawable\icons8\icons8-cancel-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-checked-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-donate-96 %281%29.png" />
+    <Content Include="Resources\drawable\icons8\icons8-donate-96 %282%29.png" />
+    <Content Include="Resources\drawable\icons8\icons8-donate-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-double-right-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-email-open-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-forgot-password-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-full-image-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-google-adwords-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-image-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-in-progress-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-key-96 %281%29.png" />
+    <Content Include="Resources\drawable\icons8\icons8-key-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-logout-rounded-down-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-male-user-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-marker-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-name-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-password-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-password-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-phone-96 %281%29.png" />
+    <Content Include="Resources\drawable\icons8\icons8-phone-96.png" />
+    <Content Include="Resources\drawable\icons8\icons8-upload-100.png" />
+    <Content Include="Resources\drawable\icons8\icons8-us-dollar-96.png" />
+    <Content Include="Resources\drawable\icons8\images.jpg" />
+    <Content Include="Resources\drawable\icons8\Man Profile Cartoon.jpg" />
+    <Content Include="Resources\drawable\icons8\olgc.png" />
+    <Content Include="Resources\drawable\icons8\only logo.png" />
+    <Content Include="Resources\drawable\icons8\Pothole repair %281%29.jpg" />
+    <Content Include="Resources\drawable\icons8\Pothole repair.jpg" />
+    <Content Include="Resources\drawable\icons8\Pothole stock image_ Image of broken, construction, cracked - 24422387.jpg" />
+    <Content Include="Resources\drawable\icons8\Potholes Protest in Unique Way.jpg" />
+    <Content Include="Resources\drawable\icons8\pss_manhole_snow_Erika_A_Clark_Twitter.jpg" />
+    <Content Include="Resources\drawable\icons8\Vector art, Vector portrait, Vector Illustration, Cartoon Logo, Cartoon Portrait, Digital Art.png" />
+    <Content Include="Resources\drawable\icons8\WhatsApp Image 2020-09-27 at 8.56.26 PM.jpeg" />
+    <Content Include="Resources\drawable\icons8\WhatsApp Image 2020-09-27 at 8.58.25 PM.jpeg" />
+    <Content Include="Resources\drawable\icons8\WhatsApp Image 2020-09-27 at 8.58.28 PM.jpeg" />
+    <Content Include="Resources\drawable\icons8\WhatsApp_Image_2020-09-27_at_8.58.25_PM-removebg-preview.png" />
+    <Content Include="Resources\drawable\icons8\Young Man, Car, Road with a Lot of Potholes.jpg" />
+    <Content Include="Resources\drawable\icons8\Your place to buy and sell all things handmade.png" />
+    <AndroidResource Include="Resources\layout\Locationwork.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Notifications.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Locations.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\settings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\VerificationEmail.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ForgotPASS.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CreateIssue.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\createissue2.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\OTPVerify.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\newPass.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\createisue3.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\createissue4.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\createissue5.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\createissue6.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PlantingCampignIssue1.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\loadingspinnerfinal.gif" />
+    <AndroidResource Include="Resources\drawable\loadingspinnerfinal1.gif" />
+    <AndroidResource Include="Resources\drawable\spinner101.gif" />
+    <AndroidResource Include="Resources\drawable\loadingindicator2.gif" />
+    <AndroidResource Include="Resources\drawable\loaderfinal101.gif" />
+    <AndroidResource Include="Resources\drawable\loginspinnerwhite.gif" />
+    <AndroidResource Include="Resources\drawable\spinnerbutfinal.gif" />
+    <AndroidResource Include="Resources\drawable\spinnerloadfinal.gif" />
+    <AndroidResource Include="Resources\drawable\locationpin.png" />
+    <AndroidResource Include="Resources\drawable\locationpoint.png" />
+    <AndroidResource Include="Resources\layout\FoundVehicle2.xml" />
+    <AndroidResource Include="Resources\layout\Garbage.xml" />
+    <AndroidResource Include="Resources\layout\Manhole1.xml" />
+    <AndroidResource Include="Resources\layout\MissingVehicle.xml" />
+    <AndroidResource Include="Resources\layout\MissingVehicle2.xml" />
+    <AndroidResource Include="Resources\layout\MissingVehicle3.xml" />
+    <AndroidResource Include="Resources\layout\PlantingCampaign2.xml" />
+    <AndroidResource Include="Resources\layout\Rainwater.xml" />
+    <AndroidResource Include="Resources\layout\SignupFinal.xml" />
+    <AndroidResource Include="Resources\layout\BrokenWires.xml" />
+    <AndroidResource Include="Resources\layout\Debris.xml" />
+    <AndroidResource Include="Resources\layout\FoundVehicle.xml" />
+    <AndroidResource Include="Resources\drawable\ISSUE_MANHOLE1.png" />
+    <AndroidResource Include="Resources\drawable\ISSUE_MANHOLE2.png" />
+    <AndroidResource Include="Resources\drawable\MissingVehicle.png" />
+    <AndroidResource Include="Resources\drawable\NoVehicle.png" />
+    <AndroidResource Include="Resources\drawable\OtherLocationIcon.png" />
+    <AndroidResource Include="Resources\drawable\Plateno.png" />
+    <AndroidResource Include="Resources\drawable\WorkLocationIcon.png" />
+    <AndroidResource Include="Resources\drawable\Vehicle.png" />
+    <AndroidResource Include="Resources\drawable\WorkLoca.png" />
+    <AndroidResource Include="Resources\drawable\searchicon.png" />
+    <AndroidResource Include="Resources\layout\testlayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\myicon.png" />
+    <AndroidResource Include="Resources\raw\notificationsound.wav" />
+    <AndroidResource Include="Resources\drawable\myicon1.png" />
+    <AndroidResource Include="Resources\drawable\r_myicon.png" />
+    <AndroidResource Include="Resources\layout\items.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\locationpointnew.png" />
+    <AndroidResource Include="Resources\layout\testmap.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FragmentHome.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\navigation.xml" />
+    <AndroidResource Include="Resources\layout\Changeno.xml" />
+    <AndroidResource Include="Resources\layout\ChangePass.xml" />
+    <AndroidResource Include="Resources\layout\ChangeUsername.xml" />
+    <AndroidResource Include="Resources\layout\NotificationSettings.xml" />
+    <AndroidResource Include="Resources\layout\Accounts.xml" />
+    <AndroidResource Include="Resources\layout\Ads.xml" />
+    <AndroidResource Include="Resources\drawable\icon_color.xml" />
+    <AndroidResource Include="Resources\drawable\Key.png" />
+    <AndroidResource Include="Resources\drawable\Kkaa.png" />
+    <AndroidResource Include="Resources\drawable\Location.png" />
+    <AndroidResource Include="Resources\drawable\LocationText.png" />
+    <AndroidResource Include="Resources\drawable\Logout.png" />
+    <AndroidResource Include="Resources\drawable\MngAds.png" />
+    <AndroidResource Include="Resources\drawable\NewPhone.png" />
+    <AndroidResource Include="Resources\drawable\notification_100px.png" />
+    <AndroidResource Include="Resources\drawable\Notifications.png" />
+    <AndroidResource Include="Resources\drawable\Passiii.png" />
+    <AndroidResource Include="Resources\drawable\phone_50px2.png" />
+    <AndroidResource Include="Resources\drawable\Rel.png" />
+    <AndroidResource Include="Resources\drawable\Rel3.png" />
+    <AndroidResource Include="Resources\drawable\RMA.png" />
+    <AndroidResource Include="Resources\drawable\scrtnewad.png" />
+    <AndroidResource Include="Resources\drawable\Settings.png" />
+    <AndroidResource Include="Resources\drawable\Submm.png" />
+    <AndroidResource Include="Resources\drawable\UpldImage.png" />
+    <AndroidResource Include="Resources\drawable\Userab.png" />
+    <AndroidResource Include="Resources\drawable\Usericon.png" />
+    <AndroidResource Include="Resources\layout\MyAds.xml" />
+    <AndroidResource Include="Resources\layout\Notification_items.xml" />
+    <AndroidResource Include="Resources\layout\notification.xml" />
+    <AndroidResource Include="Resources\drawable\View.png" />
+    <AndroidResource Include="Resources\drawable\Status.png" />
+    <AndroidResource Include="Resources\layout\FundsFragment.xml" />
+    <AndroidResource Include="Resources\layout\Funds_Items.xml" />
+    <AndroidResource Include="Resources\layout\Contribution.xml" />
+    <AndroidResource Include="Resources\drawable\ICreditCard.png" />
+    <AndroidResource Include="Resources\drawable\IEasyPaisa.png" />
+    <AndroidResource Include="Resources\drawable\IJazzCash.png" />
+    <AndroidResource Include="Resources\drawable\ImgProfileicn.png" />
+    <AndroidResource Include="Resources\drawable\IssueImgg.png" />
+    <AndroidResource Include="Resources\drawable\JazzCash.png" />
+    <AndroidResource Include="Resources\drawable\NNNNotiicatopm.png" />
+    <AndroidResource Include="Resources\drawable\NotificationsHead.png" />
+    <AndroidResource Include="Resources\drawable\Post.png" />
+    <AndroidResource Include="Resources\drawable\ProblemUpdateHead.png" />
+    <AndroidResource Include="Resources\drawable\SCREENOTP.png" />
+    <AndroidResource Include="Resources\drawable\SettingsHead.png" />
+    <AndroidResource Include="Resources\drawable\Slow.png" />
+    <AndroidResource Include="Resources\drawable\Stars.png" />
+    <AndroidResource Include="Resources\drawable\StatusHead.png" />
+    <AndroidResource Include="Resources\drawable\TBrokenWires.png" />
+    <AndroidResource Include="Resources\drawable\TCreateIssue.png" />
+    <AndroidResource Include="Resources\drawable\TDebris.png" />
+    <AndroidResource Include="Resources\drawable\TextContributee.png" />
+    <AndroidResource Include="Resources\drawable\TextFoundVehicle.png" />
+    <AndroidResource Include="Resources\drawable\TFoundVehicle.png" />
+    <AndroidResource Include="Resources\drawable\TGarbage.png" />
+    <AndroidResource Include="Resources\drawable\TManhole.png" />
+    <AndroidResource Include="Resources\drawable\TMissingVehicle.png" />
+    <AndroidResource Include="Resources\drawable\TPlantingCompaign.png" />
+    <AndroidResource Include="Resources\drawable\TPothole.png" />
+    <AndroidResource Include="Resources\layout\ViewStatus_Funds.xml" />
+    <AndroidResource Include="Resources\layout\ViewIssue_Fund.xml" />
+    <AndroidResource Include="Resources\layout\UserFund.xml" />
+    <AndroidResource Include="Resources\layout\DirectionMapLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\reddot1.png" />
+    <Content Include="Resources\screens\BACK.png" />
+    <Content Include="Resources\screens\BelowBg.png" />
+    <Content Include="Resources\screens\BGLOGIN.png" />
+    <Content Include="Resources\screens\Camera.png" />
+    <Content Include="Resources\screens\Contact.png" />
+    <Content Include="Resources\screens\DOB.png" />
+    <Content Include="Resources\screens\Downbtn.png" />
+    <Content Include="Resources\screens\Email.png" />
+    <Content Include="Resources\screens\Gallery.png" />
+    <Content Include="Resources\screens\Group237.png" />
+    <Content Include="Resources\screens\Group2388.png" />
+    <Content Include="Resources\screens\Group240.png" />
+    <Content Include="Resources\screens\Group251.png" />
+    <Content Include="Resources\screens\Group252.png" />
+    <Content Include="Resources\screens\Group254.png" />
+    <Content Include="Resources\screens\Home.png" />
+    <Content Include="Resources\screens\Homeicon.png" />
+    <Content Include="Resources\screens\IconFunds.png" />
+    <Content Include="Resources\screens\IconLocation.png" />
+    <Content Include="Resources\screens\IconNotifcation.png" />
+    <Content Include="Resources\screens\IconSetting.png" />
+    <Content Include="Resources\screens\Issue.png" />
+    <Content Include="Resources\screens\Logo.png" />
+    <Content Include="Resources\screens\LOGOo.png" />
+    <Content Include="Resources\screens\Mobile.png" />
+    <Content Include="Resources\screens\Nameicon.png" />
+    <Content Include="Resources\screens\OnlyLogo.png" />
+    <Content Include="Resources\screens\Passicon.png" />
+    <Content Include="Resources\screens\Phoneicon.png" />
+    <Content Include="Resources\screens\Photo.png" />
+    <Content Include="Resources\screens\Pothole1.png" />
+    <Content Include="Resources\screens\Profile.png" />
+    <Content Include="Resources\screens\Rectangle69.png" />
+    <Content Include="Resources\screens\Rectangle8.png" />
+    <Content Include="Resources\screens\SignUp.png" />
+    <Content Include="Resources\screens\Splash.png" />
+    <Content Include="Resources\screens\Splashh.png" />
+    <Content Include="Resources\screens\Threedot.png" />
+    <Content Include="Resources\screens\Upload.png" />
+    <Content Include="Resources\ui\33522594-4b172f50-d816-11e7-8361-b58ab6fc521c.png" />
+    <Content Include="Resources\ui\800px_COLOURBOX25949369.jpg" />
+    <Content Include="Resources\ui\Account.png" />
+    <Content Include="Resources\ui\account_30px.png" />
+    <Content Include="Resources\ui\account_30px1.png" />
+    <Content Include="Resources\ui\account_50px.png" />
+    <Content Include="Resources\ui\account_50px1.png" />
+    <Content Include="Resources\ui\add_100px.png" />
+    <Content Include="Resources\ui\add_100px9.png" />
+    <Content Include="Resources\ui\approval_100px.png" />
+    <Content Include="Resources\ui\back_to_100px.png" />
+    <Content Include="Resources\ui\buysellads_100px.png" />
+    <Content Include="Resources\ui\buysellads_100px2.png" />
+    <Content Include="Resources\ui\buysellads_50px.png" />
+    <Content Include="Resources\ui\camera_100px.png" />
+    <Content Include="Resources\ui\camera_30px.png" />
+    <Content Include="Resources\ui\camera_30px1.png" />
+    <Content Include="Resources\ui\camera_50px.png" />
+    <Content Include="Resources\ui\cancel_100px.png" />
+    <Content Include="Resources\ui\Capture.PNG" />
+    <Content Include="Resources\ui\cheap_2_100px.png" />
+    <Content Include="Resources\ui\checked_100px.png" />
+    <Content Include="Resources\ui\checked_60px.png" />
+    <Content Include="Resources\ui\checked_checkbox_50px.png" />
+    <Content Include="Resources\ui\donate_100px.png" />
+    <Content Include="Resources\ui\donate_100px2.png" />
+    <Content Include="Resources\ui\donate_100px23.png" />
+    <Content Include="Resources\ui\donate_50px.png" />
+    <Content Include="Resources\ui\donate_50px1.png" />
+    <Content Include="Resources\ui\double_right_50px.png" />
+    <Content Include="Resources\ui\download.jpg" />
+    <Content Include="Resources\ui\download.png" />
+    <Content Include="Resources\ui\down_button_30px.png" />
+    <Content Include="Resources\ui\down_button_50px.png" />
+    <Content Include="Resources\ui\Draw cartoon avatar from your photo into social media profile picture in 10 hour by Warfields.png" />
+    <Content Include="Resources\ui\ellipsis_50px.png" />
+    <Content Include="Resources\ui\email_128px.png" />
+    <Content Include="Resources\ui\email_send_60px.png" />
+    <Content Include="Resources\ui\euro_money_30px1.png" />
+    <Content Include="Resources\ui\forgot_password_100px.png" />
+    <Content Include="Resources\ui\home_30px.png" />
+    <Content Include="Resources\ui\home_30px1.png" />
+    <Content Include="Resources\ui\image_50px.png" />
+    <Content Include="Resources\ui\image_50px2.png" />
+    <Content Include="Resources\ui\location_30px1.png" />
+    <Content Include="Resources\ui\Man Profile Cartoon.png" />
+    <Content Include="Resources\ui\marker_100px.png" />
+    <Content Include="Resources\ui\money_pound_30px.png" />
+    <Content Include="Resources\ui\notification_100px.png" />
+    <Content Include="Resources\ui\no_100px.png" />
+    <Content Include="Resources\ui\password_100px3.png" />
+    <Content Include="Resources\ui\phone_50px2.png" />
+    <Content Include="Resources\ui\pngtree-realistic-virtual-credit-cards-png-image_2177524.jpg" />
+    <Content Include="Resources\ui\pngtree-vector-bank-icon-png-image_4173791.jpg" />
+    <Content Include="Resources\ui\profile.png" />
+    <Content Include="Resources\ui\remove_100px.png" />
+    <Content Include="Resources\ui\search_50px.png" />
+    <Content Include="Resources\ui\settings_100px.png" />
+    <Content Include="Resources\ui\settings_30px.png" />
+    <Content Include="Resources\ui\settings_30px1.png" />
+    <Content Include="Resources\ui\settings_50px.png" />
+    <Content Include="Resources\ui\signin_24px.png" />
+    <Content Include="Resources\ui\SignUp %282%29.png" />
+    <Content Include="Resources\ui\Signup.png" />
+    <Content Include="Resources\ui\status.png" />
+    <Content Include="Resources\ui\stream_32px.png" />
+    <Content Include="Resources\ui\stream_50px.png" />
+    <Content Include="Resources\ui\submit_progress_50px.png" />
+    <Content Include="Resources\ui\submit_progress_50pxq.png" />
+    <Content Include="Resources\ui\timer_50px.png" />
+    <Content Include="Resources\ui\toggle_off_100px.png" />
+    <Content Include="Resources\ui\toggle_on_100px.png" />
+    <Content Include="Resources\ui\to_do_100px.png" />
+    <Content Include="Resources\ui\unnamed %281%29.png" />
+    <Content Include="Resources\ui\unnamed.png" />
+    <Content Include="Resources\ui\upload_to_cloud_100px.png" />
+    <Content Include="Resources\ui\user_male_52px.png" />
+    <Content Include="Resources\ui\utility-markercluster.png" />
+    <Content Include="Resources\ui\verified_account_50px.png" />
+    <Content Include="Resources\ui\wait_100px.png" />
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+  -->
+</Project>

@@ -1,0 +1,90 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fffafa"
+    app:cardCornerRadius="8dp"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:elevation="40dp"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        >
+
+    
+      
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_marginStart="5dp"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/username"/>
+        <TextView
+            
+            
+            android:maxLines="2"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pothole not filled with water near gulshan e iqbal karachi"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:layout_below="@+id/username"
+            android:textSize="17sp"
+            android:id="@+id/description"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icnviewupdated"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/description"
+            android:layout_toLeftOf="@id/btnContribute"
+            android:id="@+id/btnView"/>
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icncontributeupdated"
+            android:layout_toLeftOf="@id/btnStatus"
+            android:layout_below="@id/description"
+            android:layout_marginTop="10dp"
+            android:id="@+id/btnContribute"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+                                                                                                                                                                                      android:src="@drawable/icnstatusupdated"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/description"
+            android:id="@+id/btnStatus"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginTop="5dp"
+            android:textColor="#707070 "
+            android:layout_below="@id/btnView"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:id="@+id/date"/>
+  
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

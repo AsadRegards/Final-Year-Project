@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:text="@string/Settings"
+        android:layout_marginStart="30dp"
+        android:textStyle="bold"
+        android:id="@+id/textviewhead"
+        android:textSize="35dp"
+        android:textColor="#3c46e4"
+        android:layout_marginTop="20dp"
+        />
+    <ImageView
+        android:src="@drawable/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/textviewhead"
+       
+         />
+     <ImageView
+        android:src="@drawable/saccounts"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgviewaccounts"
+        android:layout_below="@+id/textviewhead"
+         />
+    <ImageView
+        android:src="@drawable/snotifications"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imgviewnoti"
+        android:layout_below="@+id/imgviewaccounts"
+         />
+    <ImageView
+        android:src="@drawable/smyads"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imgviewmyads"
+        android:layout_below="@+id/imgviewnoti"
+         />
+    <ImageView
+        android:src="@drawable/spayments"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imgpayments"
+        android:layout_below="@+id/imgviewmyads"
+         />
+    
+
+</RelativeLayout>

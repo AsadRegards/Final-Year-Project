@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:layout_marginStart="30dp"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:textColor="#0078e3"
+        android:layout_marginTop="20dp"
+        />
+     <ImageView
+        android:src="@drawable/rectangle69"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+     
+        android:layout_marginTop="559dp"
+        android:id="@+id/linee"
+         />
+     <ImageView
+        android:src="@drawable/group281home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="560dp"
+        android:id="@+id/iconHome"
+         />
+    <ImageView
+        android:src="@drawable/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginTop="559dp"
+        android:layout_marginStart="150dp"
+        android:id="@+id/line2"
+         />
+    <ImageView
+        android:src="@drawable/iconfunds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="570dp"
+        android:id="@+id/iconFunds"
+         />
+    <ImageView
+        android:src="@drawable/fillednotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="560dp"
+        android:id="@+id/iconNotifications"
+         />
+     <ImageView
+            android:src="@drawable/iconlocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        
+            android:layout_marginStart="245dp"
+            android:layout_marginTop="570dp"
+            android:id="@+id/iconMap"
+             />
+     <ImageView
+            android:src="@drawable/iconsetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="570dp"
+            android:id="@+id/iconSettings"
+             />
+     <ImageView
+            android:src="@drawable/rectangle69"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+        
+            android:layout_marginTop="559dp"
+            android:layout_marginStart="150dp"
+            android:id="@+id/line"
+             />
+</RelativeLayout>

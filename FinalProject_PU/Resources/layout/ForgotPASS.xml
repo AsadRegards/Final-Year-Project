@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8">
+
+
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textv1"
+        android:text="@string/HeadForgot"
+        android:textColor="#3c46e4"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imag2"
+        android:src="@drawable/blueemptyicon"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="310dp"/>
+
+    <ImageView
+        android:layout_width="186dp"
+        android:layout_height="242dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imag3"
+        android:layout_below="@+id/textv1"
+        android:src="@drawable/group2282"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/RegisterdEmail"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/imag3"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:textColor="#3c46e4"
+        android:id="@+id/textv2"/>
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit1"
+        android:textColor="#000"
+        android:hint="@string/Email"
+        android:textColorHint="#858585"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/textv2"
+        android:textSize="25dp"
+        
+        />
+
+    <ImageView
+        android:layout_width="319dp"
+        android:layout_height="49dp"
+        android:src="@drawable/group2281"
+        android:layout_below="@+id/edit1"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imagbtn"/>
+      <!-- Loading Indicator for overall screen   -->
+    <com.mohammedalaa.gifloading.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:src="@drawable/spinnerloadfinal"/>
+</RelativeLayout>

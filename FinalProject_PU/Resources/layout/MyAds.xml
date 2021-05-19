@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    
+     <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        
+        android:id="@+id/imgbackgo"
+       
+         />
+     <ImageView
+        android:src="@drawable/createnewad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/icnads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/usericon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="10dp"
+
+        android:id="@+id/usericon"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:id="@+id/username"
+        android:layout_below="@+id/imgheadaccounts"
+       
+        />
+    <ImageView
+        android:src="@drawable/enterurl"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imgviewmyads"
+        android:layout_centerHorizontal="true"        
+        android:layout_below="@+id/username"
+         />
+    <EditText
+        android:inputType="text"
+        android:layout_width="300dp"
+        
+        
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        
+        android:layout_centerHorizontal="true"
+        
+        android:layout_below="@+id/imgviewmyads"
+        android:layout_height="50dp"
+        
+        android:id="@+id/edtUrl" />
+
+    <ImageView
+        android:src="@drawable/upldimage"
+        android:layout_width="220dp"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imguploadimg"
+        android:layout_centerHorizontal="true"        
+        android:layout_below="@+id/imgviewmyads"
+         />
+    <ImageView
+        android:src="@drawable/bdgt"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imgbudget"
+        android:layout_centerHorizontal="true"        
+        android:layout_below="@+id/edtUrl"
+         />
+    <EditText
+        android:inputType="text"
+        android:layout_width="300dp"
+        
+        
+        android:textColor="#000"
+        android:textColorHint="#858585"
+        
+        android:layout_centerHorizontal="true"
+        
+        android:layout_below="@+id/imgbudget"
+        android:layout_height="50dp"
+        
+        android:id="@+id/edtBudget" />
+    <ImageView
+        android:src="@drawable/submm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/edtBudget"
+        android:id="@+id/imgsubmitt"
+       
+         />
+</RelativeLayout>

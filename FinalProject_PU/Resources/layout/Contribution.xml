@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    
+    <ImageView
+        android:src="@drawable/headcontribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="4dp" 
+        android:id="@+id/textviewhead"
+        android:layout_centerHorizontal="true"
+       
+         />
+    <ImageView
+        android:src="@drawable/ffundsicn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+        <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:id="@+id/imggoback"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/textviewhead"
+       
+         />
+<ImageView
+        android:src="@drawable/textcontributee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgTextContribute"
+        android:layout_below="@+id/imglinehead"
+       
+         />
+    <ImageView
+        android:src="@drawable/ieasypaisa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@id/imgEasyPaisa"
+        android:layout_below="@+id/imgTextContribute"
+       
+         />
+    <ImageView
+        android:src="@drawable/ijazzcash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@id/imgJazzCash"
+        android:layout_below="@+id/imgEasyPaisa"
+       
+         />
+        <ImageView
+        android:src="@drawable/ibanktransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@id/imgBankTransfer"
+        android:layout_below="@+id/imgJazzCash"
+       
+         />
+    <ImageView
+        android:src="@drawable/icreditcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/CreditCard"
+        android:layout_below="@+id/imgBankTransfer"
+       
+         />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close"
+        android:src="@drawable/cclose"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+       />
+</RelativeLayout>

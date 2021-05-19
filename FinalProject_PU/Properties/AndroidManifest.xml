@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.finalproject_pu" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <!-- Google Maps for Android v2 requires OpenGL ES v2 -->
+  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+  <!-- Permission to receive remote notifications from Google Play Services -->
+  <!-- Notice here that we have the package name of our application as a prefix on the permissions. -->
+  <uses-permission android:name="com.companyname.finalproject_pu.permission.MAPS_RECEIVE" />
+  <permission android:name="com.companyname.finalproject_pu.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+  <!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  
+  
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@drawable/appiconfinal" android:label="Problem Update" android:roundIcon="@drawable/appiconfinal" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+    <!-- Necessary for apps that target Android 9.0 or higher -->
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
+    
+
+    <provider android:name="androidx.core.content.FileProvider" android:authorities="com.companyname.finalproject_pu.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    </provider>
+    <activity android:name="crc64830617e3579ebeb9.CreateIssue" android:label="CreateIssue" />
+    <activity android:name="crc64830617e3579ebeb9.createissue2" android:label="createissue2" />
+    <activity android:name="crc64830617e3579ebeb9.createissue3" android:label="createissue3" />
+    <activity android:name="crc64830617e3579ebeb9.createissue4" android:label="createissue4" />
+    <activity android:name="crc64830617e3579ebeb9.createissue5" android:label="createissue5" />
+    <activity android:name="crc64830617e3579ebeb9.createissue6" android:label="createissue6" />
+    <activity android:name="crc64830617e3579ebeb9.EmailVerifyActivity" android:label="EmailVerifyActivity" />
+    <activity android:name="crc64830617e3579ebeb9.ForgotPassActivity" android:label="ForgotPassActivity" />
+    <activity android:name="crc64830617e3579ebeb9.FundsActivity" android:label="FundsActivity" />
+    <activity android:name="crc64830617e3579ebeb9.LocationActivity" android:label="LocationActivity" />act
+    <activity android:name="crc64830617e3579ebeb9.LocationsActivity" android:label="LocationsActivity" />
+    <activity android:name="crc64830617e3579ebeb9.Login" android:label="Login" >
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>  
+    </activity>
+    <activity android:name="crc64830617e3579ebeb9.MainActivity" android:label="@string/app_name" android:theme="@style/AppTheme" >
+      
+    </activity>
+    <activity android:name="crc64830617e3579ebeb9.testActivity" android:label="testActivity">
+       
+    </activity>
+    <activity android:name="crc64830617e3579ebeb9.MapActivity" android:label="MapActivity"/>
+    <activity android:name="crc64830617e3579ebeb9.Newpassword" android:label="Newpassword" />
+    <activity android:name="crc64830617e3579ebeb9.NotificationsActivity" android:label="NotificationsActivity" />
+    <activity android:name="crc64830617e3579ebeb9.OTPVerify" android:label="OTPVerify" />
+    <activity android:name="crc64830617e3579ebeb9.PhotoUploading" android:label="PhotoUploading" />
+    <activity android:name="crc64830617e3579ebeb9.Register1Activity" android:label="Register1Activity" />
+    <activity android:name="crc64830617e3579ebeb9.Register2Activity" android:label="Register2Activity" />
+    <activity android:name="crc64830617e3579ebeb9.Register3Activity" android:label="Register3Activity" />
+    <activity android:name="crc64830617e3579ebeb9.SettingsActivity" android:label="SettingsActivity" />
+    <activity android:name="crc644f28929abffd59e1.HomeActivity" android:label="HomeActivity" />
+    <activity android:name="crc646957603ea1820544.MediaPickerActivity" android:configChanges="orientation|screenSize|uiMode" />
+    <service android:name="crc64396a3fe5f8138e3f.KeepAliveService" />
+    <receiver android:name="crc64a0e0a82d0db9a07d.BatteryBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" />
+    <receiver android:name="crc64a0e0a82d0db9a07d.EnergySaverBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" />
+    <receiver android:name="crc64a0e0a82d0db9a07d.ConnectivityBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" />
+    <provider android:name="xamarin.essentials.fileProvider" android:authorities="com.companyname.finalproject_pu.fileProvider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.companyname.finalproject_pu.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999999" />
+    <!-- suppress ExportedReceiver -->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.companyname.finalproject_pu" />
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <!-- suppress ExportedReceiver -->
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE"/>
+
+    <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+    <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+        <category android:name="${applicationId}" />
+      </intent-filter>
+    </receiver>
+      
+
+    <!--FCM RECEIVER ENDS HERE-->
+    
+    
+  </application>
+</manifest>

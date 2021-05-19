@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglogin">
+    <ImageView
+        android:src="@drawable/iconwhitecomplete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="310dp"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="@string/Location"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textView1" />
+    <ImageView
+        android:src="@drawable/asset2"
+        android:layout_width="400dp"
+        android:layout_height="352dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/imageView2" />
+    <ImageView
+        android:src="@drawable/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/imgback" />
+    <ImageView
+        android:src="@drawable/group2771"        
+        android:layout_centerVertical="true"
+        android:layout_width="112dp"
+        android:layout_height="143dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="50dp"
+        android:id="@+id/imgHomeLoca" />
+    <ImageView
+        android:src="@drawable/groupwork"
+        android:layout_width="112dp"
+        android:layout_height="143dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="190dp"
+        android:id="@+id/imgJobLoca" />
+    <me.grantland.widget.AutofitTextView
+         android:text="@string/Location2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgJobLoca"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:maxLines="4"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textColor="#858585"
+        android:textStyle="normal"
+        android:id="@+id/textView2" />
+     <ImageView
+        android:src="@drawable/asset1"
+        android:layout_width="360dp"
+        android:layout_height="237dp"
+        android:paddingBottom="50dp"
+        android:layout_marginTop="110dp"
+        android:layout_below="@+id/imgHomeLoca"
+        android:id="@+id/imageViewdown" />
+    <ImageView
+        android:src="@drawable/group2388"
+        android:layout_width="229dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imgHomeLoca"
+        android:id="@+id/imageView9" />
+    
+    
+
+
+
+
+      
+
+
+
+
+
+
+</RelativeLayout>
