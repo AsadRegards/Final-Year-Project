@@ -81,20 +81,11 @@ namespace FinalProject_PU
             next_FoundVehicle = (ImageView)FindViewById(Resource.Id.next_FoundVehicle);
             next_FoundVehicle.Click += Next_FoundVehicle_Click;
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
+          
         }
         private void Next_FoundVehicle_Click(object sender, EventArgs e)
         {
-            if (selected != "")
+            if (FoundVehicle_edtPlateno.Text != "" && FoundVehicle_MissingDate.Text!="")
             {
 
 
@@ -122,35 +113,7 @@ namespace FinalProject_PU
 
         
 
-        private void IconHome_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconFunds_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconNotifications_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconMap_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconSettngs_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
+        
 
     }
 }

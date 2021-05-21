@@ -79,12 +79,12 @@
           <Property Name="Vehiclepassing" Type="nvarchar" MaxLength="50" />
           <Property Name="IssueImage" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IssueDate" Type="datetime" />
-          <Property Name="missingDate" Type="datetime" />
-          <Property Name="foundDate" Type="datetime" />
+          <Property Name="missingDate" Type="datetime2" Precision="7" />
+          <Property Name="foundDate" Type="datetime2" Precision="7" />
           <Property Name="isresolved" Type="int" />
           <Property Name="estimated_cost" Type="int" />
           <Property Name="location_name" Type="nvarchar(max)" />
-          <Property Name="resolveddate" Type="datetime" />
+          <Property Name="resolveddate" Type="datetime2" Precision="7" />
           <Property Name="amount_collected" Type="int" />
           <Property Name="isWorkingStarted" Type="int" />
           <Property Name="issueFlag" Type="nvarchar" MaxLength="50" />
@@ -364,8 +364,8 @@
           <Property Name="volunteer_id" Type="Int32" Nullable="false" />
           <Property Name="issue_id" Type="Int32" Nullable="false" />
           <Property Name="assigned_date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="issue_table" Relationship="Self.IssueID_FK" FromRole="AssignedByAdmin" ToRole="issue_table" />
           <NavigationProperty Name="Volunteer_table" Relationship="Self.VolunteerID_FK" FromRole="AssignedByAdmin" ToRole="Volunteer_table" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.IssueID_FK" FromRole="AssignedByAdmin" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="FCM_TOKEN">
           <Key>
@@ -384,8 +384,8 @@
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="fund_date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="issue_table" Relationship="Self.FK_funds_table_issue_table" FromRole="funds_table" ToRole="issue_table" />
           <NavigationProperty Name="user_table" Relationship="Self.FK_funds_table_user_table1" FromRole="funds_table" ToRole="user_table" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_funds_table_issue_table" FromRole="funds_table" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="issue_images_table">
           <Key>
@@ -394,47 +394,7 @@
           <Property Name="image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="issue_id" Type="Int32" Nullable="false" />
           <Property Name="images" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <NavigationProperty Name="issue_table" Relationship="Self.FK_issue_images_table_issue_table" FromRole="issue_images_table" ToRole="issue_table" />
-        </EntityType>
-        <EntityType Name="issue_table">
-          <Key>
-            <PropertyRef Name="issue_id" />
-          </Key>
-          <Property Name="issue_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_id" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="locationLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="locationLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="roadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="waterLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="issuePositionwrtRoad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="traffic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="isRoadBlock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="issueStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Schedule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Iswateroverflow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="roadCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Vehiclepassing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IssueImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IssueDate" Type="DateTime" Precision="3" />
-          <Property Name="missingDate" Type="DateTime" Precision="3" />
-          <Property Name="foundDate" Type="DateTime" Precision="3" />
-          <Property Name="isresolved" Type="Int32" />
-          <Property Name="estimated_cost" Type="Int32" />
-          <Property Name="location_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="resolveddate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="AssignedByAdmin" Relationship="Self.IssueID_FK" FromRole="issue_table" ToRole="AssignedByAdmin" />
-          <NavigationProperty Name="funds_table" Relationship="Self.FK_funds_table_issue_table" FromRole="issue_table" ToRole="funds_table" />
-          <NavigationProperty Name="issue_images_table" Relationship="Self.FK_issue_images_table_issue_table" FromRole="issue_table" ToRole="issue_images_table" />
-          <NavigationProperty Name="issue_table1" Relationship="Self.FK_issue_table_issue_table" FromRole="issue_table" ToRole="issue_table1" />
-          <NavigationProperty Name="issue_table2" Relationship="Self.FK_issue_table_issue_table" FromRole="issue_table1" ToRole="issue_table" />
-          <NavigationProperty Name="user_table" Relationship="Self.FK_issue_table_user_table" FromRole="issue_table" ToRole="user_table" />
-          <NavigationProperty Name="nearby_user_table" Relationship="Self.FK_nearby_user_table_issue_table" FromRole="issue_table" ToRole="nearby_user_table" />
-          <NavigationProperty Name="report_table" Relationship="Self.FK_report_table_issue_table" FromRole="issue_table" ToRole="report_table" />
-          <Property Name="amount_collected" Type="Int32" />
-          <Property Name="isWorkingStarted" Type="Int32" />
-          <Property Name="issueFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="issueType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_issue_images_table_issue_table" FromRole="issue_images_table" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="nearby_user_table">
           <Key>
@@ -443,9 +403,9 @@
           <Property Name="ui_pair_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="issue_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="issue_table" Relationship="Self.FK_nearby_user_table_issue_table" FromRole="nearby_user_table" ToRole="issue_table" />
           <NavigationProperty Name="nearby_user_table1" Relationship="Self.FK_nearby_user_table_nearby_user_table" FromRole="nearby_user_table" ToRole="nearby_user_table1" />
           <NavigationProperty Name="nearby_user_table2" Relationship="Self.FK_nearby_user_table_nearby_user_table" FromRole="nearby_user_table1" ToRole="nearby_user_table" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_nearby_user_table_issue_table" FromRole="nearby_user_table" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="report_table">
           <Key>
@@ -457,8 +417,8 @@
           <Property Name="report_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="admin_reply" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="issue_table" Relationship="Self.FK_report_table_issue_table" FromRole="report_table" ToRole="issue_table" />
           <NavigationProperty Name="user_table" Relationship="Self.FK_report_table_user_table" FromRole="report_table" ToRole="user_table" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_report_table_issue_table" FromRole="report_table" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="user_table">
           <Key>
@@ -476,8 +436,8 @@
           <Property Name="password_hash" Type="Int32" Nullable="false" />
           <Property Name="userrating" Type="Int32" Nullable="false" />
           <NavigationProperty Name="funds_table" Relationship="Self.FK_funds_table_user_table1" FromRole="user_table" ToRole="funds_table" />
-          <NavigationProperty Name="issue_table" Relationship="Self.FK_issue_table_user_table" FromRole="user_table" ToRole="issue_table" />
           <NavigationProperty Name="report_table" Relationship="Self.FK_report_table_user_table" FromRole="user_table" ToRole="report_table" />
+          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_issue_table_user_table" FromRole="user_table" ToRole="issue_table" />
         </EntityType>
         <EntityType Name="Volunteer_table">
           <Key>
@@ -491,18 +451,6 @@
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AssignedByAdmin" Relationship="Self.VolunteerID_FK" FromRole="Volunteer_table" ToRole="AssignedByAdmin" />
         </EntityType>
-        <Association Name="IssueID_FK">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="AssignedByAdmin" Type="Self.AssignedByAdmin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="AssignedByAdmin">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="VolunteerID_FK">
           <End Role="Volunteer_table" Type="Self.Volunteer_table" Multiplicity="1" />
           <End Role="AssignedByAdmin" Type="Self.AssignedByAdmin" Multiplicity="*" />
@@ -515,18 +463,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_funds_table_issue_table">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="funds_table" Type="Self.funds_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="funds_table">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_funds_table_user_table1">
           <End Role="user_table" Type="Self.user_table" Multiplicity="1" />
           <End Role="funds_table" Type="Self.funds_table" Multiplicity="*" />
@@ -536,66 +472,6 @@
             </Principal>
             <Dependent Role="funds_table">
               <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_issue_images_table_issue_table">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="issue_images_table" Type="Self.issue_images_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="issue_images_table">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_issue_table_issue_table">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="issue_table1" Type="Self.issue_table" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="issue_table1">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_issue_table_user_table">
-          <End Role="user_table" Type="Self.user_table" Multiplicity="1" />
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user_table">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="issue_table">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_nearby_user_table_issue_table">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="nearby_user_table" Type="Self.nearby_user_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="nearby_user_table">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_report_table_issue_table">
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
-          <End Role="report_table" Type="Self.report_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="report_table">
-              <PropertyRef Name="issue_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -630,46 +506,17 @@
           <EntitySet Name="FCM_TOKEN" EntityType="Self.FCM_TOKEN" />
           <EntitySet Name="funds_table" EntityType="Self.funds_table" />
           <EntitySet Name="issue_images_table" EntityType="Self.issue_images_table" />
-          <EntitySet Name="issue_table" EntityType="Self.issue_table" />
           <EntitySet Name="nearby_user_table" EntityType="Self.nearby_user_table" />
           <EntitySet Name="report_table" EntityType="Self.report_table" />
           <EntitySet Name="user_table" EntityType="Self.user_table" />
           <EntitySet Name="Volunteer_table" EntityType="Self.Volunteer_table" />
-          <AssociationSet Name="IssueID_FK" Association="Self.IssueID_FK">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
-          </AssociationSet>
           <AssociationSet Name="VolunteerID_FK" Association="Self.VolunteerID_FK">
             <End Role="Volunteer_table" EntitySet="Volunteer_table" />
             <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
           </AssociationSet>
-          <AssociationSet Name="FK_funds_table_issue_table" Association="Self.FK_funds_table_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="funds_table" EntitySet="funds_table" />
-          </AssociationSet>
           <AssociationSet Name="FK_funds_table_user_table1" Association="Self.FK_funds_table_user_table1">
             <End Role="user_table" EntitySet="user_table" />
             <End Role="funds_table" EntitySet="funds_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_issue_images_table_issue_table" Association="Self.FK_issue_images_table_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="issue_images_table" EntitySet="issue_images_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_issue_table_issue_table" Association="Self.FK_issue_table_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="issue_table1" EntitySet="issue_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_issue_table_user_table" Association="Self.FK_issue_table_user_table">
-            <End Role="user_table" EntitySet="user_table" />
-            <End Role="issue_table" EntitySet="issue_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_nearby_user_table_issue_table" Association="Self.FK_nearby_user_table_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="nearby_user_table" EntitySet="nearby_user_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_report_table_issue_table" Association="Self.FK_report_table_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
           <AssociationSet Name="FK_nearby_user_table_nearby_user_table" Association="Self.FK_nearby_user_table_nearby_user_table">
             <End Role="nearby_user_table" EntitySet="nearby_user_table" />
@@ -680,7 +527,36 @@
             <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
           <EntitySet Name="NotificationTable" EntityType="problemupdatedbModel.NotificationTable" />
-        </EntityContainer>
+          <EntitySet Name="issue_table" EntityType="problemupdatedbModel.issue_table" />
+          <AssociationSet Name="IssueID_FK" Association="problemupdatedbModel.IssueID_FK">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_funds_table_issue_table" Association="problemupdatedbModel.FK_funds_table_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="funds_table" EntitySet="funds_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_issue_images_table_issue_table" Association="problemupdatedbModel.FK_issue_images_table_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="issue_images_table" EntitySet="issue_images_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_issue_table_issue_table" Association="problemupdatedbModel.FK_issue_table_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="issue_table1" EntitySet="issue_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_issue_table_user_table" Association="problemupdatedbModel.FK_issue_table_user_table">
+            <End Role="user_table" EntitySet="user_table" />
+            <End Role="issue_table" EntitySet="issue_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nearby_user_table_issue_table" Association="problemupdatedbModel.FK_nearby_user_table_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="nearby_user_table" EntitySet="nearby_user_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_report_table_issue_table" Association="problemupdatedbModel.FK_report_table_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="report_table" EntitySet="report_table" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="NotificationTable">
           <Key>
             <PropertyRef Name="notification_id" />
@@ -689,7 +565,131 @@
           <Property Name="notification_text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="notification_image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-      </Schema>
+        <EntityType Name="issue_table">
+          <Key>
+            <PropertyRef Name="issue_id" />
+          </Key>
+          <Property Name="issue_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="locationLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="locationLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="roadSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="waterLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="issuePositionwrtRoad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="traffic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isRoadBlock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="issueStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Schedule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Iswateroverflow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="roadCoverage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vehiclepassing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IssueImage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IssueDate" Type="DateTime" Precision="3" />
+          <Property Name="missingDate" Type="DateTime" Precision="7" />
+          <Property Name="foundDate" Type="DateTime" Precision="7" />
+          <Property Name="isresolved" Type="Int32" />
+          <Property Name="estimated_cost" Type="Int32" />
+          <Property Name="location_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="resolveddate" Type="DateTime" Precision="7" />
+          <Property Name="amount_collected" Type="Int32" />
+          <Property Name="isWorkingStarted" Type="Int32" />
+          <Property Name="issueFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="issueType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AssignedByAdmin" Relationship="problemupdatedbModel.IssueID_FK" FromRole="issue_table" ToRole="AssignedByAdmin" />
+          <NavigationProperty Name="funds_table" Relationship="problemupdatedbModel.FK_funds_table_issue_table" FromRole="issue_table" ToRole="funds_table" />
+          <NavigationProperty Name="issue_images_table" Relationship="problemupdatedbModel.FK_issue_images_table_issue_table" FromRole="issue_table" ToRole="issue_images_table" />
+          <NavigationProperty Name="issue_table1" Relationship="problemupdatedbModel.FK_issue_table_issue_table" FromRole="issue_table" ToRole="issue_table1" />
+          <NavigationProperty Name="issue_table2" Relationship="problemupdatedbModel.FK_issue_table_issue_table" FromRole="issue_table1" ToRole="issue_table" />
+          <NavigationProperty Name="user_table" Relationship="problemupdatedbModel.FK_issue_table_user_table" FromRole="issue_table" ToRole="user_table" />
+          <NavigationProperty Name="nearby_user_table" Relationship="problemupdatedbModel.FK_nearby_user_table_issue_table" FromRole="issue_table" ToRole="nearby_user_table" />
+          <NavigationProperty Name="report_table" Relationship="problemupdatedbModel.FK_report_table_issue_table" FromRole="issue_table" ToRole="report_table" />
+        </EntityType>
+        <Association Name="IssueID_FK">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.AssignedByAdmin" Role="AssignedByAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="AssignedByAdmin">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_funds_table_issue_table">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.funds_table" Role="funds_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="funds_table">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_issue_images_table_issue_table">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.issue_images_table" Role="issue_images_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="issue_images_table">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_issue_table_issue_table">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="issue_table1">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_issue_table_user_table">
+          <End Type="problemupdatedbModel.user_table" Role="user_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_table">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="issue_table">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nearby_user_table_issue_table">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.nearby_user_table" Role="nearby_user_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="nearby_user_table">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_report_table_issue_table">
+          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
+          <End Type="problemupdatedbModel.report_table" Role="report_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="report_table">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -754,39 +754,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="issue_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel.issue_table">
-              <MappingFragment StoreEntitySet="issue_table">
-                <ScalarProperty Name="issueType" ColumnName="issueType" />
-                <ScalarProperty Name="issueFlag" ColumnName="issueFlag" />
-                <ScalarProperty Name="isWorkingStarted" ColumnName="isWorkingStarted" />
-                <ScalarProperty Name="amount_collected" ColumnName="amount_collected" />
-                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="locationLatitude" ColumnName="locationLatitude" />
-                <ScalarProperty Name="locationLongitude" ColumnName="locationLongitude" />
-                <ScalarProperty Name="roadSize" ColumnName="roadSize" />
-                <ScalarProperty Name="waterLevel" ColumnName="waterLevel" />
-                <ScalarProperty Name="issuePositionwrtRoad" ColumnName="issuePositionwrtRoad" />
-                <ScalarProperty Name="traffic" ColumnName="traffic" />
-                <ScalarProperty Name="isRoadBlock" ColumnName="isRoadBlock" />
-                <ScalarProperty Name="issueStatement" ColumnName="issueStatement" />
-                <ScalarProperty Name="Schedule" ColumnName="Schedule" />
-                <ScalarProperty Name="Iswateroverflow" ColumnName="Iswateroverflow" />
-                <ScalarProperty Name="roadCoverage" ColumnName="roadCoverage" />
-                <ScalarProperty Name="Vehiclepassing" ColumnName="Vehiclepassing" />
-                <ScalarProperty Name="IssueImage" ColumnName="IssueImage" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="missingDate" ColumnName="missingDate" />
-                <ScalarProperty Name="foundDate" ColumnName="foundDate" />
-                <ScalarProperty Name="isresolved" ColumnName="isresolved" />
-                <ScalarProperty Name="estimated_cost" ColumnName="estimated_cost" />
-                <ScalarProperty Name="location_name" ColumnName="location_name" />
-                <ScalarProperty Name="resolveddate" ColumnName="resolveddate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="nearby_user_table">
             <EntityTypeMapping TypeName="problemupdatedbModel.nearby_user_table">
               <MappingFragment StoreEntitySet="nearby_user_table">
@@ -843,6 +810,39 @@
                 <ScalarProperty Name="notification_image" ColumnName="notification_image" />
                 <ScalarProperty Name="notification_text" ColumnName="notification_text" />
                 <ScalarProperty Name="notification_id" ColumnName="notification_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="issue_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.issue_table">
+              <MappingFragment StoreEntitySet="issue_table">
+                <ScalarProperty Name="issueType" ColumnName="issueType" />
+                <ScalarProperty Name="issueFlag" ColumnName="issueFlag" />
+                <ScalarProperty Name="isWorkingStarted" ColumnName="isWorkingStarted" />
+                <ScalarProperty Name="amount_collected" ColumnName="amount_collected" />
+                <ScalarProperty Name="resolveddate" ColumnName="resolveddate" />
+                <ScalarProperty Name="location_name" ColumnName="location_name" />
+                <ScalarProperty Name="estimated_cost" ColumnName="estimated_cost" />
+                <ScalarProperty Name="isresolved" ColumnName="isresolved" />
+                <ScalarProperty Name="foundDate" ColumnName="foundDate" />
+                <ScalarProperty Name="missingDate" ColumnName="missingDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueImage" ColumnName="IssueImage" />
+                <ScalarProperty Name="Vehiclepassing" ColumnName="Vehiclepassing" />
+                <ScalarProperty Name="roadCoverage" ColumnName="roadCoverage" />
+                <ScalarProperty Name="Iswateroverflow" ColumnName="Iswateroverflow" />
+                <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+                <ScalarProperty Name="issueStatement" ColumnName="issueStatement" />
+                <ScalarProperty Name="isRoadBlock" ColumnName="isRoadBlock" />
+                <ScalarProperty Name="traffic" ColumnName="traffic" />
+                <ScalarProperty Name="issuePositionwrtRoad" ColumnName="issuePositionwrtRoad" />
+                <ScalarProperty Name="waterLevel" ColumnName="waterLevel" />
+                <ScalarProperty Name="roadSize" ColumnName="roadSize" />
+                <ScalarProperty Name="locationLongitude" ColumnName="locationLongitude" />
+                <ScalarProperty Name="locationLatitude" ColumnName="locationLatitude" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

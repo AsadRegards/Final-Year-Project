@@ -43,7 +43,7 @@ namespace FinalProject_PU
             iconFunds.Click += IconFunds_Click;
             iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
             iconHome.Click += IconHome_Click;
-           
+
             next_imga2 = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             next_imga2.Click += Next_imga2_Click;
 
@@ -68,9 +68,9 @@ namespace FinalProject_PU
             radiobtn2.Click += Radiobtn2_Click;
             radiobtn3 = (RadioButton)FindViewById(Resource.Id.create_issue3_radiobtn3);
             radiobtn3.Click += Radiobtn3_Click;
-              //runtime py profile change krna or name change krna 
+            //runtime py profile change krna or name change krna 
             //start
-          
+
             char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
             byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
             Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
@@ -126,11 +126,19 @@ namespace FinalProject_PU
 
         private void Next_imga2_Click(object sender, EventArgs e)
         {
-            string a = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
-            Pothole p = new Pothole();
-            p.IssueImage = a;
-            p.waterLevel = selected;
-            Control.DataOper.PutData<createissue4>(this, p);
+            if (selected != null || selected!="")
+            {
+                string a = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
+                Pothole p = new Pothole();
+                p.IssueImage = a;
+                p.waterLevel = selected;
+                Control.DataOper.PutData<createissue4>(this, p);
+
+            }
+            else
+            {
+                Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+            }
 
         }
 

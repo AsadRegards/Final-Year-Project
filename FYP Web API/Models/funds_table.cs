@@ -20,7 +20,7 @@ namespace FYP_Web_API.Models
         public int amount { get; set; }
         public System.DateTime fund_date { get; set; }
     
-        public virtual issue_table issue_table { get; set; }
         public virtual user_table user_table { get; set; }
+        public virtual issue_table issue_table { get; set; }
     }
 }

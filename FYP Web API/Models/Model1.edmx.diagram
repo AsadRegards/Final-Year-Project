@@ -11,24 +11,24 @@
         <EntityTypeShape EntityType="problemupdatedbModel.FCM_TOKEN" Width="1.5" PointX="1.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.funds_table" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.issue_images_table" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="problemupdatedbModel.issue_table" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.nearby_user_table" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.report_table" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.user_table" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel.Volunteer_table" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="problemupdatedbModel.IssueID_FK" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.VolunteerID_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_funds_table_issue_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.FK_funds_table_user_table1" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_issue_images_table_issue_table" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_issue_table_issue_table" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_issue_table_user_table" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_nearby_user_table_issue_table" ManuallyRouted="false" />
-        <AssociationConnector Association="problemupdatedbModel.FK_report_table_issue_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.FK_nearby_user_table_nearby_user_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.FK_report_table_user_table" ManuallyRouted="false" />
         <EntityTypeShape EntityType="problemupdatedbModel.NotificationTable" Width="1.5" PointX="0.75" PointY="0.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="problemupdatedbModel.issue_table" Width="1.5" PointX="3" PointY="6.75" />
+        <AssociationConnector Association="problemupdatedbModel.IssueID_FK" />
+        <AssociationConnector Association="problemupdatedbModel.FK_funds_table_issue_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_issue_images_table_issue_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_issue_table_issue_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_issue_table_user_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_nearby_user_table_issue_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_report_table_issue_table" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

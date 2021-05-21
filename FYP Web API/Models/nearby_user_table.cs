@@ -18,8 +18,8 @@ namespace FYP_Web_API.Models
         public int user_id { get; set; }
         public int issue_id { get; set; }
     
-        public virtual issue_table issue_table { get; set; }
         public virtual nearby_user_table nearby_user_table1 { get; set; }
         public virtual nearby_user_table nearby_user_table2 { get; set; }
+        public virtual issue_table issue_table { get; set; }
     }
 }

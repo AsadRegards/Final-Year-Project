@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -106,18 +107,22 @@ namespace FinalProject_PU
             MissingVehicle_image.PerformClick();
         }
 
+        
         private void Next_MissingVehicle_Click(object sender, EventArgs e)
         {
+            string issueImageString = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
             if (FoundVehicle_radiobtn2.Checked)
             {
                 Model.Missingvehicle m = new Missingvehicle();
                 m.isVehicleLostorFound = "found";
+                m.IssueImage = issueImageString;
                 FinalProject_PU.Control.DataOper.PutData<FoundVehicle>(this, m);
             }
             else
             {
                 Model.Missingvehicle m = new Missingvehicle();
                 m.isVehicleLostorFound = "lost";
+                m.IssueImage = issueImageString;
                 FinalProject_PU.Control.DataOper.PutData<MissingVehicle2>(this, m);
             }
         }

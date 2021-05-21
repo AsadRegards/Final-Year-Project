@@ -17,6 +17,7 @@ namespace FinalProject_PU.Model
         public string IssueImage { get; set; }
         public int balance_payment { get; set; }
 
+        public int isresolved { get; set; }
         public int amount_collected { get; set; }
 
         public int isWorkingStarted { get; set; }

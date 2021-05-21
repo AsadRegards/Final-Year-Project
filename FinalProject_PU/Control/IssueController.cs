@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace FinalProject_PU.Control
 {
@@ -31,9 +32,13 @@ namespace FinalProject_PU.Control
             if(response.StatusCode==System.Net.HttpStatusCode.Accepted)
             {
                 Intent i = new Intent(acc, typeof(FragmentHomeActivity));
-                acc.StartActivity(i);
-                Toast.MakeText(acc, "Issue Posted Successfully", ToastLength.Long).Show();
+                MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    Toast.MakeText(acc, "Issue Posted Successfully", ToastLength.Long).Show();
+                });
+                
                 DataOper.SendNotification("Issue Alert", issueObj.issueStatement);
+                acc.StartActivity(i);
                 return true;
 
             }

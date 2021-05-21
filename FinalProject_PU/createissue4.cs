@@ -130,9 +130,17 @@ namespace FinalProject_PU
 
         private void Createissue4_next_Click(object sender, EventArgs e)
         {
-            var p = JsonConvert.DeserializeObject<Pothole>(Intent.GetStringExtra("objtopass"));
-            p.roadSize = selected;
-            Control.DataOper.PutData<createissue5>(this, p);
+            if (selected != null || selected != "") 
+            {
+                var p = JsonConvert.DeserializeObject<Pothole>(Intent.GetStringExtra("objtopass"));
+                p.roadSize = selected;
+                Control.DataOper.PutData<createissue5>(this, p);
+            }
+            else
+            {
+                Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+            }
+            
             
 
         }

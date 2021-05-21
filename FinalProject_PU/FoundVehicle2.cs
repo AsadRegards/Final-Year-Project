@@ -16,7 +16,7 @@ namespace FinalProject_PU
     [Activity(Label = "FoundVehicle2")]
     public class FoundVehicle2 : Activity
     {
-        static string location_lati, location_longi, LocationName,selected;
+        static string location_lati, location_longi, LocationName;
         ImageView back_FoundVehicle2, next_FoundVehicle2, FoundVehicle2_HomeLocation, FoundVehicle2_WorkLocation, FoundVehicle2_OtherLocation,
                  iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton FoundVehicle2_radiobtn1, FoundVehicle2_radiobtn2, FoundVehicle2_radiobtn3;
@@ -30,8 +30,16 @@ namespace FinalProject_PU
 
             // Create your application here
             SetContentView(Resource.Layout.FoundVehicle2);
+            
             circleImageView_FoundVehicle2 = (CircleImageView)FindViewById(Resource.Id.circleImageView_FoundVehicle2);
             FoundVehicle2_tvusername = (TextView)FindViewById(Resource.Id.FoundVehicle2_tvusername);
+            //Changing userProfile and userName at runtime
+            char[] nameArr = Control.UserInfoHolder.User_name.ToCharArray();
+            FoundVehicle2_tvusername.SetText(nameArr, 0, nameArr.Length);
+            byte[] arr = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
+            Bitmap arrBitmap = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
+            circleImageView_FoundVehicle2.SetImageBitmap(arrBitmap);
+            //
             Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             FoundVehicle2_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
             FoundVehicle2_head = (TextView)FindViewById(Resource.Id.FoundVehicle2_tev1);
@@ -54,16 +62,9 @@ namespace FinalProject_PU
             FoundVehicle2_radiobtn2.Click += FoundVehicle2_radiobtn2_Click;
             FoundVehicle2_radiobtn3 = (RadioButton)FindViewById(Resource.Id.FoundVehicle2_Radiobtn3);
             FoundVehicle2_radiobtn3.Click += FoundVehicle2_radiobtn3_Click;
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
+
+
+           
         }
 
         private void FoundVehicle2_radiobtn3_Click(object sender, EventArgs e)
@@ -107,16 +108,20 @@ namespace FinalProject_PU
             FoundVehicle2_radiobtn1.Checked = true;
         }
 
+        string APIKEY = "AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE";
+        MapFunctions.MapFunctionHelper mapFuncHelper;
         private async void Next_FoundVehicle2_Click(object sender, EventArgs e)
         {
-            if (selected != "")
+
+
+            if (FoundVehicle2_radiobtn3.Checked)
             {
-                if (FoundVehicle2_radiobtn3.Checked)
-                {
-                    var p = JsonConvert.DeserializeObject<Model.Missingvehicle>(Intent.GetStringExtra("objtopass"));
-                    Control.DataOper.PutData<Issuelocationpickup_MissingVehicle>(this, p);
-                }
-                else
+                var p = JsonConvert.DeserializeObject<Model.Missingvehicle>(Intent.GetStringExtra("objtopass"));
+                Control.DataOper.PutData<Issuelocationpickup_MissingVehicle>(this, p);
+            }
+            else
+            {
+                if (location_lati != "" && location_longi!="")
                 {
                     await Task.Run(async () =>
                     {
@@ -124,78 +129,54 @@ namespace FinalProject_PU
                         p.locationLatitude = location_lati;
                         p.locationLongitude = location_longi;
                         p.Status = "unverified";
-                        p.issueDate = DateTime.Now;
+                        p.isresolved = 0; // Issue is not resolved yet.
+                        p.issueFlag = "green";
+                        p.issueType = "Found Vehicle";
 
-                        Xamarin.Essentials.Location loc = new Location();
-                        loc.Latitude = Convert.ToDouble(location_lati);
-                        loc.Longitude = Convert.ToDouble(location_longi);
+                        
 
                         try
                         {
 
-
-                            var placemarks = await Geocoding.GetPlacemarksAsync(Convert.ToDouble(location_lati), Convert.ToDouble(location_longi));
-
-                            var placemark = placemarks?.FirstOrDefault();
+                            mapFuncHelper = new MapFunctions.MapFunctionHelper(APIKEY,null);
+                            var placemark = await mapFuncHelper.FindCordinateAddress(new Android.Gms.Maps.Model.LatLng(Convert.ToDouble(location_lati), Convert.ToDouble(location_longi)));
                             if (placemark != null)
                             {
 
-                                LocationName = placemark.SubLocality;
-                                p.issueStatement = "Vehicle gone Missing since" + p.missingDate.Date + "Plate No." + p.plateNumber + "near" + LocationName;
+                                LocationName = placemark.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
+                                
+                                p.issueStatement = "Unidentified vehicle found since" + p.missingDate.Date.ToShortDateString() + " with Plate No." + p.plateNumber + "near" + LocationName;
                                 await Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
                             }
                         }
                         catch (FeatureNotSupportedException fnsEx)
                         {
-                        // Feature not supported on device
-                    }
+                            // Feature not supported on device
+                        }
                         catch (Exception ex)
                         {
-                        // Handle exception that may have occurred in geocoding
-                    }
+                            // Handle exception that may have occurred in geocoding
+                        }
 
-                        await Control.IssueController.PostIssue<Missingvehicle>(p, this);
+                        
 
 
                     });
+
                 }
-            }
-            else
-            {
-                Toast.MakeText(this, "Please fill out the data!", ToastLength.Long).Show();
+                else
+                {
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        Toast.MakeText(this, "Please select Vehicle Location", ToastLength.Long).Show();
+                    });
+                    
+                }
             }
         }
 
         
 
-        private void IconHome_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconFunds_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconNotifications_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconMap_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconSettngs_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
+       
     }
 }

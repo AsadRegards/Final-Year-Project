@@ -98,6 +98,7 @@
     <Compile Include="Control\Funds.cs" />
     <Compile Include="Control\InputValidation.cs" />
     <Compile Include="Control\IssueController.cs" />
+    <Compile Include="Control\IssueFlagDetector.cs" />
     <Compile Include="Control\IssueOper.cs" />
     <Compile Include="Control\UserInfoHolder.cs" />
     <Compile Include="CreateIssue.cs" />

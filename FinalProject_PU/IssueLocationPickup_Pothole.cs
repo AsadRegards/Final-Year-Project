@@ -161,8 +161,8 @@ namespace FinalProject_PU
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        
-
+        string APIKEY = "AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE";
+        MapFunctions.MapFunctionHelper mapFuncHelper;
         private async void Set_location_Click(object sender, EventArgs e)
         {
             Final_Position = googleMap.CameraPosition.Target;
@@ -176,13 +176,18 @@ namespace FinalProject_PU
                 Issue.locationLatitude = Final_Position.Latitude.ToString();
                 Issue.locationLongitude = Final_Position.Longitude.ToString();
                 Issue.Status = "unverified";
+                Issue.issueType = "Pothole";
+                using (Control.IssueFlagDetector i = new Control.IssueFlagDetector())
+                {
+                    Issue.issueFlag = i.DetectPotholeFlag(Issue);
+                }
                 Issue.issueDate = DateTime.Now;
                 try
                 {
 
 
-                    var LocationName = await new MapFunctions.MapFunctionHelper("AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE",googleMap).FindCordinateAddress(Final_Position);
-                        
+                    mapFuncHelper = new MapFunctions.MapFunctionHelper(APIKEY, googleMap);
+                    var LocationName = await mapFuncHelper.FindCordinateAddress(Final_Position);        
                         if (LocationName == " ")
                         {
                            
