@@ -123,7 +123,7 @@ namespace FinalProject_PU
                     var p = JsonConvert.DeserializeObject<Manhole>(Intent.GetStringExtra("objtopass"));
            
                 p.issuePositionwrtRoad = selected;
-                Control.DataOper.PutData<Issuelocationpickup_Manhole>(this, p);
+                Control.DataOper.PutData<IssueLocationPickup_Manhole>(this, p);
                 });
             }
             else
