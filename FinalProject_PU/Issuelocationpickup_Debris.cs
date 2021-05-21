@@ -139,7 +139,7 @@ namespace FinalProject_PU
 
             if (!PlacesApi.IsInitialized)
             {
-                PlacesApi.Initialize(this, "AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE");
+                PlacesApi.Initialize(this, APIKEY);
             }
 
             List<Place.Field> fields = new List<Place.Field>();

@@ -129,14 +129,25 @@ namespace FinalProject_PU
 
         private async void Creatissue5_btnnext_Click(object sender, EventArgs e)
         {
-            await Task.Run(() =>
+            if(selected!=null)
             {
-                var p = JsonConvert.DeserializeObject<Model.Brokenpole>(Intent.GetStringExtra("objtopass"));
-                p.roadSize = selected;
-                Control.DataOper.PutData<Issuelocatrionpickup_BrokenWires>(this, p);
-               
+                await Task.Run(() =>
+                {
+                    var p = JsonConvert.DeserializeObject<Model.Brokenpole>(Intent.GetStringExtra("objtopass"));
+                    p.roadSize = selected;
+                    Control.DataOper.PutData<Issuelocationpickup_BrokenWires>(this, p);
 
-            });
+
+                });
+            }
+            else
+            {
+                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                });
+            }
+           
         }
 
       

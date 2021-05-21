@@ -111,7 +111,7 @@ namespace FinalProject_PU
 
         private void Createissue4_radio2_Click(object sender, EventArgs e)
         {
-            selected = "threelanel";
+            selected = "threelane";
             createissue4_radiobtn2.Checked = true;
             createissue4_radiobtn3.Checked = false;
             createissue4_radiobtn1.Checked = false;
@@ -136,6 +136,13 @@ namespace FinalProject_PU
                     gar.roadSize = selected;
                     FinalProject_PU.Control.DataOper.PutData<BrokenWires3>(this, gar);
 
+                }
+                else
+                {
+                    Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                    });
                 }
             });
         }

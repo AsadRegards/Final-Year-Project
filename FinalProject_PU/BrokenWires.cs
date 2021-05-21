@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Control;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -116,13 +117,22 @@ namespace FinalProject_PU
 
         private async void Next_BrokenWires_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => {
+            if(selected!=null)
+                await Task.Run(() => {
                 var gar = new Model.Brokenpole();
                 gar.roadCoverage = selected;
+                gar.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
                 FinalProject_PU.Control.DataOper.PutData<BrokenWires2>(this, gar);
 
 
             });
+            else
+            {
+                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                });
+            }
         }
 
         

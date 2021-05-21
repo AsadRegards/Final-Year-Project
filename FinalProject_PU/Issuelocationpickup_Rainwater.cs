@@ -180,6 +180,7 @@ namespace FinalProject_PU
                 p.Status = "unverified";
                 p.issueFlag = new Control.IssueFlagDetector().DetectRainwaterFlag(p);
                 p.isresolved = 0;
+                p.issueType = "Rain Water";
 
 
 
