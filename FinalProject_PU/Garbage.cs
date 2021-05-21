@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -132,6 +133,7 @@ namespace FinalProject_PU
                 {
                     var gar = new Model.Garbage();
                     gar.roadCoverage = selected;
+                    gar.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
                     FinalProject_PU.Control.DataOper.PutData<Garbage2>(this, gar);
 
 
@@ -139,7 +141,11 @@ namespace FinalProject_PU
             }
             else
             {
-                Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                });
+                
             }
         }
 
