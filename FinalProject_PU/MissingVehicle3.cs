@@ -53,7 +53,7 @@ namespace FinalProject_PU
             MissingVehicle3_HomeLocation.Click += MissingVehicle3_HomeLocation_Click;
             MissingVehicle3_WorkLocation = (ImageView)FindViewById(Resource.Id.MissingVehicle3_WorkLocation);
             MissingVehicle3_WorkLocation.Click += MissingVehicle3_WorkLocation_Click;
-            MissingVehicle3_OtherLocation = (ImageView)FindViewById(Resource.Id.FoundVehicle2_otherlocation);
+            MissingVehicle3_OtherLocation = (ImageView)FindViewById(Resource.Id.MissingVehicle3_OtherLocation);
             MissingVehicle3_OtherLocation.Click += MissingVehicle3_OtherLocation_Click;
             MissingVehicle3_radiobtn1 = (RadioButton)FindViewById(Resource.Id.MissingVehicle3_Radiobtn1);
             MissingVehicle3_radiobtn1.Click += MissingVehicle3_radiobtn1_Click;
@@ -113,12 +113,15 @@ namespace FinalProject_PU
             MissingVehicle3_radiobtn1.Checked = true;
         }
 
+
+        string APIKEY = "AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE";
         private async  void Next_MissingVehicle3_Click(object sender, EventArgs e)
         {
 
             if (MissingVehicle3_radiobtn3.Checked)
             {
                 var p = JsonConvert.DeserializeObject<Model.Missingvehicle>(Intent.GetStringExtra("objtopass"));
+                p.issueType = "Missing Vehicle";
                 Control.DataOper.PutData<Issuelocationpickup_MissingVehicle>(this, p);
             }
             else
@@ -129,37 +132,34 @@ namespace FinalProject_PU
                     p.locationLatitude = location_lati;
                     p.locationLongitude = location_longi;
                     p.Status = "unverified";
-                    p.issueDate = DateTime.Now;
-                    
-                    Xamarin.Essentials.Location loc = new Location();
-                    loc.Latitude = Convert.ToDouble(location_lati);
-                    loc.Longitude = Convert.ToDouble(location_longi);
+                    p.issueType = "Missing Vehicle";
+                    p.issueFlag = "green";
+                    p.isresolved = 0; 
 
                     try
                     {
 
-
-                        var placemarks = await Geocoding.GetPlacemarksAsync(Convert.ToDouble(location_lati), Convert.ToDouble(location_longi));
-
-                        var placemark = placemarks?.FirstOrDefault();
+                        var mapFuncHelper = new MapFunctions.MapFunctionHelper(APIKEY, null);
+                        var placemark = await mapFuncHelper.FindCordinateAddress(new Android.Gms.Maps.Model.LatLng(Convert.ToDouble(location_lati), Convert.ToDouble(location_longi)));
                         if (placemark != null)
                         {
 
-                            LocationName = placemark.SubLocality;
-                            p.issueStatement = "Vehicle gone Missing since" + p.missingDate.Date + "Plate No." + p.plateNumber + "near" + LocationName;
+                            LocationName = placemark.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
+                            p.location_name = LocationName;
+                            p.issueStatement = "Vehicle Gone Missing since " + p.missingDate.Date.ToShortDateString() + " with Plate No. " + p.plateNumber + " near " + LocationName;
+                            Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                            AlertDialog alert = dialog.Create();
+
+                            alert.SetMessage("Please wait while your issue is being posted ...");
+                            alert.Show();
                             await Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
                         }
                     }
-                    catch (FeatureNotSupportedException fnsEx)
+                    catch (Exception)
                     {
-                        // Feature not supported on device
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle exception that may have occurred in geocoding
+                        //handle any exception caused due to geocoding or issue posting
                     }
 
-                    await Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
 
 
                 });

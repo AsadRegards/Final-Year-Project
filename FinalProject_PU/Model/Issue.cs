@@ -12,6 +12,7 @@ namespace FinalProject_PU.Model
         public string locationLongitude { get; set; }
         public string locationLatitude { get; set; }
         public string Status { get; set; }
+
         public DateTime issueDate = DateTime.Now;
         public string location_name { get; set; }
         public string IssueImage { get; set; }

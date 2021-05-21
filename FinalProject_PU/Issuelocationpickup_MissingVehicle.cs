@@ -27,7 +27,7 @@ namespace FinalProject_PU
         private MapFragment map1; Button set_location; private GoogleMap googleMap; LatLng Final_Position;
         static LatLng current_location;
         Button imgsearchicon;
-        static string LocationName;
+        
         LoadingView loader;
         BackgroundWorker worker, worker2;
 
@@ -168,6 +168,7 @@ namespace FinalProject_PU
         MapFunctions.MapFunctionHelper mapFuncHelper;
         private async void Set_location_Click(object sender, EventArgs e)
         {
+            Final_Position = googleMap.CameraPosition.Target;
 
             try
             {
@@ -177,8 +178,9 @@ namespace FinalProject_PU
                 p.locationLatitude = Final_Position.Latitude.ToString();
                 p.locationLongitude = Final_Position.Longitude.ToString();
                 p.Status = "unverified";
-                p.issueType = "Found Unidentified Vehicle";
                 p.issueFlag = "green";
+                p.isresolved = 0;
+                
                 
 
                 try
@@ -186,7 +188,16 @@ namespace FinalProject_PU
 
                         mapFuncHelper = new MapFunctions.MapFunctionHelper(APIKEY, googleMap);
                         p.location_name = await mapFuncHelper.FindCordinateAddress(Final_Position);
-                        p.issueStatement = "Vehicle gone Missing since" + p.missingDate.Date + "Plate No." + p.plateNumber + "near" + LocationName;
+                        p.location_name = p.location_name.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
+                        if (p.issueType=="Found Vehicle")
+                        {
+                        p.issueStatement = "Unidentified Vehicle Found since " + p.foundDate.Date.ToShortDateString() + "with Plate No. " + p.plateNumber + " near " + p.location_name;
+                        }
+                        if(p.issueType=="Missing Vehicle")
+                        {
+                        p.issueStatement = "Vehicle gone Missing since " + p.missingDate.Date + " with Plate No. " + p.plateNumber + " near " + p.location_name;
+                        }
+                       
                     Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                     AlertDialog alert = dialog.Create();
                    
@@ -207,6 +218,7 @@ namespace FinalProject_PU
             catch (Exception)
             {
                 set_location.Enabled = true;
+                throw;
             }
 
 

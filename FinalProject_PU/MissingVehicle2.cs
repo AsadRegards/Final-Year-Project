@@ -96,7 +96,9 @@ namespace FinalProject_PU
             m.plateNumber = MissingVehicle2_edtPlateno.Text;
             try
             {
-                m.foundDate = Convert.ToDateTime(MissingVehicle2_MissingDate.Text);
+                //m.foundDate = Convert.ToDateTime(MissingVehicle2_MissingDate.Text);
+                //isko sahi krna hey 21 may 2021
+
             }
 
             catch
