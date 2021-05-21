@@ -8,6 +8,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace FinalProject_PU
     public class PlantingCampaign2 : Activity
     {
         static string schedule;
+        static DateTime timeToWater;
         TextView timeDisplay;
         ImageView issueImg, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, iconback, iconnext;
         TextView tvusername, tvinfoproblem, tev1;
@@ -83,9 +85,25 @@ namespace FinalProject_PU
             timeDisplay.Click += TimeSelectOnClick;
         }
 
-        private void Iconnext_Click(object sender, EventArgs e)
+        private async void Iconnext_Click(object sender, EventArgs e)
         {
             
+            var p = JsonConvert.DeserializeObject<Planting>(Intent.GetStringExtra("objtopass"));
+            p.Schedule = schedule;
+            p.time = timeToWater;
+            Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            AlertDialog alert = dialog.Create();
+
+            alert.SetMessage("Please wait while your issue is being posted ...");
+            alert.Show();
+            if(!await Control.IssueController.PostIssue<Planting>(p, this))
+            {
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Toast.MakeText(this, "Unfortunately! Your Issue cannot be posted at this time", ToastLength.Long).Show();
+                });
+            }
+
         }
 
         private void IconHome_Click(object sender, EventArgs e)
@@ -123,10 +141,11 @@ namespace FinalProject_PU
                 delegate (DateTime time)
                 {
                     timeDisplay.Text = time.ToShortTimeString();
+                    timeToWater = time;
                 });
 
             frag.Show(FragmentManager, TimePickerFragment.TAG);
-            schedule = timeDisplay.Text;
+            
         }
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
