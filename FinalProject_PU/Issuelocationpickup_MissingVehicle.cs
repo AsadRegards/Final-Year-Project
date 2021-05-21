@@ -20,7 +20,7 @@ using Android.Locations;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "IssueLocationPickup_Pothole")]
+    [Activity(Label = "IssueLocationPickup_MissingVehicle")]
     public class Issuelocationpickup_MissingVehicle : Activity, IOnMapReadyCallback
     {
 

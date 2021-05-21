@@ -39,6 +39,7 @@ namespace FinalProject_PU.Control
                 
                 DataOper.SendNotification("Issue Alert", issueObj.issueStatement);
                 acc.StartActivity(i);
+                acc.Dispose();
                 return true;
 
             }

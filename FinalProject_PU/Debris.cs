@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
@@ -133,12 +134,16 @@ namespace FinalProject_PU
                 {
                     FinalProject_PU.Model.Debris deb = new Model.Debris();
                     deb.roadCoverage = selected;
+                    deb.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
                     FinalProject_PU.Control.DataOper.PutData<Debris2>(this, deb);
                 });
             }
             else
             {
-                Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                });
             }
             
         }

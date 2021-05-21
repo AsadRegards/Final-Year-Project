@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
@@ -133,12 +134,24 @@ namespace FinalProject_PU
 
         private async void Creatissue5_btnnext_Click(object sender, EventArgs e)
         {
-            await Task.Run(() =>
+            if(selected!=null)
             {
-                var p = JsonConvert.DeserializeObject<Model.Debris>(Intent.GetStringExtra("objtopass"));
-                p.traffic = selected;
-                FinalProject_PU.Control.DataOper.PutData<Debris4>(this, p);
-            });
+                await Task.Run(() =>
+                {
+                    var p = JsonConvert.DeserializeObject<Model.Debris>(Intent.GetStringExtra("objtopass"));
+                    p.traffic = selected;
+                    FinalProject_PU.Control.DataOper.PutData<Debris4>(this, p);
+                });
+            }
+            else
+            {
+                MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                });
+                
+            }
+           
         }
 
 

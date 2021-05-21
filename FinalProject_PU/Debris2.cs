@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
@@ -143,7 +144,10 @@ namespace FinalProject_PU
             }
             else
             {
-                Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Toast.MakeText(this, "Please select any option", ToastLength.Long).Show();
+                });
             }
             
         }
