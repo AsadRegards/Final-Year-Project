@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -111,6 +112,7 @@ namespace FinalProject_PU
         {
             Model.Rainwater m = new Model.Rainwater();
             m.Vehiclepassing = selected;
+            m.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
             Control.DataOper.PutData<Issuelocationpickup_Rainwater>(this, m);
         }
 

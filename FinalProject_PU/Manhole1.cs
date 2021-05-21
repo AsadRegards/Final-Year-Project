@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
+using Newtonsoft.Json;
 using Refractored.Controls;
 using System;
 using System.Collections.Generic;
@@ -106,12 +107,17 @@ namespace FinalProject_PU
                 {
                     Model.Manhole man = new Model.Manhole();
                     man.Iswateroverflow = selected;
+                    man.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
                     FinalProject_PU.Control.DataOper.PutData<Manhole2>(this, man);
                 });
             }
             else
             {
-                Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() => 
+                {
+                    Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                });
+                
             }
         }
 

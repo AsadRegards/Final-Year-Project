@@ -128,7 +128,10 @@ namespace FinalProject_PU
             }
             else
             {
-                Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+                });
             }
         }
 
