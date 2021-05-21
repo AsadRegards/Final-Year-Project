@@ -95,7 +95,8 @@ namespace FinalProject_PU
 
                 try
                 {
-                    m.foundDate = Convert.ToDateTime(FoundVehicle_MissingDate.Text);
+                    //m.foundDate = Convert.ToDateTime(FoundVehicle_MissingDate.Text);
+                    //get m.founddate from date time picker
                 }
 
                 catch

@@ -117,6 +117,7 @@ namespace FinalProject_PU
             if (FoundVehicle2_radiobtn3.Checked)
             {
                 var p = JsonConvert.DeserializeObject<Model.Missingvehicle>(Intent.GetStringExtra("objtopass"));
+                p.issueType = "Found Vehicle";
                 Control.DataOper.PutData<Issuelocationpickup_MissingVehicle>(this, p);
             }
             else
@@ -144,8 +145,13 @@ namespace FinalProject_PU
                             {
 
                                 LocationName = placemark.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
-                                
-                                p.issueStatement = "Unidentified vehicle found since" + p.missingDate.Date.ToShortDateString() + " with Plate No." + p.plateNumber + "near" + LocationName;
+                                p.location_name = LocationName;
+                                p.issueStatement = "Unidentified vehicle found since " + p.foundDate.Date.ToShortDateString() + " with Plate No. " + p.plateNumber + " near " + LocationName;
+                                Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                                AlertDialog alert = dialog.Create();
+
+                                alert.SetMessage("Please wait while your issue is being posted ...");
+                                alert.Show();
                                 await Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
                             }
                         }
