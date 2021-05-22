@@ -17,6 +17,12 @@ namespace FinalProject_PU.Helper
         public TextView UserName { get; set; }
         public TextView IssueDate { get; set; }
         public TextView IssueStatement { get; set; }
+        public ImageView ViewStatus { get; set; }
+        public ImageView GoLast { get; set; }
+        public ImageView Report { get; set; }
+        public ImageView Contribute { get; set; }
+        public ImageView ViewOnMap { get; set; }
+
 
         Android.Graphics.Typeface tf;
         //
@@ -28,8 +34,14 @@ namespace FinalProject_PU.Helper
             UserName = itemView.FindViewById<TextView>(Resource.Id.tvname);
             IssueDate = itemView.FindViewById<TextView>(Resource.Id.tvtime);
             IssueStatement = itemView.FindViewById<TextView>(Resource.Id.tvinfo);
+            ViewStatus = itemView.FindViewById<ImageView>(Resource.Id.ViewStatus);
+            ViewOnMap = itemView.FindViewById<ImageView>(Resource.Id.ViewOnMap);
+            Contribute = itemView.FindViewById<ImageView>(Resource.Id.ContributeHome);
+            Report = itemView.FindViewById<ImageView>(Resource.Id.Report);
+            GoLast = itemView.FindViewById<ImageView>(Resource.Id.GoLast);
+
             //beauttification
-            
+
             /*
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             IssueStatement.SetTypeface(tf, TypefaceStyle.Bold);

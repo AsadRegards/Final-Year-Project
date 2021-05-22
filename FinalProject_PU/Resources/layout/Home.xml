@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home"
+    android:background="#f7f7f7"
     >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,7 +22,20 @@
         android:layout_height="match_parent"
 
         >
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Home"
+            android:textColor="#3c46e4"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textViewHome"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#3c46e4"
+            android:layout_marginTop="50dp"/>
     <ImageView
         android:src="@drawable/groupissue"
         android:layout_width="343dp"

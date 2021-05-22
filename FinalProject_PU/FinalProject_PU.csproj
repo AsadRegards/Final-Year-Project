@@ -202,6 +202,7 @@
     <AndroidAsset Include="Assets\Quicksand-Light.otf" />
     <AndroidAsset Include="Assets\Quicksand-Regular.otf" />
     <GoogleServicesJson Include="google-services.json" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\drawable\icons8\App5.zip" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -240,6 +241,9 @@
   <ItemGroup>
     <PackageReference Include="AutoFitTextView-Xamarin.Android">
       <Version>0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Karamunting.Android.DushyantMainwal.RoundedImageView">
+      <Version>0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Karamunting.Android.HotBitmapGG.RingProgressBar">
       <Version>1.2.3</Version>
@@ -616,6 +620,11 @@
     <AndroidResource Include="Resources\drawable\IcnStatusUpdated.png" />
     <AndroidResource Include="Resources\drawable\greenDot.png" />
     <AndroidResource Include="Resources\drawable\greendot1.png" />
+    <AndroidResource Include="Resources\drawable\IcnFundsHome2.png" />
+    <AndroidResource Include="Resources\drawable\IcnGoLastHome2.png" />
+    <AndroidResource Include="Resources\drawable\IcnMapHome2.png" />
+    <AndroidResource Include="Resources\drawable\IcnReportHome2.png" />
+    <AndroidResource Include="Resources\drawable\IcnStatusHome2.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />
@@ -838,6 +847,14 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\reddot1.png" />
+    <AndroidResource Include="Resources\drawable\items.xml" />
+    <AndroidResource Include="Resources\layout\ReportIssue.xml" />
+    <AndroidResource Include="Resources\drawable\RPRT5.png" />
+    <AndroidResource Include="Resources\drawable\ReporttTXT.png" />
+    <AndroidResource Include="Resources\drawable\RPRT1.png" />
+    <AndroidResource Include="Resources\drawable\RPRT2.png" />
+    <AndroidResource Include="Resources\drawable\RPRT3.png" />
+    <AndroidResource Include="Resources\drawable\RPRT4.png" />
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />

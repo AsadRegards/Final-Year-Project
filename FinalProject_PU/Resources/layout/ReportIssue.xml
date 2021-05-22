@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    
+    <ImageView
+        android:src="@drawable/reportttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="4dp" 
+        android:id="@+id/textviewhead"
+        android:layout_centerHorizontal="true"
+       
+         />
+    <ImageView
+        android:src="@drawable/iconnext"
+        android:layout_width="35dp"
+        android:layout_height="35dp"   
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/next"
+       
+         />
+    <ImageView
+        android:src="@drawable/icnreport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/imglinehead"
+        android:id="@+id/imgaccounticon"
+       
+         />
+        <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:id="@+id/imggoback"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/textviewhead"
+       
+         />
+     
+    
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close"
+        android:src="@drawable/cclose"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+       />
+    
+       <TextView
+            android:text="Loction :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imglinehead"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="80dp"
+            android:textColor="#000"
+            android:textStyle="normal"
+            android:id="@+id/text_location" />
+        <TextView
+            android:text="Gulshan e Iqbal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imglinehead"
+            android:layout_toRightOf="@+id/text_location"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:id="@+id/tvLocation" />
+    <TextView
+            android:text="Issue Type :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_location"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="80dp"
+            android:textColor="#000"
+            android:textStyle="normal"
+            android:id="@+id/txtIssueType"
+            
+        />
+        <TextView
+            android:text="Pothole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_location"
+            android:layout_toRightOf="@+id/txtIssueType"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:id="@+id/tvIssueType" />
+    <TextView
+            android:text="Select best option that describes your report!:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvIssueType"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000"
+            android:textStyle="normal"
+            android:maxLines="2"
+            android:id="@+id/txtHeadi" />
+       <ImageView
+        android:src="@drawable/rprt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtHeadi"
+        android:layout_marginTop="10dp"
+        android:id="@+id/IssueReport1"
+           />
+    <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/txtHeadi"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/IssueReportRadio1" />
+
+      <ImageView
+        android:src="@drawable/rprt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IssueReport1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/IssueReport2"
+           />
+    <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/IssueReport1"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/IssueReportRadio2" />
+
+    <ImageView
+        android:src="@drawable/rprt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IssueReport2"
+        android:layout_marginTop="10dp"
+        android:id="@+id/IssueReport3"
+           />
+    <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/IssueReport2"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/IssueReportRadio3" />
+
+     <ImageView
+        android:src="@drawable/rprt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IssueReport3"
+        android:layout_marginTop="10dp"
+        android:id="@+id/IssueReport4"
+           />
+    <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/IssueReport3"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/IssueReportRadio4" />
+    
+     <ImageView
+        android:src="@drawable/rprt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IssueReport4"
+        android:layout_marginTop="10dp"
+        android:id="@+id/IssueReport5"
+           />
+    <RadioButton
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/IssueReport4"
+        android:background="@drawable/ellipse1"
+        android:id="@+id/IssueReportRadio5" />
+</RelativeLayout>

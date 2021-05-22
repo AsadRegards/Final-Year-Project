@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="FinalProject_PU.Control.Account">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIIAAAAAAgAAAAAgAAAUAAAAABMAAAAgAAAAAAAAAAI=</HashCode>
+      <FileName>Control\Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.DataOper">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIABAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Control\DataOper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.Funds">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACAAAA=</HashCode>
+      <FileName>Control\Funds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.InputValidation">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Control\InputValidation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.IssueController">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAGAAAA=</HashCode>
+      <FileName>Control\IssueController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.IssueFlagDetector" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAAIAAAAAAgAAAIAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Control\IssueFlagDetector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Control.IssueOper">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IssueOper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Control.UserInfoHolder">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACAAAAAAAAAAgAAAQABIAAAAAAIAAEACEAAACAAA=</HashCode>
+      <FileName>Control\UserInfoHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Brokenpole">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQCAAAAAAAAACAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Brokenpole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Debris">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACQCAAAAAAAAACAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Debris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Garbage">
+    <Position X="8.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACQCAAAAAAAAACAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Garbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Issue">
+    <Position X="4.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAkAAAABBCAKBgBAAEBAAAAAAAAAAAAAAiAAIA=</HashCode>
+      <FileName>Model\Issue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Manhole">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQCQCAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Manhole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Missingvehicle">
+    <Position X="8.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAABAAAAAAAAAgAAAAAAAAAABAA=</HashCode>
+      <FileName>Model\Missingvehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.OpenForFundsIssues">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAAQABAAAKAgAgAEAAAAAAAAIAAAAAAkAAAA=</HashCode>
+      <FileName>Model\OpenForFundsIssues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Planting">
+    <Position X="8.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Planting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Pothole">
+    <Position X="2.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACQCAABAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Pothole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.Rainwater">
+    <Position X="6.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Rainwater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.User">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIACAAgAAAAAAAAAAAQQAIAAAAEQAAAECAAAAAAAAA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.GeocodedWaypoint" Collapsed="true">
+    <Position X="5.75" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAIAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Northeast" Collapsed="true">
+    <Position X="5.75" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Southwest" Collapsed="true">
+    <Position X="5.75" Y="44" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Bounds" Collapsed="true">
+    <Position X="2.25" Y="41" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Distance" Collapsed="true">
+    <Position X="5.75" Y="41" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Duration" Collapsed="true">
+    <Position X="0.5" Y="46" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.EndLocation" Collapsed="true">
+    <Position X="2.25" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.StartLocation" Collapsed="true">
+    <Position X="7.5" Y="45" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Distance2" Collapsed="true">
+    <Position X="7.5" Y="41" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Duration2" Collapsed="true">
+    <Position X="0.5" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.EndLocation2" Collapsed="true">
+    <Position X="4" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Polyline" Collapsed="true">
+    <Position X="0.5" Y="44" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.StartLocation2" Collapsed="true">
+    <Position X="0.5" Y="45" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Step" Collapsed="true">
+    <Position X="2.25" Y="45" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAIAAAAAAAIABAAAAAAAAEAAAAAABAAAAAAAQAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Leg" Collapsed="true">
+    <Position X="0.5" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAAAIAAQAAAAABBAAAAAAAAEAAAAAAAAAAgAAAQAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.OverviewPolyline" Collapsed="true">
+    <Position X="5.75" Y="45" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.Route" Collapsed="true">
+    <Position X="4" Y="44" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAIAAAAQAAABAAAAAAAACACAAgAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.DirectionParser" Collapsed="true">
+    <Position X="4" Y="41" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\DirectionParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapFunctions.MapFunctionHelper" Collapsed="true">
+    <Position X="4" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACAAAEAAEAABAABAAAAAgAAACCAAAAAAAAACAAA=</HashCode>
+      <FileName>MapFunctions\MapFunctionHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.AddressComponent" Collapsed="true">
+    <Position X="0.5" Y="41" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Location" Collapsed="true">
+    <Position X="2.25" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Northeast" Collapsed="true">
+    <Position X="7.5" Y="43" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Southwest" Collapsed="true">
+    <Position X="7.5" Y="44" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Viewport" Collapsed="true">
+    <Position X="4" Y="45" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Geometry" Collapsed="true">
+    <Position X="2.25" Y="46" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgBAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.Result" Collapsed="true">
+    <Position X="2.25" Y="44" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="yucee.Helpers.GeocodingParser" Collapsed="true">
+    <Position X="7.5" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>MapFunctions\GeocodingParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.PushNotification.MessagingService">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAgBAAAAAAAAAAAAAAAAAAgAAAgA=</HashCode>
+      <FileName>PushNotification\MessagingService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.Data">
+    <Position X="3" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAACgCAoAAAAAAgAAAAAAAAAAAAAIQAACAACAgA=</HashCode>
+      <FileName>Helper\Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.Funds_RecyclerViewHolder">
+    <Position X="6.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAQAAIAgAAE=</HashCode>
+      <FileName>Helper\Funds_RecylerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.Funds_RecyclerViewAdapter">
+    <Position X="4.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAEAAAAggAAIAAgABAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\Funds_RecylerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.Notification_RecyclerViewHolder">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAQAACAAAAAA=</HashCode>
+      <FileName>Helper\Notification_RecylcerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.Notifictaion_RecyclerViewAdapter">
+    <Position X="6.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAEAAAAAgAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\Notification_RecylcerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.NotificationData">
+    <Position X="0.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAoAAAAAAAAAAAAAAAAAAAAIQAACAAAAAA=</HashCode>
+      <FileName>Helper\NotificationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.RecyclerViewHolder">
+    <Position X="4.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAApIEAAAAAAAAAAAAAAAAAAAQQACAAgBAA=</HashCode>
+      <FileName>Helper\RecyclerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Helper.RecyclerViewAdapter">
+    <Position X="3" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAEAAAAAgAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\RecyclerViewAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.AdsFragmentSettings" Collapsed="true">
+    <Position X="0.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAEAACAAQgAAAAAACAACAAIAAAAAAACAAA=</HashCode>
+      <FileName>AdsFragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.BrokenWires" Collapsed="true">
+    <Position X="2.25" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQICAAAAAAABCAAEAEAABAAAhCBVkAACQAKAEggAIAA=</HashCode>
+      <FileName>BrokenWires.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.BrokenWires2" Collapsed="true">
+    <Position X="4" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EUAAAIRrCAABCAAEAAAAAAEABCDAcA0AQAKAAggAoAA=</HashCode>
+      <FileName>BrokenWires2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.BrokenWires3" Collapsed="true">
+    <Position X="5.75" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAIB7CAABCAAEAAEAAAEABCFAcAwAQAKAIggAKAA=</HashCode>
+      <FileName>BrokenWires3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ChPass_fragmentSettings" Collapsed="true">
+    <Position X="7.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAEAAQhABAAAACAAAAQIAAAAAAAAAAE=</HashCode>
+      <FileName>ChPass_fragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ChPhno_fragmentSettings" Collapsed="true">
+    <Position X="0.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAIAEAAQhAAAAAACAAAAQIAAAAAAAAAAE=</HashCode>
+      <FileName>ChPhno_fragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ChUsrname_fragmentsettings" Collapsed="true">
+    <Position X="2.25" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAAAAAAEAAQhAAAAAACAAAAQIAAAAAAAAAAE=</HashCode>
+      <FileName>ChUsrname_fragmentsettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ContributeFund" Collapsed="true">
+    <Position X="4" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAAAAAAQAAAAAAACAAAIAAAAACAAAAAAA=</HashCode>
+      <FileName>ContributeFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.CreateIssue" Collapsed="true">
+    <Position X="5.75" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAAAgAJCAQEIAAAAAEABDBAAAAAQAKCAAgAIAg=</HashCode>
+      <FileName>CreateIssue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.createissue2" Collapsed="true">
+    <Position X="0.5" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQDACQAQIBBJDAQEAAAAEIACBCBACgABYCCQIggAYgA=</HashCode>
+      <FileName>createissue2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.createissue3" Collapsed="true">
+    <Position X="2.25" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAIBAJCAAEAgAAEAACBCBAAAAAQCCgAggAJAA=</HashCode>
+      <FileName>createissue3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.createissue4" Collapsed="true">
+    <Position X="4" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAIBrCAABCAAEAAAAAAAADCDAcA0AQACAAggAIgA=</HashCode>
+      <FileName>createissue4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.createissue5" Collapsed="true">
+    <Position X="5.75" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIB7CAABCAAEAAEAACAABCBAcAwAQACAAggAKAE=</HashCode>
+      <FileName>createissue5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.createissue6" Collapsed="true">
+    <Position X="7.5" Y="25.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAACBRBCAAEECAAAAACBCBQAAgAQAKAAggAIwA=</HashCode>
+      <FileName>createissue6.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Debris" Collapsed="true">
+    <Position X="0.5" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgAAEABAIBCAgEAAAghAAAxCJAQAAAQNqAAggIIAA=</HashCode>
+      <FileName>Debris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Debris2" Collapsed="true">
+    <Position X="2.25" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EUAAAIRrCAABCAAEAAAAAAEABCDAcA0AQAKAAggAoAA=</HashCode>
+      <FileName>Debris2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Debris3" Collapsed="true">
+    <Position X="4" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAIB7CAABCAAEAAEAACEABCFAcAwAQAKAAggAKAA=</HashCode>
+      <FileName>Debris3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Debris4" Collapsed="true">
+    <Position X="5.75" Y="33.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAACBRBCAAEECAAAAACBCBQAAgAQAKAAggAIwA=</HashCode>
+      <FileName>Debris4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.DirectionFragment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIJAIBIAAAQAEgQCAEEACAgACEAoAEAAACACAE=</HashCode>
+      <FileName>DirectionFragment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.DirectionMapFragment" Collapsed="true">
+    <Position X="2.25" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DirectionMapFragment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.EmailVerifyActivity" Collapsed="true">
+    <Position X="4" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAEAAAABQAABAAAAAAAAKCEAAAAEAAIAAAAAAAA=</HashCode>
+      <FileName>EmailVerifyActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ForgotPassActivity" Collapsed="true">
+    <Position X="5.75" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAlAAAAAAAAACAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ForgotPassActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.FoundVehicle" Collapsed="true">
+    <Position X="7.5" Y="26.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJAAAoCABAAAQAAAAAAAgACCDAAAAQAKAAgkAYAA=</HashCode>
+      <FileName>FoundVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.FoundVehicle2" Collapsed="true">
+    <Position X="0.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAMBBAiAgAAJAQAEAASCBQIAAQASAAhlAIAA=</HashCode>
+      <FileName>FoundVehicle2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.FragmentHomeActivity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAIAAAACAAAAAAAAAAAABQAAE=</HashCode>
+      <FileName>FragmentHomeActivity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.FundsActivity" Collapsed="true">
+    <Position X="4" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FundsActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.FundsFragment" Collapsed="true">
+    <Position X="5.75" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEgCAAEIAKAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>FundsFragment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Garbage" Collapsed="true">
+    <Position X="0.5" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YYCAAAEAAwABaAAEAAAAAABAJCJAAIAAQACCIggQIAI=</HashCode>
+      <FileName>Garbage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Garbage2" Collapsed="true">
+    <Position X="2.25" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EUAAAIRrCAABCAAEAAAAAAEABCDAcA0AQAKAAggAoAA=</HashCode>
+      <FileName>Garbage2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Garbage3" Collapsed="true">
+    <Position X="4" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAIB7CAABCAAEAAEAACEABCFAcAwAQAKAAggAKAA=</HashCode>
+      <FileName>Garbage3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Garbage4" Collapsed="true">
+    <Position X="5.75" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAACARBCAAEAAAAAAACBCBQAAgAQACAAggAIQA=</HashCode>
+      <FileName>Garbage4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.IssueFragment" Collapsed="true">
+    <Position X="0.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEgCAAEIAKAAAAAAAAAAAAAMAAA=</HashCode>
+      <FileName>IssueFragment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_Debris" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_Debris.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_FoundVehicle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAAIAAAAIAABAAIAAAAEECAAAGAAAAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_FoundVehicle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_Garbage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_Garbage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.IssueLocationPickup_Manhole" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIApAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_Manhole.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_MissingVehicle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_MissingVehicle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_PlantingCompaign" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>IssueLocationpickup_PlantingCampaign.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.IssueLocationPickup_Pothole" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIApAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>IssueLocationPickup_Pothole.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_Rainwater" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocationpickup_Rainwater.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Issuelocationpickup_BrokenWires" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAIAIAQYAABIAhAAAEEECAAACAAgAAAAAogAAA=</HashCode>
+      <FileName>Issuelocatrionpickup_BrokenWires.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Location_pickup_home" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAAIAAAAIAAAAAAAAAAEECAAAGAAAAAAAAogAAA=</HashCode>
+      <FileName>Location_pickup_home.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Location_pickup_job" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAAIAAAAIAAAAAAAAAAEECAAAGAAAAAAAAogAAA=</HashCode>
+      <FileName>Location_pickup_job.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.LocationActivity" Collapsed="true">
+    <Position X="5.75" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAgAAAAAAAAACAAAAABAAAAACAQACA=</HashCode>
+      <FileName>LocationActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.LocationsActivity" Collapsed="true">
+    <Position X="0.5" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADAAAAAAAAAAAAAAAACAAAABAAAAAACAAACA=</HashCode>
+      <FileName>LocationsActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Login" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAwgAQgAxQAAsAAAIAAAAACQAAAAAAQABAAAASAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.MainActivity" Collapsed="true">
+    <Position X="4" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAgAABAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Manhole1" Collapsed="true">
+    <Position X="5.75" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgAAABmAAEAQAACAEABCBAAAAAQACYQggAIEQ=</HashCode>
+      <FileName>Manhole1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Manhole2" Collapsed="true">
+    <Position X="7.5" Y="29.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EUAAAIRrCAABCAAEAAAAAAEABCDAcA0AQAKAAggAoAA=</HashCode>
+      <FileName>Manhole2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Manhole3" Collapsed="true">
+    <Position X="0.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAIB7CAABCAAEAAEAACEABCFAcAwAQAKAAggAKAA=</HashCode>
+      <FileName>Manhole3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Manhole4" Collapsed="true">
+    <Position X="2.25" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAACBRBCAAEECAAAAACBCBQAAgAQAKAAggAIwA=</HashCode>
+      <FileName>Manhole4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MapActivity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAIAAAAEAAIAAAAAAAAAAAACAACGgAAAAAAAogAAA=</HashCode>
+      <FileName>MapActivity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.MissingVehicle" Collapsed="true">
+    <Position X="5.75" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgAAgAABCIAEEEAgAFAAhCBAAAAAQALAAggEIII=</HashCode>
+      <FileName>MissingVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MissingVehicle2" Collapsed="true">
+    <Position X="0.5" Y="30.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAAEBAgAABCAAEABAAUAAABCBAAAAAQCKBAAiAMAA=</HashCode>
+      <FileName>MissingVehicle2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MissingVehicle3" Collapsed="true">
+    <Position X="2.25" Y="30.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAACAIABCgBkIRIsCAQIBCFEAAAAQAiJAAgAKAA=</HashCode>
+      <FileName>MissingVehicle3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.MyAdsFragmentSettings" Collapsed="true">
+    <Position X="4" Y="30.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAEAAAAQhAAAAAACAAAAAIAAAAAAAAACE=</HashCode>
+      <FileName>MyAdsFragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Newpassword" Collapsed="true">
+    <Position X="5.75" Y="30.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAABAAABAABAAAAAACAAAAAAAAAIAAAAAQE=</HashCode>
+      <FileName>Newpassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.notificationfragment" Collapsed="true">
+    <Position X="7.5" Y="30.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgCAAEIAKAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>notificationfragment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.NotificationFragmentSettings" Collapsed="true">
+    <Position X="0.5" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAGAAAAAAAAgAAAAAACBgAQAYAAAAAAAAAAA=</HashCode>
+      <FileName>NotificationFragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.NotificationsActivity" Collapsed="true">
+    <Position X="2.25" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAABCAAEAAAAAAAABCBAAAAAQACAAAgAIAA=</HashCode>
+      <FileName>NotificationsActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.NotificationsSettings" Collapsed="true">
+    <Position X="4" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAAAAAAAAAACBgAQAQAAAAAAAAAAA=</HashCode>
+      <FileName>NotificationsSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.OTPVerify" Collapsed="true">
+    <Position X="5.75" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABQQAAAAAAAAAAACAAAAAAAgMAAAAAQAA=</HashCode>
+      <FileName>OTPVerify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.PhotoUploading" Collapsed="true">
+    <Position X="0.5" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAAEAAAABQAwBIAAQAAAAACAYAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>PhotoUploading.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.PlantingCampaign1" Collapsed="true">
+    <Position X="2.25" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAABABAAAAAAAAAAEAgCAAAAAIAAYAAAAAAAA=</HashCode>
+      <FileName>PlantingCampaign1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.PlantingCampaign2" Collapsed="true">
+    <Position X="4" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAgAAAABABCBAEAAAAJAEIhDBAAABBQAKAAAgQIAA=</HashCode>
+      <FileName>PlantingCampaign2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.TimePickerFragment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAII=</HashCode>
+      <FileName>PlantingCampaign2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Rainwater" Collapsed="true">
+    <Position X="5.75" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RYAAAEAAgAABCAEEAgBAAAEABDBABAgAQACAgggAMAA=</HashCode>
+      <FileName>Rainwater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Register1Activity" Collapsed="true">
+    <Position X="7.5" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEgAAAAAARQAAhAAAAAAAAAiAEAAAgAAIAAAACEAA=</HashCode>
+      <FileName>Register1Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Register2Activity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAAAABQAgBAAAYBAAAIjAAAAAgAAIAAAAAEAA=</HashCode>
+      <FileName>Register2Activity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FinalProject_PU.Register3Activity" Collapsed="true">
+    <Position X="2.25" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAAAABQAAFAAAAAAAAAiAAAAAgAABAQAEAEAA=</HashCode>
+      <FileName>Register3Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Settings" Collapsed="true">
+    <Position X="4" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAgAAAAAQggAAAAECACAADAAAIAAAAAAAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.SettingsActivity" Collapsed="true">
+    <Position X="5.75" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingsActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.SignUpFinal" Collapsed="true">
+    <Position X="7.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAACAAAAAAAAAAAACAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>SignUpFinal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.testActivity" Collapsed="true">
+    <Position X="7.5" Y="36.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAhAAAAAAIQA=</HashCode>
+      <FileName>testActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.UserFund" Collapsed="true">
+    <Position X="7.5" Y="38.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAABEAAAAAAAQAAQACAAAAAFAIABAABAAAA=</HashCode>
+      <FileName>UserFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ViewIssueFund" Collapsed="true">
+    <Position X="7.5" Y="35.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAABAAAAACAAQAAAAAQAACBAQAAAAIAAAAAQAAA=</HashCode>
+      <FileName>ViewIssueFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.ViewStatusFund" Collapsed="true">
+    <Position X="7.5" Y="39.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAEAAAAACAAAAAAAAAIQSAAAAAAAIAAACAQAAA=</HashCode>
+      <FileName>ViewStatusFund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.Model.HomeActivity" Collapsed="true">
+    <Position X="7.5" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAECABAAAJAAAAAUACAAEIAKBAQAAAAAAAAAFIAAA=</HashCode>
+      <FileName>HomeActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalProject_PU.AccountFragmentSettings" Collapsed="true">
+    <Position X="7.5" Y="37.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAAIAAAAAAAQgAIAAAASAAAAQIEAAgAAAAAAA=</HashCode>
+      <FileName>AccountFragmentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="FinalProject_PU.IWifiAccess" Collapsed="true">
+    <Position X="7.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>IWifiAccess.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
