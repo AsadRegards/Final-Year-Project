@@ -16,18 +16,20 @@ using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "ViewStatusFund")]
-    public class ViewStatusFund : Activity
+    [Activity(Label = "ViewStatusHome")]
+    public class ViewStatusHome : Activity
     {
         TextView working_started, resolved, estimated_amount, collected_amount, Contributor_name;
         CircleImageView userimage;
-        ImageView issueImage,close;
+        ImageView issueImage, close;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
             SetContentView(Resource.Layout.ViewStatus_Funds);
+
+            var IssueObj = JsonConvert.DeserializeObject<Helper.Data>(Intent.GetStringExtra("issueobj"));
 
             working_started = (TextView)FindViewById(Resource.Id.tv_WorkingStatus);
             resolved = (TextView)FindViewById(Resource.Id.tvResolvedStatus);
@@ -37,51 +39,51 @@ namespace FinalProject_PU
             userimage = (CircleImageView)FindViewById(Resource.Id.imgProfile);
             issueImage = (ImageView)FindViewById(Resource.Id.imgissuev);
             close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
 
-            var IssueObj = JsonConvert.DeserializeObject<Model.OpenForFundsIssues>(Intent.GetStringExtra("issueObj"));
-            if(IssueObj.isworkingstarted==0)
+            if (IssueObj.isworkingstarted == 0)
             {
                 working_started.Text = "No";
             }
-            else if(IssueObj.isworkingstarted==1)
+            else if (IssueObj.isworkingstarted == 1)
             {
                 working_started.Text = "Yes";
             }
-            if(IssueObj.isResolved==0)
+            if (IssueObj.isResolved == 0)
             {
                 resolved.Text = "No";
             }
-            else if(IssueObj.isResolved==1)
+            else if (IssueObj.isResolved == 1)
             {
                 resolved.Text = "Yes";
             }
-            
-            estimated_amount.Text = IssueObj.estimated_cost.ToString();
-            if(IssueObj.amount_collected>IssueObj.estimated_cost)
+
+            estimated_amount.Text = IssueObj.estimatedCost.ToString();
+            if (IssueObj.amountCollected > IssueObj.estimatedCost)
             {
-                collected_amount.Text = IssueObj.estimated_cost.ToString();
+                collected_amount.Text = IssueObj.estimatedCost.ToString();
             }
             else
             {
-                collected_amount.Text = IssueObj.amount_collected.ToString();
+                collected_amount.Text = IssueObj.amountCollected.ToString();
             }
 
-            if(IssueObj.estimated_cost!=0)
+            if (IssueObj.estimatedCost != 0)
             {
-                Task.Run(async() =>
+                Task.Run(async () =>
                 {
-                    var user = await GetTopContributer(IssueObj.issue_id);
-                    if(user!=null)
+                    var user = await GetTopContributer(IssueObj.IssueId);
+                    if (user != null)
                     {
-                        
+
                         byte[] arr = Convert.FromBase64String(user.profile_pic);
                         Bitmap b1 = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
-                        MainThread.BeginInvokeOnMainThread(() => 
+                        MainThread.BeginInvokeOnMainThread(() =>
                         {
                             userimage.SetImageBitmap(b1);
                             Contributor_name.Text = user.name;
                         });
-                        
+
 
                     }
                     else
@@ -92,15 +94,11 @@ namespace FinalProject_PU
 
                     }
                 });
-               
+
             }
             byte[] arr1 = Convert.FromBase64String(IssueObj.IssueImage);
             Bitmap b2 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             issueImage.SetImageBitmap(b2);
-            close.Click += Close_Click;
-           
-
-
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -115,7 +113,5 @@ namespace FinalProject_PU
             return User;
 
         }
-
-        
     }
 }

@@ -193,7 +193,9 @@
     <Compile Include="testActivity.cs" />
     <Compile Include="UserFund.cs" />
     <Compile Include="ViewIssueFund.cs" />
+    <Compile Include="ViewIssueOnMap.cs" />
     <Compile Include="ViewStatusFund.cs" />
+    <Compile Include="ViewStatusHome.cs" />
     <Compile Include="View\ViewFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -855,6 +857,9 @@
     <AndroidResource Include="Resources\drawable\RPRT2.png" />
     <AndroidResource Include="Resources\drawable\RPRT3.png" />
     <AndroidResource Include="Resources\drawable\RPRT4.png" />
+    <AndroidResource Include="Resources\layout\layout1.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />

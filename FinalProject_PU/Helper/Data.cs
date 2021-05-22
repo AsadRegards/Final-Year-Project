@@ -24,6 +24,14 @@ namespace FinalProject_PU.Helper
         public string Issueflag { get; set; }
         public string IssueType { get; set; }
 
+        public int IssueId { get; set; }
+
+        public int estimatedCost { get; set; }
+        public int amountCollected { get; set; }
+
+        public int isworkingstarted { get; set; }
+        public int isResolved { get; set; }
+
         public LatLng GetLocation()
         {
             return new LatLng(Convert.ToDouble(IssueLatitude), Convert.ToDouble(IssueLongitude));
@@ -32,23 +40,17 @@ namespace FinalProject_PU.Helper
         public string ElevatedDays { get; set; }
 
 
-        public int GetElevatedDates()
+        public string GetElevatedDates()
         {
             var ElevatedDays = (DateTime.Now.Date - IssueDate.Date).Days;
-            return ElevatedDays;
+            if(ElevatedDays!=0)
+            {
+                return ElevatedDays.ToString() + " Days ";
+            }
+            return "Today";
+           
         }
 
-        public Data()
-        {
-            
-            if (GetElevatedDates() == 0)
-            {
-                ElevatedDays = "Today";
-            }
-            else
-            {
-                ElevatedDays = "Today";
-            }
-        }
+        
     }
 }

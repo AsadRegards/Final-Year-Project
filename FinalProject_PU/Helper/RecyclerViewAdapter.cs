@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System;
 using Android.Content;
 using AndroidX.Core.Graphics;
+using Android.App;
+using Newtonsoft.Json;
 
 namespace FinalProject_PU.Helper
 {
@@ -85,7 +87,59 @@ namespace FinalProject_PU.Helper
             viewHolder.UserName.Text = lstData[position].UserName;
             viewHolder.IssueDate.Text = lstData[position].ElevatedDays;
             viewHolder.IssueStatement.Text = lstData[position].IssueStatement;
+            viewHolder.ViewStatus.Click += (sender, EventArgs) => 
+            {
+                ViewStatus_Click(sender, EventArgs, position);
+            };
+            viewHolder.ViewOnMap.Click += (sender, EventArgs) =>
+            {
+                ViewOnMap_Click(sender, EventArgs, position);
+            };
+            viewHolder.Contribute.Click += (sender, EventArgs) =>
+            {
+                Contribute_Click(sender, EventArgs, position);
+            };
+            viewHolder.Report.Click += (sender, EventArgs) => 
+            {
+                Report_Click(sender, EventArgs, position);
+            };
+            viewHolder.GoLast.Click += (sender, EventArgs) => 
+            {
+                GoLast_Click(sender, EventArgs, position);
+            };
+        }
 
+        private void GoLast_Click(object sender, EventArgs e, int position)
+        {
+           
+        }
+
+        private void Report_Click(object sender, EventArgs e, int position)
+        {
+        
+        }
+
+        private void Contribute_Click(object sender, EventArgs e, int position)
+        {
+            
+        }
+
+        private void ViewOnMap_Click(object sender, EventArgs e, int position)
+        {
+            var issuePosition = lstData[position].GetLocation();
+            string lat = issuePosition.Latitude.ToString();
+            string lon = issuePosition.Longitude.ToString();
+            // Control.DataOper.PutData<ViewIssueOnMap>(Application.Context, issuePosition);
+            Intent i = new Intent(Application.Context, typeof(ViewIssueOnMap));
+            i.PutExtra("lattopass", JsonConvert.SerializeObject(lat));
+            i.PutExtra("longtopass", JsonConvert.SerializeObject(lon));
+            Application.Context.StartActivity(i);
+
+        }
+
+        private void ViewStatus_Click(object sender, EventArgs e,int position)
+        {
+          
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

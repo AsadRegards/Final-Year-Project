@@ -72,7 +72,13 @@ namespace FYP_Web_API.Controllers
                             IssueLatitude=issue_table.locationLatitude,
                             IssueLongitude=issue_table.locationLongitude,
                             Issueflag=issue_table.issueFlag,
-                            IssueType=issue_table.issueType
+                            IssueType=issue_table.issueType,
+                            estimatedCost=issue_table.estimated_cost,
+                            amountCollected=issue_table.amount_collected,
+                            isworkingstarted=issue_table.isWorkingStarted,
+                            isResolved=issue_table.isresolved,
+                            IssueId=issue_table.issue_id
+
 
 
                         }).ToList();

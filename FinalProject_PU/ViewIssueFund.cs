@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Maps.Model;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -49,17 +50,23 @@ namespace FinalProject_PU
 
             close.Click += Close_Click;
 
-            imgviewonmap.Click += Imgviewonmap_Click;
+            imgviewonmap.Click += (sender, EventArgs) => 
+            {
+                Imgviewonmap_Click(sender, EventArgs, IssueObj);
+            };
             
 
 
 
         }
 
-        private void Imgviewonmap_Click(object sender, EventArgs e)
+        private void Imgviewonmap_Click(object sender, EventArgs e, Model.OpenForFundsIssues issue)
         {
-            //call an activity that will show issue on map
-            //pass the issueobj for showing necessary details.
+            Intent i = new Intent(Application.Context, typeof(ViewIssueOnMap));
+            i.PutExtra("lattopass", JsonConvert.SerializeObject(issue.issueLatitude));
+            i.PutExtra("longtopass", JsonConvert.SerializeObject(issue.issueLongitude));
+            Application.Context.StartActivity(i);
+
         }
 
         private void Close_Click(object sender, EventArgs e)

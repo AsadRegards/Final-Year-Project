@@ -27,6 +27,9 @@ namespace FinalProject_PU.Model
         public int isResolved { get; set; }
         public int isworkingstarted { get; set; }
 
+        public string issueLatitude { get; set; }
+        public string issueLongitude { get; set; }
+
         
         
     }

@@ -285,7 +285,7 @@ namespace FinalProject_PU
             foreach(var issue in issueList)
             {
                 MarkerOptions mOptions = new MarkerOptions();
-                mOptions.SetTitle(issue.IssueType);
+                
                 mOptions.SetPosition(issue.GetLocation());
                 if(issue.Issueflag=="green")
                 {

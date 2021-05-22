@@ -37,7 +37,10 @@ namespace FYP_Web_API.Controllers
                     issue_id = issue_table.issue_id,
                     issueDate = issue_table.IssueDate,
                     isResolved = issue_table.isresolved,
-                    isworkingstarted = issue_table.isWorkingStarted
+                    isworkingstarted = issue_table.isWorkingStarted,
+                    issueLatitude=issue_table.locationLatitude,
+                    issueLongitude=issue_table.locationLongitude
+
 
                 }).Where(x => x.estimated_cost != 0 && x.status == "verified").ToList();
                 if (data != null)
