@@ -22,10 +22,10 @@
 
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
             android:src="@drawable/pothole1"
-            android:layout_width="295dp"
-            android:layout_height="197dp"          
+            android:layout_width="265dp"
+            android:layout_height="187dp"          
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="160dp"
             android:id="@+id/imgIssue"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -34,10 +34,10 @@
             />
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="295dp"
-            android:layout_height="197dp"
+            android:layout_width="265dp"
+            android:layout_height="187dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="160dp"
             android:visibility="visible"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -51,7 +51,7 @@
 
         <ImageView
             android:src="@drawable/belowbg"
-            android:layout_width="310dp"
+            android:layout_width="265dp"
             android:layout_height="251dp"
             android:layout_marginTop="313dp"
             android:layout_centerHorizontal="true"
@@ -59,10 +59,10 @@
          />
         <Refractored.Controls.CircleImageView
             android:src="@drawable/profile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="330dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="50dp"
             android:id="@+id/imgProfile"
          />
         
@@ -72,7 +72,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgIssue"
-            android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/imgProfile"
             android:textSize="10dp"
             android:textColor="#fff"
@@ -88,7 +87,7 @@
             android:layout_below="@id/imgIssue"
             android:layout_toRightOf="@id/imgProfile"
             android:textSize="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:id="@+id/tvtime" />
@@ -105,7 +104,7 @@
             
             android:layout_centerHorizontal="true"
             android:maxLines="3"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="45dp"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="60dp"
             android:textColor="#fff"
@@ -116,7 +115,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/icnstatushome2"
             android:layout_below="@id/tvinfo"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="55dp"
             android:layout_marginTop="35dp"
             android:id="@+id/ViewStatus"/>
         <TextView
@@ -127,11 +126,12 @@
             android:layout_below="@id/ViewStatus"
             android:layout_toLeftOf="@id/ViewOnMap"
              android:maxLines="2"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="55dp"
             android:textAlignment="center"
             android:textSize="10dp"
             android:textColor="#fff"
             android:textStyle="normal"
+            android:layout_marginTop="5dp"
             android:id="@+id/tvViewstatus" />
         <ImageView
             android:layout_width="wrap_content"
@@ -139,7 +139,7 @@
             android:src="@drawable/icnmaphome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewStatus"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:id="@+id/ViewOnMap"/>
         <TextView
@@ -156,6 +156,7 @@
             android:textSize="10dp"
             android:textColor="#fff"
             android:textStyle="normal"
+            android:layout_marginTop="5dp"
             android:id="@+id/tvViewOnMap" />
         <ImageView
             android:layout_width="wrap_content"
@@ -163,7 +164,7 @@
             android:src="@drawable/icnreporthome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewOnMap"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:id="@+id/Report"/>
                 <TextView
@@ -177,6 +178,7 @@
             android:layout_marginStart="10dp"
             android:textAlignment="center"
             android:textSize="10dp"
+            android:layout_marginTop="5dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:id="@+id/tvReport" />
@@ -186,7 +188,7 @@
             android:src="@drawable/icnfundshome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/Report"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:id="@+id/ContributeHome"/>
         <TextView
@@ -197,7 +199,8 @@
             android:layout_below="@id/ContributeHome"
             android:layout_toLeftOf="@id/GoLast"
             android:layout_toRightOf="@id/Report"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:textAlignment="center"
             android:textSize="10dp"
             android:textColor="#fff"
@@ -209,7 +212,7 @@
             android:src="@drawable/icngolasthome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ContributeHome"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:id="@+id/GoLast"/>
                 <TextView
@@ -218,7 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ContributeHome"
-            
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/ContributeHome"
             android:layout_marginStart="15dp"
             android:textAlignment="center"

@@ -17,7 +17,8 @@ namespace FinalProject_PU
     public class UserFund : Activity
     {
         ImageView issueimg, btnContribute, goBack, close;
-        TextView tvHead, tvEstimatedCost, tvCollectedAmount, textEstimatedCost, textCollectedAmount;
+        TextView tvEstimatedCost, tvCollected, textEstimatedCost, textCollectedAmount;
+        Typeface tf;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -30,12 +31,25 @@ namespace FinalProject_PU
             goBack = (ImageView)FindViewById(Resource.Id.imggoback);
             close = (ImageView)FindViewById(Resource.Id.close);
 
-            tvHead = (TextView)FindViewById(Resource.Id.tvinfo);
-            //nabeel will make fancy fonts
-            //tvEstimatedCost = (TextView)FindViewById(Resource.Id.tvEstimatedCost);
-            //tvCollectedAmount = (TextView)FindViewById(Resource.Id.tvCollected);
+            //tvHead = (TextView)FindViewById(Resource.Id.tvinfo);
+            //tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            //tvHead.SetTypeface(tf, TypefaceStyle.Bold);
+
             textEstimatedCost = (TextView)FindViewById(Resource.Id.tvEstimatedCostAmount);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            textEstimatedCost.SetTypeface(tf, TypefaceStyle.Bold);
+
             textCollectedAmount = (TextView)FindViewById(Resource.Id.tvCollectedAmount);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            textCollectedAmount.SetTypeface(tf, TypefaceStyle.Bold);
+
+            tvCollected= (TextView)FindViewById(Resource.Id.tvCollected);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tvCollected.SetTypeface(tf, TypefaceStyle.Bold);
+
+            tvEstimatedCost = (TextView)FindViewById(Resource.Id.tvEstimatedCost);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tvEstimatedCost.SetTypeface(tf, TypefaceStyle.Bold);
 
             var IssueObj = JsonConvert.DeserializeObject<Model.OpenForFundsIssues>(Intent.GetStringExtra("issueObj"));
 

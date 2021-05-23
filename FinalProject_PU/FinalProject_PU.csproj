@@ -627,6 +627,7 @@
     <AndroidResource Include="Resources\drawable\IcnMapHome2.png" />
     <AndroidResource Include="Resources\drawable\IcnReportHome2.png" />
     <AndroidResource Include="Resources\drawable\IcnStatusHome2.png" />
+    <AndroidResource Include="Resources\drawable\AccountProfileNew.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />

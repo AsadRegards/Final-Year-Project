@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
@@ -16,7 +17,7 @@ using System.Text;
 namespace FinalProject_PU
 {
     [Activity(Label = "MissingVehicle2")]
-    public class MissingVehicle2 : Activity
+    public class MissingVehicle2 : Activity, Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog.IOnDateSetListener
     {
 
         ImageView back_MissingVehicle2, next_MissingVehicle2, 
@@ -43,6 +44,7 @@ namespace FinalProject_PU
             MissingVehicle2_edtDate = FindViewById<EditText>(Resource.Id.MissingVehicle2_edtDate);
             Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             MissingVehicle2_edtDate.SetTypeface(tf, TypefaceStyle.Bold);
+            MissingVehicle2_edtDate.Click += DateSelect_OnClick;
 
             //runtime py profile change krna or name change krna 
             //start
@@ -79,16 +81,7 @@ namespace FinalProject_PU
             next_MissingVehicle2 = (ImageView)FindViewById(Resource.Id.next_MissingVehicle2);
             next_MissingVehicle2.Click += Next_MissingVehicle2_Click;
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
+
         }
         private void Next_MissingVehicle2_Click(object sender, EventArgs e)
         {
@@ -108,38 +101,58 @@ namespace FinalProject_PU
 
             FinalProject_PU.Control.DataOper.PutData<MissingVehicle3>(this, m);
         }
-
-       
-
-        private void IconHome_Click(object sender, EventArgs e)
+        void DateSelect_OnClick(object sender, EventArgs eventArgs)
         {
-            var i = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(i);
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                MissingVehicle2_edtDate.Text = time.ToLongDateString();
+                MissingVehicle2_edtDate.Enabled = false;
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
-        private void IconFunds_Click(object sender, EventArgs e)
+        public void OnDateSet(Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog p0, int year, int dayOfMonth, int monthOfYear)
         {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
+            Toast.MakeText(this, $"Your selected :{monthOfYear}/{dayOfMonth}/{year}", ToastLength.Long).Show();
         }
 
-        private void IconNotifications_Click(object sender, EventArgs e)
+        public class DatePickerFragment : DialogFragment, DatePickerDialog.IOnDateSetListener
         {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
+            // TAG can be any string of your choice.
+            public static readonly string TAG = "X:" + typeof(DatePickerFragment).Name.ToUpper();
+
+            // Initialize this value to prevent NullReferenceExceptions.
+            Action<DateTime> _dateSelectedHandler = delegate { };
+
+            public static DatePickerFragment NewInstance(Action<DateTime> onDateSelected)
+            {
+                DatePickerFragment frag = new DatePickerFragment();
+                frag._dateSelectedHandler = onDateSelected;
+                return frag;
+            }
+
+            public override Dialog OnCreateDialog(Bundle savedInstanceState)
+            {
+                DateTime currently = DateTime.Now;
+                DatePickerDialog dialog = new DatePickerDialog(Activity,
+                                                               this,
+                                                               currently.Year,
+                                                               currently.Month - 1,
+                                                               currently.Day);
+                return dialog;
+            }
+
+            public void OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+            {
+                // Note: monthOfYear is a value between 0 and 11, not 1 and 12!
+                DateTime selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
+                Log.Debug(TAG, selectedDate.ToLongDateString());
+                _dateSelectedHandler(selectedDate);
+            }
         }
 
-        private void IconMap_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
 
-        private void IconSettngs_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
+
 
     }
 }

@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Model;
@@ -16,14 +17,13 @@ using System.Text;
 namespace FinalProject_PU
 {
     [Activity(Label = "FoundVehicle")]
-    public class FoundVehicle : Activity
+    public class FoundVehicle : Activity, Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog.IOnDateSetListener
     {
         static string selected;
-        ImageView back_FoundVehicle, next_FoundVehicle,
-           iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
+        ImageView back_FoundVehicle, next_FoundVehicle;
         TextView head, info;
         CircleImageView circleImageView_FoundVehicle;
-        TextView FoundVehicle_tvusername, FoundVehicle_tv, FoundVehicle_tev1, FoundVehicle_Plateno, FoundVehicle_MissingDate;
+        TextView FoundVehicle_tvusername, FoundVehicle_tv, FoundVehicle_tev1, FoundVehicle_Plateno, FoundVehicle_Date;
         Typeface tf;
         User u;
         EditText FoundVehicle_edtPlateno, FoundVehicle_edtDate;
@@ -46,11 +46,11 @@ namespace FinalProject_PU
             FoundVehicle_edtDate = FindViewById<EditText>(Resource.Id.FoundVehicle_edtDate);
             Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             FoundVehicle_edtDate.SetTypeface(tf, TypefaceStyle.Bold);
-
+            FoundVehicle_edtDate.Click += DateSelect_OnClick;
             //runtime py profile change krna or name change krna 
             //start
             // circleImageView5 = (CircleImageView)FindViewById(Resource.Id.circleImageView5);
-          char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
+            char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
             FoundVehicle_tvusername.SetText(arr, 0, arr.Length);
             byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
 
@@ -72,9 +72,9 @@ namespace FinalProject_PU
             Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             FoundVehicle_Plateno.SetTypeface(tf, TypefaceStyle.Bold);
 
-            FoundVehicle_MissingDate = (TextView)FindViewById(Resource.Id.FoundVehicle_Date_tv);
+            FoundVehicle_Date = (TextView)FindViewById(Resource.Id.FoundVehicle_Date_tv);
             Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
-            FoundVehicle_MissingDate.SetTypeface(tf, TypefaceStyle.Bold);
+            FoundVehicle_Date.SetTypeface(tf, TypefaceStyle.Bold);
 
 
 
@@ -85,7 +85,7 @@ namespace FinalProject_PU
         }
         private void Next_FoundVehicle_Click(object sender, EventArgs e)
         {
-            if (FoundVehicle_edtPlateno.Text != "" && FoundVehicle_MissingDate.Text!="")
+            if (FoundVehicle_edtPlateno.Text != "" && FoundVehicle_Date.Text!="")
             {
 
 
@@ -95,7 +95,7 @@ namespace FinalProject_PU
 
                 try
                 {
-                    //m.foundDate = Convert.ToDateTime(FoundVehicle_MissingDate.Text);
+                    //m.foundDate = Convert.ToDateTime(FoundVehicle_Date.Text);
                     //get m.founddate from date time picker
                 }
 
@@ -112,9 +112,57 @@ namespace FinalProject_PU
             }
         }
 
-        
 
-        
+        void DateSelect_OnClick(object sender, EventArgs eventArgs)
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                FoundVehicle_edtDate.Text = time.ToLongDateString();
+                FoundVehicle_edtDate.Enabled = false;
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+        public void OnDateSet(Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog p0, int year, int dayOfMonth, int monthOfYear)
+        {
+            Toast.MakeText(this, $"Your selected :{monthOfYear}/{dayOfMonth}/{year}", ToastLength.Long).Show();
+        }
+
+        public class DatePickerFragment : DialogFragment, DatePickerDialog.IOnDateSetListener
+        {
+            // TAG can be any string of your choice.
+            public static readonly string TAG = "X:" + typeof(DatePickerFragment).Name.ToUpper();
+
+            // Initialize this value to prevent NullReferenceExceptions.
+            Action<DateTime> _dateSelectedHandler = delegate { };
+
+            public static DatePickerFragment NewInstance(Action<DateTime> onDateSelected)
+            {
+                DatePickerFragment frag = new DatePickerFragment();
+                frag._dateSelectedHandler = onDateSelected;
+                return frag;
+            }
+
+            public override Dialog OnCreateDialog(Bundle savedInstanceState)
+            {
+                DateTime currently = DateTime.Now;
+                DatePickerDialog dialog = new DatePickerDialog(Activity,
+                                                               this,
+                                                               currently.Year,
+                                                               currently.Month - 1,
+                                                               currently.Day);
+                return dialog;
+            }
+
+            public void OnDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+            {
+                // Note: monthOfYear is a value between 0 and 11, not 1 and 12!
+                DateTime selectedDate = new DateTime(year, monthOfYear + 1, dayOfMonth);
+                Log.Debug(TAG, selectedDate.ToLongDateString());
+                _dateSelectedHandler(selectedDate);
+            }
+        }
+
+
 
     }
 }

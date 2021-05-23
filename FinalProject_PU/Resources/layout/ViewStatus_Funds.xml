@@ -71,7 +71,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:textColor="#000"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:id="@+id/textCollected" />
 
     <TextView
@@ -83,7 +83,7 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/textCollected"
         android:textColor="#000"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:id="@+id/text" />
     <TextView
         android:text=" 2500 "
@@ -94,7 +94,7 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/text"
         android:textColor="#000"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:id="@+id/textEstimated" />
     <TextView
         android:text="Working started :"
@@ -103,7 +103,7 @@
         android:layout_below="@id/text"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="50dp"
         android:textColor="#000"
         android:textStyle="normal"
         android:id="@+id/text_Working" />
@@ -126,7 +126,7 @@
         android:layout_below="@+id/text_Working"
         android:textSize="15sp"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="50dp"
         android:textColor="#000"
         android:textStyle="normal"
         android:id="@+id/textResolved"
@@ -153,16 +153,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
         android:textColor="#000"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:id="@+id/TopContributor" />
 
     <Refractored.Controls.CircleImageView
         android:src="@drawable/profile"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/TopContributor"
         android:id="@id/imgProfile"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
          />
 

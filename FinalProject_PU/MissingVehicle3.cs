@@ -134,7 +134,10 @@ namespace FinalProject_PU
                     p.Status = "unverified";
                     p.issueType = "Missing Vehicle";
                     p.issueFlag = "green";
-                    p.isresolved = 0; 
+                    p.isresolved = 0;
+                    p.isWorkingStarted = 0;
+                    p.amount_collected = 0;
+                    p.estimated_cost = 0;
 
                     try
                     {

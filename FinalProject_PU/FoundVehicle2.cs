@@ -133,8 +133,11 @@ namespace FinalProject_PU
                         p.isresolved = 0; // Issue is not resolved yet.
                         p.issueFlag = "green";
                         p.issueType = "Found Vehicle";
+                        p.isWorkingStarted = 0;
+                        p.amount_collected = 0;
+                        p.estimated_cost = 0;
 
-                        
+
 
                         try
                         {

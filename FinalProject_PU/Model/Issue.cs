@@ -25,6 +25,8 @@ namespace FinalProject_PU.Model
 
         public string issueFlag { get; set; }
 
+        public int estimated_cost {get;set;}
+
         public string issueType { get; set; }
         public string issueStatement
         {

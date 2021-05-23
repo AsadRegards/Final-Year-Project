@@ -7,23 +7,11 @@
     android:background="#f8f8f8">
 
         <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginTop="50dp"
-        android:id="@+id/lise"
-        />
-
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_marginStart="50dp"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginTop="50dp"
-        android:id="@+id/lwise"
-        />
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#646464"
+            android:layout_marginTop="50dp"
+            android:id="@+id/lise"/>
    
     <TextView
         android:layout_width="wrap_content"
@@ -106,6 +94,7 @@
         android:inputType="phone"
         android:layout_width="250dp"
         android:textColor="#000"
+        android:maxLength="8"
         android:textColorHint="#858585"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"

@@ -177,6 +177,9 @@ namespace FinalProject_PU
                 Issue.locationLongitude = Final_Position.Longitude.ToString();
                 Issue.Status = "unverified";
                 Issue.issueType = "Manhole";
+                Issue.isWorkingStarted = 0;
+                Issue.amount_collected = 0;
+                Issue.estimated_cost = 0;
                 using (Control.IssueFlagDetector i = new Control.IssueFlagDetector())
                 {
                     Issue.issueFlag = i.DetectManholeFlag(Issue);

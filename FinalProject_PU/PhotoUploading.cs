@@ -7,6 +7,7 @@ using FinalProject_PU.Model;
 using MohammedAlaa.GifLoading;
 using Newtonsoft.Json;
 using Plugin.Media;
+using Refractored.Controls;
 using System;
 using System.ComponentModel;
 using Xamarin.Essentials;
@@ -16,8 +17,8 @@ namespace FinalProject_PU
     [Activity(Label = "PhotoUploading")]
     public class PhotoUploading : Activity
     {
-
-        ImageView gallery, newimage, back, go;
+        CircleImageView newimage;
+        ImageView gallery, go;
         TextView upload;
         Typeface tf;
         LoadingView loader, button_loader;
@@ -43,12 +44,13 @@ namespace FinalProject_PU
             upload.SetTypeface(tf, TypefaceStyle.Bold);
 
             gallery = (ImageView)FindViewById(Resource.Id.imggallery);
-            newimage = (ImageView)FindViewById(Resource.Id.imgaccount);
+            newimage = (CircleImageView)FindViewById(Resource.Id.imgaccount);
            
             gallery.Click += Gallery_Click;
 
             go = (ImageView)FindViewById(Resource.Id.imglogin);
             go.Click += Go_Click;
+            
         }
 
         
