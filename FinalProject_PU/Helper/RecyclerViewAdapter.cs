@@ -41,6 +41,8 @@ namespace FinalProject_PU.Helper
             Contribute = itemView.FindViewById<ImageView>(Resource.Id.ContributeHome);
             Report = itemView.FindViewById<ImageView>(Resource.Id.Report);
             GoLast = itemView.FindViewById<ImageView>(Resource.Id.GoLast);
+            
+            
 
             //beauttification
 
@@ -67,6 +69,7 @@ namespace FinalProject_PU.Helper
             this.lstData = lstData;
         }
 
+        
         public override int ItemCount
         {
             get
@@ -75,6 +78,13 @@ namespace FinalProject_PU.Helper
             }
         }
 
+        RecyclerView mrecyclerView;
+        public override void OnAttachedToRecyclerView(RecyclerView recyclerView)
+        {
+            base.OnAttachedToRecyclerView(recyclerView);
+            mrecyclerView = recyclerView;
+            
+        }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
@@ -87,6 +97,8 @@ namespace FinalProject_PU.Helper
             viewHolder.UserName.Text = lstData[position].UserName;
             viewHolder.IssueDate.Text = lstData[position].ElevatedDays;
             viewHolder.IssueStatement.Text = lstData[position].IssueStatement;
+            viewHolder.IssueDate.Text = lstData[position].GetElevatedDates();
+            
             viewHolder.ViewStatus.Click += (sender, EventArgs) => 
             {
                 ViewStatus_Click(sender, EventArgs, position);
@@ -106,22 +118,28 @@ namespace FinalProject_PU.Helper
             viewHolder.GoLast.Click += (sender, EventArgs) => 
             {
                 GoLast_Click(sender, EventArgs, position);
+                
             };
         }
 
+     
         private void GoLast_Click(object sender, EventArgs e, int position)
         {
-           
+            mrecyclerView.SmoothScrollToPosition(0);
         }
 
         private void Report_Click(object sender, EventArgs e, int position)
         {
-        
+            Intent i = new Intent(Application.Context, typeof(ReportIssueHome));
+            i.PutExtra("issueobj", JsonConvert.SerializeObject(lstData[position]));
+            Application.Context.StartActivity(i);
         }
 
         private void Contribute_Click(object sender, EventArgs e, int position)
         {
-            
+            Intent i = new Intent(Application.Context, typeof(ContributeFund));
+            Control.UserInfoHolder.currentIssueContext = lstData[position].IssueId;
+            Application.Context.StartActivity(i);
         }
 
         private void ViewOnMap_Click(object sender, EventArgs e, int position)
@@ -139,7 +157,10 @@ namespace FinalProject_PU.Helper
 
         private void ViewStatus_Click(object sender, EventArgs e,int position)
         {
-          
+            Intent i = new Intent(Application.Context, typeof(ViewStatusHome));
+            i.PutExtra("issueobj", JsonConvert.SerializeObject(lstData[position]));
+            Application.Context.StartActivity(i);
+            
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

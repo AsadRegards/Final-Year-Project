@@ -33,7 +33,7 @@ namespace FinalProject_PU
         private RecyclerView.LayoutManager layoutManager;
         private static List<Data> lstData = new List<Data>();
 
-        
+       
 
         public  override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -50,6 +50,8 @@ namespace FinalProject_PU
             //  layoutManager = new LinearLayoutManager(this);
             layoutManager = new GridLayoutManager(Application.Context, 1, GridLayoutManager.Horizontal, false);
             recycler.SetLayoutManager(layoutManager);
+
+            
             
 
             byte[] arr = Convert.FromBase64String(UserInfoHolder.Profile_pic);

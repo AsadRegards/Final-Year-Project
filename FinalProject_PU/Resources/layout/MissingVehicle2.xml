@@ -6,24 +6,12 @@
     android:layout_height="match_parent"
     android:background="#f8f8f8">
 
-        <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginTop="50dp"
-        android:id="@+id/lise"
-        />
-
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_marginStart="50dp"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginTop="50dp"
-        android:id="@+id/lwise"
-        />
+             <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#646464"
+            android:layout_marginTop="50dp"
+            android:id="@+id/lise"/>
    
     <TextView
         android:layout_width="wrap_content"
@@ -104,6 +92,7 @@
         android:id="@+id/imgPlateno" />
     <EditText
         android:inputType="phone"
+        android:maxLength="8"
         android:layout_width="250dp"
         android:textColor="#000"
         android:textColorHint="#858585"
@@ -146,68 +135,14 @@
         android:layout_height="50dp"
         
         android:id="@+id/MissingVehicle2_edtDate" />
-
-   
     <ImageView
-        android:src="@drawable/iconhome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/close"
+        android:src="@drawable/cclose"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/iconHome"
-           />
-
-    <ImageView
-        android:src="@drawable/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginTop="559dp"
-        android:id="@+id/line2"
-         />
-    <ImageView
-        android:src="@drawable/iconfunds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconFunds"
-         />
-    <ImageView
-        android:src="@drawable/iconnotifcation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconNotifications"
-         />
- <ImageView
-        android:src="@drawable/iconlocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconMap"
-         />
- <ImageView
-        android:src="@drawable/iconsetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconSettings"
-         />
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="559dp"
-        android:id="@+id/line"
-         />
+        android:layout_marginBottom="5dp"
+       />
+   
 </RelativeLayout>

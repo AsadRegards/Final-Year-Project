@@ -19,6 +19,7 @@ namespace FinalProject_PU
     {
         ImageView imgissuev, imgprofile, imgviewonmap, close;
         TextView tvtime, tvname, tvinfo;
+        Typeface tf;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -30,8 +31,17 @@ namespace FinalProject_PU
             imgprofile = (ImageView)FindViewById(Resource.Id.imgProfile);
             imgviewonmap = (ImageView)FindViewById(Resource.Id.imgvieonmap);
             tvtime = (TextView)FindViewById(Resource.Id.tvtime);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tvtime.SetTypeface(tf, TypefaceStyle.Bold);
+
             tvname = (TextView)FindViewById(Resource.Id.tvname);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tvname.SetTypeface(tf, TypefaceStyle.Bold);
+
             tvinfo = (TextView)FindViewById(Resource.Id.tvinfo);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tvinfo.SetTypeface(tf, TypefaceStyle.Bold);
+
             close = (ImageView)FindViewById(Resource.Id.close);
 
             var IssueObj = JsonConvert.DeserializeObject<Model.OpenForFundsIssues>(Intent.GetStringExtra("issueObj"));

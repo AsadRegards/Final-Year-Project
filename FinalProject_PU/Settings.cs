@@ -32,8 +32,6 @@ namespace FinalProject_PU
             var rootview = inflater.Inflate(Resource.Layout.settings, container, false);
             Accounts = (ImageView)rootview.FindViewById(Resource.Id.imgviewaccounts);
             Accounts.Click += Accounts_Click;
-            Notifications = (ImageView)rootview.FindViewById(Resource.Id.imgviewnoti);
-            Notifications.Click += Notifications_Click;
             logout = (ImageView)rootview.FindViewById(Resource.Id.imgaccounticon);
             logout.Click += Logout_Click;
             myads = (ImageView)rootview.FindViewById(Resource.Id.imgviewmyads);

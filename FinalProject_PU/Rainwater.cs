@@ -44,17 +44,6 @@ namespace FinalProject_PU
             highVehicle.Click += HighVehicle_Click;
             noVehicle = (ImageView)FindViewById(Resource.Id.noVehicle);
             noVehicle.Click += NoVehicle_Click;
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-
           
             Rainwater_next = (ImageView)FindViewById(Resource.Id.Rainwater_btnnext);
             Rainwater_next.Click += Rainwater_next_Click;

@@ -64,16 +64,6 @@ namespace FinalProject_PU
             Garbage_radiobtn2.Click += Garbage_radiobtn2_Click;
             Garbage_radiobtn3 = (RadioButton)FindViewById(Resource.Id.Garbage_Radiobtn3);
             Garbage_radiobtn3.Click += Garbage_radiobtn3_Click;
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
             //runtime py profile change krna or name change krna 
             //start
 

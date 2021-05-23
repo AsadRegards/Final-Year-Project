@@ -44,19 +44,13 @@
         android:id="@+id/imgviewaccounts"
         android:layout_below="@+id/textviewhead"
          />
-    <ImageView
-        android:src="@drawable/snotifications"
-        android:layout_width="392dp"
-        android:layout_height="wrap_content" 
-        android:id="@+id/imgviewnoti"
-        android:layout_below="@+id/imgviewaccounts"
-         />
+    
     <ImageView
         android:src="@drawable/smyads"
         android:layout_width="392dp"
         android:layout_height="wrap_content" 
         android:id="@+id/imgviewmyads"
-        android:layout_below="@+id/imgviewnoti"
+        android:layout_below="@id/imgviewaccounts"
          />
     <ImageView
         android:src="@drawable/spayments"

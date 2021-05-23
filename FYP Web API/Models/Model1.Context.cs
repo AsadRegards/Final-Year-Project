@@ -37,5 +37,6 @@ namespace FYP_Web_API.Models
         public virtual DbSet<Volunteer_table> Volunteer_table { get; set; }
         public virtual DbSet<NotificationTable> NotificationTable { get; set; }
         public virtual DbSet<issue_table> issue_table { get; set; }
+        public virtual DbSet<PaymentMethodInfo> PaymentMethodInfo { get; set; }
     }
 }

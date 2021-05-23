@@ -81,12 +81,12 @@
           <Property Name="IssueDate" Type="datetime" />
           <Property Name="missingDate" Type="datetime2" Precision="7" />
           <Property Name="foundDate" Type="datetime2" Precision="7" />
-          <Property Name="isresolved" Type="int" />
-          <Property Name="estimated_cost" Type="int" />
+          <Property Name="isresolved" Type="int" Nullable="false" />
+          <Property Name="estimated_cost" Type="int" Nullable="false" />
           <Property Name="location_name" Type="nvarchar(max)" />
           <Property Name="resolveddate" Type="datetime2" Precision="7" />
-          <Property Name="amount_collected" Type="int" />
-          <Property Name="isWorkingStarted" Type="int" />
+          <Property Name="amount_collected" Type="int" Nullable="false" />
+          <Property Name="isWorkingStarted" Type="int" Nullable="false" />
           <Property Name="issueFlag" Type="nvarchar" MaxLength="50" />
           <Property Name="issueType" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -106,6 +106,24 @@
           <Property Name="notification_text" Type="nvarchar(max)" Nullable="false" />
           <Property Name="notification_image" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PaymentMethodInfo">
+          <Key>
+            <PropertyRef Name="easypaisanumber" />
+            <PropertyRef Name="easypaisatitle" />
+            <PropertyRef Name="jazzcashnumber" />
+            <PropertyRef Name="jazzcashtitle" />
+            <PropertyRef Name="bankaccountnumber" />
+            <PropertyRef Name="bankaccounttitle" />
+          </Key>
+          <Property Name="easypaisanumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="easypaisatitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="jazzcashnumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="jazzcashtitle" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bankaccountnumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bankaccounttitle" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="report_table">
           <Key>
             <PropertyRef Name="report_id" />
@@ -115,7 +133,7 @@
           <Property Name="issue_id" Type="int" Nullable="false" />
           <Property Name="report_text" Type="nvarchar(max)" Nullable="false" />
           <Property Name="status" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="admin_reply" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="admin_reply" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="user_table">
           <Key>
@@ -289,6 +307,16 @@
           <EntitySet Name="report_table" EntityType="Self.report_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_table" EntityType="Self.user_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Volunteer_table" EntityType="Self.Volunteer_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentMethodInfo" EntityType="Self.PaymentMethodInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PaymentMethodInfo].[easypaisanumber] AS [easypaisanumber], 
+    [PaymentMethodInfo].[easypaisatitle] AS [easypaisatitle], 
+    [PaymentMethodInfo].[jazzcashnumber] AS [jazzcashnumber], 
+    [PaymentMethodInfo].[jazzcashtitle] AS [jazzcashtitle], 
+    [PaymentMethodInfo].[bankaccountnumber] AS [bankaccountnumber], 
+    [PaymentMethodInfo].[bankaccounttitle] AS [bankaccounttitle]
+    FROM [dbo].[PaymentMethodInfo] AS [PaymentMethodInfo]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_funds_table_issue_table" Association="Self.FK_funds_table_issue_table">
             <End Role="issue_table" EntitySet="issue_table" />
             <End Role="funds_table" EntitySet="funds_table" />
@@ -416,7 +444,7 @@
           <Property Name="issue_id" Type="Int32" Nullable="false" />
           <Property Name="report_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="admin_reply" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="admin_reply" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="user_table" Relationship="Self.FK_report_table_user_table" FromRole="report_table" ToRole="user_table" />
           <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_report_table_issue_table" FromRole="report_table" ToRole="issue_table" />
         </EntityType>
@@ -556,6 +584,7 @@
             <End Role="issue_table" EntitySet="issue_table" />
             <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
+          <EntitySet Name="PaymentMethodInfo" EntityType="problemupdatedbModel.PaymentMethodInfo" />
           </EntityContainer>
         <EntityType Name="NotificationTable">
           <Key>
@@ -588,12 +617,12 @@
           <Property Name="IssueDate" Type="DateTime" Precision="3" />
           <Property Name="missingDate" Type="DateTime" Precision="7" />
           <Property Name="foundDate" Type="DateTime" Precision="7" />
-          <Property Name="isresolved" Type="Int32" />
-          <Property Name="estimated_cost" Type="Int32" />
+          <Property Name="isresolved" Type="Int32" Nullable="false" />
+          <Property Name="estimated_cost" Type="Int32" Nullable="false" />
           <Property Name="location_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="resolveddate" Type="DateTime" Precision="7" />
-          <Property Name="amount_collected" Type="Int32" />
-          <Property Name="isWorkingStarted" Type="Int32" />
+          <Property Name="amount_collected" Type="Int32" Nullable="false" />
+          <Property Name="isWorkingStarted" Type="Int32" Nullable="false" />
           <Property Name="issueFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="issueType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AssignedByAdmin" Relationship="problemupdatedbModel.IssueID_FK" FromRole="issue_table" ToRole="AssignedByAdmin" />
@@ -689,6 +718,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="PaymentMethodInfo">
+          <Key>
+            <PropertyRef Name="easypaisanumber" />
+            <PropertyRef Name="easypaisatitle" />
+            <PropertyRef Name="jazzcashnumber" />
+            <PropertyRef Name="jazzcashtitle" />
+            <PropertyRef Name="bankaccountnumber" />
+            <PropertyRef Name="bankaccounttitle" />
+          </Key>
+          <Property Name="easypaisanumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="easypaisatitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jazzcashnumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="jazzcashtitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankaccountnumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bankaccounttitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -843,6 +888,18 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentMethodInfo">
+            <EntityTypeMapping TypeName="problemupdatedbModel.PaymentMethodInfo">
+              <MappingFragment StoreEntitySet="PaymentMethodInfo">
+                <ScalarProperty Name="bankaccounttitle" ColumnName="bankaccounttitle" />
+                <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
+                <ScalarProperty Name="jazzcashtitle" ColumnName="jazzcashtitle" />
+                <ScalarProperty Name="jazzcashnumber" ColumnName="jazzcashnumber" />
+                <ScalarProperty Name="easypaisatitle" ColumnName="easypaisatitle" />
+                <ScalarProperty Name="easypaisanumber" ColumnName="easypaisanumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

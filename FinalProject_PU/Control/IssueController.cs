@@ -32,14 +32,11 @@ namespace FinalProject_PU.Control
             if(response.StatusCode==System.Net.HttpStatusCode.Accepted)
             {
                 Intent i = new Intent(acc, typeof(FragmentHomeActivity));
-                MainThread.BeginInvokeOnMainThread(() => 
-                {
-                    Toast.MakeText(acc, "Issue Posted Successfully", ToastLength.Long).Show();
-                });
+              
                 
-                DataOper.SendNotification("Issue Alert", issueObj.issueStatement);
+                DataOper.SendNotification(new Model.Notification() { title="Issue Alert", message=issueObj.issueStatement, image=issueObj.IssueImage});
                 acc.StartActivity(i);
-                acc.Dispose();
+                
                 return true;
 
             }
@@ -56,6 +53,24 @@ namespace FinalProject_PU.Control
                 var list = JsonConvert.DeserializeObject<List<Helper.Data>>(response);
                 return list; 
         }
-        
+
+        public async Task<bool> reportanissue(Report report)
+        {
+            HttpClient client = new HttpClient();
+            var uri = baseuri + "/api/issue/reportanissue";
+            var json = JsonConvert.SerializeObject(report);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(uri, content);
+            if(response.StatusCode==System.Net.HttpStatusCode.Accepted)
+            {
+                return true;
+            }
+            return false;
+
+
+
+        }
+
+
     }
 }

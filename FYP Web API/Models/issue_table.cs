@@ -43,12 +43,12 @@ namespace FYP_Web_API.Models
         public Nullable<System.DateTime> IssueDate { get; set; }
         public Nullable<System.DateTime> missingDate { get; set; }
         public Nullable<System.DateTime> foundDate { get; set; }
-        public Nullable<int> isresolved { get; set; }
-        public Nullable<int> estimated_cost { get; set; }
+        public int isresolved { get; set; }
+        public int estimated_cost { get; set; }
         public string location_name { get; set; }
         public Nullable<System.DateTime> resolveddate { get; set; }
-        public Nullable<int> amount_collected { get; set; }
-        public Nullable<int> isWorkingStarted { get; set; }
+        public int amount_collected { get; set; }
+        public int isWorkingStarted { get; set; }
         public string issueFlag { get; set; }
         public string issueType { get; set; }
     

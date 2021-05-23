@@ -62,17 +62,7 @@ namespace FinalProject_PU
 
 
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-
+ 
             var arr = Control.UserInfoHolder.User_name.ToCharArray();
             createissue5_tvusername.SetText(arr, 0, arr.Length);
             var barr = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);

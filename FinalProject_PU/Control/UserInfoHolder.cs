@@ -26,6 +26,7 @@ namespace FinalProject_PU.Control
 
         public static  string joblocatlongi { get; set; }
         public static int UserRating { get; set; }
+        public static int currentIssueContext { get; set; }
 
         public static void FetchUserInfo(User user)
         {

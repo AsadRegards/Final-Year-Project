@@ -177,11 +177,11 @@ namespace FinalProject_PU
                 Issue.locationLongitude = Final_Position.Longitude.ToString();
                 Issue.Status = "unverified";
                 Issue.issueType = "Pothole";
-                using (Control.IssueFlagDetector i = new Control.IssueFlagDetector())
-                {
-                    Issue.issueFlag = i.DetectPotholeFlag(Issue);
-                }
-                Issue.issueDate = DateTime.Now;
+                Issue.isWorkingStarted = 0;
+                Issue.amount_collected = 0;
+                Issue.estimated_cost = 0;
+                Issue.issueFlag = new Control.IssueFlagDetector().DetectPotholeFlag(Issue);
+                
                 try
                 {
 

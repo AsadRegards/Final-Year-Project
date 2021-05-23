@@ -43,17 +43,7 @@ namespace FinalProject_PU
             create_issue_4_tv.SetTypeface(tf, TypefaceStyle.Bold);
 
             circleimageview24 = FindViewById<CircleImageView>(Resource.Id.circleImageView24);
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-
+            
             createissue4_next = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             createissue4_next.Click += Createissue4_next_Click;
 
@@ -78,7 +68,7 @@ namespace FinalProject_PU
             byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
             Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
             circleimageview24.SetImageBitmap(bitmapp);
-            create_issue_4_tv.SetText(arr, 0, arr.Length);
+            createissue3_tvusername.SetText(arr, 0, arr.Length);
             //end //runtime py profile change krna or name change krna 
         }
 

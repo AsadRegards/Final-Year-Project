@@ -19,7 +19,7 @@ namespace FinalProject_PU.Helper
     {
 
         static int Position_;
-        public TextView Username { get; set; }
+        //public TextView Username { get; set; }
         public TextView FundDate { get; set; }
         public ImageView ViewIssue { get; set; }
         public ImageView Contribute { get; set; }
@@ -28,7 +28,7 @@ namespace FinalProject_PU.Helper
 
         public Funds_RecyclerViewHolder(Android.Views.View itemsView) : base(itemsView)
         {
-            Username = itemsView.FindViewById<TextView>(Resource.Id.username);
+            //Username = itemsView.FindViewById<TextView>(Resource.Id.username);
             FundDate = itemsView.FindViewById<TextView>(Resource.Id.date);
             FundStatement = itemsView.FindViewById<TextView>(Resource.Id.description);
             ViewIssue = itemsView.FindViewById<ImageView>(Resource.Id.btnView);
@@ -62,7 +62,7 @@ namespace FinalProject_PU.Helper
 
 
 
-            viewHolder.Username.Text = lstData[position].userName;
+          //  viewHolder.Username.Text = lstData[position].userName;
             viewHolder.FundDate.Text = lstData[position].issueDate.ToShortDateString();
             viewHolder.FundStatement.Text = lstData[position].issueStatement;
             viewHolder.ViewStatus.Click += (sender, EventArgs) =>

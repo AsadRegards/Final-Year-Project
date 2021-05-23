@@ -125,10 +125,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ImageModerationController.cs" />
     <Compile Include="Controllers\IssueController.cs" />
     <Compile Include="Controllers\PushNotificationController.cs" />
     <Compile Include="Controllers\UserFundsController.cs" />
+    <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +174,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NotificationTable.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethodInfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pushnotification.cs" />

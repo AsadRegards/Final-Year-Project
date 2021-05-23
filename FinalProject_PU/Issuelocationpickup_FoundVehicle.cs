@@ -139,6 +139,10 @@ namespace FinalProject_PU
                 p.locationLatitude = Final_Position.Latitude.ToString();
                 p.locationLongitude = Final_Position.Longitude.ToString();
                 p.Status = "unverified";
+                p.isWorkingStarted = 0;
+                p.amount_collected = 0;
+                p.estimated_cost = 0;
+                p.isresolved = 0;
                 try
                 {
 

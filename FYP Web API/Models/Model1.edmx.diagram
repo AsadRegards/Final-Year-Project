@@ -28,6 +28,7 @@
         <AssociationConnector Association="problemupdatedbModel.FK_issue_table_user_table" />
         <AssociationConnector Association="problemupdatedbModel.FK_nearby_user_table_issue_table" />
         <AssociationConnector Association="problemupdatedbModel.FK_report_table_issue_table" />
+        <EntityTypeShape EntityType="problemupdatedbModel.PaymentMethodInfo" Width="1.5" PointX="7.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -30,8 +30,17 @@ namespace FinalProject_PU.Control
         {
             var uri = Account.BaseAddressUri + "/api/userfunds/gettopcontributer/?issueid=" + IssueId;
             var response = await client.GetStringAsync(uri);
-            var User = JsonConvert.DeserializeObject<Model.User>(response);
-            return User;
+            try 
+            {
+                var User = JsonConvert.DeserializeObject<Model.User>(response);
+                return User;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+            
+            
         }
     }
 }

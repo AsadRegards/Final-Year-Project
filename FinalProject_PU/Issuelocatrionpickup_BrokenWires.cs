@@ -184,6 +184,9 @@ namespace FinalProject_PU
                     p.issueFlag = "yellow";
                 p.isresolved = 0;
                 p.issueType = "Broken Wire";
+                p.isWorkingStarted = 0;
+                p.amount_collected = 0;
+                p.estimated_cost = 0;
 
 
 

@@ -51,18 +51,6 @@ namespace FinalProject_PU
             byte[] imageArray = Convert.FromBase64String(base64image);
             Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
             issueImg.SetImageBitmap(bitmap);
-
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-
         
             //runtime py profile change krna or name change krna 
             //start

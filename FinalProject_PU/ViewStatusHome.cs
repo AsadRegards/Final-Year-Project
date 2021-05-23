@@ -21,7 +21,8 @@ namespace FinalProject_PU
     {
         TextView working_started, resolved, estimated_amount, collected_amount, Contributor_name;
         CircleImageView userimage;
-        ImageView issueImage, close;
+        ImageView issueImage, close, goback;
+        Typeface tf;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,10 +33,27 @@ namespace FinalProject_PU
             var IssueObj = JsonConvert.DeserializeObject<Helper.Data>(Intent.GetStringExtra("issueobj"));
 
             working_started = (TextView)FindViewById(Resource.Id.tv_WorkingStatus);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            working_started.SetTypeface(tf, TypefaceStyle.Bold);
+
             resolved = (TextView)FindViewById(Resource.Id.tvResolvedStatus);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            resolved.SetTypeface(tf, TypefaceStyle.Bold);
+
             estimated_amount = (TextView)FindViewById(Resource.Id.textEstimated);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            estimated_amount.SetTypeface(tf, TypefaceStyle.Bold);
+
             collected_amount = (TextView)FindViewById(Resource.Id.textCollected);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            collected_amount.SetTypeface(tf, TypefaceStyle.Bold);
+
             Contributor_name = (TextView)FindViewById(Resource.Id.tvname);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            Contributor_name.SetTypeface(tf, TypefaceStyle.Bold);
+
+            goback = FindViewById<ImageView>(Resource.Id.imggoback);
+            goback.Click += Goback_Click;
             userimage = (CircleImageView)FindViewById(Resource.Id.imgProfile);
             issueImage = (ImageView)FindViewById(Resource.Id.imgissuev);
             close = (ImageView)FindViewById(Resource.Id.close);
@@ -96,9 +114,21 @@ namespace FinalProject_PU
                 });
 
             }
+            else
+            {
+                userimage.Visibility = Android.Views.ViewStates.Gone;
+                Contributor_name.Text = "No Contributer yet";
+
+
+            }
             byte[] arr1 = Convert.FromBase64String(IssueObj.IssueImage);
             Bitmap b2 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             issueImage.SetImageBitmap(b2);
+        }
+
+        private void Goback_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Close_Click(object sender, EventArgs e)

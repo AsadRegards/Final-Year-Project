@@ -33,17 +33,7 @@ namespace FinalProject_PU
             // Create your application here
             SetContentView(Resource.Layout.createisue3);
             circleimageview3 = (CircleImageView)FindViewById(Resource.Id.circleImageView3);
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-
+            
             next_imga2 = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             next_imga2.Click += Next_imga2_Click;
 

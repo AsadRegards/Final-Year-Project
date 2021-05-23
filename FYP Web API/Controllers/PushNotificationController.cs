@@ -57,18 +57,31 @@ namespace FYP_Web_API.Controllers
 
         [HttpPost]
         [ActionName("sendpushnotification")]
-        public IHttpActionResult SendPushNotification([FromUri]string title, [FromUri]string message)
+        public IHttpActionResult SendPushNotification([FromBody]notification noti )
         {
             
             var DeviceTokenList = GetAllTokens();
 
             pushnotification notification = new pushnotification();
-            notification.body = message;
-            notification.title = title;
+            notification.body = noti.message;
+            notification.title = noti.title;
+            NotificationTable table = new NotificationTable();
+            table.notification_image = noti.image;
+            table.notification_text = noti.message;
+            dbe.NotificationTable.Add(table);
+            dbe.SaveChanges();
             var Json = JsonConvert.SerializeObject(notification);
             SendNotification(DeviceTokenList, Json);
             return Ok();
 
+        }
+
+        [HttpGet]
+        [ActionName("getallnotification")]
+        public HttpResponseMessage getallNotification()
+        {
+            var list = dbe.NotificationTable.ToList();
+            return Request.CreateResponse(HttpStatusCode.Accepted, list);
         }
 
 
@@ -174,6 +187,13 @@ namespace FYP_Web_API.Controllers
                 throw;
             }
         }
+    }
+
+    public class notification
+    {
+        public string title { get; set; }
+        public string message { get; set; }
+        public string image { get; set; }
     }
     
 }

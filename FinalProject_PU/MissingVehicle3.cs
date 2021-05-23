@@ -61,16 +61,6 @@ namespace FinalProject_PU
             MissingVehicle3_radiobtn2.Click += MissingVehicle3_radiobtn2_Click;
             MissingVehicle3_radiobtn3 = (RadioButton)FindViewById(Resource.Id.MissingVehicle3_Radiobtn3);
             MissingVehicle3_radiobtn3.Click += MissingVehicle3_radiobtn3_Click;
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
         }
 
         private void MissingVehicle3_radiobtn3_Click(object sender, EventArgs e)
@@ -134,7 +124,10 @@ namespace FinalProject_PU
                     p.Status = "unverified";
                     p.issueType = "Missing Vehicle";
                     p.issueFlag = "green";
-                    p.isresolved = 0; 
+                    p.isresolved = 0;
+                    p.isWorkingStarted = 0;
+                    p.amount_collected = 0;
+                    p.estimated_cost = 0;
 
                     try
                     {
@@ -147,17 +140,22 @@ namespace FinalProject_PU
                             LocationName = placemark.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
                             p.location_name = LocationName;
                             p.issueStatement = "Vehicle Gone Missing since " + p.missingDate.Date.ToShortDateString() + " with Plate No. " + p.plateNumber + " near " + LocationName;
-                            Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-                            AlertDialog alert = dialog.Create();
+                            MainThread.BeginInvokeOnMainThread(() => 
+                            {
+                                Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                                AlertDialog alert = dialog.Create();
 
-                            alert.SetMessage("Please wait while your issue is being posted ...");
-                            alert.Show();
-                            await Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
+                                alert.SetMessage("Please wait while your issue is being posted ...");
+                                alert.Show();
+                                Control.IssueController.PostIssue<Model.Missingvehicle>(p, this);
+                            });
+                         
+                            
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        //handle any exception caused due to geocoding or issue posting
+                       
                     }
 
 

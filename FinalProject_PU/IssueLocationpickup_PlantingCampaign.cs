@@ -181,6 +181,9 @@ namespace FinalProject_PU
                 p.issueFlag = "green";
                 p.isresolved = 0;
                 p.issueType = "Planting Compaign";
+                p.isWorkingStarted = 0;
+                p.amount_collected = 0;
+                p.estimated_cost = 0;
 
 
 

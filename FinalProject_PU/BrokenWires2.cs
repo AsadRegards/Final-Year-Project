@@ -59,17 +59,6 @@ namespace FinalProject_PU
             tev1.SetTypeface(tf, TypefaceStyle.Bold);
 
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
-           
             createissue4_next = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             createissue4_next.Click += Createissue4_next_Click;
 

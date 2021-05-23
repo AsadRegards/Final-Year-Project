@@ -34,7 +34,7 @@ namespace FinalProject_PU.Control
         }
 
 
-        public static string BaseAddressUri = string.Format("http://{0}:8045", "192.168.0.104");
+        public static string BaseAddressUri = string.Format("http://{0}:8045", "problemupdate101.ddns.net");
 
     
         static public int verifyEmail(string emailp,Android.Content.Context acc)

@@ -91,13 +91,57 @@ namespace FYP_Web_API.Controllers
         }
 
 
+        [HttpPost]
+        [ActionName("postnewfund")]
+        public HttpResponseMessage postnewfund(funds_table fund)
+        {
+            dbe.funds_table.Add(fund);
+            dbe.SaveChanges();
 
-        //To do work in guidance with funds working.txt ( On Desktop)
-        //view button api
-        //status api
-        //contribute work
-        //easypaisa ko mail krna payment integration k liye
-        //to checkout ki api check krni hey
+            return Request.CreateResponse(HttpStatusCode.Accepted, "accepted fund");
+        }
+        [HttpGet]
+        [ActionName("getpaymentinfo")]
+        public HttpResponseMessage getpaymentinfo()
+        {
+            var info = dbe.PaymentMethodInfo.FirstOrDefault();
+            return Request.CreateResponse(HttpStatusCode.Accepted, info);
+        }
+
+        [HttpPut]
+        [ActionName("setpaymentinfo")]
+        public HttpResponseMessage setpaymentinfo(string newNumber,string newtitle, int code)
+        {
+            if (code == 1)
+            {
+                var info = dbe.PaymentMethodInfo.FirstOrDefault();
+                info.easypaisanumber = newNumber;
+                info.easypaisatitle = newtitle;
+                dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
+                dbe.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Accepted, "easypaisa updated");
+            }
+            if(code==2)
+            {
+                var info = dbe.PaymentMethodInfo.FirstOrDefault();
+                info.jazzcashnumber = newNumber;
+                info.jazzcashtitle = newtitle;
+                dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
+                dbe.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Accepted, "jazzcash updated");
+            }
+            if(code==3)
+            {
+                var info = dbe.PaymentMethodInfo.FirstOrDefault();
+                info.bankaccountnumber = newNumber;
+                info.bankaccountnumber = newtitle;
+                dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
+                dbe.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Accepted, "jazzcash updated");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "no updation");
+
+        }
 
 
 

@@ -44,16 +44,6 @@ namespace FinalProject_PU
             Manhole1_radio2 = (ImageView)FindViewById(Resource.Id.iconIssue2);
             Manhole1_radio2.Click += Manhole1_radio2_Click;
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
             circleImageView_Manhole1 = (CircleImageView)FindViewById(Resource.Id.circleImageView_Manhole1);
             //runtime py profile change krna or name change krna 
             //start

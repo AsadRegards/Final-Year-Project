@@ -126,8 +126,8 @@ namespace FinalProject_PU
                 if (InputValidation.ValidatePassword(pass.Text, pass.Text, this))
                 {
                     MainThread.BeginInvokeOnMainThread(() => {
-                        loadingIndicator.Visibility = Android.Views.ViewStates.Visible;
-                        //loginbuttonindicator.Visibility = Android.Views.ViewStates.Visible;
+                        //loadingIndicator.Visibility = Android.Views.ViewStates.Visible;
+                        loginbuttonindicator.Visibility = Android.Views.ViewStates.Visible;
                     });
 
                     try

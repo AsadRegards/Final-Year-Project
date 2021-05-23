@@ -42,6 +42,7 @@ namespace FinalProject_PU
 
             list1.Add(new IssueFragment());
             list1.Add(new FundsFragment());
+            list1.Add(new notificationfragment());
             list1.Add(new Settings());
             list1.Add(new DirectionFragment());
 
@@ -76,17 +77,17 @@ namespace FinalProject_PU
                     return true;
                 case Resource.Id.navigation_notifications:
                     SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[0])
+                      .Replace(Resource.Id.fragment_main, list1[2])
                       .Commit();
                     return true;
                 case Resource.Id.navigation_map:
                     SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[3])
+                      .Replace(Resource.Id.fragment_main, list1[4])
                       .Commit();
                     return true;
                 case Resource.Id.navigation_settings:
                     SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[2])
+                      .Replace(Resource.Id.fragment_main, list1[3])
                       .Commit();
                     return true;
 

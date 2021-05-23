@@ -77,7 +77,8 @@ namespace FYP_Web_API.Controllers
                             amountCollected=issue_table.amount_collected,
                             isworkingstarted=issue_table.isWorkingStarted,
                             isResolved=issue_table.isresolved,
-                            IssueId=issue_table.issue_id
+                            IssueId=issue_table.issue_id,
+                            location_name=issue_table.location_name
 
 
 
@@ -85,6 +86,16 @@ namespace FYP_Web_API.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.Accepted, data);
             }
+        }
+
+        [HttpPost]
+        [ActionName("reportanissue")]
+        public HttpResponseMessage reportanissue(report_table report)
+        {
+            dbe.report_table.Add(report);
+            int result=dbe.SaveChanges();
+            
+            return Request.CreateResponse(HttpStatusCode.Accepted, "accepted");
         }
 
     }

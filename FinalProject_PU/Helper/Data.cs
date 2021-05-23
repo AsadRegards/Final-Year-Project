@@ -16,9 +16,11 @@ namespace FinalProject_PU.Helper
     {
         public string IssueImage { get; set; }
         public string UserImage { get; set; }
+        public string location_name { get; set; }
         public string UserName { get; set; }
         public DateTime IssueDate { get; set; }
         public string IssueStatement { get; set; }
+       
         public string IssueLatitude { get; set; }
         public string IssueLongitude { get; set; }
         public string Issueflag { get; set; }
@@ -27,10 +29,14 @@ namespace FinalProject_PU.Helper
         public int IssueId { get; set; }
 
         public int estimatedCost { get; set; }
+       
         public int amountCollected { get; set; }
+       
 
         public int isworkingstarted { get; set; }
+         
         public int isResolved { get; set; }
+       
 
         public LatLng GetLocation()
         {

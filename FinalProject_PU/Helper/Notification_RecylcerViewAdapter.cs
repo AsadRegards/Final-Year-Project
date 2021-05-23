@@ -32,9 +32,9 @@ namespace FinalProject_PU.Helper
     }
     class Notifictaion_RecyclerViewAdapter : RecyclerView.Adapter
     {
-        private List<Helper.NotificationData> lstData = new List<NotificationData>();
+        private List<Model.Notification> lstData = new List<Model.Notification>();
 
-        public Notifictaion_RecyclerViewAdapter(List<NotificationData> lstData)
+        public Notifictaion_RecyclerViewAdapter(List<Model.Notification> lstData)
         {
             this.lstData = lstData;
         }
@@ -51,12 +51,11 @@ namespace FinalProject_PU.Helper
         {
             Notification_RecyclerViewHolder viewHolder = holder as Notification_RecyclerViewHolder;
 
-            byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
+            byte[] arr1 = Convert.FromBase64String(lstData[position].image); //UserImage
             Android.Graphics.Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             viewHolder.UserImage.SetImageBitmap(b1); //
-            viewHolder.UserName.Text = lstData[position].UserName;
-            viewHolder.IssueDate.Text = lstData[position].ElevatedDays;
-            viewHolder.IssueStatement.Text = lstData[position].IssueStatement;
+
+            viewHolder.IssueStatement.Text = lstData[position].message;
 
         }
 
