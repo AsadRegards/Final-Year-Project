@@ -12,14 +12,13 @@ namespace FYP_Web_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class nearby_user_table
+    public partial class database_firewall_rules
     {
-        public int ui_pair_id { get; set; }
-        public int user_id { get; set; }
-        public int issue_id { get; set; }
-    
-        public virtual issue_table issue_table { get; set; }
-        public virtual nearby_user_table nearby_user_table1 { get; set; }
-        public virtual nearby_user_table nearby_user_table2 { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

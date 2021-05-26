@@ -21,7 +21,7 @@ namespace FYP_Web_API.Models
         public string status { get; set; }
         public string admin_reply { get; set; }
     
-        public virtual user_table user_table { get; set; }
         public virtual issue_table issue_table { get; set; }
+        public virtual user_table user_table { get; set; }
     }
 }

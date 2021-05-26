@@ -19,7 +19,7 @@ namespace FYP_Web_API.Models
         public int issue_id { get; set; }
         public System.DateTime assigned_date { get; set; }
     
-        public virtual Volunteer_table Volunteer_table { get; set; }
         public virtual issue_table issue_table { get; set; }
+        public virtual Volunteer_table Volunteer_table { get; set; }
     }
 }
