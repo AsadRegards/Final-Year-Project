@@ -15785,6 +15785,9 @@ namespace FinalProject_PU
 			// aapt resource value: 0x7F080079
 			public const int BlueEmptyICon = 2131230841;
 			
+			// aapt resource value: 0x7F080082
+			public const int BtnViewMap = 2131230850;
+			
 			// aapt resource value: 0x7F08007A
 			public const int BlueIcon = 2131230842;
 			

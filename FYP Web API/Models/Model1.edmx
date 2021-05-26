@@ -210,18 +210,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_issue_table_user_table">
-          <End Role="user_table" Type="Self.user_table" Multiplicity="1" />
-          <End Role="issue_table" Type="Self.issue_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user_table">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="issue_table">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_nearby_user_table_issue_table">
           <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
           <End Role="nearby_user_table" Type="Self.nearby_user_table" Multiplicity="*" />
@@ -332,10 +320,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <AssociationSet Name="FK_issue_table_issue_table" Association="Self.FK_issue_table_issue_table">
             <End Role="issue_table" EntitySet="issue_table" />
             <End Role="issue_table1" EntitySet="issue_table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_issue_table_user_table" Association="Self.FK_issue_table_user_table">
-            <End Role="user_table" EntitySet="user_table" />
-            <End Role="issue_table" EntitySet="issue_table" />
           </AssociationSet>
           <AssociationSet Name="FK_nearby_user_table_issue_table" Association="Self.FK_nearby_user_table_issue_table">
             <End Role="issue_table" EntitySet="issue_table" />
