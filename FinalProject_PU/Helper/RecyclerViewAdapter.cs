@@ -84,6 +84,7 @@ namespace FinalProject_PU.Helper
             base.OnAttachedToRecyclerView(recyclerView);
             mrecyclerView = recyclerView;
             
+            
         }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {

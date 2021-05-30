@@ -50,6 +50,7 @@ namespace FinalProject_PU
             //  layoutManager = new LinearLayoutManager(this);
             layoutManager = new GridLayoutManager(Application.Context, 1, GridLayoutManager.Horizontal, false);
             recycler.SetLayoutManager(layoutManager);
+            
 
             
             
@@ -78,6 +79,7 @@ namespace FinalProject_PU
             lstData.Reverse();
             adapter = new RecyclerViewAdapter(lstData);
             recycler.SetAdapter(adapter);
+            
 
 
         }

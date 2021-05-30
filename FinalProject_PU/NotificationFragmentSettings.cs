@@ -60,9 +60,7 @@ namespace FinalProject_PU
         }
         private void Back_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.fragment_main, new Settings())
-                                            .Commit();
+           
         }
     }
 }

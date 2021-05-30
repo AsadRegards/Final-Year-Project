@@ -30,14 +30,14 @@ namespace FinalProject_PU.Control
             
         }
 
-
+         
         public async  static void SendNotification(Model.Notification notif)
         {
             HttpClient client = new HttpClient();
             var uri = Account.BaseAddressUri + "/api/pushnotification/sendpushnotification";
             var json = JsonConvert.SerializeObject(notif);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(uri, null);
+            var response = await client.PostAsync(uri, content);
 
         }
 

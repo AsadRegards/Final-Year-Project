@@ -46,9 +46,7 @@ namespace FinalProject_PU
 
         private void Myads_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.fragment_main, new AdsFragmentSettings())
-                                            .Commit();
+            
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -61,15 +59,13 @@ namespace FinalProject_PU
 
         private void Notifications_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.fragment_main, new NotificationFragmentSettings())
-                                            .Commit();
+            
         }
 
         private void Accounts_Click(object sender, EventArgs e)
         {
             //click here to call accountsfragmentsettings
-            Activity.SupportFragmentManager.BeginTransaction().Replace(Resource.Id.fragment_main, new AccountFragmentSettings()).AddToBackStack("settings").Commit();
+            
 
         }
     }

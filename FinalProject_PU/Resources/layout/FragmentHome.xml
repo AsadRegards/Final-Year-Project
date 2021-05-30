@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <FrameLayout
+   <androidx.viewpager.widget.ViewPager
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:layout_above="@+id/navigation"
-       android:id="@+id/fragment_main"/>
+       android:id="@+id/viewPager1"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

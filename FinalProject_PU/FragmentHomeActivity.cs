@@ -6,6 +6,7 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using AndroidX.ViewPager.Widget;
 using FinalProject_PU.Control;
 using System;
 using System.Collections.Generic;
@@ -27,77 +28,69 @@ namespace FinalProject_PU
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        
-
-        
-        TextView textMessage;
-        static List<AndroidX.Fragment.App.Fragment> list1;
+        ViewPager viewPager;
+        BottomNavigationView Mnavigation;
+        //creating fragment instance
+        IssueFragment Home = new IssueFragment();
+        FundsFragment funds = new FundsFragment();
+        notificationfragment notification = new notificationfragment();
+        DirectionFragment direction = new DirectionFragment();
+        Settings settings = new Settings();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.FragmentHome);
+            ConnectViews();
 
-            list1 = new List<AndroidX.Fragment.App.Fragment>();
-
-            list1.Add(new IssueFragment());
-            list1.Add(new FundsFragment());
-            list1.Add(new notificationfragment());
-            list1.Add(new Settings());
-            list1.Add(new DirectionFragment());
-
-            SupportFragmentManager.BeginTransaction()
-                       .Replace(Resource.Id.fragment_main, list1[0])
-                       .Commit();
-
-
-            BottomNavigationView Mnavigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            Mnavigation.SetOnNavigationItemSelectedListener(this);
-            Mnavigation.ItemIconTintList = null;
-
-
-
-
+ 
         }
 
+        public void ConnectViews()
+        {
+            viewPager = FindViewById<ViewPager>(Resource.Id.viewPager1);
+            Mnavigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+            Mnavigation.SetOnNavigationItemSelectedListener(this);
+            viewPager.OffscreenPageLimit = 5;
+
+            SetupViewpager();
+            
+        }
+
+        private void SetupViewpager()
+        {
+            ViewPagerAdapter adapter = new ViewPagerAdapter(SupportFragmentManager);
+            adapter.AddFragment(Home, "Home");
+            adapter.AddFragment(funds, "Funds");
+            adapter.AddFragment(notification, "Notification");
+            adapter.AddFragment(direction, "Direction");
+            adapter.AddFragment(settings, "Settings");
+            viewPager.Adapter = adapter;
+
+        }
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
                 case Resource.Id.navigation_home:
-                    SupportFragmentManager.BeginTransaction()
-                       .Replace(Resource.Id.fragment_main, list1[0])
-                       .Commit();
+                    viewPager.SetCurrentItem(0, true);
                     return true;
                 case Resource.Id.navigation_funds:
-                    SupportFragmentManager.BeginTransaction()
-                       .Replace(Resource.Id.fragment_main, list1[1])
-                       .Commit();
+                    viewPager.SetCurrentItem(1, true);
                     return true;
                 case Resource.Id.navigation_notifications:
-                    SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[2])
-                      .Commit();
+                    viewPager.SetCurrentItem(2, true);
                     return true;
                 case Resource.Id.navigation_map:
-                    SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[4])
-                      .Commit();
+                    viewPager.SetCurrentItem(3, true);
                     return true;
                 case Resource.Id.navigation_settings:
-                    SupportFragmentManager.BeginTransaction()
-                      .Replace(Resource.Id.fragment_main, list1[3])
-                      .Commit();
+                    viewPager.SetCurrentItem(4, true);
                     return true;
-
-
-
-
 
             }
             return false;
         }
-
     }
 }

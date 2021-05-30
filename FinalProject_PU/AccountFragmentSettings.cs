@@ -60,33 +60,24 @@ namespace FinalProject_PU
         }
         private void Back_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                           .Replace(Resource.Id.fragment_main, new Settings(), "settings")
-                                           .Commit();
+            
         }
 
         
 
         private void ChangeUsername_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.fragment_main, new ChUsrname_fragmentsettings())
-                                            .Commit();
+           
         }
 
         private void Changeno_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.fragment_main, new ChPhno_fragmentSettings())
-                                            .Commit();
+            
         }
 
         private void ChangePass_Click(object sender, EventArgs e)
         {
-            Activity.SupportFragmentManager
-                .BeginTransaction()
-                .Replace(Resource.Id.fragment_main, new ChPass_fragmentSettings())
-                .Commit();
+            
         }
 
     }
