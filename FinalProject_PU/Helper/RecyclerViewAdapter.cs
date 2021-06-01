@@ -92,7 +92,7 @@ namespace FinalProject_PU.Helper
             byte[] arr0 = Convert.FromBase64String(lstData[position].IssueImage); //IssueImage
             Bitmap b0 = BitmapFactory.DecodeByteArray(arr0, 0, arr0.Length);
             viewHolder.imageview.SetImageBitmap(b0);
-            byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
+           byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
             Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             viewHolder.UserImage.SetImageBitmap(b1); //
             viewHolder.UserName.Text = lstData[position].UserName;

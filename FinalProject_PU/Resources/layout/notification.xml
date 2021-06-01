@@ -13,11 +13,17 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:id="@+id/tvNoti"/>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#3c46e4"
+            android:layout_marginTop="50dp"
+        android:id="@+id/imageView1"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView2"
-        android:layout_below="@id/tvNoti"
+        android:layout_below="@id/imageView1"
         
         android:scrollbars="vertical|none"
     />

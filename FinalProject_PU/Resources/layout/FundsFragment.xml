@@ -15,7 +15,7 @@
         android:id="@+id/tvNoti"/>
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="3dp"
             android:background="#3c46e4"
             android:layout_marginTop="50dp"/>
     <androidx.recyclerview.widget.RecyclerView

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0078e3">
+    android:background="#fff">
 
 
      <FrameLayout
@@ -20,60 +20,87 @@
      </FrameLayout>
 
      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#ffff"
-        android:drawableStart="@drawable/greendot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/loc1"
+        
         android:drawablePadding="2dp"
         android:minWidth="25px"
         
-        android:hint="Start Location"
+        
+        
         android:minHeight="25px"
-        android:id="@+id/materialTextView1" />
+        android:id="@+id/materialTextView4" />
 
      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/materialTextView1"
-        android:background="#ffff"
-        android:text="Destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:drawableStart="@drawable/radiobg"
+        
+        android:maxLines="3"
+        
+        
+        android:background="@drawable/loc3"
+        
         android:minWidth="25px"
         android:minHeight="25px"
-        android:drawableStart="@drawable/reddot1"
+        
+        android:drawablePadding="2dp"
+        android:id="@+id/materialTextView3" />
+         <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:drawableStart="@drawable/radiobg"
+        android:hint="Destination"
+        android:maxLines="3"
+        android:layout_marginEnd="60dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:drawablePadding="2dp"
         android:id="@+id/materialTextView2" />
+             <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/radiobg"
+        android:hint="Start Location"
+        android:maxLines="3"
+        android:layout_marginEnd="60dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:drawablePadding="2dp"
+        android:id="@+id/materialTextView1" />
 
-    <Button
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/pinid"
-        android:background="@drawable/locationpointnew"
-        />
-
+    
    <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="23dp"        
-        android:id="@+id/radioButton1" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:paddingRight="20dp"
+        android:id="@+id/radioButton1"
+        />
 
     <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="18dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:paddingRight="20dp"
+        
         android:layout_below="@+id/radioButton1"
         android:id="@+id/radioButton2" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
         android:text="GET DIRECTION"
+        android:background="@drawable/fundsbgnew"
         android:id="@+id/getdirection"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"

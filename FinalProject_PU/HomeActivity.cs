@@ -26,8 +26,8 @@ namespace FinalProject_PU.Model
         private RecyclerViewAdapter adapter;
         private RecyclerView.LayoutManager layoutManager;
         private List<Data> lstData = new List<Data>();
-       
-       
+
+
         protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -51,34 +51,15 @@ namespace FinalProject_PU.Model
             imgwriteIssue = (ImageView)FindViewById(Resource.Id.imgwriteIssue);
             imgwriteIssue.Click += delegate
              {
-                 var i = new Intent(this,typeof(CreateIssue));
+                 var i = new Intent(this, typeof(CreateIssue));
                  this.StartActivity(i);
              };
-            CircleImageView img = FindViewById<CircleImageView>(Resource.Id.circleImageView1);
-            Android.Graphics.Bitmap bitmap =BitmapFactory.DecodeByteArray(arr,0,arr.Length);
-            img.SetImageBitmap(bitmap);
+            //       CircleImageView img = FindViewById<CircleImageView>(Resource.Id.circleImageView1);
+            //     Android.Graphics.Bitmap bitmap =BitmapFactory.DecodeByteArray(arr,0,arr.Length);
+            //   img.SetImageBitmap(bitmap);
 
-          
 
-            iconfunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconfunds.Click += Iconfunds_Click;
-
-            notifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            notifications.Click += Notifications_Click;
-
-            map = (ImageView)FindViewById(Resource.Id.iconMap);
-            map.Click += Map_Click;
-
-            setting = (ImageView)FindViewById(Resource.Id.iconSettings);
-            setting.Click += Setting_Click;
         }
-
-        private void Iconfunds_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
-        }
-
 
         private async Task<List<Data>> InitData()
         {
@@ -98,22 +79,6 @@ namespace FinalProject_PU.Model
 
 
         }
-        private void Setting_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
-
-        private void Map_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
-
-        private void Notifications_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
-        }
+        
     }
 }
