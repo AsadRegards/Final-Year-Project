@@ -14,41 +14,31 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    public class AccountFragmentSettings : AndroidX.Fragment.App.Fragment
+
+    [Activity(Label = "AccountFragmentSettings")]
+    public class AccountFragmentSettings : Activity
     {
         ImageView ChangePass, Changeno, ChangeUsername, back;
         private TextView Username;
         private CircleImageView user_image;
 
-        public override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-           
+            SetContentView(Resource.Layout.Accounts);
             // Create your application here
-
-            
-        }
-
-        
-
-        public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-
-            var rootview = inflater.Inflate(Resource.Layout.Accounts, container, false);
-            ChangePass = (ImageView)rootview.FindViewById(Resource.Id.imgchangepass);
+            ChangePass = (ImageView)FindViewById(Resource.Id.imgchangepass);
             ChangePass.Click += ChangePass_Click;
-            Changeno = (ImageView)rootview.FindViewById(Resource.Id.imgchangeno);
+            Changeno = (ImageView)FindViewById(Resource.Id.imgchangeno);
             Changeno.Click += Changeno_Click;
-            ChangeUsername = (ImageView)rootview.FindViewById(Resource.Id.imgchangeusername);
+            ChangeUsername = (ImageView)FindViewById(Resource.Id.imgchangeusername);
             ChangeUsername.Click += ChangeUsername_Click;
-            back = (ImageView)rootview.FindViewById(Resource.Id.imgbackgo);
+            back = (ImageView)FindViewById(Resource.Id.imgbackgo);
             back.Click += Back_Click;
 
             //UserName and Profile Pic
-            Username = (TextView)rootview.FindViewById(Resource.Id.username); //User Name
-            user_image = (CircleImageView)rootview.FindViewById(Resource.Id.usericon);  //user profile pic
+            Username = (TextView)FindViewById(Resource.Id.username); //User Name
+            user_image = (CircleImageView)FindViewById(Resource.Id.usericon);  //user profile pic
             //Fetching user profile and name from UserInfoHolder
             Username.Text = Control.UserInfoHolder.User_name;
             byte[] arr = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
@@ -56,28 +46,37 @@ namespace FinalProject_PU
             user_image.SetImageBitmap(UserImageBitmap);
             //
 
-            return rootview;
-        }
-        private void Back_Click(object sender, EventArgs e)
-        {
-            
+
         }
 
-        
+
+
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+            this.Finish();
+        }
+
+
 
         private void ChangeUsername_Click(object sender, EventArgs e)
         {
-           
+            var intent = new Intent(this, typeof(ChUsrname_fragmentsettings));
+            StartActivity(intent);
+
         }
 
         private void Changeno_Click(object sender, EventArgs e)
         {
-            
+            var intent = new Intent(this, typeof(ChPhno_fragmentSettings));
+            StartActivity(intent);
         }
 
         private void ChangePass_Click(object sender, EventArgs e)
         {
-            
+            var intent = new Intent(this, typeof(ChPass_fragmentSettings));
+            StartActivity(intent);
         }
 
     }

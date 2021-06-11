@@ -14,7 +14,8 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    public class ChPass_fragmentSettings : AndroidX.Fragment.App.Fragment
+    [Activity(Label = "ChPass_fragmentSettings")]
+    public class ChPass_fragmentSettings : Activity
     {
         TextView Username;
         ImageView back, submit;
@@ -22,41 +23,32 @@ namespace FinalProject_PU
         EditText edtCurrentPass, edtNewPass, edtConfrimPass;
         //CircleImageView userimage;
 
-        public override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
-        }
-
-        public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-
-            var rootview = inflater.Inflate(Resource.Layout.ChangePass, container, false);
-            back = (ImageView)rootview.FindViewById(Resource.Id.imgbackgo);
+            SetContentView(Resource.Layout.ChangePass);
+            back = (ImageView)FindViewById(Resource.Id.imgbackgo);
             back.Click += Back_Click;
-            edtCurrentPass = (EditText)rootview.FindViewById(Resource.Id.edtCurrentPass);
-            edtNewPass = (EditText)rootview.FindViewById(Resource.Id.edtNewPass);
-            edtConfrimPass = (EditText)rootview.FindViewById(Resource.Id.edtConfirmPass);
-            submit = (ImageView)rootview.FindViewById(Resource.Id.imgsubmitt);
+            edtCurrentPass = (EditText)FindViewById(Resource.Id.edtCurrentPass);
+            edtNewPass = (EditText)FindViewById(Resource.Id.edtNewPass);
+            edtConfrimPass = (EditText)FindViewById(Resource.Id.edtConfirmPass);
+            submit = (ImageView)FindViewById(Resource.Id.imgsubmitt);
             submit.Click += Submit_Click;
 
             //UserName and Profile Pic
-            Username = (TextView)rootview.FindViewById(Resource.Id.username); //User Name
-            user_image = (CircleImageView)rootview.FindViewById(Resource.Id.usericon);  //user profile pic
+            Username = (TextView)FindViewById(Resource.Id.username); //User Name
+            user_image = (CircleImageView)FindViewById(Resource.Id.usericon);  //user profile pic
             //Fetching user profile and name from UserInfoHolder
             Username.Text = Control.UserInfoHolder.User_name;
             byte[] arr = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
             Bitmap UserImageBitmap = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
             user_image.SetImageBitmap(UserImageBitmap);
             //
-
-
-            return rootview;
-
         }
+
+    
 
         private async void Submit_Click(object sender, EventArgs e)
         {
@@ -69,7 +61,8 @@ namespace FinalProject_PU
 
         private void Back_Click(object sender, EventArgs e)
         {
-            
+            base.OnBackPressed();
+            this.Finish();
         }
     }
 }

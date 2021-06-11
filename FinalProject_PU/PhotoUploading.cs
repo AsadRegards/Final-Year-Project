@@ -95,8 +95,8 @@ namespace FinalProject_PU
 
             var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
-                CompressionQuality = 40
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Custom,
+                CompressionQuality = 80
 
             });
 

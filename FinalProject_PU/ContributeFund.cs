@@ -72,7 +72,7 @@ namespace FinalProject_PU
             catch (Exception)
             {
 
-                throw;
+                
             }
 
         }
@@ -94,7 +94,7 @@ namespace FinalProject_PU
             catch (Exception)
             {
 
-                throw;
+                
             }
 
         }
@@ -116,7 +116,7 @@ namespace FinalProject_PU
             catch (Exception)
             {
 
-                throw;
+                
             }
     
         }

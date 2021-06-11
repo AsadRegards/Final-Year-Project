@@ -126,6 +126,11 @@ namespace FinalProject_PU
             if(AllSet)
             {
                 Control.Payment_Integration payment = new Control.Payment_Integration(CardNo.Text, Cvc.Text, ExpDateYear.Text, ExpDateMonth.Text, Amount.Text);
+                Android.App.AlertDialog.Builder dialogue = new AlertDialog.Builder(this);
+                AlertDialog alert = dialogue.Create();
+                alert.SetTitle("Transaction in process");
+                alert.SetMessage("Please wait while your transaction is being processed...");
+                alert.Show();
                 if (payment.StripePay(this))
                 {
                     Model.funds funds = new Model.funds();
@@ -135,14 +140,21 @@ namespace FinalProject_PU
                     funds.fund_date = DateTime.Now;
                     funds.postnewfund(funds);
                     Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-                    AlertDialog alert = dialog.Create();
-                    alert.SetTitle("Payment Information");
-                    alert.SetMessage("Payment Succesfull");
-                    alert.SetButton("OK", (c, ev) =>
+                    AlertDialog alert1 = dialog.Create();
+                    alert.Dismiss();
+                    alert1.SetTitle("Payment Information");
+                    alert1.SetMessage("Payment Succesfull");
+                    alert1.SetButton("OK", (c, ev) =>
                     {
-                        alert.Dismiss();
+                        alert1.Dismiss();
                     });
-                    alert.Show();
+                    alert1.Show();
+                }
+                else
+                {
+            
+                    Toast.MakeText(this, "Payment Declined", ToastLength.Long).Show();
+                    alert.Dismiss();
                 }
             }
             }

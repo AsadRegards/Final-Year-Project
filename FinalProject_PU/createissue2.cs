@@ -258,10 +258,25 @@ namespace FinalProject_PU
             
         }
 
-        private void Next_imga2_Click(object sender, EventArgs e)
+        private async void Next_imga2_Click(object sender, EventArgs e)
         {
-
-            IssueOper.ProceedToIssueActivity(selected, this, base64image);
+            if(await new ImageModeration().IsValidImage(base64image))
+            {
+                IssueOper.ProceedToIssueActivity(selected, this, base64image);
+            }
+            else
+            {
+                Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                AlertDialog alert1 = dialog.Create();
+                alert1.SetButton("OK", (c, ev) =>
+                {
+                    alert1.Dismiss();
+                });
+                alert1.SetTitle("Wrong Image");
+                alert1.SetMessage("The image you are trying to post does not relate to this issue. Please upload correct picture");
+                alert1.Show();
+            }
+            
         }
 
       

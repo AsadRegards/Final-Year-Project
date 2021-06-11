@@ -37,34 +37,46 @@ namespace FinalProject_PU
             myads = (ImageView)rootview.FindViewById(Resource.Id.imgviewmyads);
             myads.Click += Myads_Click;
             payments = (ImageView)rootview.FindViewById(Resource.Id.imgpayments);
-            
+            payments.Click += Payments_Click;
             
             return rootview;
         }
 
-        
+        private void Payments_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(Application.Context, typeof(ContributeFund));
+            Application.Context.StartActivity(intent);
+
+        }
 
         private void Myads_Click(object sender, EventArgs e)
         {
-            
+            var intent = new Intent(Application.Context, typeof(MyAdsFragmentSettings));
+            Application.Context.StartActivity(intent);
+
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            //Logout work will be done here
-            //app will be directed to login screen
-            //shared preferences will be cleared
-           //userinfoholder will be cleared
+            Control.UserInfoHolder.DisposeUserinfo();
+            var intent = new Intent(Application.Context, typeof(Login));
+            Activity.StartActivity(intent);
+            Application.Context.DeleteSharedPreferences("tokenfile");
+            this.Activity.Finish();
+
+
         }
 
         private void Notifications_Click(object sender, EventArgs e)
         {
-            
+            var intent = new Intent(Application.Context, typeof(notificationfragment));
+            Application.Context.StartActivity(intent);
         }
 
         private void Accounts_Click(object sender, EventArgs e)
         {
-            //click here to call accountsfragmentsettings
+            var intent = new Intent(Application.Context, typeof(AccountFragmentSettings));
+            Application.Context.StartActivity(intent);
             
 
         }
