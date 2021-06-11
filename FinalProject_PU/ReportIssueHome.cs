@@ -68,7 +68,10 @@ namespace FinalProject_PU
             tvIssueType = (TextView)FindViewById(Resource.Id.tvIssueType);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tvIssueType.SetTypeface(tf, TypefaceStyle.Bold);
-            
+            textheadi= (TextView)FindViewById(Resource.Id.txtHeadi);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            textheadi.SetTypeface(tf, TypefaceStyle.Bold);
+
             issueData = JsonConvert.DeserializeObject<Helper.Data>(Intent.GetStringExtra("issueobj"));
            
 

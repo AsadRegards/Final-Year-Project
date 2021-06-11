@@ -63,9 +63,9 @@ namespace FinalProject_PU
                 var i = new Intent(Application.Context, typeof(CreateIssue));
                 this.StartActivity(i);
             };
-            CircleImageView img = RootView.FindViewById<CircleImageView>(Resource.Id.circleImageView1);
-            Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
-            img.SetImageBitmap(bitmap);
+            //CircleImageView img = RootView.FindViewById<CircleImageView>(Resource.Id.circleImageView1);
+            //Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
+            //img.SetImageBitmap(bitmap);
 
             return RootView;
 

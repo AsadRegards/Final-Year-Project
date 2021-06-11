@@ -33,28 +33,20 @@
             android:id="@+id/textViewHome"/>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="3dp"
             android:background="#3c46e4"
             android:layout_marginTop="50dp"/>
-    <ImageView
-        android:src="@drawable/groupissue"
-        android:layout_width="343dp"
-        android:layout_height="92dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:id="@+id/imgwriteIssue" />
-
-    <Refractored.Controls.CircleImageView
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginStart="60dp"
-        android:src="@drawable/iconsss"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#ffffff"
-        android:id="@+id/circleImageView1"
+ 
+        <ImageView
+            android:src="@drawable/postissuebtn"
+            android:layout_width="147dp"
+            android:layout_height="42dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:paddingRight="5dp"
+            android:id="@+id/imgwriteIssue"
         />
-
+        
 
            
 

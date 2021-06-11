@@ -883,6 +883,11 @@
     <AndroidResource Include="Resources\drawable\PayNow.png" />
     <AndroidResource Include="Resources\drawable\Refresh.png" />
     <AndroidResource Include="Resources\drawable\Refresh2.png" />
+    <AndroidResource Include="Resources\drawable\LOC2.png" />
+    <AndroidResource Include="Resources\drawable\POSTISSUEBTN.png" />
+    <AndroidResource Include="Resources\drawable\LOC1.png" />
+    <AndroidResource Include="Resources\drawable\RadioBg.png" />
+    <AndroidResource Include="Resources\drawable\LOC3.png" />
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />

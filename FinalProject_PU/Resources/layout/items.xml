@@ -22,10 +22,10 @@
 
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
             android:src="@drawable/pothole1"
-            android:layout_width="265dp"
-            android:layout_height="187dp"          
+            android:layout_width="285dp"
+            android:layout_height="237dp"          
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="70dp"
             android:id="@+id/imgIssue"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -34,10 +34,10 @@
             />
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="265dp"
-            android:layout_height="187dp"
+            android:layout_width="285dp"
+            android:layout_height="237dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="70dp"
             android:visibility="visible"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -51,9 +51,9 @@
 
         <ImageView
             android:src="@drawable/belowbg"
-            android:layout_width="265dp"
-            android:layout_height="251dp"
-            android:layout_marginTop="313dp"
+            android:layout_width="285dp"
+            android:layout_height="301dp"
+            android:layout_marginTop="260dp"
             android:layout_centerHorizontal="true"
             android:id="@+id/imgbelowPath"
          />
@@ -61,7 +61,7 @@
             android:src="@drawable/profile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="300dp"
             android:layout_marginStart="50dp"
             android:id="@+id/imgProfile"
          />
@@ -72,10 +72,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgIssue"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imgProfile"
             android:textSize="15dp"
             android:textColor="#fff"
-            android:textStyle="normal"
+            android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:id="@+id/tvname" />
 
@@ -84,10 +86,11 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgIssue"
-            android:layout_marginEnd="70dp"
+            android:layout_below="@id/tvname"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
             android:textSize="10dp"
-            android:layout_alignParentEnd="true"
             android:textColor="#fff"
             android:textStyle="normal"
             android:id="@+id/tvtime" />
@@ -95,7 +98,7 @@
 
 
         <TextView
-            android:text="Open Road Spill"
+            android:text="Open Road Spill not filled with water near Gulshan e Iqbal"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,10 +106,12 @@
             android:textSize="15sp"
             android:fontFamily="serif"
             android:maxLines="3"
-            android:layout_marginTop="45dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="40dp"
+            
             android:textColor="#fff"
+            
             android:textStyle="normal"
             android:id="@+id/tvinfo" />
         <ImageView
@@ -115,7 +120,7 @@
             android:src="@drawable/icnstatushome2"
             android:layout_below="@id/tvinfo"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/ViewStatus"/>
         <TextView
             android:text="View Status"
@@ -127,7 +132,7 @@
              android:maxLines="2"
             android:layout_marginStart="55dp"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="12dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:layout_marginTop="5dp"
@@ -139,7 +144,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewStatus"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/ViewOnMap"/>
         <TextView
             android:text="View On Map"
@@ -152,7 +157,7 @@
              android:maxLines="2"
            android:layout_marginStart="8dp" 
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="12dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:layout_marginTop="5dp"
@@ -164,7 +169,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewOnMap"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/Report"/>
                 <TextView
             android:text="Report"
@@ -176,7 +181,7 @@
             android:layout_toRightOf="@id/ViewOnMap"
             android:layout_marginStart="10dp"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="12dp"
             android:layout_marginTop="5dp"
             android:textColor="#fff"
             android:textStyle="normal"
@@ -188,7 +193,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/Report"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/ContributeHome"/>
         <TextView
             android:text="Fund"
@@ -201,7 +206,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="12dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:id="@+id/tvContribute" />
@@ -212,7 +217,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ContributeHome"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:id="@+id/GoLast"/>
                 <TextView
             android:text="Refresh"
@@ -224,7 +229,7 @@
             android:layout_toRightOf="@id/ContributeHome"
             android:layout_marginStart="15dp"
             android:textAlignment="center"
-            android:textSize="10dp"
+            android:textSize="12dp"
             android:textColor="#fff"
             android:textStyle="normal"
             android:id="@+id/tvGoLast" />
