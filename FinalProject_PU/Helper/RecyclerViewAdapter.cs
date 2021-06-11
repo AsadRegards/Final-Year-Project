@@ -41,8 +41,16 @@ namespace FinalProject_PU.Helper
             Contribute = itemView.FindViewById<ImageView>(Resource.Id.ContributeHome);
             Report = itemView.FindViewById<ImageView>(Resource.Id.Report);
             GoLast = itemView.FindViewById<ImageView>(Resource.Id.GoLast);
-            
-            
+
+            //fake items from notificationitems.xml to replace with adsitems.xml
+            UserImage = itemView.FindViewById<CircleImageView>(Resource.Id.userimage);
+            UserName = itemView.FindViewById<TextView>(Resource.Id.username);
+            IssueDate = itemView.FindViewById<TextView>(Resource.Id.date);
+            IssueStatement = itemView.FindViewById<MultiAutoCompleteTextView>(Resource.Id.description);
+            //end of fake items
+
+
+
 
             //beauttification
 
@@ -92,7 +100,7 @@ namespace FinalProject_PU.Helper
             byte[] arr0 = Convert.FromBase64String(lstData[position].IssueImage); //IssueImage
             Bitmap b0 = BitmapFactory.DecodeByteArray(arr0, 0, arr0.Length);
             viewHolder.imageview.SetImageBitmap(b0);
-           byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
+            byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
             Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             viewHolder.UserImage.SetImageBitmap(b1); //
             viewHolder.UserName.Text = lstData[position].UserName;
@@ -123,7 +131,17 @@ namespace FinalProject_PU.Helper
             };
         }
 
-     
+
+        public override int GetItemViewType(int position)
+        {
+            if(position % 6 == 0)
+            {
+                return 0; //return AD_TYPE
+            }
+            return 1; //return VIEW_TYPE
+        }
+
+
         private void GoLast_Click(object sender, EventArgs e, int position)
         {
             mrecyclerView.SmoothScrollToPosition(0);
@@ -166,9 +184,21 @@ namespace FinalProject_PU.Helper
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            LayoutInflater inflater = LayoutInflater.From(parent.Context);
-            Android.Views.View itemView = inflater.Inflate(Resource.Layout.items, parent, false);
-            return new RecyclerViewHolder(itemView);
+            if(viewType==0)
+            {
+                LayoutInflater inflater = LayoutInflater.From(parent.Context);
+                //TO CHANGE WITH LAYOUT FOR ADS SHOWING
+
+                Android.Views.View itemView = inflater.Inflate(Resource.Layout.Notification_items, parent, false);
+                return new RecyclerViewHolder(itemView);
+            }
+            else
+            {
+                LayoutInflater inflater = LayoutInflater.From(parent.Context);
+                Android.Views.View itemView = inflater.Inflate(Resource.Layout.items, parent, false);
+                return new RecyclerViewHolder(itemView);
+            }
+           
         }
     }
 }
