@@ -51,7 +51,7 @@ namespace FinalProject_PU
 
         private void Myads_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(Application.Context, typeof(MyAdsFragmentSettings));
+            var intent = new Intent(Application.Context, typeof(AdsFragmentSettings));
             Application.Context.StartActivity(intent);
 
         }

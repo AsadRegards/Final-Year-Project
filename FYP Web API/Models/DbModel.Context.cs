@@ -25,7 +25,6 @@ namespace FYP_Web_API.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ad_table> ad_table { get; set; }
         public virtual DbSet<admin_table> admin_table { get; set; }
         public virtual DbSet<AssignedByAdmin> AssignedByAdmin { get; set; }
         public virtual DbSet<FCM_TOKEN> FCM_TOKEN { get; set; }
@@ -39,5 +38,6 @@ namespace FYP_Web_API.Models
         public virtual DbSet<Volunteer_table> Volunteer_table { get; set; }
         public virtual DbSet<PaymentMethodInfo> PaymentMethodInfo { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<ad_table> ad_table { get; set; }
     }
 }

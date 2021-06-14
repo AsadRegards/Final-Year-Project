@@ -32,6 +32,8 @@ namespace FinalProject_PU
         private RecyclerViewAdapter adapter;
         private RecyclerView.LayoutManager layoutManager;
         private static List<Data> lstData = new List<Data>();
+        private static List<AdsData> lstAdData = new List<AdsData>();
+
 
        
 
@@ -76,8 +78,9 @@ namespace FinalProject_PU
         {
             base.OnActivityCreated(savedInstanceState);
             lstData = await InitData();
+            lstAdData = await InitAds();
             lstData.Reverse();
-            adapter = new RecyclerViewAdapter(lstData);
+            adapter = new RecyclerViewAdapter(lstData,lstAdData);
             recycler.SetAdapter(adapter);
             
 
@@ -88,6 +91,11 @@ namespace FinalProject_PU
         private async Task<List<Helper.Data>> InitData()
         {
             return await IssueController.FetchPostList();
+        }
+
+        private async Task<List<AdsData>> InitAds()
+        {
+            return await AdsData.GetAllAds();
         }
     }
 }

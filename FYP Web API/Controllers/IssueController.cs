@@ -98,6 +98,15 @@ namespace FYP_Web_API.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, "accepted");
         }
 
+        [HttpGet]
+        [ActionName("fetchallads")]
+        public HttpResponseMessage fetchallads()
+        {
+            var list = dbe.ad_table.ToList();
+
+            return Request.CreateResponse(HttpStatusCode.Accepted, list);
+        }
+
     }
        
 }

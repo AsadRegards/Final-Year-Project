@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="97c9e49efb3945e695d4eb24fe363cc4" Name="Diagram1">
-        <EntityTypeShape EntityType="problemupdatedbModel1.ad_table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel1.admin_table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel1.AssignedByAdmin" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="problemupdatedbModel1.FCM_TOKEN" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -30,6 +29,7 @@
         <AssociationConnector Association="problemupdatedbModel1.FK_report_table_issue_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel1.FK_nearby_user_table_nearby_user_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel1.FK_report_table_user_table" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="problemupdatedbModel1.ad_table" Width="1.5" PointX="0.875" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

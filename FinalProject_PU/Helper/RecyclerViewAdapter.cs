@@ -25,6 +25,12 @@ namespace FinalProject_PU.Helper
         public ImageView Contribute { get; set; }
         public ImageView ViewOnMap { get; set; }
 
+        //Ads Items
+        public ImageView Ad_image { get; set; }
+        public TextView Ad_Title { get; set; }
+        public TextView Ad_text { get; set; }
+        public ImageView Ad_button { get; set; }
+
 
         Android.Graphics.Typeface tf;
         //
@@ -42,12 +48,11 @@ namespace FinalProject_PU.Helper
             Report = itemView.FindViewById<ImageView>(Resource.Id.Report);
             GoLast = itemView.FindViewById<ImageView>(Resource.Id.GoLast);
 
-            //fake items from notificationitems.xml to replace with adsitems.xml
-            UserImage = itemView.FindViewById<CircleImageView>(Resource.Id.userimage);
-            UserName = itemView.FindViewById<TextView>(Resource.Id.username);
-            IssueDate = itemView.FindViewById<TextView>(Resource.Id.date);
-            IssueStatement = itemView.FindViewById<MultiAutoCompleteTextView>(Resource.Id.description);
-            //end of fake items
+            //items from AdItems.xml
+            Ad_image = itemView.FindViewById<ImageView>(Resource.Id.imgIssue);
+            Ad_Title = itemView.FindViewById<TextView>(Resource.Id.adtitle);
+            Ad_text = itemView.FindViewById<TextView>(Resource.Id.adtext);
+            Ad_button = itemView.FindViewById<ImageView>(Resource.Id.adgoButton);
 
 
 
@@ -71,10 +76,13 @@ namespace FinalProject_PU.Helper
     class RecyclerViewAdapter : RecyclerView.Adapter
     {
         private List<Data> lstData = new List<Data>();
+        private List<AdsData> lstAdsData = new List<AdsData>();
 
-        public RecyclerViewAdapter(List<Data> lstData)
+        public RecyclerViewAdapter(List<Data> lstData, List<AdsData> lstAdsData)
         {
             this.lstData = lstData;
+            this.lstAdsData = lstAdsData;
+            
         }
 
         
@@ -94,47 +102,91 @@ namespace FinalProject_PU.Helper
             
             
         }
+
+
+        int AdPosition = 0;
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
-            byte[] arr0 = Convert.FromBase64String(lstData[position].IssueImage); //IssueImage
-            Bitmap b0 = BitmapFactory.DecodeByteArray(arr0, 0, arr0.Length);
-            viewHolder.imageview.SetImageBitmap(b0);
-            byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
-            Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
-            viewHolder.UserImage.SetImageBitmap(b1); //
-            viewHolder.UserName.Text = lstData[position].UserName;
-            viewHolder.IssueDate.Text = lstData[position].ElevatedDays;
-            viewHolder.IssueStatement.Text = lstData[position].IssueStatement;
-            viewHolder.IssueDate.Text = lstData[position].GetElevatedDates();
             
-            viewHolder.ViewStatus.Click += (sender, EventArgs) => 
+            if(position==0 || position%6!=0)
             {
-                ViewStatus_Click(sender, EventArgs, position);
-            };
-            viewHolder.ViewOnMap.Click += (sender, EventArgs) =>
+                RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
+                byte[] arr0 = Convert.FromBase64String(lstData[position].IssueImage); //IssueImage
+                Bitmap b0 = BitmapFactory.DecodeByteArray(arr0, 0, arr0.Length);
+                viewHolder.imageview.SetImageBitmap(b0);
+                byte[] arr1 = Convert.FromBase64String(lstData[position].UserImage); //UserImage
+                Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
+                viewHolder.UserImage.SetImageBitmap(b1); //
+                viewHolder.UserName.Text = lstData[position].UserName;
+                viewHolder.IssueDate.Text = lstData[position].ElevatedDays;
+                viewHolder.IssueStatement.Text = lstData[position].IssueStatement;
+                viewHolder.IssueDate.Text = lstData[position].GetElevatedDates();
+
+                viewHolder.ViewStatus.Click += (sender, EventArgs) =>
+                {
+                    ViewStatus_Click(sender, EventArgs, position);
+                };
+                viewHolder.ViewOnMap.Click += (sender, EventArgs) =>
+                {
+                    ViewOnMap_Click(sender, EventArgs, position);
+                };
+                viewHolder.Contribute.Click += (sender, EventArgs) =>
+                {
+                    Contribute_Click(sender, EventArgs, position);
+                };
+                viewHolder.Report.Click += (sender, EventArgs) =>
+                {
+                    Report_Click(sender, EventArgs, position);
+                };
+                viewHolder.GoLast.Click += (sender, EventArgs) =>
+                {
+                    GoLast_Click(sender, EventArgs, position);
+
+                };
+            }
+            else
             {
-                ViewOnMap_Click(sender, EventArgs, position);
-            };
-            viewHolder.Contribute.Click += (sender, EventArgs) =>
-            {
-                Contribute_Click(sender, EventArgs, position);
-            };
-            viewHolder.Report.Click += (sender, EventArgs) => 
-            {
-                Report_Click(sender, EventArgs, position);
-            };
-            viewHolder.GoLast.Click += (sender, EventArgs) => 
-            {
-                GoLast_Click(sender, EventArgs, position);
-                
-            };
+                try
+                {
+                    if(AdPosition < lstAdsData.Count)
+                    {
+                        RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
+                        byte[] arr = Convert.FromBase64String(lstAdsData[AdPosition].Adsimage);
+                        Bitmap bitmap = BitmapFactory.DecodeByteArray(arr, 0, arr.Length);
+                        viewHolder.Ad_image.SetImageBitmap(bitmap);
+                        char[] title = lstAdsData[AdPosition].Adstitle.ToCharArray();
+                        viewHolder.Ad_Title.SetText(title, 0, title.Length);
+                        char[] text = lstAdsData[AdPosition].Adstext.ToCharArray();
+                        viewHolder.Ad_text.SetText(text, 0, text.Length);
+                        
+                        viewHolder.Ad_button.Click += (sender, EventArgs) =>
+                        {
+                            Adbutton_Click(sender, EventArgs, AdPosition);
+                        };
+                        AdPosition += 1;
+                    }
+                   
+                }
+                catch(Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("EXCEPTION::"+ex.ToString());
+                }
+               
+
+            }
+
         }
 
+        private void Adbutton_Click(object sender, EventArgs eventArgs, int adPosition)
+        {
+            var uri = Android.Net.Uri.Parse(lstAdsData[adPosition].websitelink);
+            var intent = new Intent(Intent.ActionView, uri);
+            Application.Context.StartActivity(intent);
+        }
 
         public override int GetItemViewType(int position)
         {
-            if(position % 6 == 0)
+            if(position % 6 == 0 && position!=0)
             {
                 return 0; //return AD_TYPE
             }
@@ -189,7 +241,7 @@ namespace FinalProject_PU.Helper
                 LayoutInflater inflater = LayoutInflater.From(parent.Context);
                 //TO CHANGE WITH LAYOUT FOR ADS SHOWING
 
-                Android.Views.View itemView = inflater.Inflate(Resource.Layout.Notification_items, parent, false);
+                Android.Views.View itemView = inflater.Inflate(Resource.Layout.AdItems, parent, false);
                 return new RecyclerViewHolder(itemView);
             }
             else

@@ -15,9 +15,9 @@ namespace FYP_Web_API.Models
     public partial class ad_table
     {
         public int advertisment_id { get; set; }
-        public string advertisement_name { get; set; }
-        public string advertisemnet_description { get; set; }
-        public string advertisement_link { get; set; }
-        public string advertisement_image { get; set; }
+        public string Adstitle { get; set; }
+        public string Adstext { get; set; }
+        public string websitelink { get; set; }
+        public string Adsimage { get; set; }
     }
 }

@@ -21,6 +21,8 @@ namespace FinalProject_PU
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Ads);
+           
 
             // Create your fragment here
             back = (ImageView)FindViewById(Resource.Id.imgbackgo);
@@ -38,7 +40,8 @@ namespace FinalProject_PU
 
         private void CrtNewAd_Click(object sender, EventArgs e)
         {
-
+            var intent = new Intent(Application.Context, typeof(MyAdsFragmentSettings));
+            StartActivity(intent);
         }
 
         private void ManageAds_Click(object sender, EventArgs e)

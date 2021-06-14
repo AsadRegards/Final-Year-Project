@@ -43,7 +43,7 @@ namespace FinalProject_PU.Model
             //  layoutManager = new LinearLayoutManager(this);
             layoutManager = new GridLayoutManager(this, 1, GridLayoutManager.Horizontal, false);
             recycler.SetLayoutManager(layoutManager);
-            adapter = new RecyclerViewAdapter(lstData);
+            adapter = new RecyclerViewAdapter(lstData,new List<AdsData>());
             recycler.SetAdapter(adapter);
 
             byte[] arr = Convert.FromBase64String(UserInfoHolder.Profile_pic);

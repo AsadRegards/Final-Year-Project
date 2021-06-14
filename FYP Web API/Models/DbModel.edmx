@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="problemupdatedbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="problemupdatedbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ad_table">
           <Key>
             <PropertyRef Name="advertisment_id" />
           </Key>
           <Property Name="advertisment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="advertisement_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="advertisemnet_description" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="advertisement_link" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="advertisement_image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Adstitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adstext" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="websitelink" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adsimage" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="admin_table">
           <Key>
@@ -390,21 +390,10 @@ warning 6002: The table/view 'problemupdatedb.sys.database_firewall_rules' does 
             <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="problemupdatedbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ad_table">
-          <Key>
-            <PropertyRef Name="advertisment_id" />
-          </Key>
-          <Property Name="advertisment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="advertisement_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="advertisemnet_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="advertisement_link" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="advertisement_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="admin_table">
           <Key>
             <PropertyRef Name="admin_id" />
@@ -721,7 +710,6 @@ warning 6002: The table/view 'problemupdatedb.sys.database_firewall_rules' does 
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="problemupdatedbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ad_table" EntityType="Self.ad_table" />
           <EntitySet Name="admin_table" EntityType="Self.admin_table" />
           <EntitySet Name="AssignedByAdmin" EntityType="Self.AssignedByAdmin" />
           <EntitySet Name="FCM_TOKEN" EntityType="Self.FCM_TOKEN" />
@@ -779,24 +767,24 @@ warning 6002: The table/view 'problemupdatedb.sys.database_firewall_rules' does 
             <End Role="user_table" EntitySet="user_table" />
             <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
+          <EntitySet Name="ad_table" EntityType="problemupdatedbModel1.ad_table" />
         </EntityContainer>
+        <EntityType Name="ad_table">
+          <Key>
+            <PropertyRef Name="advertisment_id" />
+          </Key>
+          <Property Name="advertisment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adstitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adstext" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="websitelink" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adsimage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="problemupdatedbModel1StoreContainer" CdmEntityContainer="problemupdatedbEntities">
-          <EntitySetMapping Name="ad_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.ad_table">
-              <MappingFragment StoreEntitySet="ad_table">
-                <ScalarProperty Name="advertisment_id" ColumnName="advertisment_id" />
-                <ScalarProperty Name="advertisement_name" ColumnName="advertisement_name" />
-                <ScalarProperty Name="advertisemnet_description" ColumnName="advertisemnet_description" />
-                <ScalarProperty Name="advertisement_link" ColumnName="advertisement_link" />
-                <ScalarProperty Name="advertisement_image" ColumnName="advertisement_image" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="admin_table">
             <EntityTypeMapping TypeName="problemupdatedbModel1.admin_table">
               <MappingFragment StoreEntitySet="admin_table">
@@ -958,6 +946,17 @@ warning 6002: The table/view 'problemupdatedb.sys.database_firewall_rules' does 
                 <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
                 <ScalarProperty Name="create_date" ColumnName="create_date" />
                 <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ad_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel1.ad_table">
+              <MappingFragment StoreEntitySet="ad_table">
+                <ScalarProperty Name="Adsimage" ColumnName="Adsimage" />
+                <ScalarProperty Name="websitelink" ColumnName="websitelink" />
+                <ScalarProperty Name="Adstext" ColumnName="Adstext" />
+                <ScalarProperty Name="Adstitle" ColumnName="Adstitle" />
+                <ScalarProperty Name="advertisment_id" ColumnName="advertisment_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
