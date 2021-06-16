@@ -85,8 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountFragmentSettings.cs" />
+    <Compile Include="AdPreviewActivity.cs" />
     <Compile Include="AdsData.cs" />
     <Compile Include="AdsFragmentSettings.cs" />
+    <Compile Include="AdTitleandTextActivity.cs" />
     <Compile Include="BrokenWires.cs" />
     <Compile Include="BrokenWires2.cs" />
     <Compile Include="BrokenWires3.cs" />
@@ -890,6 +892,9 @@
     <AndroidResource Include="Resources\drawable\RadioBg.png" />
     <AndroidResource Include="Resources\drawable\LOC3.png" />
     <AndroidResource Include="Resources\layout\AdItems.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\adtextandtitle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <Content Include="Resources\screens\BACK.png" />

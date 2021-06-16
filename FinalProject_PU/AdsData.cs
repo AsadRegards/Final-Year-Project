@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace FinalProject_PU
@@ -19,6 +20,21 @@ namespace FinalProject_PU
             var response = await client.GetStringAsync(uri);
             var list = JsonConvert.DeserializeObject<List<AdsData>>(response);
             return list;
+        }
+
+        public async Task<bool> StoreAd(AdsData data)
+        {
+            var uri = Control.Account.BaseAddressUri + "/api/issue/storead";
+            HttpClient client = new HttpClient();
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(uri, content);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

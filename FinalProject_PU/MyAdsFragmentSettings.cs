@@ -5,6 +5,8 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,9 @@ namespace FinalProject_PU
         //CircleImageView userimage;
         TextView Username;
         EditText edturl;
+        private string base64image;
+        private bool IsImageUploaded = false;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,14 +44,72 @@ namespace FinalProject_PU
 
         private void Submit_Click(object sender, EventArgs e)
         {
+            if(Control.InputValidation.validateUri(edturl.Text))
+            {
+                if(IsImageUploaded)
+                {
+                    //opening new intent showing preview of ad::to creat
+                }
+                else
+                {
+                    Toast.MakeText(this, "Please upload an image for your ad", ToastLength.Long).Show();
+                }
 
+            }
+            else
+            {
+                Toast.MakeText(this, "Please enter correct website address", ToastLength.Long).Show();
+            }
         }
 
         private void Uploadimg_Click(object sender, EventArgs e)
         {
-            //upload image ka work
+            try
+            { 
+                UploadPhoto();  
+            }
+            catch(NullReferenceException)
+            {
+                Toast.MakeText(this, "Please select any photo to upload", ToastLength.Long).Show();
+            }
+            catch(Exception)
+            {
+                Toast.MakeText(this, "Image couldn't be selected at this time", ToastLength.Long).Show();
+            }
         }
 
+        public async void UploadPhoto()
+        {
+            try
+            {
+                await CrossMedia.Current.Initialize();
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    Toast.MakeText(this, "upload not supported on this device", ToastLength.Short).Show();
+
+                }
+
+                var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
+                    CompressionQuality = 90
+
+                });
+
+                //convert file to byte array , to bitmap
+                byte[] imageArray = System.IO.File.ReadAllBytes(file.Path);
+                base64image = Convert.ToBase64String(imageArray);
+                IsImageUploaded = true;
+
+
+            }
+            catch (Exception ex)
+            { Toast.MakeText(this, "Please select any image to represent the issue" + ex, ToastLength.Long).Show(); }
+
+
+
+
+        }
         private void Back_Click(object sender, EventArgs e)
         {
 

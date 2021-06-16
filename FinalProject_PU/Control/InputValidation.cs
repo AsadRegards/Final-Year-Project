@@ -54,6 +54,17 @@ namespace FinalProject_PU.Control
             return true;
         }
 
+        static public bool validateUri(string uri)
+        {
+            Regex reg = new Regex(@"/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/");
+            Match mat = reg.Match(uri);
+            if(!mat.Success || uri=="")
+            {
+                return false;
+            }
+            return true;
+        }
+
         static public bool ValidatePassword(string password,string confirmpassword, Android.Content.Context acc)
         {
             Regex reg = new Regex(@"^[a-zA-Z0-9]{8,20}$");

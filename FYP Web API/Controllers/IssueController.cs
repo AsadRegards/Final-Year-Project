@@ -107,6 +107,22 @@ namespace FYP_Web_API.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, list);
         }
 
+        [HttpPost]
+        [ActionName("storead")]
+        public HttpResponseMessage storead(ad_table ad)
+        {
+            dbe.ad_table.Add(ad);
+            var result=dbe.SaveChanges();
+
+            if(result!=0)
+            {
+                return Request.CreateResponse(HttpStatusCode.Accepted, "success");
+
+            }
+            return Request.CreateResponse(HttpStatusCode.NotAcceptable, "failed to save ad");
+
+        }
+
     }
        
 }
