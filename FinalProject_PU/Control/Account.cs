@@ -33,8 +33,8 @@ namespace FinalProject_PU.Control
             return string.Empty;
         }
 
-
-        public static string BaseAddressUri = string.Format("https://fypwebapi20210529205921.azurewebsites.net"); //
+        //https://fypwebapi20210529205921.azurewebsites.net
+        public static string BaseAddressUri = string.Format("http://{0}:8045","192.168.0.105"); //
 
     
         static public int verifyEmail(string emailp,Android.Content.Context acc)
@@ -92,14 +92,11 @@ namespace FinalProject_PU.Control
 
        
 
-        static public async Task<User> UserLogin(string email, int password_hash, Android.Content.Context acc)
+        static public async Task<User> UserLogin(string email, int password_hash)
         {
-            string uri = string.Format("{0}/api/account/login/?email_address={1}&password_hash={2}", BaseAddressUri,email, password_hash);
-                                              
+            string uri = string.Format("{0}/api/account/login/?email_address={1}&password_hash={2}", BaseAddressUri,email, password_hash);         
             HttpClient client = new HttpClient();
-            
-            var response = await client.GetStringAsync(uri);
-
+            string response = await client.GetStringAsync(uri);
             var userObj = JsonConvert.DeserializeObject<User>(response);
             return userObj;
         }

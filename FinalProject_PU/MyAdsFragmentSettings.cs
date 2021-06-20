@@ -20,7 +20,7 @@ namespace FinalProject_PU
         ImageView back, uploadimg, submit;
         //CircleImageView userimage;
         TextView Username;
-        EditText edturl;
+        EditText edturl, budget;
         private string base64image;
         private bool IsImageUploaded = false;
 
@@ -37,6 +37,9 @@ namespace FinalProject_PU
             edturl = (EditText)FindViewById(Resource.Id.edtUrl);
             submit = (ImageView)FindViewById(Resource.Id.imgsubmitt);
             submit.Click += Submit_Click;
+            budget = FindViewById<EditText>(Resource.Id.edtBudget);
+
+
 
             // Create your fragment here
         }
@@ -48,7 +51,20 @@ namespace FinalProject_PU
             {
                 if(IsImageUploaded)
                 {
-                    //opening new intent showing preview of ad::to creat
+                    int budgetAmount;
+                   if(int.TryParse(budget.Text,out budgetAmount))
+                    {
+                        var intent = new Intent(this, typeof(AdTitleandTextActivity));
+                        intent.PutExtra("baseimage", JsonConvert.SerializeObject(base64image));
+                        intent.PutExtra("budget", JsonConvert.SerializeObject(budgetAmount));
+                        intent.PutExtra("link", JsonConvert.SerializeObject(edturl.Text));
+                        StartActivity(intent);
+                    }
+                   else
+                    {
+                        Toast.MakeText(this, "Please enter budget amount", ToastLength.Long).Show();
+                    }
+                    
                 }
                 else
                 {
@@ -104,7 +120,7 @@ namespace FinalProject_PU
 
             }
             catch (Exception ex)
-            { Toast.MakeText(this, "Please select any image to represent the issue" + ex, ToastLength.Long).Show(); }
+            { Toast.MakeText(this, "Please select any image to represent the issue",ToastLength.Long).Show(); }
 
 
 

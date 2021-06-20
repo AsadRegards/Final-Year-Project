@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="8dp"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    android:scrollbars="horizontal|none">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8f8"
+    >
+
+
+
+
+        <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="@drawable/pothole1"
+            android:layout_width="285dp"
+            android:layout_height="237dp"          
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:id="@+id/imgIssue"
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            />
+        <com.dushyant.roundedimageviewlibrary.RoundedImageView
+
+            android:layout_width="285dp"
+            android:layout_height="237dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:visibility="visible"
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            android:scrollbars="horizontal"
+            android:id="@+id/hardcoded"
+            android:scaleType="centerCrop"
+            android:contentDescription="description"
+            tools:ignore="MissingDimension,Suspicious0dp" />
+
+        <ImageView
+            android:src="@drawable/belowbg"
+            android:layout_width="285dp"
+            android:layout_height="301dp"
+            android:layout_marginTop="260dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imgbelowPath"
+         />
+        <TextView
+            android:text="Sponsored"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            
+            android:textSize="12dp"
+            android:textColor="#fff"
+
+            android:fontFamily="serif"
+            android:id="@+id/tvsponsered" />
+        <TextView
+            android:text="Nabeel Khan"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:id="@+id/adtitle" />
+
+
+
+        <TextView
+            android:text="Stay Home Safe Life by yourself"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgIssue"
+            android:textSize="15sp"
+            android:fontFamily="serif"
+            android:maxLines="3"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="40dp"
+            
+            android:textColor="#fff"
+            
+            android:textStyle="normal"
+            android:id="@+id/adtext" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icngolasthome2"
+            android:layout_below="@id/adtext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:id="@+id/adgoButton"/>
+                
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit ad"
+            android:id="@+id/adsubmit"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+          
+
+         
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

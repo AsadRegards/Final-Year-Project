@@ -33,15 +33,18 @@ namespace FinalProject_PU
         private void Preview_Click(object sender, EventArgs e)
         {
             if (adText.Text != "" && adTitle.Text != "")
-                //to create adpreview activity
-                base64Image = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("baseimage"));
-            string adtitle = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("adtitle"));
-            string adtext = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("adtext"));
-
+            //to create adpreview activity
+            base64Image = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("baseimage"));
+            int budget = JsonConvert.DeserializeObject<int>(Intent.GetStringExtra("budget"));
+            string link = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("link"));
+            string adtitle = adTitle.Text;
+            string adtext = adText.Text;
             Intent i = new Intent(this, typeof(AdPreviewActivity));
             i.PutExtra("baseimage", JsonConvert.SerializeObject(base64Image));
             i.PutExtra("adtitle", JsonConvert.SerializeObject(adtitle));
             i.PutExtra("adtext", JsonConvert.SerializeObject(adtext));
+            i.PutExtra("adbudget", JsonConvert.SerializeObject(budget));
+            i.PutExtra("link", JsonConvert.SerializeObject(link));
             StartActivity(i);
 
 

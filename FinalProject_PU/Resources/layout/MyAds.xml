@@ -109,7 +109,7 @@
         android:layout_below="@+id/edtUrl"
          />
     <EditText
-        android:inputType="text"
+        android:inputType="number"
         android:layout_width="300dp"
         
         
@@ -125,7 +125,7 @@
     <ImageView
         android:src="@drawable/submm"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
+        android:layout_height="wrap_content"  
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/edtBudget"

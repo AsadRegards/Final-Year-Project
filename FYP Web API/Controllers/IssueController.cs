@@ -103,6 +103,7 @@ namespace FYP_Web_API.Controllers
         public HttpResponseMessage fetchallads()
         {
             var list = dbe.ad_table.ToList();
+            list.Reverse();
 
             return Request.CreateResponse(HttpStatusCode.Accepted, list);
         }
@@ -112,13 +113,33 @@ namespace FYP_Web_API.Controllers
         public HttpResponseMessage storead(ad_table ad)
         {
             dbe.ad_table.Add(ad);
-            var result=dbe.SaveChanges();
-
-            if(result!=0)
+            try
             {
-                return Request.CreateResponse(HttpStatusCode.Accepted, "success");
+                var result = dbe.SaveChanges();
+                if (result != 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.Accepted, "success");
 
+                }
             }
+            catch (DbEntityValidationException ex)
+            {
+                StreamWriter sw = new StreamWriter("D:\\WORK\\abcerror.txt");
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    sw.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        sw.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                sw.Close();
+            }
+
+
+
             return Request.CreateResponse(HttpStatusCode.NotAcceptable, "failed to save ad");
 
         }

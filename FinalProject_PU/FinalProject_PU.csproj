@@ -897,6 +897,9 @@
     <AndroidResource Include="Resources\layout\adtextandtitle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\AdPreview.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />

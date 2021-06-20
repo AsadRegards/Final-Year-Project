@@ -134,7 +134,7 @@ namespace FinalProject_PU
                     {
                         if(CheckWifiStatus())
                         {
-                            var user = await Account.UserLogin(email.Text, pass.Text.GetHashCode(), this);
+                            var user = await Account.UserLogin(email.Text, pass.Text.GetHashCode());
                             if (user == null)
                             {
                                 MainThread.BeginInvokeOnMainThread(() =>

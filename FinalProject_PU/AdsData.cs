@@ -12,6 +12,7 @@ namespace FinalProject_PU
         public string Adstitle { get; set; }
         public string Adstext { get; set; }
         public string websitelink { get; set; }
+        public int budget { get; internal set; }
 
         public static async Task<List<AdsData>>  GetAllAds()
         {

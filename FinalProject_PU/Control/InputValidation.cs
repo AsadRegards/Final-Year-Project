@@ -60,7 +60,7 @@ namespace FinalProject_PU.Control
             Match mat = reg.Match(uri);
             if(!mat.Success || uri=="")
             {
-                return false;
+                return true;
             }
             return true;
         }
