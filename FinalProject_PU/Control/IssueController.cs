@@ -34,7 +34,7 @@ namespace FinalProject_PU.Control
                 Intent i = new Intent(acc, typeof(FragmentHomeActivity));
               
                 
-                DataOper.SendNotification(new Model.Notification() { title="Issue Alert", message=issueObj.issueStatement, image=issueObj.IssueImage});
+                DataOper.SendNotification(new Model.Notification() { notification_title="Issue Alert", notification_text=issueObj.issueStatement, notification_image=issueObj.IssueImage});
                 acc.StartActivity(i);
                 
                 return true;

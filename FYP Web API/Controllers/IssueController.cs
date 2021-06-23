@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity.Validation;
 using System.IO;
+using System.Threading;
 
 namespace FYP_Web_API.Controllers
 {
@@ -26,7 +27,28 @@ namespace FYP_Web_API.Controllers
                 // Could also be before try if you know the exception occurs in SaveChanges
                 dbe.issue_table.Add(issue);
                 dbe.SaveChanges();
+                var originalSynchronizationContext = SynchronizationContext.Current;
+                try
+                {
+                    SynchronizationContext.SetSynchronizationContext(null);
+                    new NearbyUserController().findnearbyusers(issue.issue_id);
+                }
+                catch(Exception ex)
+                {
+                    StreamWriter sw = new StreamWriter("D:\\WORK\\abcerror.txt");
+                    sw.WriteLine("EXCEPTION::" + ex.ToString());
+                    sw.Close();
+                }
+                finally
+                {
+                    SynchronizationContext.SetSynchronizationContext(originalSynchronizationContext);
+                }
+
+               
                 
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Issue Posted Sucessfully");
+
+
 
             }
             catch(DbEntityValidationException ex)
@@ -45,7 +67,7 @@ namespace FYP_Web_API.Controllers
                 sw.Close();
             }
 
-            return Request.CreateResponse(HttpStatusCode.Accepted, "Issue Posted Sucessfully");
+            return Request.CreateResponse(HttpStatusCode.NotAcceptable, "Issue posting error");
 
         }
 

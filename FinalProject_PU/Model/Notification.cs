@@ -16,9 +16,11 @@ namespace FinalProject_PU.Model
 {
     class Notification
     {
-       public string title { get; set; }
-        public string message { get; set; }
-        public string image { get; set; }
+        public int notification_id { get; set; }
+        public string notification_title { get; set; }
+        public string notification_text { get; set; }
+        public string notification_image { get; set; }
+        public DateTime notification_date { get; set; }
 
         public async Task<List<Notification>> getallnotification()
         {
