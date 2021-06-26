@@ -132,7 +132,6 @@
     <Compile Include="Garbage4.cs" />
     <Compile Include="Helper\Data.cs" />
     <Compile Include="Helper\Funds_RecylerViewAdapter.cs" />
-    <Compile Include="Helper\NotificationData.cs" />
     <Compile Include="Helper\Notification_RecylcerViewAdapter.cs" />
     <Compile Include="Helper\RecyclerViewAdapter.cs" />
     <Compile Include="IssueFragment.cs" />

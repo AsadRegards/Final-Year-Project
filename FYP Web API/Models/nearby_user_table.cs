@@ -17,6 +17,7 @@ namespace FYP_Web_API.Models
         public int ui_pair_id { get; set; }
         public int user_id { get; set; }
         public int issue_id { get; set; }
+        public int Isverified { get; set; }
     
         public virtual issue_table issue_table { get; set; }
         public virtual nearby_user_table nearby_user_table1 { get; set; }

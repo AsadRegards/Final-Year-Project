@@ -13,7 +13,7 @@ namespace FinalProject_PU.Helper
     class Notification_RecyclerViewHolder: RecyclerView.ViewHolder
     {
        
-        public CircleImageView UserImage { get; set; }
+        public CircleImageView IssueImage { get; set; }
         public TextView UserName { get; set; }
         public TextView IssueDate { get; set; }
         public MultiAutoCompleteTextView IssueStatement { get; set; }
@@ -22,7 +22,8 @@ namespace FinalProject_PU.Helper
         public Notification_RecyclerViewHolder(Android.Views.View itemView) : base(itemView)
         {
            
-            UserImage = itemView.FindViewById<CircleImageView>(Resource.Id.userimage);
+            
+            IssueImage = itemView.FindViewById<CircleImageView>(Resource.Id.userimage); //This imageview is for Issue Image not userImage
             UserName = itemView.FindViewById<TextView>(Resource.Id.username);
             IssueDate = itemView.FindViewById<TextView>(Resource.Id.date);
             IssueStatement = itemView.FindViewById<MultiAutoCompleteTextView>(Resource.Id.description );
@@ -51,11 +52,11 @@ namespace FinalProject_PU.Helper
         {
             Notification_RecyclerViewHolder viewHolder = holder as Notification_RecyclerViewHolder;
 
-            byte[] arr1 = Convert.FromBase64String(lstData[position].image); //UserImage
+            byte[] arr1 = Convert.FromBase64String(lstData[position].notification_image); //IssueImage
             Android.Graphics.Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
-            viewHolder.UserImage.SetImageBitmap(b1); //
+            viewHolder.IssueImage.SetImageBitmap(b1); //
 
-            viewHolder.IssueStatement.Text = lstData[position].message;
+            viewHolder.IssueStatement.Text = lstData[position].notification_text;
 
         }
 

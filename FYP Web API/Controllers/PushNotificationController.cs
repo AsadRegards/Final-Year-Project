@@ -63,11 +63,11 @@ namespace FYP_Web_API.Controllers
             var DeviceTokenList = GetAllTokens();
 
             pushnotification notification = new pushnotification();
-            notification.body = noti.message;
-            notification.title = noti.title;
+            notification.title = noti.notification_text;
+            notification.body = noti.notification_title;
             NotificationTable table = new NotificationTable();
-            table.notification_image = noti.image;
-            table.notification_text = noti.message;
+            table.notification_image = noti.notification_image;
+            table.notification_text = noti.notification_text;
             dbe.NotificationTable.Add(table);
             dbe.SaveChanges();
             var Json = JsonConvert.SerializeObject(notification);
@@ -191,9 +191,11 @@ namespace FYP_Web_API.Controllers
 
     public class notification
     {
-        public string title { get; set; }
-        public string message { get; set; }
-        public string image { get; set; }
+        public int notification_id { get; set; }
+        public string notification_title { get; set; }
+        public string notification_text { get; set; }
+        public string notification_image { get; set; }
+        public DateTime notification_date { get; set; }
     }
     
 }

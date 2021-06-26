@@ -5,7 +5,8 @@ namespace FinalProject_PU.Model
 {
     class Issue
     {
-        public List<User> NearbyUsers;
+        
+        
         public int issue_id { get; set; }
 
         public int user_id = Control.UserInfoHolder.User_id;
@@ -43,5 +44,12 @@ namespace FinalProject_PU.Model
        {
             //implment web api to get issue from database
        }
+    }
+
+    class NearbyUser
+    {
+        int user_id { get; set; }
+        int issue_id { get; set; }
+
     }
 }

@@ -1,17 +1,11 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
-using Refractored.Controls;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FinalProject_PU.Helper
 {

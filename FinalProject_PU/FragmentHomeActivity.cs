@@ -13,11 +13,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Android.Views.View;
 
 namespace FinalProject_PU
 {
     [Activity(Label = "FragmentHomeActivity", Theme = V)]
-    public class FragmentHomeActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
+    public class FragmentHomeActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener,IOnTouchListener
     {
         private const string V = "@style/Theme.AppCompat.Light.NoActionBar";
 
@@ -52,7 +53,7 @@ namespace FinalProject_PU
             Mnavigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             Mnavigation.SetOnNavigationItemSelectedListener(this);
             viewPager.OffscreenPageLimit = 5;
-
+            viewPager.SetOnTouchListener(this);
             SetupViewpager();
             
         }
@@ -91,6 +92,11 @@ namespace FinalProject_PU
 
             }
             return false;
+        }
+
+        public bool OnTouch(Android.Views.View v, MotionEvent e)
+        {
+            return true;
         }
     }
 }
