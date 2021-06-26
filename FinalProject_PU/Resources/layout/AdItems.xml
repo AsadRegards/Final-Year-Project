@@ -14,30 +14,30 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f8f8f8"
+        android:background="#3B414B"
     >
 
 
 
 
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
-            android:src="@drawable/pothole1"
-            android:layout_width="285dp"
-            android:layout_height="237dp"          
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
+            android:src="@drawable/hellow"
+            android:layout_width="395dp"
+            android:layout_height="257dp"          
+
+
             android:id="@+id/imgIssue"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
             app:imagePadding="10"
             app:cornerRadius="10"
             />
+        
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="285dp"
-            android:layout_height="237dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
+            android:layout_width="395dp"
+            android:layout_height="257dp"
+
             android:visibility="visible"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -49,22 +49,17 @@
             android:contentDescription="description"
             tools:ignore="MissingDimension,Suspicious0dp" />
 
-        <ImageView
-            android:src="@drawable/belowbg"
-            android:layout_width="285dp"
-            android:layout_height="301dp"
-            android:layout_marginTop="260dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/imgbelowPath"
-         />
+       
         <TextView
             android:text="Sponsored"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgIssue"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_below="@id/adgoButton"
+            
+            android:layout_alignParentEnd="true"
+            android:paddingRight="5dp"
+            
             
             android:textSize="12dp"
             android:textColor="#fff"
@@ -72,16 +67,16 @@
             android:fontFamily="serif"
             android:id="@+id/tvsponsered" />
         <TextView
-            android:text="Nabeel Khan"
+            android:text="Halloween Sale"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgIssue"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="45dp"
             android:layout_centerHorizontal="true"
-            android:textSize="15dp"
-            android:textColor="#fff"
+            android:textSize="25dp"
+            android:textColor="#0078e3"
             android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:id="@+id/adtitle" />
@@ -89,31 +84,33 @@
 
 
         <TextView
-            android:text="Stay Home Safe Life by yourself"
+            android:text="Have a spooky  All Halloween's Even."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgIssue"
+            android:layout_below="@id/adtitle"
             android:textSize="15sp"
             android:fontFamily="serif"
             android:maxLines="3"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="40dp"
             
             android:textColor="#fff"
             
             android:textStyle="normal"
+            android:layout_centerHorizontal="true"
+            
             android:id="@+id/adtext" />
         
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icngolasthome2"
+            android:src="@drawable/newbtn"
             android:layout_below="@id/adtext"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="95dp"
             android:id="@+id/adgoButton"/>
                 
 

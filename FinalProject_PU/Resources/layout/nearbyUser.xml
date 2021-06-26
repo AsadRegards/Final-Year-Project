@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        
+        android:id="@+id/imgbackgo"
+       
+         />
+     <TextView
+        android:text="Verify Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:textColor="#0011ff"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/astatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         /> 
+        <ImageView
+        android:src="@drawable/usericon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="10dp"
+
+        android:id="@+id/usericon"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:id="@+id/username"
+        android:layout_below="@+id/imgheadaccounts"
+       
+        />
+    <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="@drawable/pothole1"
+            android:layout_width="285dp"
+            android:layout_height="237dp"          
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/imgIssue"
+        android:layout_below="@+id/username"
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            />
+       
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Road Spill near Gulshan e Iqbal"
+        android:layout_below="@id/imgIssue"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/issuetxt"/>
+
+        
+      <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:layout_marginTop="10dp"
+        android:id="@+id/switch1"
+        android:layout_below="@id/issuetxt"
+        android:layout_centerHorizontal="true"
+        />
+          <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Verify this issue"
+        android:layout_below="@id/switch1"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/verifytxt"/>
+              <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you dont want to verify, pkease report it!"
+        android:layout_below="@id/verifytxt"
+        android:layout_marginTop="20dp"
+        android:textColor="#0078e3"
+        android:clickable="true"
+        android:textSize="15sp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:textColorLink="#0078e3"
+        
+        android:layout_centerHorizontal="true"
+        android:id="@+id/verify2txt"/>
+        
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="un-verified"
+        android:layout_below="@id/issuetxt"
+        android:textColor="#E44343"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:clickable="true"
+        
+        android:textSize="15sp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/switch1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/verify3txt"/>
+
+
+</RelativeLayout>

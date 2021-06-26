@@ -4,13 +4,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+      <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        
+        android:id="@+id/imgbackgo"
+       
+         />
+     <ImageView
+        android:src="@drawable/createnewad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgheadaccounts"
+       
+         />
+    <ImageView
+        android:src="@drawable/icnads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        
+        android:id="@+id/imgaccounticon"
+       
+         />
+    <ImageView
+        android:src="@drawable/rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imglinehead"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         /> 
+        <ImageView
+        android:src="@drawable/usericon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="10dp"
+
+        android:id="@+id/usericon"
+        android:layout_below="@+id/imgheadaccounts"
+       
+         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ad Title"
-        android:textSize="30dp"
+        android:text="Username"
+        android:textSize="20sp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="90dp"
+        android:textColor="#000"
+        android:id="@+id/username"
+        android:layout_below="@+id/imgheadaccounts"
+       
+        />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Advertisement Title"
+        android:textSize="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#000"
+        android:layout_below="@id/username"
         android:id="@+id/dadtitle"/>
 
     <EditText
@@ -18,33 +81,48 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/dadtitle"
         android:id="@+id/adtitle"
-        android:inputType="text"/>
+        android:background="@drawable/text1"
+        android:inputType="text"
+        
+        android:text="Halloween Sale"
+        android:textAlignment="center"
+        android:padding="25dp"
+        android:textColor="#7676"
+/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ad Text"
-        android:textSize="30dp"
+        android:text="Advertisement Text"
+        android:textSize="25dp"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/adtitle"
-        android:layout_marginTop="30dp"
-        android:id="@+id/dadtext"/>
+        
+        android:id="@+id/dadtext"
+        android:textColor="#000"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dadtext"
         android:id="@+id/adtext"
+        android:maxLines="3"
+        android:textAlignment="center"
+        android:textColor="#767676"
+        android:text="Sale Sale Sale"
+       android:background="@drawable/text2" 
         android:inputType="textMultiLine"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="preview"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:id="@+id/preview"/>
+        android:id="@+id/preview"
+       
+        android:background="@drawable/btnpreview">
 
 
 
