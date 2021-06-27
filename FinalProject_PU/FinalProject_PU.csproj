@@ -179,6 +179,7 @@
     <Compile Include="Model\Report.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="MyAdsFragmentSettings.cs" />
+    <Compile Include="NearbyUser.cs" />
     <Compile Include="Newpassword.cs" />
     <Compile Include="NotificationFragmentSettings.cs" />
     <Compile Include="NotificationsActivity.cs" />
