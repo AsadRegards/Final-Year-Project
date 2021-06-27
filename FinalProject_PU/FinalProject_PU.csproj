@@ -179,6 +179,7 @@
     <Compile Include="Model\Report.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="MyAdsFragmentSettings.cs" />
+    <Compile Include="NearbyUser.cs" />
     <Compile Include="Newpassword.cs" />
     <Compile Include="NotificationFragmentSettings.cs" />
     <Compile Include="NotificationsActivity.cs" />
@@ -648,6 +649,14 @@
     <AndroidResource Include="Resources\drawable\BgText.png" />
     <AndroidResource Include="Resources\drawable\HeadPayment.png" />
     <AndroidResource Include="Resources\drawable\FundsBGNew.png" />
+    <AndroidResource Include="Resources\drawable\Btn.png" />
+    <AndroidResource Include="Resources\drawable\BtnBtn.png" />
+    <AndroidResource Include="Resources\drawable\HalloweenSa.png" />
+    <AndroidResource Include="Resources\drawable\Hellow.png" />
+    <AndroidResource Include="Resources\drawable\AdvertisemntTittle.png" />
+    <AndroidResource Include="Resources\drawable\AdvertisemntText.png" />
+    <AndroidResource Include="Resources\drawable\BtnPreview.png" />
+    <AndroidResource Include="Resources\drawable\AStatus.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />
@@ -899,7 +908,13 @@
     <AndroidResource Include="Resources\layout\AdPreview.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\NearbyUserVerification.xml">
+    <AndroidResource Include="Resources\drawable\Leloyr.png" />
+    <AndroidResource Include="Resources\drawable\Newbtn.png" />
+    <AndroidResource Include="Resources\drawable\Newimage.png" />
+    <AndroidResource Include="Resources\drawable\Text2.png" />
+    <AndroidResource Include="Resources\drawable\Preview.png" />
+    <AndroidResource Include="Resources\drawable\Text1.png" />
+    <AndroidResource Include="Resources\layout\nearbyUser.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <Content Include="Resources\screens\BACK.png" />
