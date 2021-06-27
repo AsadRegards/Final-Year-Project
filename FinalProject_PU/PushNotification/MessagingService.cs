@@ -66,33 +66,47 @@ namespace FinalProject_PU.PushNotification
                .SetContentType(AudioContentType.Sonification)
                .SetUsage(AudioUsageKind.Notification).Build();
             //custom sounds end here
-            NotificationManager notificationmanager = (NotificationManager)GetSystemService(Context.NotificationService);
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
-            {
-                NotificationChannel notificationchannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification Channel", Android.App.NotificationImportance.Max);
-                notificationchannel.Description = "ProblemUpdate Channel";
-                notificationchannel.EnableLights(true);
-                notificationchannel.LightColor = Android.Graphics.Color.Blue;
-                notificationchannel.SetSound(alarmUri, alarmAttributes);
-                notificationmanager.CreateNotificationChannel(notificationchannel);
 
+            try
+            {
+                var intent = new Intent(Application.Context, typeof(MainActivity));
+                intent.AddFlags(ActivityFlags.ClearTop);
+                var pendingIntent = PendingIntent.GetActivity(Application.Context, 0, intent, PendingIntentFlags.OneShot);
+
+                NotificationManager notificationmanager = (NotificationManager)GetSystemService(Context.NotificationService);
+                if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+                {
+                    NotificationChannel notificationchannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification Channel", Android.App.NotificationImportance.Max);
+                    notificationchannel.Description = "ProblemUpdate Channel";
+                    notificationchannel.EnableLights(true);
+                    notificationchannel.LightColor = Android.Graphics.Color.Blue;
+                    notificationchannel.SetSound(alarmUri, alarmAttributes);
+                    notificationmanager.CreateNotificationChannel(notificationchannel);
+
+
+                }
+                NotificationCompat.Builder notificationbuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+
+                Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.appiconfinal);
+
+                Android.Net.Uri alar_mUri = Android.Net.Uri.Parse($"{ContentResolver.SchemeAndroidResource}://{this.Application.ApplicationContext.PackageName}/{Resource.Raw.notificationsound}");
+                notificationbuilder.SetAutoCancel(true)
+                    .SetWhen(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds())
+                    .SetContentTitle(title)
+                    .SetContentText(body)
+                    .SetSmallIcon(Resource.Drawable.r_myicon)
+                    .SetLargeIcon(bitmap)
+                    .SetSound(alar_mUri)
+                    .SetContentInfo("info")
+                    .SetContentIntent(pendingIntent);
+
+                notificationmanager.Notify(new Random().Next(), notificationbuilder.Build());
+            }
+            catch(Exception)
+            {
 
             }
-            NotificationCompat.Builder notificationbuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
-
-            Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.appiconfinal);
-
-            Android.Net.Uri alar_mUri = Android.Net.Uri.Parse($"{ContentResolver.SchemeAndroidResource}://{this.Application.ApplicationContext.PackageName}/{Resource.Raw.notificationsound}");
-            notificationbuilder.SetAutoCancel(true)
-                .SetWhen(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds())
-                .SetContentTitle(title)
-                .SetContentText(body)
-                .SetSmallIcon(Resource.Drawable.r_myicon)
-                .SetLargeIcon(bitmap)
-                .SetSound(alar_mUri)
-                .SetContentInfo("info");
-
-            notificationmanager.Notify(new Random().Next(), notificationbuilder.Build());
+         
         }
 
     }

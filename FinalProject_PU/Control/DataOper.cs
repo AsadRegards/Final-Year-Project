@@ -38,6 +38,7 @@ namespace FinalProject_PU.Control
             var json = JsonConvert.SerializeObject(notif);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync(uri, content);
+            var a = 2;
 
         }
 

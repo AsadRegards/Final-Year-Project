@@ -26,6 +26,11 @@ namespace FinalProject_PU
 
             // Create your application here
             SetContentView(Resource.Layout.ActivityMain);
+            //bool flag = false;
+            //if(Intent.Extras!=null)
+            //{
+            //    flag = true;
+            //}
             Log.Debug(TAG, "SplashActivity.OnCreate");
         }
 
