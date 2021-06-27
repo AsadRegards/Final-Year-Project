@@ -117,7 +117,7 @@
               <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If you dont want to verify, pkease report it!"
+        android:text="If you dont want to verify, please report it!"
         android:layout_below="@id/verifytxt"
         android:layout_marginTop="20dp"
         android:textColor="#0078e3"

@@ -218,6 +218,9 @@
     <AndroidAsset Include="Assets\Quicksand-Light.otf" />
     <AndroidAsset Include="Assets\Quicksand-Regular.otf" />
     <GoogleServicesJson Include="google-services.json" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="Resources\drawable\icons8\App5.zip" />
     <None Include="Resources\AboutResources.txt" />
