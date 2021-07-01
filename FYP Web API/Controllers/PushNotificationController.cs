@@ -25,7 +25,7 @@ namespace FYP_Web_API.Controllers
         {
             var oldToken = dbe.FCM_TOKEN.Where(x => x.UserID == userId).FirstOrDefault();
             //Deleting old Token
-            if(oldToken!=null)
+            if (oldToken != null)
             {
                 dbe.FCM_TOKEN.Remove(oldToken);
                 dbe.SaveChanges();
@@ -53,7 +53,41 @@ namespace FYP_Web_API.Controllers
             return TokenList;
         }
 
-        
+        [HttpPost]
+        [ActionName("sendverificationnotification")]
+        public HttpResponseMessage sendverificationnotification(int issueId)
+        {
+            var list = dbe.nearby_user_table.Where(x => x.issue_id == issueId).ToList();
+            if (list != null)
+            {
+                foreach (var item in list)
+                {
+                    List<string> tokenList = new List<string>();
+                    try 
+                    { 
+                        var token = dbe.FCM_TOKEN.Where(x => x.UserID == item.user_id).FirstOrDefault();
+                        if (token != null)
+                        {
+                            tokenList.Add(token.Token);
+                            pushnotification notification = new pushnotification() { title = "Issue Verification", body = "Please verify this issue in your area", issueid = issueId.ToString(), userid = item.user_id.ToString() };
+                            var json = JsonConvert.SerializeObject(notification);
+                            SendNotification(tokenList, json);
+                        }
+                    }
+                    catch(Exception) { }
+                   
+                   
+
+                }
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Verification Notification sent");
+            }
+
+            return Request.CreateResponse(HttpStatusCode.NotFound, "No nearby users found");
+            
+            
+            
+
+        }
 
         [HttpPost]
         [ActionName("sendpushnotification")]

@@ -121,6 +121,18 @@ namespace FYP_Web_API.Controllers
         }
 
         [HttpGet]
+        [ActionName("getissuebyid")]
+        public HttpResponseMessage getissuebyid(int issueid)
+        {
+            var issue = dbe.issue_table.Where(x => x.issue_id == issueid).FirstOrDefault();
+            if(issue!=null)
+            {
+                return Request.CreateResponse(HttpStatusCode.Accepted, issue);
+            }
+            return Request.CreateResponse(HttpStatusCode.NotFound, "issue not found");
+        }
+
+        [HttpGet]
         [ActionName("fetchallads")]
         public HttpResponseMessage fetchallads()
         {

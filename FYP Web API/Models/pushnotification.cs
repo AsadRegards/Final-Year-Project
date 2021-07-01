@@ -10,6 +10,9 @@ namespace FYP_Web_API.Models
         public string title { get; set; }
         public string body { get; set; }
 
+        public string issueid { get; set; }
+        public string userid { get; set; }
+
         public string sound = "default";
        
 

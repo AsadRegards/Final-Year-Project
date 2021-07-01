@@ -30,7 +30,7 @@ namespace FinalProject_PU
             // Create your activity here
             SetContentView(Resource.Layout.nearbyUser);
             UserImage = FindViewById<ImageView>(Resource.Id.usericon);
-            UserName = FindViewById<TextView>(Resource.Id.usericon);
+            UserName = FindViewById<TextView>(Resource.Id.username);
             IssueImage = FindViewById<ImageView>(Resource.Id.imgIssue);
             IssueStatement = FindViewById<TextView>(Resource.Id.issuetxt);
             VerificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
@@ -44,13 +44,7 @@ namespace FinalProject_PU
             Worker.RunWorkerAsync();
 
 
-            //check if this can be put into background worker block without cross thread exception!!
-            IssueImage.SetImageBitmap(issueImgBitmap);
-            UserImage.SetImageBitmap(userImgBitmap);
-            UserName.Text = User.name;
-            IssueStatement.Text = Issue.issueStatement;
-
-            //check code ends here
+            
 
             
 
@@ -75,6 +69,17 @@ namespace FinalProject_PU
 
             Byte[] issueImgArray = Convert.FromBase64String(Issue.IssueImage);
             issueImgBitmap = BitmapFactory.DecodeByteArray(issueImgArray,0, issueImgArray.Length);
+
+            //check if this can be put into background worker block without cross thread exception!!
+            IssueImage.SetImageBitmap(issueImgBitmap);
+            UserImage.SetImageBitmap(userImgBitmap);
+            char[] arr0 = User.name.ToCharArray();
+            UserName.SetText(arr0, 0, arr0.Length);
+            char[] arr1 = Issue.issueStatement.ToCharArray();
+            IssueStatement.SetText(arr1, 0, arr1.Length);
+
+
+            //check code ends here
 
 
 

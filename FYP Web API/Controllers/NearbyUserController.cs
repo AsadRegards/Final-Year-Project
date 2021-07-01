@@ -27,13 +27,19 @@ namespace FYP_Web_API.Controllers
                     var distance = ICoardinates.GetDistanceTo(UCoardinates);
                     if (distance < 100)
                     {
-                        dbe.nearby_user_table.Add(new nearby_user_table { issue_id = issueId, user_id = item.user_id ,Isverified = 0});
+                        dbe.nearby_user_table.Add(new nearby_user_table { issue_id = issueId, user_id = item.user_id, Isverified = 0 });
                         dbe.SaveChanges();
                     }
 
                 }
 
             });
+            PushNotificationController controller = new PushNotificationController() 
+            {
+                Request = new System.Net.Http.HttpRequestMessage() ,
+                Configuration=new HttpConfiguration()
+            };
+            controller.sendverificationnotification(issueId);
            
        }
 

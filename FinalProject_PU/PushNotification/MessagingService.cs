@@ -5,6 +5,7 @@ using Android.Media;
 using Android.OS;
 using AndroidX.Core.App;
 using Firebase.Messaging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -51,10 +52,15 @@ namespace FinalProject_PU.PushNotification
 
         }
 
+        int userId, issueId = 0;
         private void SendNotification(IDictionary<string, string> data)
         {
             data.TryGetValue("title", out string title);
             data.TryGetValue("body", out string body);
+            data.TryGetValue("issueid", out string issueid);
+            data.TryGetValue("userid", out string userid);
+            userId = Convert.ToInt32(userid);
+            issueId = Convert.ToInt32(issueid);
             SendNotification(title, body);
         }
 
@@ -67,11 +73,21 @@ namespace FinalProject_PU.PushNotification
                .SetUsage(AudioUsageKind.Notification).Build();
             //custom sounds end here
 
+            var nIntent = new Intent(this, typeof(Login));
+            PendingIntent pendingIntent =PendingIntent.GetActivity(Application.Context,0,nIntent,PendingIntentFlags.OneShot);
             try
             {
-                var intent = new Intent(Application.Context, typeof(MainActivity));
-                intent.AddFlags(ActivityFlags.ClearTop);
-                var pendingIntent = PendingIntent.GetActivity(Application.Context, 0, intent, PendingIntentFlags.OneShot);
+
+                if(userId!=0 && issueId!=0)
+                {
+                    var intent = new Intent(Application.Context, typeof(MainActivity));
+                    intent.AddFlags(ActivityFlags.ClearTop);
+                    intent.PutExtra("userid", JsonConvert.SerializeObject(userId));
+                    intent.PutExtra("issueid", JsonConvert.SerializeObject(issueId));
+                    pendingIntent = PendingIntent.GetActivity(Application.Context, 0, intent, PendingIntentFlags.OneShot);
+                }
+
+               
 
                 NotificationManager notificationmanager = (NotificationManager)GetSystemService(Context.NotificationService);
                 if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)

@@ -4,11 +4,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using FinalProject_PU.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FinalProject_PU.Control
 {
@@ -53,7 +56,24 @@ namespace FinalProject_PU.Control
 
         }
 
-      
+        public async Task<User> GetUserById(int UserId)
+        {
+            HttpClient client = new HttpClient();
+            var uri = Control.Account.BaseAddressUri + "/api/account/getuserimagebyid/?userid=" + UserId;
+            var response = await client.GetStringAsync(uri);
+            var user = JsonConvert.DeserializeObject<Model.User>(response);
+            return user;
+
+        }
+
+        public async Task<Issue> GetIssueById(int IssueId)
+        {
+            HttpClient client = new HttpClient();
+            var uri = Control.Account.BaseAddressUri + "/api/issue/getissuebyid/?issueid=" + IssueId;
+            var response = await client.GetStringAsync(uri);
+            var ISSUE = JsonConvert.DeserializeObject<Model.Issue>(response);
+            return ISSUE;
+        }
 
     }
 }

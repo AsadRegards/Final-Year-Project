@@ -6,12 +6,15 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FinalProject_PU.Model;
 
 namespace FinalProject_PU
 {
@@ -20,26 +23,49 @@ namespace FinalProject_PU
     public class MainActivity : Activity
     {
         static readonly string TAG = "X:" + typeof(MainActivity).Name;
+        int userId, issueId;
+        Issue IssueObj;
+        User UserObj;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
             SetContentView(Resource.Layout.ActivityMain);
-            //bool flag = false;
-            //if(Intent.Extras!=null)
-            //{
-            //    flag = true;
-            //}
+            
+            if (Intent.Extras != null)
+            {
+                
+                userId = JsonConvert.DeserializeObject<int>(Intent.GetStringExtra("userid"));
+                issueId= JsonConvert.DeserializeObject<int>(Intent.GetStringExtra("issueid"));
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.DoWork += Worker_DoWork;
+                worker.RunWorkerAsync();
+
+               
+            }
+            else
+            {
+                SimulateStartup();
+            }
             Log.Debug(TAG, "SplashActivity.OnCreate");
         }
 
-        protected override void OnResume()
+        private async void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            base.OnResume();
-            Task startupWork = new Task(() => { SimulateStartup(); });
-            startupWork.Start();
+           UserObj = await new Control.IssueOper().GetUserById(userId);
+           IssueObj = await new Control.IssueOper().GetIssueById(issueId);
+
+            Intent NBintent = new Intent(this, typeof(NearbyUser));
+            NBintent.PutExtra("UserObject", JsonConvert.SerializeObject(UserObj));
+            NBintent.PutExtra("IssueObject", JsonConvert.SerializeObject(IssueObj));
+            RunOnUiThread(() => {
+                StartActivity(NBintent);
+            });
+            
         }
+
+       
 
         // Simulates background work that happens behind the splash screen
         async void SimulateStartup()

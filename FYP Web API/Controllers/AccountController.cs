@@ -26,6 +26,22 @@ namespace FYP_Web_API.Controllers
         }
 
         [HttpGet]
+        [ActionName("getuserimagebyid")]
+        public HttpResponseMessage getuserimagebyid(int userid)
+        {
+            var user = dbe.user_table.Where(x => x.user_id == userid).FirstOrDefault();
+            var userTS = new user_table();  //User to Send //Created to avoid overHead
+            userTS.profile_pic = user.profile_pic;
+            userTS.user_id = user.user_id;
+            userTS.name = user.name;
+            if (user != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.Accepted, userTS);
+            }
+            return Request.CreateResponse(HttpStatusCode.NotFound, "User Not Found");
+        }
+
+        [HttpGet]
         [ActionName("login")]
         // http://*:8044/api/test/login/email=asadregards@gmail.com&password_hash=123456
         public HttpResponseMessage login(string Email_address, int Password_hash)
