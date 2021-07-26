@@ -178,9 +178,36 @@ namespace FYP_Web_API.Controllers
 
         }
 
+
+        [HttpGet]
+        [ActionName("GetIssuePoints")]
+        public HttpResponseMessage GetIssuePoints()
+        {
+            List<LocationPoints> points = new List<LocationPoints>();
+            var redIssueList = dbe.issue_table.Where(x => x.issueFlag == "red").ToList();
+            if(redIssueList!=null)
+            {
+                foreach (var item in redIssueList)
+                {
+                    points.Add(new LocationPoints { Latitude = item.locationLatitude, Longitude = item.locationLongitude });
+                }
+                return Request.CreateResponse(HttpStatusCode.Accepted, points);
+            }
+           
+            return Request.CreateResponse(HttpStatusCode.Accepted, points);
+            
+            
+
+        }
+
     }
-       
+    public class LocationPoints
+    {
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+    }
 }
+
 
 
 /*

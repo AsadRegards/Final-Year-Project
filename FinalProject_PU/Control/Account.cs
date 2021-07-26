@@ -96,6 +96,7 @@ namespace FinalProject_PU.Control
         {
             string uri = string.Format("{0}/api/account/login/?email_address={1}&password_hash={2}", BaseAddressUri,email, password_hash);         
             HttpClient client = new HttpClient();
+            client.Timeout = TimeSpan.FromMinutes(2);
             string response = await client.GetStringAsync(uri);
             var userObj = JsonConvert.DeserializeObject<User>(response);
             return userObj;

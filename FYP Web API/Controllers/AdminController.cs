@@ -157,7 +157,7 @@ namespace FYP_Web_API.Controllers
 
                         }).Where(x => x.funds_id == id).FirstOrDefault();
 
-
+                
                 return Request.CreateResponse(HttpStatusCode.Accepted, data);
             }
         }
@@ -166,7 +166,7 @@ namespace FYP_Web_API.Controllers
         [ActionName("getreportsbyid")]
         public HttpResponseMessage getreportsbyid(int issueid)
         {
-            var data = dbe.report_table.Where(x => x.issue_id == issueid).FirstOrDefault();
+            var data = dbe.report_table.Where(x => x.issue_id == issueid).ToList();
             return Request.CreateResponse(HttpStatusCode.Accepted, data);
         }
     }

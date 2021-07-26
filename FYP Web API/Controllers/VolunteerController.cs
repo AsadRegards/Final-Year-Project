@@ -22,7 +22,7 @@ namespace FYP_Web_API.Controllers
             if (volunteer == null)
             {
 
-                return Request.CreateResponse(HttpStatusCode.OK, volunteer);
+                return Request.CreateResponse(HttpStatusCode.OK, "notfound");
 
             }
             else
@@ -93,6 +93,60 @@ namespace FYP_Web_API.Controllers
                 return Request.CreateResponse(HttpStatusCode.Accepted);
             }
             return Request.CreateResponse(HttpStatusCode.NotAcceptable);
+        }
+
+        [HttpGet]
+        [ActionName("GetstatusofIssue")]
+        public HttpResponseMessage GetstatusofIssue(int id)
+        {
+            var issue = dbe.issue_table.Where(x => x.issue_id == id).FirstOrDefault();
+            if(issue!=null)
+            {
+                return Request.CreateResponse(HttpStatusCode.Accepted, issue.Status);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpGet]
+        [ActionName("updatestatusofissue1")]
+        public HttpResponseMessage updatestatusofissue1(int id)
+        {
+            var issue = dbe.issue_table.Where(x => x.issue_id == id).FirstOrDefault();
+            if (issue != null)
+            {
+                issue.Status = "verified";
+                dbe.SaveChanges();
+
+                Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+
+        }
+
+
+        [HttpGet]
+        [ActionName("updatestatusofissue0")]
+        public HttpResponseMessage updatestatusofissue0(int id)
+        {
+            var issue = dbe.issue_table.Where(x => x.issue_id == id).FirstOrDefault();
+            if (issue != null)
+            {
+                issue.Status = "unverified";
+                dbe.SaveChanges();
+
+                Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+
+        }
+
+        [HttpPost]
+        [ActionName("writereport")]
+        public HttpResponseMessage writereport([FromBody]Volunteer_Report Vr)
+        {
+            dbe.Volunteer_Report.Add(Vr);
+            dbe.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.Accepted, "");
         }
     }
 }

@@ -5,21 +5,48 @@ using Com.Google.Maps.Android;
 using Java.Util;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using yucee.Helpers;
 
 namespace FinalProject_PU.MapFunctions
 {
+
+    public class LocationPoints
+    {
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+    }
+
     public class MapFunctionHelper
     {
         string mapkey;
         GoogleMap googleMap;
+        int[] issueWayPointCount = new int[10];
+        List<LocationPoints> RedissuePoints;
 
+        public async Task<List<LocationPoints>> GetIssuePoints()
+        {
+            HttpClient client = new HttpClient();
+            var uri = Control.Account.BaseAddressUri + "/api/issue/GetIssuePoints";
+            var response = await client.GetStringAsync(uri);
+            var list = JsonConvert.DeserializeObject<List<LocationPoints>>(response);
+            return list;
+
+        }
+
+        public async void populateredissuelist()
+        {
+            RedissuePoints = new List<LocationPoints>();
+            RedissuePoints = await GetIssuePoints();
+        }
         public MapFunctionHelper(string mMapkey, GoogleMap mmap)
         {
             mapkey = mMapkey;
             googleMap = mmap;
+            populateredissuelist();
         }
 
         public string GetGeoCodeUrl(double lat, double lng)
@@ -97,10 +124,26 @@ namespace FinalProject_PU.MapFunctions
                 
             } 
             var directionData = JsonConvert.DeserializeObject<DirectionParser>(Json);
+            for(int i=0; i<directionData.routes.Count; i++)
+            {
+                foreach(var point in RedissuePoints)
+                {
+                    foreach(var waypoints in PolyUtil.Decode(directionData.routes[i].overview_polyline.points))
+                    {
+                        if(Math.Abs(Convert.ToDouble(waypoints.Latitude)-Convert.ToDouble(point.Latitude)) <=0.00001 && Math.Abs(Convert.ToDouble(waypoints.Longitude) - Convert.ToDouble(point.Longitude)) <= 0.00001)
+                        {
+                            issueWayPointCount[i] += 1;
+                        }
+                    }
+                }
+            }
 
+            int routeIndex = issueWayPointCount.ToList().IndexOf(issueWayPointCount.Min());
             //Decode Encoded route
-            var Points = directionData.routes[0].overview_polyline.points;
-
+            var Points = directionData.routes[routeIndex].overview_polyline.points;
+            
+            //enumerate through this line variable through for loop and
+            //check for any points that matches for points contained in preloaded issues array
             var Line = PolyUtil.Decode(Points);
 
             ArrayList routeList = new ArrayList();

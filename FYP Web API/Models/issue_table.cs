@@ -22,6 +22,7 @@ namespace FYP_Web_API.Models
             this.issue_images_table = new HashSet<issue_images_table>();
             this.nearby_user_table = new HashSet<nearby_user_table>();
             this.report_table = new HashSet<report_table>();
+            this.Volunteer_Report = new HashSet<Volunteer_Report>();
         }
     
         public int issue_id { get; set; }
@@ -65,5 +66,7 @@ namespace FYP_Web_API.Models
         public virtual ICollection<nearby_user_table> nearby_user_table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<report_table> report_table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volunteer_Report> Volunteer_Report { get; set; }
     }
 }

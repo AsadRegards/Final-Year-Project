@@ -15,6 +15,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using FinalProject_PU.Model;
+using Android.Content.PM;
+using Android;
+using AndroidX.Core.Content;
 
 namespace FinalProject_PU
 {
@@ -26,21 +29,52 @@ namespace FinalProject_PU
         int userId, issueId;
         Issue IssueObj;
         User UserObj;
+
+        private static int REQUEST_EXTERNAL_STORAGE = 1;
+        private static String[] PERMISSIONS_STORAGE = {
+        Android.Manifest.Permission.ReadExternalStorage,
+        Android.Manifest.Permission.WriteExternalStorage};
+
+        public void verifyStoragePermissions(Activity activity)
+        {
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) == (int)Permission.Granted)
+            {
+                // We have permission, go ahead and use the camera.
+            }
+            else
+            {
+                RequestPermissions(PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE); 
+            }
+        }
+
+        //public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        //{
+        //    base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //}
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+           // verifyStoragePermissions(this);
             // Create your application here
             SetContentView(Resource.Layout.ActivityMain);
             
             if (Intent.Extras != null)
             {
-                
-                userId = JsonConvert.DeserializeObject<int>(Intent.GetStringExtra("userid"));
-                issueId= JsonConvert.DeserializeObject<int>(Intent.GetStringExtra("issueid"));
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.DoWork += Worker_DoWork;
-                worker.RunWorkerAsync();
+                var userid = Intent.GetStringExtra("userid");
+                var issueid = Intent.GetStringExtra("issueid");
+                if(userid!=null && issueid!=null)
+                {
+                    userId = JsonConvert.DeserializeObject<int>(userid);
+                    issueId = JsonConvert.DeserializeObject<int>(issueid);
+                    BackgroundWorker worker = new BackgroundWorker();
+                    worker.DoWork += Worker_DoWork;
+                    worker.RunWorkerAsync();
+                }
+                else
+                {
+                    SimulateStartup();
+                }
+               
 
                
             }

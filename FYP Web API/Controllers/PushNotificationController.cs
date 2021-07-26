@@ -53,6 +53,7 @@ namespace FYP_Web_API.Controllers
             return TokenList;
         }
 
+
         [HttpPost]
         [ActionName("sendverificationnotification")]
         public HttpResponseMessage sendverificationnotification(int issueId)
@@ -88,6 +89,26 @@ namespace FYP_Web_API.Controllers
             
 
         }
+
+        [HttpGet]
+        [ActionName("SendNotificationToAUser")]
+        public HttpResponseMessage SendNotificationToAUser(string title,string body, int userId)
+        {
+            pushnotification notification = new pushnotification() { title = title, body = body };
+            string json = JsonConvert.SerializeObject(notification);
+            var token = dbe.FCM_TOKEN.Where(x => x.UserID == userId).FirstOrDefault();
+            if(token!=null)
+            {
+                List<string> tokenList = new List<string>();
+                tokenList.Add(token.Token);
+                SendNotification(tokenList, json);
+                return Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+            
+
+        }
+
 
         [HttpPost]
         [ActionName("sendpushnotification")]

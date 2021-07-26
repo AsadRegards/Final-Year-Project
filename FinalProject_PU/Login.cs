@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Widget;
 using FinalProject_PU.Control;
@@ -12,6 +14,7 @@ using System;
 using System.ComponentModel;
 using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 
 namespace FinalProject_PU
@@ -241,6 +244,10 @@ namespace FinalProject_PU
 
         }
 
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
         private void Signupworker_DoWork(object sender, DoWorkEventArgs e)
         {
             var duration = TimeSpan.FromMilliseconds(100);

@@ -29,6 +29,9 @@
         <AssociationConnector Association="problemupdatedbModel.FK_report_table_issue_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.FK_nearby_user_table_nearby_user_table" ManuallyRouted="false" />
         <AssociationConnector Association="problemupdatedbModel.FK_report_table_user_table" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="problemupdatedbModel.Volunteer_Report" Width="1.5" PointX="10.5" PointY="8.75" />
+        <AssociationConnector Association="problemupdatedbModel.FK_Volunteer_Report_issue_table" />
+        <AssociationConnector Association="problemupdatedbModel.FK_Volunteer_Report_Volunteer_table" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

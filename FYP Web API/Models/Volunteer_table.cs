@@ -18,6 +18,7 @@ namespace FYP_Web_API.Models
         public Volunteer_table()
         {
             this.AssignedByAdmin = new HashSet<AssignedByAdmin>();
+            this.Volunteer_Report = new HashSet<Volunteer_Report>();
         }
     
         public int volunteer_id { get; set; }
@@ -29,5 +30,7 @@ namespace FYP_Web_API.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignedByAdmin> AssignedByAdmin { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volunteer_Report> Volunteer_Report { get; set; }
     }
 }
