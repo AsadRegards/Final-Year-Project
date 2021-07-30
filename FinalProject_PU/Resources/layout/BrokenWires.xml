@@ -30,8 +30,9 @@
         android:layout_height="30dp"
         android:id="@+id/next_BrokenWires"
         android:src="@drawable/iconnext"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"/>
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -53,7 +54,7 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/brokenwires"
         android:layout_below="@+id/BrokenWires_tvusername"

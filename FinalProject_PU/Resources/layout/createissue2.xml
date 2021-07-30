@@ -30,7 +30,8 @@
         android:id="@+id/imganext"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentEnd="true"
+         />
    <!-- circle image view profile pic-->
         <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
@@ -60,30 +61,33 @@
         android:layout_below="@id/tvusername"
         android:textSize="15dp"
         android:id="@+id/tvinfoproblem"
-        android:layout_marginStart="80dp"
+        android:layout_centerHorizontal="true"
+
         android:layout_marginTop="10dp"/>
 
     <ImageView
         android:src="@drawable/iss1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvinfoproblem"
         android:layout_marginTop="10dp"
         android:id="@+id/imgbtn1"
+        android:layout_marginEnd="170dp"
            />
     <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_below="@+id/tvinfoproblem"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/radioButton1" />
     <ImageView
         android:src="@drawable/iss2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="170dp"
         android:layout_below="@+id/imgbtn1"
         android:layout_marginTop="10dp"
         android:id="@+id/imgbtn2"
@@ -93,33 +97,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_below="@+id/imgbtn1"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton2" />
     <ImageView
         android:src="@drawable/iss3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn2"
         android:layout_marginTop="10dp"
         android:id="@+id/imgbtn3"
+        android:layout_marginEnd="170dp"
            />            
     <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_below="@+id/imgbtn2"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton3" />
         <ImageView
         android:src="@drawable/iss4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn3"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="170dp"
         android:id="@+id/imgbtn4"
            />            
     <RadioButton
@@ -127,13 +131,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_below="@+id/imgbtn3"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton4" />
         <ImageView
         android:src="@drawable/iss5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvinfoproblem"
         android:layout_marginTop="10dp"
@@ -145,13 +148,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="200dp"
+        android:layout_toRightOf="@id/radioButton1"
+        android:layout_marginStart="155dp"
         android:layout_below="@+id/tvinfoproblem"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton5" />
     <ImageView
         android:src="@drawable/iss6"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn5"
         android:layout_marginTop="10dp"
@@ -163,50 +166,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="196dp"
+        android:layout_toRightOf="@id/radioButton1"
+        android:layout_marginStart="155dp"
         android:layout_below="@+id/imgbtn5"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton6" />
         <ImageView
         android:src="@drawable/iss7"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn6"
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:id="@+id/imgbtn7"
            />    
-            <RadioButton
+        
+        <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="200dp"
+        android:layout_toRightOf="@id/radioButton1"
+        android:layout_marginStart="155dp"
         android:layout_below="@+id/imgbtn6"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton7" />
-            <ImageView
+        
+        <ImageView
         android:src="@drawable/iss8"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn7"
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:id="@+id/imgbtn8"
            />    
-            <RadioButton
+        
+        <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="196dp"
+        android:layout_toRightOf="@id/radioButton1"
+        android:layout_marginStart="155dp"
         android:layout_below="@+id/imgbtn7"
-        android:background="@drawable/ellipse1"
         android:id="@+id/radioButton8" />
-    <com.dushyant.roundedimageviewlibrary.RoundedImageView
+    <!--
+    android:background="@drawable/ellipse1"
+        -->
+        <com.dushyant.roundedimageviewlibrary.RoundedImageView
         android:src="@drawable/issimg"
-        android:layout_width="290dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:layout_below="@+id/imgbtn8"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
@@ -221,6 +230,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
+        android:layout_below="@id/imgbtn9"
        />
 
     

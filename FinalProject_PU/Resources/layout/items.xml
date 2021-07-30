@@ -22,8 +22,8 @@
 
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
             android:src="@drawable/pothole1"
-            android:layout_width="285dp"
-            android:layout_height="237dp"          
+            android:layout_width="320dp"
+            android:layout_height="267dp"          
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
             android:id="@+id/imgIssue"
@@ -34,8 +34,8 @@
             />
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="285dp"
-            android:layout_height="237dp"
+            android:layout_width="320dp"
+            android:layout_height="267dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
             android:visibility="visible"
@@ -48,20 +48,24 @@
             android:scaleType="centerCrop"
             android:contentDescription="description"
             tools:ignore="MissingDimension,Suspicious0dp" />
+        <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="#3B414B"
 
-        <ImageView
-            android:src="@drawable/belowbg"
-            android:layout_width="285dp"
-            android:layout_height="301dp"
-            android:layout_marginTop="260dp"
+            android:layout_width="320dp"
+            android:layout_height="306dp"
+            android:layout_marginTop="280dp"
             android:layout_centerHorizontal="true"
             android:id="@+id/imgbelowPath"
-         />
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            />
         <Refractored.Controls.CircleImageView
             android:src="@drawable/profile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="330dp"
             android:layout_marginStart="50dp"
             android:id="@+id/imgProfile"
          />
@@ -106,8 +110,10 @@
             android:textSize="15sp"
             android:fontFamily="serif"
             android:maxLines="3"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginTop="60dp"
+
+            android:layout_centerInParent="true"
+            android:layout_marginStart="70dp"
             android:layout_marginEnd="40dp"
             
             android:textColor="#fff"
@@ -120,7 +126,7 @@
             android:src="@drawable/icnstatushome2"
             android:layout_below="@id/tvinfo"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
             android:id="@+id/ViewStatus"/>
         <TextView
             android:text="View Status"
@@ -130,7 +136,7 @@
             android:layout_below="@id/ViewStatus"
             android:layout_toLeftOf="@id/ViewOnMap"
              android:maxLines="2"
-            android:layout_marginStart="55dp"
+            android:layout_marginStart="50dp"
             android:textAlignment="center"
             android:textSize="12dp"
             android:textColor="#fff"
@@ -143,8 +149,8 @@
             android:src="@drawable/icnmaphome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewStatus"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="57dp"
             android:id="@+id/ViewOnMap"/>
         <TextView
             android:text="View On Map"
@@ -155,7 +161,7 @@
             android:layout_toLeftOf="@id/Report"
             android:layout_toRightOf="@id/ViewStatus"
              android:maxLines="2"
-           android:layout_marginStart="8dp" 
+           android:layout_marginStart="15dp" 
             android:textAlignment="center"
             android:textSize="12dp"
             android:textColor="#fff"
@@ -168,8 +174,8 @@
             android:src="@drawable/icnreporthome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewOnMap"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="55dp"
             android:id="@+id/Report"/>
                 <TextView
             android:text="Report"
@@ -179,7 +185,7 @@
             android:layout_below="@id/Report"
             android:layout_toLeftOf="@id/ContributeHome"
             android:layout_toRightOf="@id/ViewOnMap"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:textAlignment="center"
             android:textSize="12dp"
             android:layout_marginTop="5dp"
@@ -192,8 +198,8 @@
             android:src="@drawable/icnfundshome2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/Report"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="57dp"
             android:id="@+id/ContributeHome"/>
         <TextView
             android:text="Fund"
@@ -203,7 +209,7 @@
             android:layout_below="@id/ContributeHome"
             android:layout_toLeftOf="@id/GoLast"
             android:layout_toRightOf="@id/Report"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:textAlignment="center"
             android:textSize="12dp"
@@ -216,8 +222,8 @@
             android:src="@drawable/refresh2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ContributeHome"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="55dp"
             android:id="@+id/GoLast"/>
                 <TextView
             android:text="Refresh"
@@ -225,9 +231,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ContributeHome"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/ContributeHome"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             android:textAlignment="center"
             android:textSize="12dp"
             android:textColor="#fff"

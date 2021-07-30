@@ -8,10 +8,11 @@
     android:background="@drawable/bglogin">
     <ImageView
         android:src="@drawable/iconwhitecomplete"
-        android:layout_width="40dp"
+         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="310dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
         android:id="@+id/imageView1" />
     <TextView
         android:text="@string/Register"
@@ -27,7 +28,7 @@
     
     <ImageView
         android:src="@drawable/asset2"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="352dp"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/textView1"
@@ -40,7 +41,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="65dp"
         android:layout_below="@+id/textView1"
         android:textColor="#858585"/>
 
@@ -49,7 +50,8 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="88dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:id="@+id/imgemail" />
     
@@ -61,7 +63,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="65dp"
         android:layout_below="@+id/textView2"
         android:textColor="#858585"/>    
 
@@ -69,9 +71,10 @@
         android:src="@drawable/pass"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginStart="45dp"
-        android:layout_below="@+id/textView1"
+        android:layout_marginTop="88dp"
+        android:layout_marginStart="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
         android:id="@+id/imgpass"/>
 
        
@@ -84,11 +87,11 @@
 
     <ImageView
         android:src="@drawable/group237"
-        android:layout_width="87dp"
+        android:layout_width="97dp"
         android:layout_height="85dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="130dp"
         android:layout_marginStart="240dp"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@id/imgemail"
         android:id="@+id/imglogin" />
      <!-- Loading Indicator for overall screen   -->
     <com.mohammedalaa.gifloading.LoadingView
@@ -102,28 +105,29 @@
      <!-- Loading Indicator for login click button    -->
     <com.mohammedalaa.gifloading.LoadingView
         android:id="@+id/loading_view_button"
-        android:layout_width="87dp"
+        android:layout_width="97dp"
         android:layout_height="85dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="130dp"
         android:layout_marginStart="240dp"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@id/imgemail"
         android:visibility="gone"
         app:src="@drawable/spinnerbutfinal"/>
 
      <ImageView
         android:src="@drawable/asset1"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="237dp"
+        android:layout_centerHorizontal="true"
         android:paddingBottom="40dp"
         android:layout_below="@+id/imglogin"
         android:id="@+id/imageViewdown" />
     <ImageView
         android:src="@drawable/group2388"
-        android:layout_width="229dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/imglogin"
+        android:layout_below="@id/imgpass"
         android:id="@+id/imageView9" />
 
      <android.support.design.widget.TextInputLayout

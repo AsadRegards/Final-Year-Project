@@ -16,7 +16,7 @@ namespace FinalProject_PU.Helper
         public CircleImageView IssueImage { get; set; }
         public TextView UserName { get; set; }
         public TextView IssueDate { get; set; }
-        public MultiAutoCompleteTextView IssueStatement { get; set; }
+        public  TextView IssueStatement { get; set; }
 
         
         public Notification_RecyclerViewHolder(Android.Views.View itemView) : base(itemView)
@@ -26,7 +26,7 @@ namespace FinalProject_PU.Helper
             IssueImage = itemView.FindViewById<CircleImageView>(Resource.Id.userimage); //This imageview is for Issue Image not userImage
             UserName = itemView.FindViewById<TextView>(Resource.Id.username);
             IssueDate = itemView.FindViewById<TextView>(Resource.Id.date);
-            IssueStatement = itemView.FindViewById<MultiAutoCompleteTextView>(Resource.Id.description );
+            IssueStatement = itemView.FindViewById<TextView>(Resource.Id.description );
 
         }
 

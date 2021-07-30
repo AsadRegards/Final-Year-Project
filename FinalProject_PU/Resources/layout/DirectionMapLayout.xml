@@ -20,7 +20,7 @@
      </FrameLayout>
 
      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:background="@drawable/loc1"
@@ -34,7 +34,7 @@
         android:id="@+id/materialTextView4" />
 
      <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:drawableStart="@drawable/radiobg"
@@ -50,7 +50,7 @@
         android:drawablePadding="2dp"
         android:id="@+id/materialTextView3" />
          <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:drawableStart="@drawable/radiobg"
@@ -62,7 +62,7 @@
         android:drawablePadding="2dp"
         android:id="@+id/materialTextView2" />
              <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:drawableStart="@drawable/radiobg"
