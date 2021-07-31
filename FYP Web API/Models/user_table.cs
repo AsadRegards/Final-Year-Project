@@ -20,6 +20,7 @@ namespace FYP_Web_API.Models
             this.funds_table = new HashSet<funds_table>();
             this.issue_table = new HashSet<issue_table>();
             this.report_table = new HashSet<report_table>();
+            this.ad_table = new HashSet<ad_table>();
         }
     
         public int user_id { get; set; }
@@ -40,5 +41,7 @@ namespace FYP_Web_API.Models
         public virtual ICollection<issue_table> issue_table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<report_table> report_table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ad_table> ad_table { get; set; }
     }
 }

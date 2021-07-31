@@ -119,7 +119,7 @@ namespace FYP_Web_API.Controllers
                 info.easypaisatitle = newtitle;
                 dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
                 dbe.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.Accepted, "easypaisa updated");
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Easypaisa updated");
             }
             if(code==2)
             {
@@ -128,7 +128,7 @@ namespace FYP_Web_API.Controllers
                 info.jazzcashtitle = newtitle;
                 dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
                 dbe.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.Accepted, "jazzcash updated");
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Jazzcash updated"); //that
             }
             if(code==3)
             {
@@ -137,7 +137,7 @@ namespace FYP_Web_API.Controllers
                 info.bankaccountnumber = newtitle;
                 dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
                 dbe.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.Accepted, "jazzcash updated");
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Jazzcash updated"); //Change with bank account this or that
             }
             return Request.CreateResponse(HttpStatusCode.OK, "no updation");
 

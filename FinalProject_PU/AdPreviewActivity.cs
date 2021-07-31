@@ -58,6 +58,10 @@ namespace FinalProject_PU
 
         private async void SubmitButton_Click(object sender, EventArgs e)
         {
+            data.Status = "pending";
+            data.User_id = Control.UserInfoHolder.User_id;
+            data.Elapsed_Days = 0;
+            data.Date = DateTime.Now;
             //call method to send data to Database
             if (await data.StoreAd(data))
             {

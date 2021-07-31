@@ -136,9 +136,11 @@ namespace FYP_Web_API.Controllers
         [ActionName("fetchallads")]
         public HttpResponseMessage fetchallads()
         {
-            var list = dbe.ad_table.ToList();
-            list.Reverse();
-
+            var list = dbe.ad_table.Where(x => x.Status == "approved").ToList();
+            if(list!=null)
+            {
+                list.Reverse();
+            }
             return Request.CreateResponse(HttpStatusCode.Accepted, list);
         }
 

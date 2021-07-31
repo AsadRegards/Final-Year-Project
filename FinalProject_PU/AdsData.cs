@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -13,6 +14,13 @@ namespace FinalProject_PU
         public string Adstext { get; set; }
         public string websitelink { get; set; }
         public int budget { get; internal set; }
+
+        public string Status { get; set; }
+        public int User_id { get; set; }
+
+        public DateTime Date { get; set; }
+        public int Elapsed_Days { get; set; }
+
 
         public static async Task<List<AdsData>>  GetAllAds()
         {

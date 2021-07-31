@@ -104,11 +104,11 @@ namespace FinalProject_PU.Helper
         }
 
 
-        int AdPosition = 0;
+        
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             
-            if(position==0 || position%6!=0)
+            if(GetItemViewType(position)!=0)
             {
                 RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
                 byte[] arr0 = Convert.FromBase64String(lstData[position].IssueImage); //IssueImage
@@ -146,8 +146,10 @@ namespace FinalProject_PU.Helper
             }
             else
             {
-                try
-                {
+                //try
+                //{
+                    int AdPosition = position / 6 -1;
+                    int checknumber = position;
                     if(AdPosition < lstAdsData.Count)
                     {
                         RecyclerViewHolder viewHolder = holder as RecyclerViewHolder;
@@ -158,20 +160,26 @@ namespace FinalProject_PU.Helper
                         viewHolder.Ad_Title.SetText(title, 0, title.Length);
                         char[] text = lstAdsData[AdPosition].Adstext.ToCharArray();
                         viewHolder.Ad_text.SetText(text, 0, text.Length);
-                        
+                        var index = AdPosition;
                         viewHolder.Ad_button.Click += (sender, EventArgs) =>
                         {
-                            Adbutton_Click(sender, EventArgs, AdPosition);
+                            Adbutton_Click(sender, EventArgs, index);
                         };
-                        AdPosition += 1;
+                         AdPosition += 1;//
+                        
                     }
-                   
-                }
-                catch(Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine("EXCEPTION::"+ex.ToString());
-                }
-               
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    System.Diagnostics.Debug.WriteLine("EXCEPTION::" + ex.ToString());
+                //    throw;
+                //}
+                //finally
+                //{
+                //    AdPosition += 1;
+                //}
+
 
             }
 
@@ -179,16 +187,33 @@ namespace FinalProject_PU.Helper
 
         private void Adbutton_Click(object sender, EventArgs eventArgs, int adPosition)
         {
-            var uri = Android.Net.Uri.Parse(lstAdsData[adPosition].websitelink);
-            var intent = new Intent(Intent.ActionView, uri);
+            string uri= lstAdsData[adPosition].websitelink;
+            if (!uri.Contains("http://") || !uri.Contains("https://"))
+            {
+                uri=uri.Insert(0, "http://");
+            }
+            var f_uri = Android.Net.Uri.Parse(uri);
+            var intent = new Intent(Intent.ActionView, f_uri);
             Application.Context.StartActivity(intent);
         }
 
         public override int GetItemViewType(int position)
         {
+            
             if(position % 6 == 0 && position!=0)
             {
-                return 0; //return AD_TYPE
+                int AdPosition = position / 6 -1;
+                if(AdPosition<lstAdsData.Count)
+                {
+                    return 0;
+                }
+                //if(AdPosition<lstAdsData.Count)
+                //{
+                //    return 0; //return AD_TYPE
+                //}
+                //return 1;
+                
+                
             }
             return 1; //return VIEW_TYPE
         }
@@ -226,6 +251,7 @@ namespace FinalProject_PU.Helper
 
         }
 
+        int ItemTYPE;
         private void ViewStatus_Click(object sender, EventArgs e,int position)
         {
             Intent i = new Intent(Application.Context, typeof(ViewStatusHome));
@@ -236,18 +262,21 @@ namespace FinalProject_PU.Helper
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            if(viewType==0)
+            if(viewType==0 )
             {
                 LayoutInflater inflater = LayoutInflater.From(parent.Context);
                 //TO CHANGE WITH LAYOUT FOR ADS SHOWING
 
                 Android.Views.View itemView = inflater.Inflate(Resource.Layout.AdItems, parent, false);
+                ItemTYPE = 0;
                 return new RecyclerViewHolder(itemView);
             }
             else
             {
+                
                 LayoutInflater inflater = LayoutInflater.From(parent.Context);
                 Android.Views.View itemView = inflater.Inflate(Resource.Layout.items, parent, false);
+                ItemTYPE=1;
                 return new RecyclerViewHolder(itemView);
             }
            

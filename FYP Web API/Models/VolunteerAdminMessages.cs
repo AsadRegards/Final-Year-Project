@@ -12,18 +12,11 @@ namespace FYP_Web_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ad_table
+    public partial class VolunteerAdminMessages
     {
-        public int advertisment_id { get; set; }
-        public string Adstitle { get; set; }
-        public string Adstext { get; set; }
-        public string websitelink { get; set; }
-        public string Adsimage { get; set; }
-        public string Status { get; set; }
-        public int User_id { get; set; }
-        public System.DateTime Date { get; set; }
-        public int Elapsed_Days { get; set; }
-    
-        public virtual user_table user_table { get; set; }
+        public int message_id { get; set; }
+        public string message { get; set; }
+        public string user_name_id { get; set; }
+        public System.DateTime date { get; set; }
     }
 }
