@@ -63,7 +63,7 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/createissue6"
         android:layout_below="@+id/create_issue_3_tvusername"
@@ -73,8 +73,8 @@
         android:layout_marginTop="30dp"/>
 
     <ImageView
-        android:src="@drawable/issue6314"
-        android:layout_width="378dp"
+        android:src="@drawable/group293"
+        android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_below="@+id/create_issue_4_tv"
         android:layout_marginTop="10dp"
@@ -91,8 +91,8 @@
         android:id="@+id/create_issue6_radiobtn1" />
 
     <ImageView
-        android:src="@drawable/issue6315"
-        android:layout_width="378dp"
+        android:src="@drawable/group326"
+        android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_below="@+id/create_issue_4_tv"
         android:layout_marginTop="130dp"
@@ -109,8 +109,8 @@
         android:id="@+id/create_issue6_radiobtn2" />
 
         <ImageView
-        android:src="@drawable/issue6323"
-        android:layout_width="378dp"
+        android:src="@drawable/group325"
+        android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_below="@+id/create_issue6_radiobtn1"
         android:layout_marginTop="175dp"

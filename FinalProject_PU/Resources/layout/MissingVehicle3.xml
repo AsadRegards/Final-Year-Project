@@ -31,7 +31,7 @@
         android:id="@+id/next_MissingVehicle3"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentRight="true"/>
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -53,21 +53,22 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/MissingVehicle3_text"
         android:layout_below="@+id/MissingVehicle3_tvusername"
         android:textSize="12dp"
         android:id="@+id/MissingVehicle3_tv"
-        android:layout_marginStart="40dp"
+        android:textAlignment="center"
         android:layout_marginTop="20dp"/>
 
     <ImageView
         android:src="@drawable/homelocationicon"
-        android:layout_width="135dp"
+        android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginRight="195dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="55dp"
         android:layout_below="@+id/MissingVehicle3_tvusername"
         android:id="@+id/MissingVehicle3_homelocation"
            />
@@ -77,18 +78,20 @@
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="70dp"
         android:layout_below="@+id/MissingVehicle3_tv"
         android:background="@drawable/ellipse1"
         android:id="@+id/MissingVehicle3_Radiobtn1" />
 
         <ImageView
         android:src="@drawable/worklocationicon"
-        android:layout_width="135dp"
+        android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginRight="20dp"
+        
         android:layout_below="@+id/MissingVehicle3_tvusername"
         android:id="@+id/MissingVehicle3_WorkLocation"
            />
@@ -98,7 +101,7 @@
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="150dp"
         android:layout_marginStart="245dp"
         android:layout_below="@+id/MissingVehicle3_tv"
         android:background="@drawable/ellipse1"
@@ -106,10 +109,11 @@
  
      <ImageView
         android:src="@drawable/otherlocationicon"
-        android:layout_width="135dp"
+        android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_marginTop="185dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="225dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginStart="100dp"
         android:layout_below="@+id/MissingVehicle3_tv"
         android:id="@+id/MissingVehicle3_OtherLocation"
            />

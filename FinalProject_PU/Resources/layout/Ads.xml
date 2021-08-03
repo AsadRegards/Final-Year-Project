@@ -33,15 +33,16 @@
        
          />
     <ImageView
-        android:src="@drawable/rel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#646464"        
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/imglinehead"
         android:layout_below="@+id/imgheadaccounts"
        
          />
+
     <ImageView
         android:src="@drawable/usericon"
         android:layout_width="wrap_content"
@@ -67,7 +68,7 @@
         />
      <ImageView
         android:src="@drawable/scrtnewad"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_marginTop="40dp"
         android:layout_height="wrap_content" 
         android:id="@+id/imgcrtnewads"
@@ -75,7 +76,7 @@
          />
     <ImageView
         android:src="@drawable/mngads"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content" 
         android:id="@+id/imgManageAds"

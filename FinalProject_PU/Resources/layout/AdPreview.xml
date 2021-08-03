@@ -18,12 +18,24 @@
     >
 
 
+             <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="#3B414B"
 
+            android:layout_width="320dp"
+            android:layout_height="306dp"
+            android:layout_marginTop="280dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imgbelowPath"
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            />
 
-        <com.dushyant.roundedimageviewlibrary.RoundedImageView
+       <com.dushyant.roundedimageviewlibrary.RoundedImageView
             android:src="@drawable/pothole1"
-            android:layout_width="285dp"
-            android:layout_height="237dp"          
+            android:layout_width="320dp"
+            android:layout_height="267dp"          
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
             android:id="@+id/imgIssue"
@@ -32,10 +44,13 @@
             app:imagePadding="10"
             app:cornerRadius="10"
             />
+        
+        
+
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="285dp"
-            android:layout_height="237dp"
+            android:layout_width="320dp"
+            android:layout_height="267dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
             android:visibility="visible"
@@ -49,14 +64,8 @@
             android:contentDescription="description"
             tools:ignore="MissingDimension,Suspicious0dp" />
 
-        <ImageView
-            android:src="@drawable/belowbg"
-            android:layout_width="285dp"
-            android:layout_height="301dp"
-            android:layout_marginTop="260dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/imgbelowPath"
-         />
+        
+
         <TextView
             android:text="Sponsored"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -91,7 +100,7 @@
         <TextView
             android:text="Stay Home Safe Life by yourself"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgIssue"
             android:textSize="15sp"
@@ -100,14 +109,14 @@
             android:layout_marginTop="50dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="40dp"
-            
+            android:textAlignment="center"
             android:textColor="#fff"
             
             android:textStyle="normal"
             android:id="@+id/adtext" />
         
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/icngolasthome2"
             android:layout_below="@id/adtext"
@@ -123,8 +132,8 @@
             android:layout_height="wrap_content"
             android:text="submit ad"
             android:id="@+id/adsubmit"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
+            android:layout_below="@id/adgoButton"
+            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"/>
           
 

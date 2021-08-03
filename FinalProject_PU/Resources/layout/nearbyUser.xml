@@ -38,7 +38,7 @@
          />
     <ImageView
         android:src="@drawable/rel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"   
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
@@ -84,13 +84,14 @@
             />
        
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Road Spill near Gulshan e Iqbal"
         android:layout_below="@id/imgIssue"
         android:layout_marginTop="20dp"
         android:textColor="#000"
         android:textSize="15sp"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:id="@+id/issuetxt"/>
 
@@ -105,22 +106,24 @@
         android:layout_centerHorizontal="true"
         />
           <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please Verify this issue"
         android:layout_below="@id/switch1"
         android:layout_marginTop="20dp"
         android:textColor="#000"
         android:textSize="15sp"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:id="@+id/verifytxt"/>
               <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="If you dont want to verify, please report it!"
         android:layout_below="@id/verifytxt"
         android:layout_marginTop="20dp"
         android:textColor="#0078e3"
+        android:textAlignment="center"
         android:clickable="true"
         android:textSize="15sp"
         android:autoLink="all"

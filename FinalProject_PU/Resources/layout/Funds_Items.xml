@@ -27,7 +27,7 @@
             android:textStyle="bold"
             
             
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pothole not filled with water near gulshan e iqbal karachi"
             android:layout_marginTop="5dp"

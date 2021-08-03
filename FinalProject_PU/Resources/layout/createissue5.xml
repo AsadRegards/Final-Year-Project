@@ -40,7 +40,8 @@
         android:id="@+id/create_issue5_btnnext"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentEnd="true"
+        />
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -62,21 +63,23 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/createissue5"
         android:layout_below="@+id/create_issue_5_tvusername"
         android:textSize="12dp"
         android:id="@+id/create_issue_5_tv"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"/>
+        
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"/>
 
     <ImageView
         android:src="@drawable/issue5lighttraffic"
-        android:layout_width="205dp"
+        android:layout_width="match_parent"
         android:layout_height="205dp"
         android:layout_below="@+id/create_issue_5_tv"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="170dp"
         android:id="@+id/crt_issue_5_radio1"
            />
     <RadioButton
@@ -90,7 +93,7 @@
         android:id="@+id/create_issue5_radiobtn1" />
     <ImageView
         android:src="@drawable/issue5moderate"
-        android:layout_width="205dp"
+        android:layout_width="match_parent"
         android:layout_height="205dp"
         android:layout_below="@+id/create_issue_5_tv"
         android:layout_marginTop="10dp"
@@ -109,7 +112,7 @@
 
     <ImageView
         android:src="@drawable/issue5heavytraffic"
-        android:layout_width="371dp"
+        android:layout_width="match_parent"
         android:layout_height="196dp"
         android:layout_below="@+id/create_issue5_radiobtn2"
         android:layout_marginTop="40dp"

@@ -36,7 +36,7 @@
         android:id="@+id/img2"
         android:src="@drawable/blueemptyicon"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="310dp"/>
+        android:layout_alignParentRight="true"/>
     
  
 
@@ -70,7 +70,7 @@
         android:layout_marginStart="20dp"
         android:gravity="center"
         android:layout_below="@+id/textInputLayout5"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="35dp"
         android:textSize="20dp"
         android:textColor="#858585"
         android:id="@+id/tv5"/>
@@ -87,7 +87,7 @@
 
     
     <ImageView
-        android:layout_width="319dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
         android:src="@drawable/group2281"
         android:layout_below="@+id/tv5"
