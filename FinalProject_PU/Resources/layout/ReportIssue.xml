@@ -35,9 +35,9 @@
        
          />
     <ImageView
-        android:src="@drawable/rel3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
+        android:background="#6464"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"   
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/imglinehead"
@@ -107,8 +107,9 @@
             android:id="@+id/tvIssueType" />
     <TextView
             android:text="Select best option that describes your report!:"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_below="@+id/text_location"
             android:textSize="15sp"
             android:layout_marginTop="18dp"
@@ -119,7 +120,7 @@
             android:id="@+id/txtHeadi" />
        <ImageView
         android:src="@drawable/rprt1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtHeadi"
         android:layout_marginTop="10dp"
@@ -137,7 +138,7 @@
 
       <ImageView
         android:src="@drawable/rprt2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/IssueReport1"
         android:layout_marginTop="10dp"
@@ -155,7 +156,7 @@
 
     <ImageView
         android:src="@drawable/rprt3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/IssueReport2"
         android:layout_marginTop="10dp"
@@ -173,7 +174,7 @@
 
      <ImageView
         android:src="@drawable/rprt4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/IssueReport3"
         android:layout_marginTop="10dp"
@@ -191,7 +192,7 @@
     
      <ImageView
         android:src="@drawable/rprt5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/IssueReport4"
         android:layout_marginTop="10dp"
