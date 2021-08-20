@@ -27,9 +27,9 @@
        
          />
     <ImageView
-        android:src="@drawable/rel3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
+        android:background="#0078e3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"   
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/imglinehead"
@@ -38,7 +38,7 @@
          />
      <ImageView
         android:src="@drawable/saccounts"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"   
         android:layout_marginTop="20dp"
         android:id="@+id/imgviewaccounts"
@@ -47,14 +47,14 @@
     
     <ImageView
         android:src="@drawable/smyads"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" 
         android:id="@+id/imgviewmyads"
         android:layout_below="@id/imgviewaccounts"
          />
     <ImageView
         android:src="@drawable/spayments"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" 
         android:id="@+id/imgpayments"
         android:layout_below="@+id/imgviewmyads"

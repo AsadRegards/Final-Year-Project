@@ -19,7 +19,20 @@
 
 
 
+             <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="#3B414B"
 
+            android:layout_width="320dp"
+            android:layout_height="306dp"
+            android:layout_marginTop="280dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imgbelowPath"
+            app:scaleType="centerCrop"
+            app:canvasPadding="10"
+            app:imagePadding="10"
+            app:cornerRadius="10"
+            />
+   
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
             android:src="@drawable/pothole1"
             android:layout_width="320dp"
@@ -48,19 +61,6 @@
             android:scaleType="centerCrop"
             android:contentDescription="description"
             tools:ignore="MissingDimension,Suspicious0dp" />
-        <com.dushyant.roundedimageviewlibrary.RoundedImageView
-            android:src="#3B414B"
-
-            android:layout_width="320dp"
-            android:layout_height="306dp"
-            android:layout_marginTop="280dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/imgbelowPath"
-            app:scaleType="centerCrop"
-            app:canvasPadding="10"
-            app:imagePadding="10"
-            app:cornerRadius="10"
-            />
         <Refractored.Controls.CircleImageView
             android:src="@drawable/profile"
             android:layout_width="50dp"
@@ -222,7 +222,7 @@
             android:src="@drawable/refresh2"
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ContributeHome"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="55dp"
             android:id="@+id/GoLast"/>
                 <TextView
@@ -233,7 +233,7 @@
             android:layout_below="@id/ContributeHome"
             android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/ContributeHome"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:textAlignment="center"
             android:textSize="12dp"
             android:textColor="#fff"

@@ -7,24 +7,13 @@
     android:layout_height="match_parent"
     android:background="#f8f8f8">
 
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_height="wrap_content"
+     <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#646464"
+            android:layout_marginTop="50dp"
+            android:id="@+id/lise"/>
      
-        android:layout_marginTop="50dp"
-        android:id="@+id/lise"
-        />
-
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="318dp"
-        android:layout_marginStart="50dp"
-        android:layout_height="wrap_content"
-     
-        android:layout_marginTop="50dp"
-        android:id="@+id/lwise"
-        />
     
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +31,7 @@
         android:id="@+id/imga2"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentRight="true"/>
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -64,17 +53,18 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/PlantingCampignissue2_text"
         android:layout_below="@id/tvusername"
         android:textSize="15dp"
         android:id="@+id/tvinfoproblem"
-        android:layout_marginStart="80dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:layout_marginTop="40dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/I_Will_Water"
         android:layout_below="@+id/tvinfoproblem"
@@ -111,67 +101,6 @@
         android:textSize="20dp"
         android:gravity="center"/>
 
-    <ImageView
-        android:src="@drawable/iconhome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_alignParentBottom="true"
-        android:id="@+id/iconHome"
-           />
-    <ImageView
-        android:src="@drawable/line2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginTop="559dp"
-        android:id="@+id/line2"
-         />
-    <ImageView
-        android:src="@drawable/iconfunds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconFunds"
-         />
-    <ImageView
-        android:src="@drawable/iconnotifcation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconNotifications"
-         />
- <ImageView
-        android:src="@drawable/iconlocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconMap"
-         />
- <ImageView
-        android:src="@drawable/iconsetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="570dp"
-        android:id="@+id/iconSettings"
-         />
-    <ImageView
-        android:src="@drawable/rectangle69"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="559dp"
-        android:id="@+id/line"
-         />
    
 
    

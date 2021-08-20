@@ -34,15 +34,17 @@
        
          />
     <ImageView
-        android:src="@drawable/rel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"   
+        
+        android:layout_width="match_parent"
+        android:layout_height="2dp"   
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/imglinehead"
         android:layout_below="@+id/imgheadaccounts"
+        android:background="#646464"
        
          />
+
     <Refractored.Controls.CircleImageView
         android:src="@drawable/usericon"
         android:layout_width="70dp"
@@ -68,7 +70,7 @@
         />
     <ImageView
         android:src="@drawable/cp"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"   
         android:layout_marginTop="20dp"
         android:layout_below="@+id/usericon"
@@ -77,14 +79,14 @@
          />
     <ImageView
         android:src="@drawable/cpn"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imgchangeno"
         android:layout_below="@+id/imgchangepass"
          />
        <ImageView
         android:src="@drawable/chusername"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imgchangeusername"
         android:layout_below="@+id/imgchangeno"

@@ -39,7 +39,7 @@
         android:id="@+id/create_issue4_btnnext"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentRight="true"/>
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -61,18 +61,18 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/createissue3"
         android:layout_below="@+id/create_issue_3_tvusername"
         android:textSize="15dp"
         android:id="@+id/create_issue_3_tv"
-        android:layout_marginStart="40dp"
+        android:textAlignment="center"
         android:layout_marginTop="20dp"/>
 
     <ImageView
         android:src="@drawable/group306"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/create_issue_3_tv"
         android:layout_marginTop="10dp"
@@ -90,7 +90,7 @@
 
     <ImageView
         android:src="@drawable/group310"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crt_issue_3_radio1"
         android:layout_marginTop="10dp"
@@ -108,7 +108,7 @@
 
     <ImageView
         android:src="@drawable/group324"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crt_issue_3_radio2"
         android:layout_marginTop="10dp"

@@ -10,7 +10,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="310dp"
+        android:layout_alignParentRight="true"
         android:id="@+id/imageView1" />
     <TextView
         android:text="@string/Location"
@@ -25,7 +25,7 @@
         android:id="@+id/textView1" />
     <ImageView
         android:src="@drawable/asset2"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="352dp"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/textView1"
@@ -34,31 +34,31 @@
     <ImageView
         android:src="@drawable/group2771"        
         android:layout_centerVertical="true"
-        android:layout_width="112dp"
+        android:layout_width="match_parent"
         android:layout_height="143dp"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginRight="150dp"
         android:id="@+id/imgHomeLoca" />
     <ImageView
         android:src="@drawable/workloca"
-        android:layout_width="112dp"
+        android:layout_width="match_parent"
         android:layout_height="143dp"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="150dp"
         android:id="@+id/imgJobLoca" />
     <ImageView
         android:src="@drawable/group237"
-        android:layout_width="87dp"
+        android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="230dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="210dp"
         android:layout_below="@+id/imgHomeLoca"
         android:id="@+id/imgGO" />
     <ImageView
         android:src="@drawable/asset1"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="237dp"
         android:paddingBottom="50dp"
         android:layout_marginTop="110dp"
@@ -66,7 +66,7 @@
         android:id="@+id/imgasset1" />
     <ImageView
         android:src="@drawable/group2388"
-        android:layout_width="229dp"
+        android:layout_width="match_parent"
         android:layout_height="69dp"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"

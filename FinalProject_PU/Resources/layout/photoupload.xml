@@ -13,7 +13,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="310dp"
+    android:layout_alignParentRight="true"
         android:id="@+id/imglogo" />
 
     <TextView
@@ -31,7 +31,7 @@
 
      <ImageView
         android:src="@drawable/asset2"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvhead"
@@ -48,7 +48,7 @@
         android:id="@+id/imgaccount" />
      <ImageView
         android:src="@drawable/asset1"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
@@ -77,11 +77,11 @@
 
      <ImageView
         android:src="@drawable/group237"
-        android:layout_width="87dp"
+        android:layout_width="match_parent"
         android:layout_height="85dp"
         android:layout_marginTop="40dp"
-        
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="200dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/imgaccount"
         android:id="@+id/imglogin" />
       <!-- Loading Indicator for overall screen   -->

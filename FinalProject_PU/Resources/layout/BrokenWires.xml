@@ -65,9 +65,10 @@
 
     <ImageView
         android:src="@drawable/electricpolefullroad"
-        android:layout_width="202dp"
+        android:layout_width="match_parent"
         android:layout_height="252dp"
         android:layout_marginTop="70dp"
+        android:layout_marginRight="140dp"
         android:layout_below="@+id/BrokenWires_tvusername"
         android:id="@+id/FullRoadElectricPole"
            />
@@ -78,14 +79,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="90dp"
         android:layout_below="@+id/BrokenWires_tv"
         android:background="@drawable/ellipse1"
         android:id="@+id/BrokenWire_Radiobtn1" />
 
         <ImageView
         android:src="@drawable/electricpolehalfroad"
-        android:layout_width="202dp"
+        android:layout_width="match_parent"
         android:layout_height="252dp"
         android:layout_marginTop="140dp"
         android:layout_marginStart="190dp"

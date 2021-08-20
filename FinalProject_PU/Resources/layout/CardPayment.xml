@@ -6,7 +6,7 @@
     android:background="#fff">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
         android:id="@+id/Headimg"
         android:layout_marginTop="20dp"
@@ -38,7 +38,7 @@
         android:id="@+id/txtCardNo"
         android:layout_below="@+id/HeadText"/>
     <EditText
-        android:layout_width="340dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edtCardNo"    
         android:layout_centerHorizontal="true"
@@ -101,7 +101,7 @@
        
         android:layout_below="@+id/edtCardNo"/>
     <EditText
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edtCvc"
         android:layout_marginStart="60dp"
@@ -122,7 +122,7 @@
         android:id="@+id/txtAmount"
         android:layout_below="@+id/edtExpiryDateMonth"/>
     <EditText
-        android:layout_width="340dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/edtAmount" 
         android:layout_centerHorizontal="true"

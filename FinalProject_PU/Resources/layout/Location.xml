@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/bglogin">
     <ImageView
-        android:src="@drawable/onlylogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="310dp"
+        android:src="@drawable/iconwhitecomplete"
+         android:layout_width="40dp"
+        android:layout_height="40dp"
+       android:layout_marginTop="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
         android:id="@+id/imageView1" />
     <TextView
         android:text="@string/Location"
@@ -24,9 +25,10 @@
         android:id="@+id/textView1" />
     <ImageView
         android:src="@drawable/asset2"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="352dp"
         android:layout_marginTop="10dp"
+         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView1"
         android:id="@+id/imageView2" />
     <ImageView
@@ -38,24 +40,24 @@
         android:id="@+id/imgback" />
     <ImageView
         android:src="@drawable/grouphome"
-        android:layout_width="112dp"
+        android:layout_width="match_parent"
         android:layout_height="143dp"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginRight="160dp"
         android:id="@+id/imgHomeLoca" />
     <ImageView
         android:src="@drawable/group276"
-        android:layout_width="112dp"
+        android:layout_width="match_parent"
         android:layout_height="143dp"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="60dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="140dp"
         android:id="@+id/imgJobLoca" />
     <me.grantland.widget.AutofitTextView
          android:text="@string/Location1"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/imgJobLoca"
         android:textSize="15dp"
@@ -69,19 +71,20 @@
         android:id="@+id/textView2" />
      <ImageView
         android:src="@drawable/asset1"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="237dp"
-        android:paddingBottom="50dp"
+        android:paddingBottom="40dp"
         android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/imgHomeLoca"
         android:id="@+id/imageViewdown" />
     <ImageView
         android:src="@drawable/group2388"
-        android:layout_width="229dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/imgHomeLoca"
+        android:layout_below="@id/textView2"
         android:id="@+id/imageView9" />
     
     

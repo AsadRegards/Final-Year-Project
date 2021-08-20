@@ -30,7 +30,7 @@
         android:id="@+id/next_FoundVehicle"
         android:src="@drawable/iconnext"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="320dp"/>
+        android:layout_alignParentRight="true"/>
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -52,19 +52,19 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/FoundVehicle_infor"
         android:layout_below="@+id/FoundVehicle_tvusername"
         android:textSize="12dp"
         android:id="@+id/FoundVehicle_tv"
-        android:layout_marginStart="40dp"
+        android:textAlignment="center"
         android:layout_marginTop="40dp"/>
 
     <ImageView
         android:src="@drawable/vehicle"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/FoundVehicle_tvusername"

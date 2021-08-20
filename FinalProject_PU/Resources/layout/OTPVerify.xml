@@ -32,7 +32,7 @@
         android:id="@+id/iimg2"
         android:src="@drawable/blueemptyicon"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="310dp"/>
+        android:layout_alignParentRight="true"/>
 
     <ImageView
         android:layout_width="186dp"
@@ -45,7 +45,7 @@
         android:layout_marginStart="10dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/EmailVerifyText"
         android:layout_centerHorizontal="true"
@@ -57,7 +57,7 @@
         android:id="@+id/ttv2"/>
 
     <EditText
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/eedt1"
         android:textColor="#000"
@@ -66,13 +66,14 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:inputType="number"
+        android:maxLength="6"
         android:layout_below="@+id/ttv2"
         android:textSize="25sp"
         
         />
 
     <ImageView
-        android:layout_width="319dp"
+        android:layout_width="match_parent"
         android:layout_height="49dp"
         android:src="@drawable/group2281"
         android:layout_below="@+id/eedt1"
