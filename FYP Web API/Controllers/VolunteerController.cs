@@ -149,14 +149,24 @@ namespace FYP_Web_API.Controllers
             return Request.CreateResponse(HttpStatusCode.Accepted, "");
         }
 
-        [HttpPost]
+        [HttpGet]
         [ActionName("sendmessage")]
         public HttpResponseMessage sendmessage(string id_name,string message)
         {
-            VolunteerAdminMessages m = new VolunteerAdminMessages() { date = DateTime.Now, user_name_id = id_name, message = message };
-            dbe.VolunteerAdminMessages.Add(m);
-            dbe.SaveChanges();
-            return Request.CreateResponse(HttpStatusCode.Accepted, "Message sent successfully");
+            if(string.IsNullOrEmpty(message))
+            {
+                var list = dbe.VolunteerAdminMessages.ToList();
+                return Request.CreateResponse(HttpStatusCode.Accepted, list);
+            }
+            else
+            {
+                VolunteerAdminMessages m = new VolunteerAdminMessages() { date = DateTime.Now, user_name_id = id_name, message = message };
+                dbe.VolunteerAdminMessages.Add(m);
+                dbe.SaveChanges();
+                var list = dbe.VolunteerAdminMessages.ToList();
+                return Request.CreateResponse(HttpStatusCode.Accepted, list);
+            }
+            
         }
     }
 }

@@ -48,6 +48,10 @@ namespace FYP_Web_API.Controllers
         public int GetCost(int index)
         {
             var CostIndex = new int[] { 2000,1500,3000,2000,4000,2500,5000,3500,6000,4000  };
+            if(index>=CostIndex.Length)
+            {
+                return 0;
+            }
             return CostIndex[index];
         }
     }

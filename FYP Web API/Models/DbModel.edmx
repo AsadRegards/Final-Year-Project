@@ -93,6 +93,7 @@
           <Property Name="isWorkingStarted" Type="int" Nullable="false" />
           <Property Name="issueFlag" Type="nvarchar" MaxLength="50" />
           <Property Name="issueType" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkingStatus" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="nearby_user_table">
           <Key>
@@ -545,6 +546,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <NavigationProperty Name="nearby_user_table" Relationship="Self.FK_nearby_user_table_issue_table" FromRole="issue_table" ToRole="nearby_user_table" />
           <NavigationProperty Name="report_table" Relationship="Self.FK_report_table_issue_table" FromRole="issue_table" ToRole="report_table" />
           <NavigationProperty Name="Volunteer_Report" Relationship="problemupdatedbModel.FK_Volunteer_Report_issue_table" FromRole="issue_table" ToRole="Volunteer_Report" />
+          <Property Name="WorkingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="nearby_user_table">
           <Key>
@@ -964,6 +966,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySetMapping Name="issue_table">
             <EntityTypeMapping TypeName="problemupdatedbModel.issue_table">
               <MappingFragment StoreEntitySet="issue_table">
+                <ScalarProperty Name="WorkingStatus" ColumnName="WorkingStatus" />
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="Status" ColumnName="Status" />

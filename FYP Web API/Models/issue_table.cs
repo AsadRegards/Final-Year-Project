@@ -52,6 +52,7 @@ namespace FYP_Web_API.Models
         public int isWorkingStarted { get; set; }
         public string issueFlag { get; set; }
         public string issueType { get; set; }
+        public string WorkingStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignedByAdmin> AssignedByAdmin { get; set; }

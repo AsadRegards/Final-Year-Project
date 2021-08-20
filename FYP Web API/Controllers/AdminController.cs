@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Web.Http;
 
 namespace FYP_Web_API.Controllers
@@ -41,6 +42,31 @@ namespace FYP_Web_API.Controllers
         }
 
         [HttpGet]
+        [ActionName("updateworkingstatus")]
+        public HttpResponseMessage updateworkingstatus(int issueid, string status)
+        {
+            var issue = dbe.issue_table.Where(x => x.issue_id == issueid).FirstOrDefault();
+            if(issue!=null)
+            {
+                issue.WorkingStatus = status;
+                if(status=="Working")
+                {
+                    issue.isWorkingStarted = 1;
+                }
+                if(status=="Resolved")
+                {
+                    issue.isresolved = 1;
+                }
+                if(status=="Not Working")
+                {
+                    issue.isWorkingStarted = 0;
+                }
+                dbe.SaveChanges();
+            }
+            return Request.CreateResponse(HttpStatusCode.Accepted, "");
+        }
+
+        [HttpGet]
         [ActionName("fetchallissues")]
         public HttpResponseMessage fetchallissues()
         {
@@ -61,6 +87,7 @@ namespace FYP_Web_API.Controllers
             var data = dbe.report_table.ToList();
             return Request.CreateResponse(HttpStatusCode.Accepted, data);
         }
+
         [HttpGet]
         [ActionName("fetchalladvertisments")]
         public HttpResponseMessage fetchalladvertisments()
@@ -68,6 +95,7 @@ namespace FYP_Web_API.Controllers
             var data = dbe.ad_table.ToList();
             return Request.CreateResponse(HttpStatusCode.Accepted, data);
         }
+
         [HttpGet]
         [ActionName("fetchallfunds")]
         public HttpResponseMessage fetchallfunds()
@@ -98,6 +126,50 @@ namespace FYP_Web_API.Controllers
                 return Request.CreateResponse(HttpStatusCode.Accepted, data);
             }
         }
+
+        [HttpGet]
+        [ActionName("updateadstatus")]
+        public HttpResponseMessage updateadstatus(string status, int ad_id, int daystorun)
+        {
+            var ad = dbe.ad_table.Where(x => x.advertisment_id == ad_id).FirstOrDefault();
+            if(ad!=null)
+            {
+                ad.Status = status;
+                ad.Elapsed_Days = daystorun;
+                dbe.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Status Updated");
+
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "Ad record not found");
+
+
+        }
+
+        [HttpGet]
+        [ActionName("sendmessagetoadvertiser")]
+        public HttpResponseMessage sendmessagetoadvertiser(int userid, string message)
+        {
+            var user = dbe.user_table.Where(x => x.user_id == userid).FirstOrDefault();
+            if(user!=null)
+            {
+                SmtpClient client = new SmtpClient();
+                MailMessage msg = new MailMessage();
+                string email_id = user.email_address;
+                msg.From = new MailAddress("problemupdatepu@gmail.com");
+                msg.To.Add(email_id);
+                msg.Subject = "Reply to your recent Advertisment posting";
+                msg.Body = string.Format(message);
+                msg.IsBodyHtml = true;
+                client.Credentials = new NetworkCredential("problemupdatepu@gmail.com", "6302762985");
+                client.Port = 587;
+                client.Host = "smtp.gmail.com";
+                client.EnableSsl = true;
+                client.Send(msg);
+                return Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
         [HttpGet]
         [ActionName("fetchallresolvedissues")]
         public HttpResponseMessage fetchallresolvedissues()
