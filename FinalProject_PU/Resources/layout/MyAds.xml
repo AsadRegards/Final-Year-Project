@@ -43,7 +43,7 @@
         android:layout_below="@+id/imgheadaccounts"
        
          />
-    <ImageView
+    <Refractored.Controls.CircleImageView
         android:src="@drawable/usericon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"   
@@ -101,6 +101,16 @@
         android:layout_below="@+id/imgviewmyads"
          />
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imguploadimg"
+        android:src="@drawable/uploaded"
+        android:layout_below="@id/edtUrl"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/uploaded"
+        android:visibility="gone"/>
+    <ImageView
         android:src="@drawable/bdgt"
         android:layout_width="match_parent"
         android:layout_marginTop="130dp"
@@ -123,12 +133,19 @@
         android:layout_height="50dp"
         
         android:id="@+id/edtBudget" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtBudget"
+        android:text="Note: Budget must be greater than equal to 1000 Rs."
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"/>
     <ImageView
         android:src="@drawable/submm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"  
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/edtBudget"
         android:id="@+id/imgsubmitt"
        

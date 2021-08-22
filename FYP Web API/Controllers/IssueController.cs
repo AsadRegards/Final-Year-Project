@@ -73,6 +73,34 @@ namespace FYP_Web_API.Controllers
 
 
         [HttpGet]
+        [ActionName("addfundtoissue")]
+        public HttpResponseMessage addfundtoissue(int issueid, int amount, int userid)
+        {
+            funds_table funds = new funds_table { amount = amount, issue_id = issueid, fund_date = DateTime.Now, user_id = userid };
+            dbe.funds_table.Add(funds);
+            dbe.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.Accepted, "Saved");
+        }
+
+        [HttpGet]
+        [ActionName("deleteanissue")]
+        public HttpResponseMessage deleteanissue(int issueid)
+        {
+            var issueRecord = dbe.issue_table.Where(x => x.issue_id == issueid).FirstOrDefault();
+            if(issueRecord!=null)
+            {
+                dbe.issue_table.Remove(issueRecord);
+                var result = dbe.SaveChanges();
+                if(result==1)
+                {
+                    return Request.CreateResponse(HttpStatusCode.Accepted, "");
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, "");
+                
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+        [HttpGet]
         [ActionName("fetchallissues")]
         public HttpResponseMessage fetchallissues()
         {

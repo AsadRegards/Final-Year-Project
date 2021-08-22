@@ -96,6 +96,19 @@ namespace FYP_Web_API.Controllers
         }
 
         [HttpGet]
+        [ActionName("getallvolunteerreports")]
+        public HttpResponseMessage getallvolunteerreports()
+        {
+            var list = dbe.Volunteer_Report.ToList();
+            if(list!=null)
+            {
+                return Request.CreateResponse(HttpStatusCode.Accepted, list);
+
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpGet]
         [ActionName("GetstatusofIssue")]
         public HttpResponseMessage GetstatusofIssue(int id)
         {

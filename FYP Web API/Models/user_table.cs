@@ -34,6 +34,7 @@ namespace FYP_Web_API.Models
         public string Joblocatlongi { get; set; }
         public int password_hash { get; set; }
         public int userrating { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<funds_table> funds_table { get; set; }

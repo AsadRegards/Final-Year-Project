@@ -18,26 +18,14 @@
     >
 
 
-             <com.dushyant.roundedimageviewlibrary.RoundedImageView
-            android:src="#3B414B"
-
-            android:layout_width="320dp"
-            android:layout_height="306dp"
-            android:layout_marginTop="280dp"
+        
+      <com.dushyant.roundedimageviewlibrary.RoundedImageView
+            android:src="@drawable/hellow"
+            android:layout_width="match_parent"
+            android:layout_height="257dp"
+            android:paddingBottom="50dp"
             android:layout_centerHorizontal="true"
-            android:id="@+id/imgbelowPath"
-            app:scaleType="centerCrop"
-            app:canvasPadding="10"
-            app:imagePadding="10"
-            app:cornerRadius="10"
-            />
-
-       <com.dushyant.roundedimageviewlibrary.RoundedImageView
-            android:src="@drawable/pothole1"
-            android:layout_width="320dp"
-            android:layout_height="267dp"          
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="100dp"
             android:id="@+id/imgIssue"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -49,10 +37,11 @@
 
         <com.dushyant.roundedimageviewlibrary.RoundedImageView
 
-            android:layout_width="320dp"
-            android:layout_height="267dp"
+            android:layout_width="match_parent"
+            android:layout_height="257dp"
+            android:paddingBottom="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="100dp"
             android:visibility="visible"
             app:scaleType="centerCrop"
             app:canvasPadding="10"
@@ -63,34 +52,33 @@
             android:scaleType="centerCrop"
             android:contentDescription="description"
             tools:ignore="MissingDimension,Suspicious0dp" />
-
-        
-
-        <TextView
+  <TextView
             android:text="Sponsored"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgIssue"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_below="@id/adtext"
+            
+            android:layout_alignParentEnd="true"
+            android:paddingRight="5dp"
+            
             
             android:textSize="12dp"
-            android:textColor="#fff"
+            android:textColor="#767676"
 
             android:fontFamily="serif"
             android:id="@+id/tvsponsered" />
         <TextView
-            android:text="Nabeel Khan"
+            android:text="Halloween Sale"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgIssue"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_centerHorizontal="true"
-            android:textSize="15dp"
-            android:textColor="#fff"
+            android:textSize="25dp"
+            android:textColor="#0078e3"
             android:textStyle="bold"
             android:fontFamily="sans-serif"
             android:id="@+id/adtitle" />
@@ -98,43 +86,38 @@
 
 
         <TextView
-            android:text="Stay Home Safe Life by yourself"
+            android:text="Have a spooky  All Halloween's Even."
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgIssue"
+            android:layout_below="@id/adtitle"
             android:textSize="15sp"
             android:fontFamily="serif"
             android:maxLines="3"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="40dp"
-            android:textAlignment="center"
-            android:textColor="#fff"
+            
+            android:textColor="#000"
             
             android:textStyle="normal"
+            android:layout_centerHorizontal="true"
+            
             android:id="@+id/adtext" />
         
-        <ImageView
-            android:layout_width="match_parent"
+        
+        <Button
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/icngolasthome2"
+            android:text="submit ad"
+            android:textColor="#000"
+            android:fontFamily="serif"
+            android:id="@+id/adsubmit"
             android:layout_below="@id/adtext"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
-            android:id="@+id/adgoButton"/>
-                
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="submit ad"
-            android:id="@+id/adsubmit"
-            android:layout_below="@id/adgoButton"
             android:layout_marginTop="50dp"
-            android:layout_centerHorizontal="true"/>
+            />
           
 
          

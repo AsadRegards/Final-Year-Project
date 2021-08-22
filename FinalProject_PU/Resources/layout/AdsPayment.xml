@@ -7,16 +7,16 @@
 
     
     <ImageView
-        android:src="@drawable/headcontribute"
+        android:src="@drawable/adspayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"   
-        android:layout_marginTop="4dp" 
+        android:layout_marginTop="20dp" 
         android:id="@+id/textviewhead"
         android:layout_centerHorizontal="true"
        
          />
     <ImageView
-        android:src="@drawable/ffundsicn"
+        android:src="@drawable/icnads"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"   
         android:layout_marginTop="10dp"
@@ -43,8 +43,8 @@
         android:layout_below="@+id/textviewhead"
        
          />
-<ImageView
-        android:src="@drawable/textcontributee"
+<TextView
+        android:text="@string/TextPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"   
         android:layout_marginTop="10dp"
@@ -53,7 +53,7 @@
         android:layout_below="@+id/imglinehead"
        
          />
-     <ImageView
+    <ImageView
         android:src="@drawable/groupeasypaisa"
         android:layout_width="150dp"
         android:layout_height="wrap_content"   
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"   
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
-        android:id="@+id/imgJazzCash"
+        android:id="@id/imgJazzCash"
         android:layout_below="@+id/imgEasyPaisa"
        
          />
@@ -186,4 +186,5 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
        />
+
 </RelativeLayout>

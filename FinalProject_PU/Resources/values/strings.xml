@@ -128,4 +128,11 @@
   <string name="EmailVerifyText">We have sent you an email with an OTP to complete Registration, please enter the OTP to continue.</string>
   <string name="Location1">First select home location where you are living for managing best routes for you.</string>
   <string name="Location2">Enter your work location so we can guide better routes for you.</string>
+  
+  <string name="AdsPayment">Ads Payment</string>
+  <string name="TextPayment">Please Select any one method of payment!</string>
+  <string name="EasyPaisa">EasyPaisa</string>
+  <string name="JazzCash">JazzCash</string>
+  <string name="BankAccount">Bank Account</string>
+  <string name="CardPayment">Card Payment</string>
 </resources>

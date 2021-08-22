@@ -1,12 +1,15 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using FinalProject_PU.Control;
 using Newtonsoft.Json;
 using Plugin.Media;
+using Refractored.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +20,8 @@ namespace FinalProject_PU
     [Activity(Label = "MyAdsFragmentSettings")]
     public class MyAdsFragmentSettings : Activity
     {
-        ImageView back, uploadimg, submit;
-        //CircleImageView userimage;
+        ImageView back, uploadimg, submit,uploaded;
+        CircleImageView userimage;
         TextView Username;
         EditText edturl, budget;
         private string base64image;
@@ -30,7 +33,7 @@ namespace FinalProject_PU
             SetContentView(Resource.Layout.MyAds);
             back = (ImageView)FindViewById(Resource.Id.imgbackgo);
             back.Click += Back_Click;
-            //userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
+            userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
             Username = (TextView)FindViewById(Resource.Id.username);
             uploadimg = (ImageView)FindViewById(Resource.Id.imguploadimg);
             uploadimg.Click += Uploadimg_Click;
@@ -38,6 +41,13 @@ namespace FinalProject_PU
             submit = (ImageView)FindViewById(Resource.Id.imgsubmitt);
             submit.Click += Submit_Click;
             budget = FindViewById<EditText>(Resource.Id.edtBudget);
+            //runtime py name and user image change start
+            char[] arr = UserInfoHolder.User_name.ToCharArray();
+            byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
+            Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
+            userimage.SetImageBitmap(bitmapp);
+            Username.SetText(arr, 0, arr.Length);
+            //end
 
 
 
@@ -82,7 +92,8 @@ namespace FinalProject_PU
         {
             try
             { 
-                UploadPhoto();  
+                UploadPhoto();
+                uploaded.Visibility = Android.Views.ViewStates.Visible;
             }
             catch(NullReferenceException)
             {

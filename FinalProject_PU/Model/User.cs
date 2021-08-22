@@ -33,6 +33,8 @@ namespace FinalProject_PU.Model
 
         public int password_hash { get; set; }
 
+        public string Status { get; set; }
+
      
         
        

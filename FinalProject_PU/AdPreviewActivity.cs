@@ -65,8 +65,8 @@ namespace FinalProject_PU
             //call method to send data to Database
             if (await data.StoreAd(data))
             {
-                Toast.MakeText(this, "Ads saved succesfully", ToastLength.Long).Show();
-                Intent i = new Intent(this, typeof(FragmentHomeActivity));
+              
+                Intent i = new Intent(this, typeof(AdsPayment));
                 StartActivity(i);
 
             }

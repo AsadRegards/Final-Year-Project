@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
 
       <ImageView
         android:src="@drawable/backgo"
@@ -85,7 +86,7 @@
         android:background="@drawable/text1"
         android:inputType="text"
         
-        android:text="Halloween Sale"
+        
         android:textAlignment="center"
         android:padding="25dp"
         android:textColor="#7676"
@@ -111,7 +112,7 @@
         android:maxLines="3"
         android:textAlignment="center"
         android:textColor="#767676"
-        android:text="Sale Sale Sale"
+        
        android:background="@drawable/text2" 
         android:inputType="textMultiLine"/>
 

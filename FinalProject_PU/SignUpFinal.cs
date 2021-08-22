@@ -35,6 +35,7 @@ namespace FinalProject_PU
             loadingView.Visibility = Android.Views.ViewStates.Visible;
             imgGo.Enabled = false;
             var User = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("userObj"));
+            User.Status = "active";
             await Task.Run(() => 
             {
                 try

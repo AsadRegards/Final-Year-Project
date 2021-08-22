@@ -23,6 +23,7 @@ namespace FYP_Web_API.Models
         public int User_id { get; set; }
         public System.DateTime Date { get; set; }
         public int Elapsed_Days { get; set; }
+        public int Amount { get; set; }
     
         public virtual user_table user_table { get; set; }
     }

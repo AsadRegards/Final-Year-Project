@@ -26,7 +26,7 @@ namespace FinalProject_PU
         }
 
         string APIKEY = "AIzaSyD8-hqAD2UZX-8VSVoxOpabG2zW1RnmfzE";
-        Button GetDirection;
+        Button GetDirection, pin;
         TextView startLocation, endLocation;
         RadioButton radioStart, radioEnd;
 

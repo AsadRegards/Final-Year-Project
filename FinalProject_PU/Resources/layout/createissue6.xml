@@ -73,7 +73,7 @@
         android:layout_marginTop="30dp"/>
 
     <ImageView
-        android:src="@drawable/group293"
+        android:src="@drawable/group325"
         android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_below="@+id/create_issue_4_tv"
@@ -109,7 +109,7 @@
         android:id="@+id/create_issue6_radiobtn2" />
 
         <ImageView
-        android:src="@drawable/group325"
+        android:src="@drawable/group327"
         android:layout_width="match_parent"
         android:layout_height="98dp"
         android:layout_below="@+id/create_issue6_radiobtn1"

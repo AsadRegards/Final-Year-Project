@@ -95,6 +95,14 @@
         
         android:layout_below="@+id/radioButton1"
         android:id="@+id/radioButton2" />
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:id="@+id/pinid"
+        android:background="@drawable/locationpointnew"
+        />
 
     <Button
         android:layout_width="250dp"

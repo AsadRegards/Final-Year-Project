@@ -88,6 +88,7 @@
     <Compile Include="AdPreviewActivity.cs" />
     <Compile Include="AdsData.cs" />
     <Compile Include="AdsFragmentSettings.cs" />
+    <Compile Include="AdsPayment.cs" />
     <Compile Include="AdTitleandTextActivity.cs" />
     <Compile Include="BrokenWires.cs" />
     <Compile Include="BrokenWires2.cs" />
@@ -660,6 +661,16 @@
     <AndroidResource Include="Resources\drawable\AdvertisemntText.png" />
     <AndroidResource Include="Resources\drawable\BtnPreview.png" />
     <AndroidResource Include="Resources\drawable\AStatus.png" />
+    <AndroidResource Include="Resources\drawable\Group326.png" />
+    <AndroidResource Include="Resources\drawable\Group327.png" />
+    <AndroidResource Include="Resources\drawable\Group293.png" />
+    <AndroidResource Include="Resources\drawable\AdsPayment.png" />
+    <AndroidResource Include="Resources\drawable\GroupBank.png" />
+    <AndroidResource Include="Resources\drawable\GroupCreditCard.png" />
+    <AndroidResource Include="Resources\drawable\GroupEasyPaisa.png" />
+    <AndroidResource Include="Resources\drawable\GroupJazz.png" />
+    <AndroidResource Include="Resources\drawable\GroupSubmit.png" />
+    <AndroidResource Include="Resources\drawable\Group325.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />
@@ -920,6 +931,8 @@
     <AndroidResource Include="Resources\layout\nearbyUser.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Uploaded.png" />
+    <AndroidResource Include="Resources\layout\AdsPayment.xml" />
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />
