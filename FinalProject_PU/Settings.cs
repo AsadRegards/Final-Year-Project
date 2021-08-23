@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
@@ -61,9 +62,18 @@ namespace FinalProject_PU
         {
             Control.UserInfoHolder.DisposeUserinfo();
             var intent = new Intent(Application.Context, typeof(Login));
+            intent.AddFlags(ActivityFlags.NewTask);
+            ISharedPreferences prefs = Application.Context.GetSharedPreferences("tokenfile", FileCreationMode.Private);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            
+            editor.Clear();
+            editor.Commit();
+            ISharedPreferences prefs0 = Application.Context.GetSharedPreferences("loginfile", FileCreationMode.Private);
+            ISharedPreferencesEditor editor0 = prefs0.Edit();
+            editor0.Clear();
+            editor0.Commit();
             Activity.StartActivity(intent);
-            Application.Context.DeleteSharedPreferences("tokenfile");
-            this.Activity.Finish();
+
 
 
         }
@@ -71,12 +81,14 @@ namespace FinalProject_PU
         private void Notifications_Click(object sender, EventArgs e)
         {
             var intent = new Intent(Application.Context, typeof(notificationfragment));
+            intent.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(intent);
         }
 
         private void Accounts_Click(object sender, EventArgs e)
         {
             var intent = new Intent(Application.Context, typeof(AccountFragmentSettings));
+            intent.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(intent);
             
 

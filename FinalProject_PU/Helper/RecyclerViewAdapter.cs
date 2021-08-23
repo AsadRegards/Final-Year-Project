@@ -228,12 +228,14 @@ namespace FinalProject_PU.Helper
         {
             Intent i = new Intent(Application.Context, typeof(ReportIssueHome));
             i.PutExtra("issueobj", JsonConvert.SerializeObject(lstData[position]));
+            i.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(i);
         }
 
         private void Contribute_Click(object sender, EventArgs e, int position)
         {
             Intent i = new Intent(Application.Context, typeof(ContributeFund));
+            i.AddFlags(ActivityFlags.NewTask);
             Control.UserInfoHolder.currentIssueContext = lstData[position].IssueId;
             Application.Context.StartActivity(i);
         }
@@ -247,6 +249,7 @@ namespace FinalProject_PU.Helper
             Intent i = new Intent(Application.Context, typeof(ViewIssueOnMap));
             i.PutExtra("lattopass", JsonConvert.SerializeObject(lat));
             i.PutExtra("longtopass", JsonConvert.SerializeObject(lon));
+            i.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(i);
 
         }
@@ -256,6 +259,7 @@ namespace FinalProject_PU.Helper
         {
             Intent i = new Intent(Application.Context, typeof(ViewStatusHome));
             i.PutExtra("issueobj", JsonConvert.SerializeObject(lstData[position]));
+            i.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(i);
             
         }

@@ -19,7 +19,7 @@ using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Login")]
+    [Activity(Label = "Login",NoHistory =true)]
     public class Login : Activity,IWifiAccess
     {
         EditText email;
@@ -152,6 +152,11 @@ namespace FinalProject_PU
                             else
                             {
                                 var iss = new Intent(this, typeof(FragmentHomeActivity));
+                                ISharedPreferences sharedPrefrences = Application.Context.GetSharedPreferences("loginfile", FileCreationMode.Private);
+                                ISharedPreferencesEditor spEdit = sharedPrefrences.Edit();
+                                spEdit.PutString("email", user.email_address);
+                                spEdit.PutString("password", user.password_hash.ToString());
+                                spEdit.Apply();
                                 UserInfoHolder.FetchUserInfo(user);
                                 FetchandSendTokenWithEmail();
                                 MainThread.BeginInvokeOnMainThread(() => {
@@ -269,7 +274,29 @@ namespace FinalProject_PU
                 return true;
             }
 
-            return true; //To return false but set true temperory
+            return false; //To return false but set true temperory
         }
+
+        long lastPress;
+
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+                
+                FinishAffinity();
+                
+            }
+        }
+        
     }
 }

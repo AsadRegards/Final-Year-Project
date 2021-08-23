@@ -18,6 +18,9 @@ using FinalProject_PU.Model;
 using Android.Content.PM;
 using Android;
 using AndroidX.Core.Content;
+using FinalProject_PU.Control;
+using Xamarin.Essentials;
+using System.Net.Http;
 
 namespace FinalProject_PU
 {
@@ -104,10 +107,76 @@ namespace FinalProject_PU
         // Simulates background work that happens behind the splash screen
         async void SimulateStartup()
         {
-            Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
-            await Task.Delay(3000); // Simulate a bit of startup work.
-            Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
-            StartActivity(new Intent(Application.Context, typeof(Login)));
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("loginfile", FileCreationMode.Private);
+            string email = sharedPreferences.GetString("email", string.Empty);
+            string password = sharedPreferences.GetString("password", string.Empty);
+            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
+                await Task.Delay(1000); // Simulate a bit of startup work.
+                Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
+                StartActivity(new Intent(Application.Context, typeof(Login)));
+            }
+            else
+            {
+                Login login = new Login();
+                if (login.CheckWifiStatus())
+                {
+                    var user = await Account.UserLogin(email,Convert.ToInt32(password));
+                    if (user == null)
+                    {
+                        MainThread.BeginInvokeOnMainThread(() =>
+                        {
+                            Toast.MakeText(this, "Invalid login credintials provided!", ToastLength.Long).Show();
+                            StartActivity(new Intent(Application.Context, typeof(Login)));
+
+
+
+                        });
+                    }
+
+                    else
+                    {
+                        var iss = new Intent(this, typeof(FragmentHomeActivity));
+                        ISharedPreferences sharedPrefrences = Application.Context.GetSharedPreferences("loginfile", FileCreationMode.Private);
+                        ISharedPreferencesEditor spEdit = sharedPrefrences.Edit();
+                        spEdit.PutString("email", user.email_address);
+                        spEdit.PutString("password", user.password_hash.ToString());
+                        spEdit.Apply();
+                        UserInfoHolder.FetchUserInfo(user);
+                        FetchandSendTokenWithEmail();
+                        MainThread.BeginInvokeOnMainThread(() => {
+
+                            this.StartActivity(iss);
+                            // circle5.Visibility = Android.Views.ViewStates.Visible;
+                            this.Finish();
+
+                        });
+
+                    }
+                }
+                else
+                {
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        Toast.MakeText(this, "Please connect to Wifi", ToastLength.Long).Show();
+                        StartActivity(new Intent(Application.Context, typeof(Login)));
+
+                    });
+                }
+            }
+        }
+
+        private async void FetchandSendTokenWithEmail()
+        {
+            ISharedPreferences sharedPreferences = Application.Context.GetSharedPreferences("tokenfile", FileCreationMode.Private);
+            string token = sharedPreferences.GetString("fcmtoken", string.Empty);
+            if (token != string.Empty)
+            {
+                HttpClient Client = new HttpClient();
+                var uri = Control.Account.BaseAddressUri + "/api/pushnotification/savetoken/?token=" + token + "&userid=" + UserInfoHolder.User_id;
+                var response = await Client.PostAsync(uri, null);
+            }
         }
 
     }

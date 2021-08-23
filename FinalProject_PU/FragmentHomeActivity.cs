@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.ViewPager.Widget;
+using AndroidX.ViewPager2.Widget;
 using FinalProject_PU.Control;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,6 @@ namespace FinalProject_PU
             Mnavigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             Mnavigation.SetOnNavigationItemSelectedListener(this);
             viewPager.OffscreenPageLimit = 5;
-            viewPager.SetOnTouchListener(this);
             SetupViewpager();
             
         }
@@ -96,7 +96,9 @@ namespace FinalProject_PU
 
         public bool OnTouch(Android.Views.View v, MotionEvent e)
         {
-            return true;
+            return false;
         }
+
+        
     }
 }

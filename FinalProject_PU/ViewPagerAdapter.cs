@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Fragment.App;
+using AndroidX.RecyclerView.Widget;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,11 @@ namespace FinalProject_PU
         public override AndroidX.Fragment.App.Fragment GetItem(int position)
         {
             return fragment[position];
+        }
+
+        public static implicit operator RecyclerView.Adapter(ViewPagerAdapter v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
