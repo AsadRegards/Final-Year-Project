@@ -55,7 +55,7 @@ namespace FinalProject_PU.Helper
             byte[] arr1 = Convert.FromBase64String(lstData[position].notification_image); //IssueImage
             Android.Graphics.Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
             viewHolder.IssueImage.SetImageBitmap(b1); //
-
+            viewHolder.IssueDate.Text = lstData[position].notification_date.ToShortDateString();
             viewHolder.IssueStatement.Text = lstData[position].notification_text;
 
         }

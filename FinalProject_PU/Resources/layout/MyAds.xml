@@ -100,17 +100,18 @@
         android:layout_centerHorizontal="true"        
         android:layout_below="@+id/imgviewmyads"
          />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/imguploadimg"
-        android:src="@drawable/uploaded"
-        android:layout_below="@id/edtUrl"
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/uploaded"
+        android:layout_toRightOf="@+id/imguploadimg"
+      
+        android:layout_below="@+id/edtUrl"
         android:layout_marginTop="55dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/uploaded"
-        android:visibility="gone"/>
-    <ImageView
+        android:id="@+id/uploaded"/>
+    
+        <ImageView
         android:src="@drawable/bdgt"
         android:layout_width="match_parent"
         android:layout_marginTop="130dp"

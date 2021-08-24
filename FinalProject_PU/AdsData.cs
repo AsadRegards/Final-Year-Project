@@ -21,6 +21,8 @@ namespace FinalProject_PU
         public DateTime Date { get; set; }
         public int Elapsed_Days { get; set; }
 
+        public int Amount { get; set; }
+
 
         public static async Task<List<AdsData>>  GetAllAds()
         {

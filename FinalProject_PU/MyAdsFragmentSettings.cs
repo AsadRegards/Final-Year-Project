@@ -20,7 +20,8 @@ namespace FinalProject_PU
     [Activity(Label = "MyAdsFragmentSettings",NoHistory =true)]
     public class MyAdsFragmentSettings : Activity
     {
-        ImageView back, uploadimg, submit,uploaded;
+        ImageView back, uploadimg, submit;
+        Button uploaded;
         CircleImageView userimage;
         TextView Username;
         EditText edturl, budget;
@@ -31,14 +32,18 @@ namespace FinalProject_PU
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyAds);
+            uploadimg = (ImageView)FindViewById(Resource.Id.imguploadimg);
+            uploadimg.Click += Uploadimg_Click;
+            uploaded = (Button)FindViewById(Resource.Id.uploaded);
+            uploaded.Visibility = ViewStates.Visible;
             back = (ImageView)FindViewById(Resource.Id.imgbackgo);
             back.Click += Back_Click;
             userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
             Username = (TextView)FindViewById(Resource.Id.username);
-            uploadimg = (ImageView)FindViewById(Resource.Id.imguploadimg);
-            uploadimg.Click += Uploadimg_Click;
+            
             edturl = (EditText)FindViewById(Resource.Id.edtUrl);
             submit = (ImageView)FindViewById(Resource.Id.imgsubmitt);
+           
             submit.Click += Submit_Click;
             budget = FindViewById<EditText>(Resource.Id.edtBudget);
             //runtime py name and user image change start
@@ -64,11 +69,15 @@ namespace FinalProject_PU
                     int budgetAmount;
                    if(int.TryParse(budget.Text,out budgetAmount))
                     {
-                        var intent = new Intent(this, typeof(AdTitleandTextActivity));
-                        intent.PutExtra("baseimage", JsonConvert.SerializeObject(base64image));
-                        intent.PutExtra("budget", JsonConvert.SerializeObject(budgetAmount));
-                        intent.PutExtra("link", JsonConvert.SerializeObject(edturl.Text));
-                        StartActivity(intent);
+                        if(budgetAmount>1000)
+                        {
+                            var intent = new Intent(this, typeof(AdTitleandTextActivity));
+                            intent.PutExtra("baseimage", JsonConvert.SerializeObject(base64image));
+                            intent.PutExtra("budget", JsonConvert.SerializeObject(budgetAmount));
+                            intent.PutExtra("link", JsonConvert.SerializeObject(edturl.Text));
+                            StartActivity(intent);
+                        }
+                       
                     }
                    else
                     {
@@ -124,6 +133,10 @@ namespace FinalProject_PU
             catch(Exception)
             {
                 Toast.MakeText(this, "Image couldn't be selected at this time", ToastLength.Long).Show();
+            }
+            finally
+            {
+                uploaded.Visibility = ViewStates.Visible;
             }
         }
 

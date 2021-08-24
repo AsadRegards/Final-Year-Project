@@ -20,7 +20,7 @@ namespace FinalProject_PU.Model
         public string notification_title { get; set; }
         public string notification_text { get; set; }
         public string notification_image { get; set; }
-        //public DateTime notification_date = DateTime.Now;
+        public DateTime notification_date {get;set;}
 
         public async Task<List<Notification>> getallnotification()
         {

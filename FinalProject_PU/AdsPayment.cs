@@ -1,7 +1,9 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Widget;
+using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
 
@@ -10,7 +12,7 @@ namespace FinalProject_PU
     [Activity(Label = "AdsPayment",NoHistory =true)]
     public class AdsPayment : Activity
     {
-
+        Button submit;
         ImageView easypaisa, jazzcash, bankaccount, creditcard, back, close;
         RadioButton radioeasy, radiojazz, radiobank, radiocard;
         TextView texthead, texteasy, textjazz, textbank, textcard;
@@ -46,6 +48,9 @@ namespace FinalProject_PU
             easypaisa = FindViewById<ImageView>(Resource.Id.imgEasyPaisa);
             easypaisa.Click += Easypaisa_Click;
 
+            submit = FindViewById<Button>(Resource.Id.button1);
+            submit.Click += Submit_Click;
+
             jazzcash = FindViewById<ImageView>(Resource.Id.imgJazzCash);
             jazzcash.Click += Jazzcash_Click;
 
@@ -80,6 +85,36 @@ namespace FinalProject_PU
 
 
         }
+
+        private async void Submit_Click(object sender, EventArgs e)
+        {
+            var data = JsonConvert.DeserializeObject<AdsData>("adobject");
+            if (radiobank.Checked)
+            {
+                Intent i = new Intent(this, typeof(PayByCard));
+                i.PutExtra("adobject", JsonConvert.SerializeObject(data));
+                StartActivity(i);
+
+            }
+            else
+            {
+                
+                if (await data.StoreAd(data))
+                {
+                    Toast.MakeText(this, "Your ad has been posted", ToastLength.Long).Show();
+                    Intent i = new Intent(this, typeof(FragmentHomeActivity));
+                    StartActivity(i);
+                }
+                else
+                {
+                    Toast.MakeText(this, "Your ad is not posted", ToastLength.Long).Show();
+                    Intent i = new Intent(this, typeof(FragmentHomeActivity));
+                    StartActivity(i);
+                }
+            }
+            
+        }
+
 
         private void Radiojazz_Click(object sender, EventArgs e)
         {

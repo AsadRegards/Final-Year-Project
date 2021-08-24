@@ -42,7 +42,7 @@ namespace FinalProject_PU
             data.Adsimage = base64Image;
             data.Adstitle = adtitle;
             data.Adstext = adtext;
-            data.budget = budget;
+            data.Amount = budget;
             data.websitelink = link;
 
             var arr = Convert.FromBase64String(base64Image);
@@ -62,14 +62,9 @@ namespace FinalProject_PU
             data.User_id = Control.UserInfoHolder.User_id;
             data.Elapsed_Days = 0;
             data.Date = DateTime.Now;
-            //call method to send data to Database
-            if (await data.StoreAd(data))
-            {
-              
-                Intent i = new Intent(this, typeof(AdsPayment));
-                StartActivity(i);
-
-            }
+            Intent i = new Intent(this, typeof(AdsPayment));
+            i.PutExtra("adobject",JsonConvert.SerializeObject(data));
+            StartActivity(i);
         }
         long lastPress;
         public override void OnBackPressed()

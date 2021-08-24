@@ -8,6 +8,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -139,7 +140,7 @@ namespace FinalProject_PU
 
         }
 
-        private void PaymentButton_Click(object sender, EventArgs e)
+        private async void PaymentButton_Click(object sender, EventArgs e)
         {
             if(AllSet)
             {
@@ -149,31 +150,56 @@ namespace FinalProject_PU
                 alert.SetTitle("Transaction in process");
                 alert.SetMessage("Please wait while your transaction is being processed...");
                 alert.Show();
-                if (payment.StripePay(this))
+                try 
                 {
-                    Model.funds funds = new Model.funds();
-                    funds.amount = int.Parse(Amount.Text);
-                    funds.user_id = Control.UserInfoHolder.User_id;
-                    funds.issue_id = Control.UserInfoHolder.currentIssueContext;
-                    funds.fund_date = DateTime.Now;
-                    funds.postnewfund(funds);
-                    Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-                    AlertDialog alert1 = dialog.Create();
-                    alert.Dismiss();
-                    alert1.SetTitle("Payment Information");
-                    alert1.SetMessage("Payment Succesfull");
-                    alert1.SetButton("OK", (c, ev) =>
+                    if (payment.StripePay(this))
                     {
-                        alert1.Dismiss();
-                    });
-                    alert1.Show();
+                        var addata = JsonConvert.DeserializeObject<AdsData>(Intent.GetStringExtra("adobject"));
+                        if (addata != null)
+                        {
+                            if (await addata.StoreAd(addata))
+                            {
+                                Toast.MakeText(this, "Your ad has been posted", ToastLength.Long).Show();
+                                Intent i = new Intent(this, typeof(FragmentHomeActivity));
+                                StartActivity(i);
+                            }
+                            else
+                            {
+                                Toast.MakeText(this, "Your ad is not posted", ToastLength.Long).Show();
+                                Intent i = new Intent(this, typeof(FragmentHomeActivity));
+                                StartActivity(i);
+                            }
+                        }
+                        Model.funds funds = new Model.funds();
+                        funds.amount = int.Parse(Amount.Text);
+                        funds.user_id = Control.UserInfoHolder.User_id;
+                        funds.issue_id = Control.UserInfoHolder.currentIssueContext;
+                        funds.fund_date = DateTime.Now;
+                        funds.postnewfund(funds);
+                        Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                        AlertDialog alert1 = dialog.Create();
+                        alert.Dismiss();
+                        alert1.SetTitle("Payment Information");
+                        alert1.SetMessage("Payment Succesfull");
+                        alert1.SetButton("OK", (c, ev) =>
+                        {
+                            alert1.Dismiss();
+                        });
+                        alert1.Show();
+                    }
+                    else
+                    {
+
+                        Toast.MakeText(this, "Payment Declined", ToastLength.Long).Show();
+                        alert.Dismiss();
+                    }
                 }
-                else
+                catch (System.Exception)
                 {
-            
                     Toast.MakeText(this, "Payment Declined", ToastLength.Long).Show();
                     alert.Dismiss();
                 }
+               
             }
             }
             
