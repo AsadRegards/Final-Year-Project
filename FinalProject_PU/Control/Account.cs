@@ -34,7 +34,7 @@ namespace FinalProject_PU.Control
         }
 
         //https://fypwebapi20210529205921.azurewebsites.net
-        public static string BaseAddressUri = string.Format("http://{0}:8045","192.168.100.10"); //
+        public static string BaseAddressUri = string.Format("https://fypwebapi20210824172842.azurewebsites.net"); //
 
     
         static public int verifyEmail(string emailp,Android.Content.Context acc)
