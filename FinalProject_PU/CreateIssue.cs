@@ -17,7 +17,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "CreateIssue")]
+    [Activity(Label = "CreateIssue",NoHistory =true)]
     public class CreateIssue : Activity
     {
         TextView username, textviewinfo, tev1;
@@ -25,7 +25,8 @@ namespace FinalProject_PU
         //static string base64image;
         Typeface tf;
         ImageView uploadimage, captureimage, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
-                  
+        ImageView close;    
+        
         private static string base64image;
         readonly string[] permissionGroup =
         {
@@ -42,7 +43,8 @@ namespace FinalProject_PU
             // Create your application here
             SetContentView(Resource.Layout.CreateIssue);
             RequestPermissions(permissionGroup, 0);
-            
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             username = (TextView)FindViewById(Resource.Id.tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             username.SetTypeface(tf, TypefaceStyle.Bold);
@@ -96,7 +98,32 @@ namespace FinalProject_PU
 
         }
 
-        
+        private void Close_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
+
+
         async void TakePhoto()
         {
            
@@ -106,7 +133,7 @@ namespace FinalProject_PU
                 var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                 {
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-                    CompressionQuality = 80,
+                    CompressionQuality = 103,
                     Name = "myimage.jpg",
                     Directory = "sample"
                 });

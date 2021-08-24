@@ -15,7 +15,7 @@ using FinalProject_PU.Model;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Location_pickup_job")]
+    [Activity(Label = "Location_pickup_job",NoHistory =true)]
     public class Location_pickup_job : Activity, IOnMapReadyCallback, ILocationSourceOnLocationChangedListener
     {
         private MapFragment map1;
@@ -53,7 +53,25 @@ namespace FinalProject_PU
             imgsearchicon.Click += Imgsearchicon_Click;
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Imgsearchicon_Click(object sender, EventArgs e)
         {
 

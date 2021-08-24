@@ -16,7 +16,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "createissue4")]
+    [Activity(Label = "createissue4",NoHistory =true)]
     public class createissue4 : Activity
     {
         ImageView createissue4_back, createissue4_next, createissue4_radio1, 
@@ -76,7 +76,25 @@ namespace FinalProject_PU
         {
             createissue4_radio1.PerformClick();
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Createissue4_radiobtn2_Click(object sender, EventArgs e)
         {
             createissue4_radio2.PerformClick();

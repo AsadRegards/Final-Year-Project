@@ -14,7 +14,7 @@ using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "PhotoUploading")]
+    [Activity(Label = "PhotoUploading",NoHistory =true)]
     public class PhotoUploading : Activity
     {
         CircleImageView newimage;
@@ -66,7 +66,25 @@ namespace FinalProject_PU
             worker.DoWork += Worker_DoWork;
             worker.RunWorkerAsync();
         }
-        
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             var u = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("userb"));

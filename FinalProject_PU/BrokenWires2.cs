@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "BrokenWires2")]
+    [Activity(Label = "BrokenWires2",NoHistory =true)]
     public class BrokenWires2 : Activity
     {
         static string selected;
@@ -79,6 +79,25 @@ namespace FinalProject_PU
         private void Createissue4_radiobtn1_Click(object sender, EventArgs e)
         {
             createissue4_radio1.PerformClick();
+        }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
         }
 
         private void Createissue4_radiobtn2_Click(object sender, EventArgs e)

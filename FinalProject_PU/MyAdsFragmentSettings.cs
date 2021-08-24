@@ -17,7 +17,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "MyAdsFragmentSettings")]
+    [Activity(Label = "MyAdsFragmentSettings",NoHistory =true)]
     public class MyAdsFragmentSettings : Activity
     {
         ImageView back, uploadimg, submit,uploaded;
@@ -87,13 +87,35 @@ namespace FinalProject_PU
                 Toast.MakeText(this, "Please enter correct website address", ToastLength.Long).Show();
             }
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Uploadimg_Click(object sender, EventArgs e)
         {
             try
             { 
                 UploadPhoto();
-                uploaded.Visibility = Android.Views.ViewStates.Visible;
+                //if (IsImageUploaded)
+                //{
+                //    uploaded.Visibility = Android.Views.ViewStates.Visible;
+                //}
+                
             }
             catch(NullReferenceException)
             {
@@ -139,7 +161,7 @@ namespace FinalProject_PU
         }
         private void Back_Click(object sender, EventArgs e)
         {
-
+            this.OnBackPressed();
         }
     }
 }

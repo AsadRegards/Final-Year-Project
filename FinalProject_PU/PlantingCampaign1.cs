@@ -15,7 +15,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "PlantingCampaign1")]
+    [Activity(Label = "PlantingCampaign1",NoHistory =true)]
     public class PlantingCampaign1 : Activity
     {
         
@@ -60,7 +60,25 @@ namespace FinalProject_PU
             tvinfoproblem.SetTypeface(tf, TypefaceStyle.Bold);
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void AddLocation_Click(object sender, EventArgs e)
         {
             Planting p = new Planting();

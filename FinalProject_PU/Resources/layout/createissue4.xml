@@ -61,7 +61,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/create_issue_4_tv"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="40dp"/>
 
     <ImageView
         android:src="@drawable/group502"

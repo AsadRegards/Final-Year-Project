@@ -15,7 +15,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "createissue5")]
+    [Activity(Label = "createissue5",NoHistory =true)]
     public class createissue5 : Activity
     {
         ImageView createissue5_back, creatissue5_btnnext,createissue5_radio1,
@@ -69,7 +69,26 @@ namespace FinalProject_PU
             var imagebitmap = BitmapFactory.DecodeByteArray(barr, 0, barr.Length);
             circleimageview5.SetImageBitmap(imagebitmap);
 
-           
+
+        }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
         }
 
         private void Createissue5_radiobtn3_Click(object sender, EventArgs e)

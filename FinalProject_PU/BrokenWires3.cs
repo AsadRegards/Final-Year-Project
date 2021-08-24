@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "BrokenWires3")]
+    [Activity(Label = "BrokenWires3",NoHistory =true)]
     public class BrokenWires3 : Activity
     {
         static string selected;
@@ -77,6 +77,25 @@ namespace FinalProject_PU
 
             
 
+        }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
         }
         private void Createissue5_radiobtn3_Click(object sender, EventArgs e)
         {

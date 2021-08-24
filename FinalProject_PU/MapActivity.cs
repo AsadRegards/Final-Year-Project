@@ -13,7 +13,7 @@ using Android.Content;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "MapActivity")]
+    [Activity(Label = "MapActivity",NoHistory =true)]
         
     public class MapActivity : Activity, IOnMapReadyCallback, ILocationSourceOnLocationChangedListener
     {
@@ -69,7 +69,25 @@ namespace FinalProject_PU
             StartActivityForResult(intent, 0);
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         //search button
         private async void Srch_button_Click(object sender, EventArgs e)
         {

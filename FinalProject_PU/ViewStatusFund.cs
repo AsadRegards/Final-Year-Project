@@ -16,7 +16,7 @@ using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "ViewStatusFund")]
+    [Activity(Label = "ViewStatusFund",NoHistory =true)]
     public class ViewStatusFund : Activity
     {
         TextView working_started, resolved, estimated_amount, collected_amount, Contributor_name;
@@ -118,7 +118,25 @@ namespace FinalProject_PU
 
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Close_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace FinalProject_PU
 {
 
-    [Activity(Label = "Manhole4")]
+    [Activity(Label = "Manhole4",NoHistory =true)]
     public class Manhole4 : Activity
     {
         static string selected;
@@ -73,7 +73,25 @@ namespace FinalProject_PU
         {
             crt_issue_6_radio2.PerformClick();
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Create_issue6_radiobtn1_Click(object sender, EventArgs e)
         {
             crt_issue_6_radio1.PerformClick();

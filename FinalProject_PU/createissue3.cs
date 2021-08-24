@@ -16,7 +16,7 @@ using FinalProject_PU.Control;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "createissue3")]
+    [Activity(Label = "createissue3",NoHistory =true)]
     public class createissue3 : Activity
     {
         ImageView radio1, radio2, radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, back_imga1, next_imga2;
@@ -72,7 +72,25 @@ namespace FinalProject_PU
 
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Radiobtn3_Click(object sender, EventArgs e)
         {
             radio3.PerformClick();

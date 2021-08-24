@@ -70,7 +70,7 @@
         android:textSize="12dp"
         android:id="@+id/create_issue_4_tv"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="40dp"/>
 
     <ImageView
         android:src="@drawable/group325"

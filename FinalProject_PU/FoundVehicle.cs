@@ -16,7 +16,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "FoundVehicle")]
+    [Activity(Label = "FoundVehicle",NoHistory =true)]
     public class FoundVehicle : Activity, Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog.IOnDateSetListener
     {
         static string selected;
@@ -112,7 +112,25 @@ namespace FinalProject_PU
             }
         }
 
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         void DateSelect_OnClick(object sender, EventArgs eventArgs)
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)

@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,21 +63,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="IronPython, Version=2.7.11.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\IronPython.2.7.11\lib\net45\IronPython.dll</HintPath>
-    </Reference>
-    <Reference Include="IronPython.Modules, Version=2.7.11.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\IronPython.2.7.11\lib\net45\IronPython.Modules.dll</HintPath>
-    </Reference>
-    <Reference Include="IronPython.SQLite, Version=2.7.11.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\IronPython.2.7.11\lib\net45\IronPython.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="IronPython.Wpf, Version=2.7.11.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\IronPython.2.7.11\lib\net45\IronPython.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Keras, Version=3.8.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Keras.NET.3.8.5\lib\netstandard2.0\Keras.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -102,9 +88,6 @@
     <Reference Include="Microsoft.Scripting.Metadata, Version=1.3.0.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicLanguageRuntime.1.3.0\lib\net45\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="Numpy.Bare, Version=3.7.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Numpy.Bare.3.8.1.25\lib\netstandard2.0\Numpy.Bare.dll</HintPath>
-    </Reference>
     <Reference Include="PushSharp.Amazon, Version=4.0.10.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
       <HintPath>..\packages\PushSharp.4.0.10\lib\net45\PushSharp.Amazon.dll</HintPath>
     </Reference>
@@ -125,9 +108,6 @@
     </Reference>
     <Reference Include="PushSharp.Windows, Version=4.0.10.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
       <HintPath>..\packages\PushSharp.4.0.10\lib\net45\PushSharp.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Python.Runtime, Version=2.5.1.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\pythonnet_netstandard_py38_win.2.5.1\lib\netstandard2.0\Python.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -182,9 +162,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="TensorFlowSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TensorFlowSharp.1.15.1\lib\net471\TensorFlowSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -205,15 +182,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\DbModel.Context.tt">
+    <Content Include="Models\PUMODEL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
+      <DependentUpon>PUMODEL.edmx</DependentUpon>
+      <LastGenOutput>PUMODEL.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DbModel.tt">
+    <Content Include="Models\PUMODEL.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.cs</LastGenOutput>
+      <DependentUpon>PUMODEL.edmx</DependentUpon>
+      <LastGenOutput>PUMODEL.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -232,84 +209,86 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\admin_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ad_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AssignedByAdmin.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.edmx</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FCM_TOKEN.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\funds_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_images_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nearby_user_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NotificationTable.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PaymentMethodInfo.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUMODEL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PUMODEL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUMODEL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PUMODEL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PUMODEL.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\pushnotification.cs" />
     <Compile Include="Models\report_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VolunteerAdminMessages.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_Report.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>PUMODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\DbModel.edmx">
+    <EntityDeploy Include="Models\PUMODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PUMODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DbModel.edmx.diagram">
-      <DependentUpon>DbModel.edmx</DependentUpon>
+    <Content Include="Models\PUMODEL.edmx.diagram">
+      <DependentUpon>PUMODEL.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210529205921 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210529205921 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\FYPWebAPI20210824172842 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI6298563027 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -356,10 +335,8 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
-    <Error Condition="!Exists('..\packages\TensorFlowSharp.1.15.1\build\net45\TensorFlowSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\TensorFlowSharp.1.15.1\build\net45\TensorFlowSharp.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
-  <Import Project="..\packages\TensorFlowSharp.1.15.1\build\net45\TensorFlowSharp.targets" Condition="Exists('..\packages\TensorFlowSharp.1.15.1\build\net45\TensorFlowSharp.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

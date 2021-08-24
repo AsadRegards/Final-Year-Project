@@ -133,7 +133,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/txtHeadi"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/IssueReportRadio1" />
 
       <ImageView
@@ -151,7 +151,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/IssueReport1"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/IssueReportRadio2" />
 
     <ImageView
@@ -169,7 +169,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/IssueReport2"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/IssueReportRadio3" />
 
      <ImageView
@@ -187,7 +187,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/IssueReport3"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/IssueReportRadio4" />
     
      <ImageView
@@ -205,6 +205,6 @@
         android:layout_marginTop="28dp"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/IssueReport4"
-        android:background="@drawable/ellipse1"
+        
         android:id="@+id/IssueReportRadio5" />
 </RelativeLayout>

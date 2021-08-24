@@ -278,7 +278,6 @@ namespace FinalProject_PU
         }
 
         long lastPress;
-
         public override void OnBackPressed()
         {
             // source https://stackoverflow.com/a/27124904/3814729

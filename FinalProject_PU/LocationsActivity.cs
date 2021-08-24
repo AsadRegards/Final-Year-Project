@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "LocationsActivity")]
+    [Activity(Label = "LocationsActivity",NoHistory =true)]
     public class LocationsActivity : Activity
     {
         ImageView imgback, imgjobloca, imgview9;
@@ -38,8 +38,26 @@ namespace FinalProject_PU
             intent.PutExtra("userObjtoLocation",JsonConvert.SerializeObject(user));
             this.StartActivity(intent);
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
-        private void Imgback_Click(object sender, EventArgs e)
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
+        private void Imgback_Click(object sender, EventArgs  e)
         {
             var i = new Intent(this,typeof(LocationActivity));
             this.StartActivity(i);

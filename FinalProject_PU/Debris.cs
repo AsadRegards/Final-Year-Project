@@ -17,7 +17,7 @@ using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Debris")]
+    [Activity(Label = "Debris",NoHistory =true)]
     public class Debris : Activity
     {
         ImageView back_Debris, next_Debris, FullRoadDebris, HalfRoadDebris, SideRoadDebris,
@@ -76,7 +76,25 @@ namespace FinalProject_PU
             Debris_radiobtn3.Click += Debris_radiobtn3_Click;
             
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Debris_radiobtn3_Click(object sender, EventArgs e)
         {
             SideRoadDebris.PerformClick();

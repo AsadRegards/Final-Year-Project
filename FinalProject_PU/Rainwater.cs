@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 namespace FinalProject_PU
 {
-    [Activity(Label = "Rainwater")]
+    [Activity(Label = "Rainwater",NoHistory =true)]
     public class Rainwater : Activity
     {
         static string selected;
@@ -62,7 +62,25 @@ namespace FinalProject_PU
         {
             highVehicle.PerformClick();
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Radiobtn1Rainwater_Click(object sender, EventArgs e)
         {
             allVehicle.PerformClick();

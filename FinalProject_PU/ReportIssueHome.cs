@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "ReportIssueHome")]
+    [Activity(Label = "ReportIssueHome",NoHistory =true)]
     public class ReportIssueHome : Activity
     {
         ImageView close, back, next, ReportText1, ReportText2, ReportText3, ReportText4, ReportText5;
@@ -81,7 +81,25 @@ namespace FinalProject_PU
 
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void ReportText5_Click(object sender, EventArgs e)
         {
             selected = "Issue Location is not correct";

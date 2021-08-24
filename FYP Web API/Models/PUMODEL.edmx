@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="problemupdatedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="problemupdatedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ad_table">
           <Key>
             <PropertyRef Name="advertisment_id" />
@@ -441,7 +441,8 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="problemupdatedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -454,12 +455,12 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="Adstext" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="websitelink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adsimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="User_id" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Elapsed_Days" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="user_table" Relationship="problemupdatedbModel.FK_ad_table_user_table" FromRole="ad_table" ToRole="user_table" />
           <Property Name="Amount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user_table" Relationship="Self.FK_ad_table_user_table" FromRole="ad_table" ToRole="user_table" />
         </EntityType>
         <EntityType Name="admin_table">
           <Key>
@@ -540,6 +541,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="isWorkingStarted" Type="Int32" Nullable="false" />
           <Property Name="issueFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="issueType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AssignedByAdmin" Relationship="Self.IssueID_FK" FromRole="issue_table" ToRole="AssignedByAdmin" />
           <NavigationProperty Name="funds_table" Relationship="Self.FK_funds_table_issue_table" FromRole="issue_table" ToRole="funds_table" />
           <NavigationProperty Name="issue_images_table" Relationship="Self.FK_issue_images_table_issue_table" FromRole="issue_table" ToRole="issue_images_table" />
@@ -548,8 +550,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <NavigationProperty Name="user_table" Relationship="Self.FK_issue_table_user_table" FromRole="issue_table" ToRole="user_table" />
           <NavigationProperty Name="nearby_user_table" Relationship="Self.FK_nearby_user_table_issue_table" FromRole="issue_table" ToRole="nearby_user_table" />
           <NavigationProperty Name="report_table" Relationship="Self.FK_report_table_issue_table" FromRole="issue_table" ToRole="report_table" />
-          <NavigationProperty Name="Volunteer_Report" Relationship="problemupdatedbModel.FK_Volunteer_Report_issue_table" FromRole="issue_table" ToRole="Volunteer_Report" />
-          <Property Name="WorkingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Volunteer_Report" Relationship="Self.FK_Volunteer_Report_issue_table" FromRole="issue_table" ToRole="Volunteer_Report" />
         </EntityType>
         <EntityType Name="nearby_user_table">
           <Key>
@@ -570,7 +571,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="notification_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="notification_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="notification_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="notification_title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="notification_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="notification_date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="report_table">
@@ -601,11 +602,23 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="Joblocatlongi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password_hash" Type="Int32" Nullable="false" />
           <Property Name="userrating" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ad_table" Relationship="Self.FK_ad_table_user_table" FromRole="user_table" ToRole="ad_table" />
           <NavigationProperty Name="funds_table" Relationship="Self.FK_funds_table_user_table1" FromRole="user_table" ToRole="funds_table" />
           <NavigationProperty Name="issue_table" Relationship="Self.FK_issue_table_user_table" FromRole="user_table" ToRole="issue_table" />
           <NavigationProperty Name="report_table" Relationship="Self.FK_report_table_user_table" FromRole="user_table" ToRole="report_table" />
-          <NavigationProperty Name="ad_table" Relationship="problemupdatedbModel.FK_ad_table_user_table" FromRole="user_table" ToRole="ad_table" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Volunteer_Report">
+          <Key>
+            <PropertyRef Name="report_id" />
+          </Key>
+          <Property Name="report_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="volunteer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="report" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="volunteer_id" Type="Int32" Nullable="false" />
+          <Property Name="issue_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="issue_table" Relationship="Self.FK_Volunteer_Report_issue_table" FromRole="Volunteer_Report" ToRole="issue_table" />
+          <NavigationProperty Name="Volunteer_table" Relationship="Self.FK_Volunteer_Report_Volunteer_table" FromRole="Volunteer_Report" ToRole="Volunteer_table" />
         </EntityType>
         <EntityType Name="Volunteer_table">
           <Key>
@@ -618,7 +631,16 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="cnic_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AssignedByAdmin" Relationship="Self.VolunteerID_FK" FromRole="Volunteer_table" ToRole="AssignedByAdmin" />
-          <NavigationProperty Name="Volunteer_Report" Relationship="problemupdatedbModel.FK_Volunteer_Report_Volunteer_table" FromRole="Volunteer_table" ToRole="Volunteer_Report" />
+          <NavigationProperty Name="Volunteer_Report" Relationship="Self.FK_Volunteer_Report_Volunteer_table" FromRole="Volunteer_table" ToRole="Volunteer_Report" />
+        </EntityType>
+        <EntityType Name="VolunteerAdminMessages">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_name_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="PaymentMethodInfo">
           <Key>
@@ -636,6 +658,18 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="bankaccountnumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="bankaccounttitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <Association Name="FK_ad_table_user_table">
+          <End Role="user_table" Type="Self.user_table" Multiplicity="1" />
+          <End Role="ad_table" Type="Self.ad_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_table">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="ad_table">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="IssueID_FK">
           <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
           <End Role="AssignedByAdmin" Type="Self.AssignedByAdmin" Multiplicity="*" />
@@ -744,6 +778,18 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Volunteer_Report_issue_table">
+          <End Role="issue_table" Type="Self.issue_table" Multiplicity="1" />
+          <End Role="Volunteer_Report" Type="Self.Volunteer_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue_table">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="Volunteer_Report">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_nearby_user_table_nearby_user_table">
           <End Role="nearby_user_table" Type="Self.nearby_user_table" Multiplicity="1" />
           <End Role="nearby_user_table1" Type="Self.nearby_user_table" Multiplicity="0..1" />
@@ -768,6 +814,18 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Volunteer_Report_Volunteer_table">
+          <End Role="Volunteer_table" Type="Self.Volunteer_table" Multiplicity="1" />
+          <End Role="Volunteer_Report" Type="Self.Volunteer_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer_table">
+              <PropertyRef Name="volunteer_id" />
+            </Principal>
+            <Dependent Role="Volunteer_Report">
+              <PropertyRef Name="volunteer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="problemupdatedbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ad_table" EntityType="Self.ad_table" />
           <EntitySet Name="admin_table" EntityType="Self.admin_table" />
@@ -780,8 +838,14 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySet Name="NotificationTable" EntityType="Self.NotificationTable" />
           <EntitySet Name="report_table" EntityType="Self.report_table" />
           <EntitySet Name="user_table" EntityType="Self.user_table" />
+          <EntitySet Name="Volunteer_Report" EntityType="Self.Volunteer_Report" />
           <EntitySet Name="Volunteer_table" EntityType="Self.Volunteer_table" />
+          <EntitySet Name="VolunteerAdminMessages" EntityType="Self.VolunteerAdminMessages" />
           <EntitySet Name="PaymentMethodInfo" EntityType="Self.PaymentMethodInfo" />
+          <AssociationSet Name="FK_ad_table_user_table" Association="Self.FK_ad_table_user_table">
+            <End Role="user_table" EntitySet="user_table" />
+            <End Role="ad_table" EntitySet="ad_table" />
+          </AssociationSet>
           <AssociationSet Name="IssueID_FK" Association="Self.IssueID_FK">
             <End Role="issue_table" EntitySet="issue_table" />
             <End Role="AssignedByAdmin" EntitySet="AssignedByAdmin" />
@@ -818,6 +882,10 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             <End Role="issue_table" EntitySet="issue_table" />
             <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
+          <AssociationSet Name="FK_Volunteer_Report_issue_table" Association="Self.FK_Volunteer_Report_issue_table">
+            <End Role="issue_table" EntitySet="issue_table" />
+            <End Role="Volunteer_Report" EntitySet="Volunteer_Report" />
+          </AssociationSet>
           <AssociationSet Name="FK_nearby_user_table_nearby_user_table" Association="Self.FK_nearby_user_table_nearby_user_table">
             <End Role="nearby_user_table" EntitySet="nearby_user_table" />
             <End Role="nearby_user_table1" EntitySet="nearby_user_table" />
@@ -826,78 +894,11 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             <End Role="user_table" EntitySet="user_table" />
             <End Role="report_table" EntitySet="report_table" />
           </AssociationSet>
-          <EntitySet Name="Volunteer_Report" EntityType="problemupdatedbModel.Volunteer_Report" />
-          <AssociationSet Name="FK_Volunteer_Report_issue_table" Association="problemupdatedbModel.FK_Volunteer_Report_issue_table">
-            <End Role="issue_table" EntitySet="issue_table" />
-            <End Role="Volunteer_Report" EntitySet="Volunteer_Report" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Volunteer_Report_Volunteer_table" Association="problemupdatedbModel.FK_Volunteer_Report_Volunteer_table">
+          <AssociationSet Name="FK_Volunteer_Report_Volunteer_table" Association="Self.FK_Volunteer_Report_Volunteer_table">
             <End Role="Volunteer_table" EntitySet="Volunteer_table" />
             <End Role="Volunteer_Report" EntitySet="Volunteer_Report" />
           </AssociationSet>
-          <EntitySet Name="VolunteerAdminMessages" EntityType="problemupdatedbModel.VolunteerAdminMessages" />
-          <AssociationSet Name="FK_ad_table_user_table" Association="problemupdatedbModel.FK_ad_table_user_table">
-            <End Role="user_table" EntitySet="user_table" />
-            <End Role="ad_table" EntitySet="ad_table" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Volunteer_Report">
-          <Key>
-            <PropertyRef Name="report_id" />
-          </Key>
-          <Property Name="report_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="volunteer_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="report" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="volunteer_id" Type="Int32" Nullable="false" />
-          <Property Name="issue_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="issue_table" Relationship="problemupdatedbModel.FK_Volunteer_Report_issue_table" FromRole="Volunteer_Report" ToRole="issue_table" />
-          <NavigationProperty Name="Volunteer_table" Relationship="problemupdatedbModel.FK_Volunteer_Report_Volunteer_table" FromRole="Volunteer_Report" ToRole="Volunteer_table" />
-        </EntityType>
-        <Association Name="FK_Volunteer_Report_issue_table">
-          <End Type="problemupdatedbModel.issue_table" Role="issue_table" Multiplicity="1" />
-          <End Type="problemupdatedbModel.Volunteer_Report" Role="Volunteer_Report" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="issue_table">
-              <PropertyRef Name="issue_id" />
-            </Principal>
-            <Dependent Role="Volunteer_Report">
-              <PropertyRef Name="issue_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Volunteer_Report_Volunteer_table">
-          <End Type="problemupdatedbModel.Volunteer_table" Role="Volunteer_table" Multiplicity="1" />
-          <End Type="problemupdatedbModel.Volunteer_Report" Role="Volunteer_Report" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Volunteer_table">
-              <PropertyRef Name="volunteer_id" />
-            </Principal>
-            <Dependent Role="Volunteer_Report">
-              <PropertyRef Name="volunteer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="VolunteerAdminMessages">
-          <Key>
-            <PropertyRef Name="message_id" />
-          </Key>
-          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="user_name_id" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <Association Name="FK_ad_table_user_table">
-          <End Type="problemupdatedbModel.user_table" Role="user_table" Multiplicity="1" />
-          <End Type="problemupdatedbModel.ad_table" Role="ad_table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="user_table">
-              <PropertyRef Name="user_id" />
-            </Principal>
-            <Dependent Role="ad_table">
-              <PropertyRef Name="User_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -907,16 +908,16 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySetMapping Name="ad_table">
             <EntityTypeMapping TypeName="problemupdatedbModel.ad_table">
               <MappingFragment StoreEntitySet="ad_table">
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Elapsed_Days" ColumnName="Elapsed_Days" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="User_id" ColumnName="User_id" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="advertisment_id" ColumnName="advertisment_id" />
                 <ScalarProperty Name="Adstitle" ColumnName="Adstitle" />
                 <ScalarProperty Name="Adstext" ColumnName="Adstext" />
                 <ScalarProperty Name="websitelink" ColumnName="websitelink" />
                 <ScalarProperty Name="Adsimage" ColumnName="Adsimage" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Elapsed_Days" ColumnName="Elapsed_Days" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -971,7 +972,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySetMapping Name="issue_table">
             <EntityTypeMapping TypeName="problemupdatedbModel.issue_table">
               <MappingFragment StoreEntitySet="issue_table">
-                <ScalarProperty Name="WorkingStatus" ColumnName="WorkingStatus" />
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -999,6 +999,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
                 <ScalarProperty Name="isWorkingStarted" ColumnName="isWorkingStarted" />
                 <ScalarProperty Name="issueFlag" ColumnName="issueFlag" />
                 <ScalarProperty Name="issueType" ColumnName="issueType" />
+                <ScalarProperty Name="WorkingStatus" ColumnName="WorkingStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1015,11 +1016,11 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySetMapping Name="NotificationTable">
             <EntityTypeMapping TypeName="problemupdatedbModel.NotificationTable">
               <MappingFragment StoreEntitySet="NotificationTable">
-                <ScalarProperty Name="notification_date" ColumnName="notification_date" />
-                <ScalarProperty Name="notification_title" ColumnName="notification_title" />
                 <ScalarProperty Name="notification_id" ColumnName="notification_id" />
                 <ScalarProperty Name="notification_text" ColumnName="notification_text" />
                 <ScalarProperty Name="notification_image" ColumnName="notification_image" />
+                <ScalarProperty Name="notification_title" ColumnName="notification_title" />
+                <ScalarProperty Name="notification_date" ColumnName="notification_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1038,7 +1039,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySetMapping Name="user_table">
             <EntityTypeMapping TypeName="problemupdatedbModel.user_table">
               <MappingFragment StoreEntitySet="user_table">
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="email_address" ColumnName="email_address" />
@@ -1050,6 +1050,18 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
                 <ScalarProperty Name="Joblocatlongi" ColumnName="Joblocatlongi" />
                 <ScalarProperty Name="password_hash" ColumnName="password_hash" />
                 <ScalarProperty Name="userrating" ColumnName="userrating" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volunteer_Report">
+            <EntityTypeMapping TypeName="problemupdatedbModel.Volunteer_Report">
+              <MappingFragment StoreEntitySet="Volunteer_Report">
+                <ScalarProperty Name="report_id" ColumnName="report_id" />
+                <ScalarProperty Name="volunteer_name" ColumnName="volunteer_name" />
+                <ScalarProperty Name="report" ColumnName="report" />
+                <ScalarProperty Name="volunteer_id" ColumnName="volunteer_id" />
+                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1065,6 +1077,16 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="VolunteerAdminMessages">
+            <EntityTypeMapping TypeName="problemupdatedbModel.VolunteerAdminMessages">
+              <MappingFragment StoreEntitySet="VolunteerAdminMessages">
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="user_name_id" ColumnName="user_name_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PaymentMethodInfo">
             <EntityTypeMapping TypeName="problemupdatedbModel.PaymentMethodInfo">
               <MappingFragment StoreEntitySet="PaymentMethodInfo">
@@ -1074,27 +1096,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
                 <ScalarProperty Name="jazzcashtitle" ColumnName="jazzcashtitle" />
                 <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
                 <ScalarProperty Name="bankaccounttitle" ColumnName="bankaccounttitle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Volunteer_Report">
-            <EntityTypeMapping TypeName="problemupdatedbModel.Volunteer_Report">
-              <MappingFragment StoreEntitySet="Volunteer_Report">
-                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
-                <ScalarProperty Name="volunteer_id" ColumnName="volunteer_id" />
-                <ScalarProperty Name="report" ColumnName="report" />
-                <ScalarProperty Name="volunteer_name" ColumnName="volunteer_name" />
-                <ScalarProperty Name="report_id" ColumnName="report_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VolunteerAdminMessages">
-            <EntityTypeMapping TypeName="problemupdatedbModel.VolunteerAdminMessages">
-              <MappingFragment StoreEntitySet="VolunteerAdminMessages">
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="user_name_id" ColumnName="user_name_id" />
-                <ScalarProperty Name="message" ColumnName="message" />
-                <ScalarProperty Name="message_id" ColumnName="message_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

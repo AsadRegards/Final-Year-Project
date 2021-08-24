@@ -17,12 +17,12 @@ using FinalProject_PU.Control;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "createissue2")]
+    [Activity(Label = "createissue2",NoHistory =true)]
     public class createissue2 : Activity
     {
         static string selected;
         
-        ImageView back_imga1;
+        ImageView close;
         ImageView next_imga2;
         ImageView issueImg, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome,
                  Potholeimgbtn1, Manholeimgbtn2, Debrisimgbtn3, Garbageimgbtn4, BrokenWiresimgbtn5, Plantingimgbtn6, MissingVehicleimgbtn7,
@@ -46,7 +46,8 @@ namespace FinalProject_PU
             tvusername = (TextView)FindViewById(Resource.Id.tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tvusername.SetTypeface(tf, TypefaceStyle.Bold);
-
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             base64image = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("issueimage"));
             byte[] imageArray = Convert.FromBase64String(base64image);
             Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
@@ -103,6 +104,31 @@ namespace FinalProject_PU
             radiobtn8 = (RadioButton)FindViewById(Resource.Id.radioButton8);
             radiobtn8.Click += Radiobtn8_Click;
 
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
         }
 
         private void Radiobtn8_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ using System;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Newpassword")]
+    [Activity(Label = "Newpassword",NoHistory =true)]
     public class Newpassword : Activity
     {
         ImageView submit;
@@ -48,7 +48,25 @@ namespace FinalProject_PU
             tv5.SetTypeface(tf, TypefaceStyle.Bold);
 
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         private void Submit_Click(object sender, EventArgs e)
         {
             newPass.Enabled = false;

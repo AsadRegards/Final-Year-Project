@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_PU.Model
 {
-    [Activity(Label = "HomeActivity")]
+    [Activity(Label = "HomeActivity",NoHistory =true)]
     public class HomeActivity : Activity
     {
         ImageView imgwriteIssue, iconfunds, notifications, map, setting;

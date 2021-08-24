@@ -17,7 +17,7 @@ using MohammedAlaa.GifLoading;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Issuelocationpickup_FoundVehicle")]
+    [Activity(Label = "Issuelocationpickup_FoundVehicle",NoHistory =true)]
     public class Issuelocationpickup_FoundVehicle : Activity ,IOnMapReadyCallback, ILocationSourceOnLocationChangedListener
     {
         static string LocationName;
@@ -58,6 +58,25 @@ namespace FinalProject_PU
             set_location.Click += Set_location_Click;
             imgsearchicon.Click += Imgsearchicon_Click;
 
+        }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
         }
 
         private void Imgsearchicon_Click(object sender, EventArgs e)

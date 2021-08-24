@@ -70,13 +70,13 @@
         android:textSize="12dp"
         android:id="@+id/Debris_tv"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
     <ImageView
         android:src="@drawable/debrisfullroad"
         android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="65dp"
         android:layout_marginRight="170dp"
         android:layout_below="@+id/Debris_tvusername"
         android:id="@+id/Debris_FullRoad"
@@ -97,7 +97,7 @@
         android:src="@drawable/debrishalfroad"
         android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:layout_below="@+id/Debris_tv"
         android:id="@+id/Debris_HalfRoad"

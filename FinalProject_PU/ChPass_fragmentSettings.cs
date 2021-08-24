@@ -14,7 +14,7 @@ using System.Text;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "ChPass_fragmentSettings")]
+    [Activity(Label = "ChPass_fragmentSettings",NoHistory =true)]
     public class ChPass_fragmentSettings : Activity
     {
         TextView Username;
@@ -55,6 +55,25 @@ namespace FinalProject_PU
             if(Control.InputValidation.ValidatePassword(edtNewPass.Text,edtConfrimPass.Text,Application.Context))
             {
                Control.Account.SetNewPassword(edtCurrentPass.Text.GetHashCode(),Control.UserInfoHolder.email, edtNewPass.Text.GetHashCode(),Application.Context);
+
+            }
+        }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
 
             }
         }

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "PayByCard")]
+    [Activity(Label = "PayByCard",NoHistory =true)]
     public class PayByCard : Activity,ITextWatcher
     {
         EditText CardNumber, Cvc, ExpDateMonth, ExpDateYear, Amount;
@@ -34,7 +34,25 @@ namespace FinalProject_PU
         {
            
         }
+        long lastPress;
+        public override void OnBackPressed()
+        {
+            // source https://stackoverflow.com/a/27124904/3814729
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // source https://stackoverflow.com/a/14006485/3814729
+            if (currentTime - lastPress > 5000)
+            {
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
+                lastPress = currentTime;
+            }
+            else
+            {
+
+                FinishAffinity();
+
+            }
+        }
         public void OnTextChanged(ICharSequence s, int start, int before, int count)
         {
             if(CardNumber.Text.Length>16)

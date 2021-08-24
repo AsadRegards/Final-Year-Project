@@ -68,7 +68,7 @@
         android:textSize="15dp"
         android:id="@+id/create_issue_3_tv"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
     <ImageView
         android:src="@drawable/group306"
