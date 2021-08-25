@@ -27,7 +27,7 @@ namespace FYP_Web_API.Controllers
                 // Your code...
                 // Could also be before try if you know the exception occurs in SaveChanges
                 dbe.issue_table.Add(issue);
-                issue.estimated_cost=await new CostEstimationController().EstimateCost(issue.IssueImage);
+                
                 dbe.SaveChanges();
                 var originalSynchronizationContext = SynchronizationContext.Current;
                 try
@@ -84,6 +84,20 @@ namespace FYP_Web_API.Controllers
             dbe.SaveChanges();
             return Request.CreateResponse(HttpStatusCode.Accepted, "Saved");
         }
+
+        [HttpGet]
+        [ActionName("estimateallcost")]
+        public async Task<HttpResponseMessage> estimateallcost()
+        {
+            var list = dbe.issue_table.Where(x => x.estimated_cost == 0).ToList();
+            foreach(var item in list)
+            {
+                item.estimated_cost= await new CostEstimationController().EstimateCost(item.IssueImage);
+                dbe.SaveChanges();
+            }
+            return Request.CreateResponse(HttpStatusCode.Accepted, "");
+        }
+
 
         [HttpGet]
         [ActionName("deleteanissue")]

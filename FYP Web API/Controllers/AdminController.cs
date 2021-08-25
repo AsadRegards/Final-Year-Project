@@ -15,13 +15,36 @@ namespace FYP_Web_API.Controllers
     {
         problemupdatedbEntities dbe = new problemupdatedbEntities();
 
+
+        [HttpGet]
+        [ActionName("updateuserstatus")]
+        public HttpResponseMessage updateuserstatus(int userid)
+        {
+            var user = dbe.user_table.Where(x => x.user_id == userid).FirstOrDefault();
+            if(user!=null)
+            {
+                if(user.Status=="active")
+                {
+                    user.Status = "blocked";
+                }
+                if(user.Status=="blocked")
+                {
+                    user.Status = "active";
+                }
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+
         [HttpGet]
         [ActionName("adminlogin")]
 
         public async Task<HttpResponseMessage> adminlogin(string name, string password)
         {
-            await new UserFundsController().CountAdvertismentDays();
-            await new NearbyUserController().verifybynearbyusers();
+            //await new UserFundsController().CountAdvertismentDays();
+            //await new NearbyUserController().verifybynearbyusers();
          
             admin_table admin = dbe.admin_table.Where(x => x.name == name && x.password == password).FirstOrDefault();
             if (admin == null)

@@ -28,6 +28,8 @@ namespace FinalProject_PU.Control
         public static int UserRating { get; set; }
         public static int currentIssueContext { get; set; }
 
+        public static string Status { get; set; }
+
         public static void FetchUserInfo(User user)
         {
 
@@ -40,6 +42,7 @@ namespace FinalProject_PU.Control
             joblocatlati = user.joblocatlati;
             joblocatlongi = user.joblocatlongi;
             UserRating = user.userrating;
+            Status = user.Status;
 
         }
 
@@ -53,7 +56,7 @@ namespace FinalProject_PU.Control
             homelocatlati = null;
             joblocatlongi = null;
             joblocatlati = null;
-            
+            Status = null;
             UserRating = 0;
 
 

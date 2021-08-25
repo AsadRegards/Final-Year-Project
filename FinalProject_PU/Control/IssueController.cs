@@ -21,6 +21,11 @@ namespace FinalProject_PU.Control
         static string baseuri = Account.BaseAddressUri;
         public static async Task<bool> PostIssue<T>(object obj,Android.Content.Context acc) where T:Model.Issue
         {
+            if(UserInfoHolder.Status=="blocked")
+            {
+                Toast.MakeText(acc, "You have been blocked from problem update and cannot post any issue", ToastLength.Long).Show();
+                return false;
+            }
             var issueObj = (T)obj;
             
             HttpClient client = new HttpClient();

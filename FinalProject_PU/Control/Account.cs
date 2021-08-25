@@ -33,8 +33,8 @@ namespace FinalProject_PU.Control
             return string.Empty;
         }
 
-        //https://fypwebapi20210529205921.azurewebsites.net
-        public static string BaseAddressUri = string.Format("https://fypwebapi20210825062724.azurewebsites.net"); //
+       
+        public static string BaseAddressUri = string.Format("https://fypwebapi20210825074306.azurewebsites.net/"); //
 
     
         static public int verifyEmail(string emailp,Android.Content.Context acc)

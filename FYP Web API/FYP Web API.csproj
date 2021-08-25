@@ -292,6 +292,7 @@
     <None Include="Properties\PublishProfiles\FYPWebAPI20210824172842 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210824213315 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210825062724 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FYPWebAPI20210825074306 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI6298563027 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
