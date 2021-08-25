@@ -19,7 +19,7 @@ namespace FinalProject_PU
     [Activity(Label = "createissue3",NoHistory =true)]
     public class createissue3 : Activity
     {
-        ImageView radio1, radio2, radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, back_imga1, next_imga2;
+        ImageView radio1, radio2, radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, back_imga1, next_imga2, close;
         RadioButton radiobtn1, radiobtn2, radiobtn3;
         TextView tvusername, infoprob;
         Typeface tf;
@@ -51,7 +51,10 @@ namespace FinalProject_PU
             infoprob = (TextView)FindViewById(Resource.Id.create_issue_3_tv);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             infoprob.SetTypeface(tf, TypefaceStyle.Bold);
-
+            back_imga1 = (ImageView)FindViewById(Resource.Id.backbtn);
+            back_imga1.Click += Back_imga1_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             radiobtn1 = (RadioButton)FindViewById(Resource.Id.create_issue3_radiobtn1);
             radiobtn1.Click += Radiobtn1_Click;
             radiobtn2 = (RadioButton)FindViewById(Resource.Id.create_issue3_radiobtn2);
@@ -72,6 +75,18 @@ namespace FinalProject_PU
 
 
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Back_imga1_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
         long lastPress;
         public override void OnBackPressed()
         {

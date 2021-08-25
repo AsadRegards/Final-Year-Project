@@ -18,7 +18,7 @@ namespace FinalProject_PU
     [Activity(Label = "createissue5",NoHistory =true)]
     public class createissue5 : Activity
     {
-        ImageView createissue5_back, creatissue5_btnnext,createissue5_radio1,
+        ImageView createissue5_back, creatissue5_btnnext,createissue5_radio1,close,
                     createissue5_radio2, createissue5_radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton createissue5_radiobtn1, createissue5_radiobtn2, createissue5_radiobtn3;
         CircleImageView circleimageview5;
@@ -40,7 +40,10 @@ namespace FinalProject_PU
             createissue5_radiobtn3.Click += Createissue5_radiobtn3_Click;
             creatissue5_btnnext = (ImageView)FindViewById(Resource.Id.create_issue5_btnnext);
             creatissue5_btnnext.Click += Creatissue5_btnnext_Click;
-
+            createissue5_back = (ImageView)FindViewById(Resource.Id.backbtncreate5);
+            createissue5_back.Click += Createissue5_back_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             createissue5_tvusername = (TextView)FindViewById(Resource.Id.create_issue_5_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             createissue5_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
@@ -71,6 +74,18 @@ namespace FinalProject_PU
 
 
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue5_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
         long lastPress;
         public override void OnBackPressed()
         {

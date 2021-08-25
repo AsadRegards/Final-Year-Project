@@ -46,7 +46,10 @@ namespace FinalProject_PU
             
             createissue4_next = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             createissue4_next.Click += Createissue4_next_Click;
-
+            createissue4_back = (ImageView)FindViewById(Resource.Id.backbtncreate4);
+            createissue4_back.Click += Createissue4_back_Click;
+            ImageView close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             createissue4_radiobtn1 = (RadioButton)FindViewById(Resource.Id.create_issue4_radiobtn1);
             createissue4_radiobtn1.Click += Createissue4_radiobtn1_Click;
             createissue4_radiobtn2 = (RadioButton)FindViewById(Resource.Id.create_issue4_radiobtn2);
@@ -70,6 +73,17 @@ namespace FinalProject_PU
             circleimageview24.SetImageBitmap(bitmapp);
             createissue3_tvusername.SetText(arr, 0, arr.Length);
             //end //runtime py profile change krna or name change krna 
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue4_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Createissue4_radiobtn1_Click(object sender, EventArgs e)

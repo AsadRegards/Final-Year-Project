@@ -20,7 +20,7 @@ namespace FinalProject_PU
     [Activity(Label = "Debris",NoHistory =true)]
     public class Debris : Activity
     {
-        ImageView back_Debris, next_Debris, FullRoadDebris, HalfRoadDebris, SideRoadDebris,
+        ImageView back_Debris, next_Debris,close, FullRoadDebris, HalfRoadDebris, SideRoadDebris,
                 iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton Debris_radiobtn1, Debris_radiobtn2, Debris_radiobtn3;
         CircleImageView circleImageView_Debris;

@@ -20,7 +20,7 @@ namespace FinalProject_PU
     public class Manhole4 : Activity
     {
         static string selected;
-        ImageView create_issue4_back, create_issue4_btnnext, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, circleimageview6, crt_issue_6_radio1, crt_issue_6_radio2, crt_issue_6_radio3;
+        ImageView create_issue4_back,close, create_issue4_btnnext, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, circleimageview6, crt_issue_6_radio1, crt_issue_6_radio2, crt_issue_6_radio3;
         RadioButton create_issue6_radiobtn1, create_issue6_radiobtn2, create_issue6_radiobtn3;
         TextView tvusername, create_issue_4_tv, heading_tev1;
         Typeface tf;
@@ -33,7 +33,10 @@ namespace FinalProject_PU
             tvusername = (TextView)FindViewById(Resource.Id.create_issue_3_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tvusername.SetTypeface(tf, TypefaceStyle.Bold);
-
+            create_issue4_back = (ImageView)FindViewById(Resource.Id.backbtn6);
+            create_issue4_back.Click += Create_issue4_back_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             create_issue4_btnnext = (ImageView)FindViewById(Resource.Id.create_issue4_btnnext);
             create_issue4_btnnext.Click += Create_issue4_btnnext_Click;
 
@@ -72,6 +75,16 @@ namespace FinalProject_PU
         private void Create_issue6_radiobtn2_Click(object sender, EventArgs e)
         {
             crt_issue_6_radio2.PerformClick();
+        }
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Create_issue4_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
         long lastPress;
         public override void OnBackPressed()

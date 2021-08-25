@@ -1,10 +1,13 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using FinalProject_PU.Control;
+using Refractored.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +20,9 @@ namespace FinalProject_PU
     {
         ImageView back, crtNewAd, manageAds;
         TextView Username;
+
+        public CircleImageView userimage { get; private set; }
+
         //CircleImageView userimage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,11 +35,18 @@ namespace FinalProject_PU
             back.Click += Back_Click;
             Username = (TextView)FindViewById(Resource.Id.username);
 
-            //userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
+            userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
             crtNewAd = (ImageView)FindViewById(Resource.Id.imgcrtnewads);
             crtNewAd.Click += CrtNewAd_Click;
             manageAds = (ImageView)FindViewById(Resource.Id.imgManageAds);
             manageAds.Click += ManageAds_Click;
+            //runtime py name and user image change start
+            char[] arr = UserInfoHolder.User_name.ToCharArray();
+            byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
+            Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
+            userimage.SetImageBitmap(bitmapp);
+            Username.SetText(arr, 0, arr.Length);
+            //end
         }
 
 

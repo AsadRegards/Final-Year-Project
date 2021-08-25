@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using FYP_Web_API.Models;
 
@@ -128,7 +129,7 @@ namespace FYP_Web_API.Controllers
                 info.jazzcashtitle = newtitle;
                 dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
                 dbe.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.Accepted, "Jazzcash updated"); //that
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Jazzcash updated"); 
             }
             if(code==3)
             {
@@ -137,13 +138,29 @@ namespace FYP_Web_API.Controllers
                 info.bankaccountnumber = newtitle;
                 dbe.Entry(info).State = System.Data.Entity.EntityState.Modified;
                 dbe.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.Accepted, "Jazzcash updated"); //Change with bank account this or that
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Bank account updated"); 
             }
             return Request.CreateResponse(HttpStatusCode.OK, "no updation");
 
         }
 
 
-
+        
+        public async Task CountAdvertismentDays()
+        {
+            await Task.Run(() =>
+            {
+                var list = dbe.ad_table.Where(x => x.Status == "approved").ToList();
+                foreach (var ad in list)
+                {
+                    var dateDiff = DateTime.Now.Subtract(ad.Date);
+                    if (dateDiff.TotalDays > ad.Elapsed_Days)
+                    {
+                        ad.Status = "completed";
+                        dbe.SaveChanges();
+                    }
+                }
+            }); 
+        }
     }
 }

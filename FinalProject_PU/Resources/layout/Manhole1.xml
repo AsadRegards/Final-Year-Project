@@ -34,6 +34,15 @@
         android:layout_alignParentEnd="true"
         
         />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/btnback"
+        android:src="@drawable/backgo"
+        android:layout_marginTop="10dp"
+        
+        
+        />
     <Refractored.Controls.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -55,20 +64,22 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Manhole1"
         android:layout_below="@+id/Manhole1_tvusername"
         android:textSize="12dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/Manhole1_tv"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="40dp"/>
 
     <ImageView
         android:src="@drawable/issue_manhole1"
         android:layout_width="match_parent"
         android:layout_height="202dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="80dp"
+        
         android:layout_below="@+id/Manhole1_tvusername"
         android:id="@+id/iconIssue1"
         android:layout_marginRight="170dp"
@@ -79,8 +90,9 @@
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="100dp"
+        
         android:layout_below="@+id/Manhole1_tv"
         android:background="@drawable/ellipse1"
         android:id="@+id/Manhole1_radiobtn1" />
@@ -100,7 +112,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
-        android:layout_marginStart="255dp"
+        android:layout_marginStart="145dp"
+        android:layout_toRightOf="@+id/Manhole1_radiobtn1"
         android:layout_below="@+id/Manhole1_radiobtn1"
         android:background="@drawable/ellipse1"
         android:id="@+id/Manhole1_radiobtn2" />

@@ -198,10 +198,11 @@ namespace FinalProject_PU
                 Issue.isWorkingStarted = 0;
                 Issue.amount_collected = 0;
                 Issue.estimated_cost = 0;
-                using (Control.IssueFlagDetector i = new Control.IssueFlagDetector())
-                {
-                    Issue.issueFlag = i.DetectManholeFlag(Issue);
-                }
+                //using (Control.IssueFlagDetector i = new Control.IssueFlagDetector())
+                //{
+                //    Issue.issueFlag = i.DetectManholeFlag(Issue);
+                //}
+                Issue.issueFlag = new Control.IssueFlagDetector().DetectManholeFlag(Issue);
                 Issue.issueDate = DateTime.Now;
                 try
                 {

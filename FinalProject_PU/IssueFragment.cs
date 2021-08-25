@@ -11,6 +11,7 @@ using Android.App;
 using FinalProject_PU.Control;
 using System;
 using System.Threading.Tasks;
+using MohammedAlaa.GifLoading;
 
 namespace FinalProject_PU
 {
@@ -25,7 +26,7 @@ namespace FinalProject_PU
         }
 
         ImageView imgwriteIssue;
-        
+        LoadingView loader;
 
 
         private RecyclerView recycler;
@@ -44,9 +45,10 @@ namespace FinalProject_PU
             var RootView= inflater.Inflate(Resource.Layout.Home, container, false);
 
 
-            
-           
 
+
+            loader = RootView.FindViewById<LoadingView>(Resource.Id.loading_view_button);
+            loader.Visibility = ViewStates.Visible;
             recycler = RootView.FindViewById<RecyclerView>(Resource.Id.recyclerView1);
             recycler.HasFixedSize = true;
             //  layoutManager = new LinearLayoutManager(this);
@@ -77,11 +79,19 @@ namespace FinalProject_PU
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-            lstData = await InitData();
-            lstAdData = await InitAds();
-            lstData.Reverse();
-            adapter = new RecyclerViewAdapter(lstData,lstAdData);
-            recycler.SetAdapter(adapter);
+            try
+            {
+                lstData = await InitData();
+                lstAdData = await InitAds();
+                lstData.Reverse();
+                adapter = new RecyclerViewAdapter(lstData, lstAdData);
+                recycler.SetAdapter(adapter);
+            }
+            finally
+            {
+                loader.Visibility = ViewStates.Gone;
+            }
+           
             
 
 

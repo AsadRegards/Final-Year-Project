@@ -30,7 +30,10 @@ namespace FinalProject_PU
             // Create your application here
             SetContentView(Resource.Layout.createissue4);
 
-
+            createissue4_back = (ImageView)FindViewById(Resource.Id.backbtncreate4);
+            createissue4_back.Click += Createissue4_back_Click;
+            ImageView close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             circleimageview4 = (CircleImageView)FindViewById(Resource.Id.circleImageView24);
             create_issue_3_tvusername = (TextView)FindViewById(Resource.Id.create_issue_3_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
@@ -83,6 +86,16 @@ namespace FinalProject_PU
         private void Createissue4_radiobtn2_Click(object sender, EventArgs e)
         {
             createissue4_radio2.PerformClick();
+        }
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue4_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
         long lastPress;
         public override void OnBackPressed()

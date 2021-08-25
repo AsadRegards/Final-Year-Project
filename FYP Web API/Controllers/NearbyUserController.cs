@@ -43,6 +43,20 @@ namespace FYP_Web_API.Controllers
            
        }
 
+        [HttpGet]
+        [ActionName("verifybysingleuser")]
+        public HttpResponseMessage verifybysingleuser(int userid, int issueid)
+        {
+            var record = dbe.nearby_user_table.Where(x => x.user_id == userid && x.issue_id == issueid).FirstOrDefault();
+            if(record!=null)
+            {
+                record.Isverified = 1;
+                dbe.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
        
         public void findnearbyusers(int issueid)
         {
@@ -62,6 +76,26 @@ namespace FYP_Web_API.Controllers
 
             return Request.CreateResponse(HttpStatusCode.NotFound, "No Users");
             
+        }
+
+      
+        public async Task verifybynearbyusers()
+        {
+            await Task.Run(() =>
+            {
+                var list = dbe.issue_table.ToList();
+                foreach (var issue in list)
+                {
+                    var nearbyUsersList = dbe.nearby_user_table.Where(x => x.issue_id == issue.issue_id && x.Isverified == 1).ToList();
+                    if (nearbyUsersList.Count >= 5)
+                    {
+                        issue.Status = "verified";
+                        dbe.SaveChanges();
+                    }
+
+                }
+            });
+
         }
 
     }

@@ -21,6 +21,7 @@ namespace FinalProject_PU
     public class BrokenWires : Activity
     {
         static string selected;
+
         ImageView back_BrokenWires, next_BrokenWires, FullRoadElectricPol,HalfRoadElectricPol, 
                 iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton BrokenWires_radiobtn1, BrokenWires_radiobtn2;
@@ -75,11 +76,20 @@ namespace FinalProject_PU
             BrokenWires_radiobtn1.Click += BrokenWires_radiobtn1_Click;
             BrokenWires_radiobtn2 = (RadioButton)FindViewById(Resource.Id.BrokenWire_Radiobtn2);
             BrokenWires_radiobtn2.Click += BrokenWires_radiobtn2_Click;
+            back_BrokenWires = (ImageView)FindViewById(Resource.Id.backbtn);
+            back_BrokenWires.Click += Back_BrokenWires_Click;
 
 
-          
+
+
 
         }
+
+        private void Back_BrokenWires_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
         long lastPress;
         public override void OnBackPressed()
         {

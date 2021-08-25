@@ -20,7 +20,7 @@ namespace FinalProject_PU
     public class BrokenWires2 : Activity
     {
         static string selected;
-        ImageView createissue4_back, createissue4_next, createissue4_radio1,
+        ImageView createissue4_back, createissue4_next, createissue4_radio1,close,
                        createissue4_radio2, createissue4_radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton createissue4_radiobtn1, createissue4_radiobtn2, createissue4_radiobtn3;
         CircleImageView circleimageview4;
@@ -34,12 +34,14 @@ namespace FinalProject_PU
             // Create your application here
             SetContentView(Resource.Layout.createissue4);
 
-
+            createissue4_back = (ImageView)FindViewById(Resource.Id.backbtncreate4);
+            createissue4_back.Click += Createissue4_back_Click;
             circleimageview4 = (CircleImageView)FindViewById(Resource.Id.circleImageView24);
             create_issue_3_tvusername = (TextView)FindViewById(Resource.Id.create_issue_3_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             create_issue_3_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
-
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             create_issue_3_tv = (TextView)FindViewById(Resource.Id.create_issue_3_tv);
             //tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             //create_issue_3_tv.SetTypeface(tf, TypefaceStyle.Bold);
@@ -76,6 +78,18 @@ namespace FinalProject_PU
             createissue4_radio3 = (ImageView)FindViewById(Resource.Id.crt_issue_4_radio3);
             createissue4_radio3.Click += Createissue4_radio3_Click;
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue4_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
         private void Createissue4_radiobtn1_Click(object sender, EventArgs e)
         {
             createissue4_radio1.PerformClick();

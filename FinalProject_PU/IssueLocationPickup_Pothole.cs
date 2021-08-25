@@ -121,7 +121,7 @@ namespace FinalProject_PU
                 var loc = place.LatLng;
                 //creating camera update options to move camera to the searched location
                 CameraUpdate cam = CameraUpdateFactory.NewLatLngZoom(loc, 15);
-                googleMap.MoveCamera(cam);
+                googleMap.AnimateCamera(cam);
 
             }
             catch (Exception e)

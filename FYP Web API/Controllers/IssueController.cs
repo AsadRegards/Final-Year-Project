@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Data.Entity.Validation;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace FYP_Web_API.Controllers
 {
@@ -19,19 +20,21 @@ namespace FYP_Web_API.Controllers
         //Posting New Issue
         [HttpPost]
         [ActionName("postnewissue")]
-        public HttpResponseMessage postnewissue(issue_table issue)
+        public async Task<HttpResponseMessage> postnewissue(issue_table issue)
         {
             try
             {
                 // Your code...
                 // Could also be before try if you know the exception occurs in SaveChanges
                 dbe.issue_table.Add(issue);
+                issue.estimated_cost=await new CostEstimationController().EstimateCost(issue.IssueImage);
                 dbe.SaveChanges();
                 var originalSynchronizationContext = SynchronizationContext.Current;
                 try
                 {
                     SynchronizationContext.SetSynchronizationContext(null);
                     new NearbyUserController().findnearbyusers(issue.issue_id);
+                    
                 }
                 catch(Exception ex)
                 {

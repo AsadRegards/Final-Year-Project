@@ -40,6 +40,10 @@ namespace FinalProject_PU
             create_issue_3_tvusername = (TextView)FindViewById(Resource.Id.create_issue_3_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             create_issue_3_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
+            createissue4_back = (ImageView)FindViewById(Resource.Id.backbtncreate4);
+            createissue4_back.Click += Createissue4_back_Click;
+            ImageView close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
 
             create_issue_3_tv = (TextView)FindViewById(Resource.Id.create_issue_3_tv);
            // tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
@@ -79,6 +83,16 @@ namespace FinalProject_PU
             createissue4_radio2.Click += Createissue4_radio2_Click;
             createissue4_radio3 = (ImageView)FindViewById(Resource.Id.crt_issue_4_radio3);
             createissue4_radio3.Click += Createissue4_radio3_Click;
+        }
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue4_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
         private void Createissue4_radiobtn1_Click(object sender, EventArgs e)
         {

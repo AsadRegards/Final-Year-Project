@@ -35,7 +35,7 @@ namespace FinalProject_PU
             uploadimg = (ImageView)FindViewById(Resource.Id.imguploadimg);
             uploadimg.Click += Uploadimg_Click;
             uploaded = (Button)FindViewById(Resource.Id.uploaded);
-            uploaded.Visibility = ViewStates.Visible;
+            uploaded.Visibility = ViewStates.Gone;
             back = (ImageView)FindViewById(Resource.Id.imgbackgo);
             back.Click += Back_Click;
             userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
@@ -136,7 +136,7 @@ namespace FinalProject_PU
             }
             finally
             {
-                uploaded.Visibility = ViewStates.Visible;
+               //uploaded.Visibility = ViewStates.Visible;
             }
         }
 
@@ -174,7 +174,7 @@ namespace FinalProject_PU
         }
         private void Back_Click(object sender, EventArgs e)
         {
-            this.OnBackPressed();
+            base.OnBackPressed();
         }
     }
 }

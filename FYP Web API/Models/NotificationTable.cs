@@ -18,6 +18,6 @@ namespace FYP_Web_API.Models
         public string notification_text { get; set; }
         public string notification_image { get; set; }
         public string notification_title { get; set; }
-        public Nullable<System.DateTime> notification_date { get; set; }
+        public System.DateTime notification_date { get; set; }
     }
 }

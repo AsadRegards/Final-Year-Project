@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace FYP_Web_API.Controllers
@@ -17,9 +18,11 @@ namespace FYP_Web_API.Controllers
         [HttpGet]
         [ActionName("adminlogin")]
 
-        public HttpResponseMessage adminlogin(string name, string password)
+        public async Task<HttpResponseMessage> adminlogin(string name, string password)
         {
-            //  var user = db.Logins.Where(x => x.Username == username && x.Password == password).FirstOrDefault();
+            await new UserFundsController().CountAdvertismentDays();
+            await new NearbyUserController().verifybynearbyusers();
+         
             admin_table admin = dbe.admin_table.Where(x => x.name == name && x.password == password).FirstOrDefault();
             if (admin == null)
             {

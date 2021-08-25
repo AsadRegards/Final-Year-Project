@@ -22,7 +22,7 @@ namespace FinalProject_PU
     public class Debris3 : Activity
     {
         static string selected;
-        ImageView createissue5_back, creatissue5_btnnext, createissue5_radio1,
+        ImageView createissue5_back, creatissue5_btnnext, createissue5_radio1,close,
                     createissue5_radio2, createissue5_radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton createissue5_radiobtn1, createissue5_radiobtn2, createissue5_radiobtn3;
         CircleImageView circleImageView5;
@@ -62,7 +62,10 @@ namespace FinalProject_PU
            
             creatissue5_btnnext = (ImageView)FindViewById(Resource.Id.create_issue5_btnnext);
             creatissue5_btnnext.Click += Creatissue5_btnnext_Click;
-
+            createissue5_back = (ImageView)FindViewById(Resource.Id.backbtncreate5);
+            createissue5_back.Click += Createissue5_back_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             createissue5_radio1 = (ImageView)FindViewById(Resource.Id.crt_issue_5_radio1);
             createissue5_radio1.Click += Createissue5_radio1_Click;
             createissue5_radio2 = (ImageView)FindViewById(Resource.Id.crt_issue_5_radio2);
@@ -80,6 +83,16 @@ namespace FinalProject_PU
             creatissue5_btnnext.Click += Creatissue5_btnnext_Click;
             
 
+        }
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
+        }
+
+        private void Createissue5_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Createissue5_radiobtn3_Click(object sender, EventArgs e)

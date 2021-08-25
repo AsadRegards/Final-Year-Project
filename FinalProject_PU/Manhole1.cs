@@ -24,7 +24,7 @@ namespace FinalProject_PU
         ImageView Manhole1_back, Manhole1_next, Manhole1_radio1,
                    Manhole1_radio2,  iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton Manhole1_radiobtn1, Manhole1_radiobtn2;
-        
+        ImageView back;
         TextView Manhole1_tvusername, Manhole1_tv, tev1;
         Typeface tf;
         CircleImageView circleImageView_Manhole1;
@@ -43,11 +43,19 @@ namespace FinalProject_PU
             Manhole1_radio1.Click += Manhole1_radio1_Click;
             Manhole1_radio2 = (ImageView)FindViewById(Resource.Id.iconIssue2);
             Manhole1_radio2.Click += Manhole1_radio2_Click;
-
+            back = (ImageView)FindViewById(Resource.Id.btnback);
+            back.Click += Back_Click;
             circleImageView_Manhole1 = (CircleImageView)FindViewById(Resource.Id.circleImageView_Manhole1);
+          
+            Manhole1_next = (ImageView)FindViewById(Resource.Id.Manhole1_btnnext);
+            Manhole1_next.Click += Manhole1_next_Click;
+
+            Manhole1_tvusername = (TextView)FindViewById(Resource.Id.Manhole1_tvusername);
+            Manhole1_tv = (TextView)FindViewById(Resource.Id.Manhole1_tv);
+            tev1 = (TextView)FindViewById(Resource.Id.tev1);
             //runtime py profile change krna or name change krna 
             //start
-           
+
             char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
             Manhole1_tvusername.SetText(arr, 0, arr.Length);
             byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
@@ -57,12 +65,11 @@ namespace FinalProject_PU
             img2.SetImageBitmap(bitmapp);
             //end
 
-            Manhole1_next = (ImageView)FindViewById(Resource.Id.Manhole1_btnnext);
-            Manhole1_next.Click += Manhole1_next_Click;
+        }
 
-            Manhole1_tvusername = (TextView)FindViewById(Resource.Id.Manhole1_tvusername);
-            Manhole1_tv = (TextView)FindViewById(Resource.Id.Manhole1_tv);
-            tev1 = (TextView)FindViewById(Resource.Id.tev1);
+        private void Back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Manhole1_radiobtn2_Click(object sender, EventArgs e)

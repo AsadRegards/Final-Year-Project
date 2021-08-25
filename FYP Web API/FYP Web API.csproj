@@ -282,6 +282,7 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - Web Deploy.pubxml" />
@@ -289,6 +290,8 @@
     <None Include="Properties\PublishProfiles\FYPWebAPI20210529205921 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210529205921 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210824172842 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FYPWebAPI20210824213315 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FYPWebAPI20210825062724 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI6298563027 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

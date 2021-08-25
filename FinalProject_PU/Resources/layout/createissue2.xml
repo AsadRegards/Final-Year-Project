@@ -141,7 +141,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:id="@+id/imgbtn5"
-        android:layout_alignParentEnd="true"
+        
            />    
     <RadioButton
         
@@ -159,7 +159,7 @@
         android:layout_below="@+id/imgbtn5"
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
-        android:layout_alignParentEnd="true"
+        
         android:id="@+id/imgbtn6"
            />
         <RadioButton
@@ -176,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn6"
-        android:layout_alignParentEnd="true"
+        
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:id="@+id/imgbtn7"
@@ -197,7 +197,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgbtn7"
-        android:layout_alignParentEnd="true"
+        
         android:layout_marginTop="10dp"
         android:layout_marginStart="190dp"
         android:id="@+id/imgbtn8"

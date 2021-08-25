@@ -23,7 +23,7 @@ namespace FinalProject_PU
         static string selected;
         
         ImageView close;
-        ImageView next_imga2;
+        ImageView next_imga2, back;
         ImageView issueImg, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome,
                  Potholeimgbtn1, Manholeimgbtn2, Debrisimgbtn3, Garbageimgbtn4, BrokenWiresimgbtn5, Plantingimgbtn6, MissingVehicleimgbtn7,
                 Rainwaterimgbtn8, imgviewissue;
@@ -52,7 +52,7 @@ namespace FinalProject_PU
             byte[] imageArray = Convert.FromBase64String(base64image);
             Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
             issueImg.SetImageBitmap(bitmap);
-        
+            
             //runtime py profile change krna or name change krna 
             //start
             char[] arr = UserInfoHolder.User_name.ToCharArray();
@@ -108,7 +108,8 @@ namespace FinalProject_PU
 
         private void Close_Click(object sender, EventArgs e)
         {
-            base.OnBackPressed();
+            Intent i = new Intent(this, typeof(FragmentHomeActivity));
+            this.StartActivity(i);
         }
 
         long lastPress;

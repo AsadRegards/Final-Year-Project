@@ -12,6 +12,15 @@
             android:background="#646464"
             android:layout_marginTop="50dp"
             android:id="@+id/lise"/>
+    <ImageView
+        android:src="@drawable/backgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   
+        android:layout_marginTop="10dp"
+        
+        android:id="@+id/backbtn"
+       
+         />
    
    
     <TextView
@@ -54,7 +63,7 @@
         android:layout_marginTop="25dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/brokenwires"
         android:layout_below="@+id/BrokenWires_tvusername"
@@ -78,8 +87,8 @@
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="90dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginStart="100dp"
         android:layout_below="@+id/BrokenWires_tv"
         android:background="@drawable/ellipse1"
         android:id="@+id/BrokenWire_Radiobtn1" />

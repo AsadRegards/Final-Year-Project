@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 namespace FinalProject_PU
@@ -110,12 +111,27 @@ namespace FinalProject_PU
                 VerificationText.Text = "Verified";
                 VerificationText.SetTextColor(Android.Graphics.Color.Green);
                 NotVerifiedText.Enabled = false;
+
             }
             else
             {
                 VerificationText.Text = "Un-verified";
                 VerificationText.SetTextColor(Android.Graphics.Color.DarkRed);
                 NotVerifiedText.Enabled = true;
+            }
+        }
+
+        private async void updateindatabase()
+        {
+            HttpClient client = new HttpClient();
+            var uri = Control.Account.BaseAddressUri + "/api/nearbyuser/verifybysingleuser/?userid=" + User.user_id + "&issueid=" + Issue.issue_id;
+            var response = await client.GetAsync(uri);
+            if(response.StatusCode==System.Net.HttpStatusCode.Accepted)
+            {
+                Toast.MakeText(this, "Your response has been recorded", ToastLength.Long).Show();
+                Intent i = new Intent(this, typeof(MainActivity));
+                StartActivity(i);
+                this.Finish();
             }
         }
     }
