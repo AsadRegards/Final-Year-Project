@@ -34,6 +34,7 @@ namespace FinalProject_PU
         GoogleMap googleMap;
 
         LatLng startCoardinates, endCoardinates;
+        bool IsDirectionRequestInitlialized = false;
 
         public override Android.Views.View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -47,6 +48,7 @@ namespace FinalProject_PU
             endLocation = view.FindViewById<TextView>(Resource.Id.materialTextView2);
             radioStart = view.FindViewById<RadioButton>(Resource.Id.radioButton1);
             radioEnd = view.FindViewById<RadioButton>(Resource.Id.radioButton2);
+            pin = view.FindViewById<Button>(Resource.Id.pinid);
 
             //Initializing Click events
             startLocation.Click += StartLocation_Click;
@@ -84,7 +86,9 @@ namespace FinalProject_PU
         {
             char[] msg = "PLEASE WAIT....".ToCharArray();
             GetDirection.SetText(msg, 0, msg.Length);
-            GetDirection.Enabled = false;
+            GetDirection.Visibility = ViewStates.Gone;
+            IsDirectionRequestInitlialized = true;
+            pin.Visibility = ViewStates.Gone;
             if(startCoardinates!=null && endCoardinates!=null)
             {
                 string json = await mapFuncHelper.GetDirectionJsonAsync(startCoardinates, endCoardinates);
@@ -97,16 +101,12 @@ namespace FinalProject_PU
                 {
                     Toast.MakeText(this.Activity, "Direction cannot be provided at this time", ToastLength.Long).Show();
                 }
-                GetDirection.Enabled = true;
-                GetDirection.SetText("GET DIRECTION".ToCharArray(), 0, "GET DIRECTION".ToCharArray().Length);
-              
-
 
             }
             else
             {
                 Toast.MakeText(this.Activity, "Please select Start and End Locaton", ToastLength.Long).Show();
-                GetDirection.Enabled = true;
+                GetDirection.Visibility = ViewStates.Visible;
                 GetDirection.SetText("GET DIRECTION".ToCharArray(), 0, "GET DIRECTION".ToCharArray().Length);
 
             }
@@ -116,7 +116,10 @@ namespace FinalProject_PU
   
         private void EndLocation_Click(object sender, EventArgs e)
         {
-
+            pin.Visibility = ViewStates.Visible;
+            IsDirectionRequestInitlialized = false;
+            GetDirection.Visibility = ViewStates.Visible;
+            GetDirection.SetText("GET DIRECTION".ToCharArray(), 0, "GET DIRECTION".ToCharArray().Length);
             if (!radioStart.Checked && !radioEnd.Checked)
             {
                 Toast.MakeText(Application.Context, "Please select one Type\nDestination OR Location", ToastLength.Long).Show();
@@ -147,7 +150,11 @@ namespace FinalProject_PU
 
         private void StartLocation_Click(object sender, EventArgs e)
         {
-            if(!radioStart.Checked && !radioEnd.Checked)
+            pin.Visibility = ViewStates.Visible;
+            IsDirectionRequestInitlialized = false;
+            GetDirection.Visibility = ViewStates.Visible;
+            GetDirection.SetText("GET DIRECTION".ToCharArray(), 0, "GET DIRECTION".ToCharArray().Length);
+            if (!radioStart.Checked && !radioEnd.Checked)
             {
                 Toast.MakeText(Application.Context, "Please select one Type\nDestination OR Location", ToastLength.Long).Show();
 
@@ -198,21 +205,24 @@ namespace FinalProject_PU
         MapFunctions.MapFunctionHelper mapFuncHelper;
         private async void GoogleMap_CameraIdle(object sender, EventArgs e)
         {
-            
-            if (radioStart.Checked == true)
+            if(!IsDirectionRequestInitlialized)
             {
-                startCoardinates = googleMap.CameraPosition.Target;
-                string startLoc = await mapFuncHelper.FindCordinateAddress(startCoardinates);
-                char[] startLocArray = startLoc.ToCharArray();
-                startLocation.SetText(startLocArray, 0, startLocArray.Length);
+                if (radioStart.Checked == true)
+                {
+                    startCoardinates = googleMap.CameraPosition.Target;
+                    string startLoc = await mapFuncHelper.FindCordinateAddress(startCoardinates);
+                    char[] startLocArray = startLoc.ToCharArray();
+                    startLocation.SetText(startLocArray, 0, startLocArray.Length);
+                }
+                else if (radioEnd.Checked == true)
+                {
+                    endCoardinates = googleMap.CameraPosition.Target;
+                    string endLoc = await mapFuncHelper.FindCordinateAddress(endCoardinates);
+                    char[] endLocArray = endLoc.ToCharArray();
+                    endLocation.SetText(endLocArray, 0, endLocArray.Length);
+                }
             }
-            else if (radioEnd.Checked == true)
-            {
-                endCoardinates = googleMap.CameraPosition.Target;
-                string endLoc = await mapFuncHelper.FindCordinateAddress(endCoardinates);
-                char[] endLocArray = endLoc.ToCharArray();
-                endLocation.SetText(endLocArray, 0, endLocArray.Length);
-            }
+           
         }
 
         private async Task<LatLng> getCurrentLocation()
