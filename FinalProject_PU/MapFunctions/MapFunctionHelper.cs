@@ -174,13 +174,14 @@ namespace FinalProject_PU.MapFunctions
             MarkerOptions pickupMarkerOptions = new MarkerOptions();
             pickupMarkerOptions.SetPosition(firstpoint);
             pickupMarkerOptions.SetTitle("Start Location");
-            pickupMarkerOptions.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueGreen));
-
+            BitmapDescriptor bitmapDescPickup = BitmapDescriptorFactory.FromResource(Resource.Drawable.starticon);
+            pickupMarkerOptions.SetIcon(bitmapDescPickup);
 
             MarkerOptions destinationMarkerOptions = new MarkerOptions();
             destinationMarkerOptions.SetPosition(lastpoint);
             destinationMarkerOptions.SetTitle("Destination");
-            pickupMarkerOptions.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueOrange));
+            BitmapDescriptor bitmapDescDestination = BitmapDescriptorFactory.FromResource(Resource.Drawable.destinationicon);
+            destinationMarkerOptions.SetIcon(bitmapDescDestination);
 
             PickupMarker = googleMap.AddMarker(pickupMarkerOptions);
             destinationMarker = googleMap.AddMarker(destinationMarkerOptions);

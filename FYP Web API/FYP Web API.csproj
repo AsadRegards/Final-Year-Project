@@ -182,15 +182,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\PUMODEL.Context.tt">
+    <Content Include="Models\DbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PUMODEL.edmx</DependentUpon>
-      <LastGenOutput>PUMODEL.Context.cs</LastGenOutput>
+      <DependentUpon>DbModel.edmx</DependentUpon>
+      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PUMODEL.tt">
+    <Content Include="Models\DbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PUMODEL.edmx</DependentUpon>
-      <LastGenOutput>PUMODEL.cs</LastGenOutput>
+      <DependentUpon>DbModel.edmx</DependentUpon>
+      <LastGenOutput>DbModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -209,75 +209,75 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\admin_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ad_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AssignedByAdmin.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\FCM_TOKEN.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\funds_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_images_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nearby_user_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NotificationTable.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PaymentMethodInfo.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PUMODEL.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PUMODEL.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PUMODEL.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PUMODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PUMODEL.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PUMODEL.edmx</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pushnotification.cs" />
     <Compile Include="Models\report_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VolunteerAdminMessages.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_Report.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_table.cs">
-      <DependentUpon>PUMODEL.tt</DependentUpon>
+      <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\PUMODEL.edmx">
+    <EntityDeploy Include="Models\DbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PUMODEL.Designer.cs</LastGenOutput>
+      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\PUMODEL.edmx.diagram">
-      <DependentUpon>PUMODEL.edmx</DependentUpon>
+    <Content Include="Models\DbModel.edmx.diagram">
+      <DependentUpon>DbModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />

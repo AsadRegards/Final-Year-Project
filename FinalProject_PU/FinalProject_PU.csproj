@@ -671,6 +671,7 @@
     <AndroidResource Include="Resources\drawable\GroupJazz.png" />
     <AndroidResource Include="Resources\drawable\GroupSubmit.png" />
     <AndroidResource Include="Resources\drawable\Group325.png" />
+    <AndroidResource Include="Resources\drawable\destinationicon.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />
@@ -933,6 +934,7 @@
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Uploaded.png" />
     <AndroidResource Include="Resources\layout\AdsPayment.xml" />
+    <AndroidResource Include="Resources\drawable\starticon.png" />
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />
