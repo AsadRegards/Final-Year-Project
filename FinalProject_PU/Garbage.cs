@@ -20,8 +20,7 @@ namespace FinalProject_PU
     public class Garbage : Activity
     {
         static string selected;
-        ImageView back_Garbage, next_Garbage, Garbage_FullRoad, Garbage_HalfRoad, Garbage_SideRoad,
-               iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
+        ImageView back_Garbage, next_Garbage, Garbage_FullRoad, Garbage_HalfRoad, Garbage_SideRoad;
         RadioButton Garbage_radiobtn1, Garbage_radiobtn2, Garbage_radiobtn3;
         
         CircleImageView circleImageView_Garbage;

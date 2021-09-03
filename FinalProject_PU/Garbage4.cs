@@ -98,7 +98,7 @@ namespace FinalProject_PU
 
                 await Task.Run(() =>
                 {
-                    var gar = JsonConvert.DeserializeObject<Model.Garbage>("objtopass");
+                    var gar = JsonConvert.DeserializeObject<Model.Garbage>(Intent.GetStringExtra("objtopass"));
                     gar.issuePositionwrtRoad = selected;
                     Control.DataOper.PutData<Issuelocationpickup_Garbage>(this, gar);
 
