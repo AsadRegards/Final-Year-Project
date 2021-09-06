@@ -144,7 +144,8 @@ namespace FinalProject_PU
 
                 await Task.Run(() =>
                 {
-                    var gar = JsonConvert.DeserializeObject<Model.Garbage>("objtopass");
+                    var json = Intent.GetStringExtra("objtopass");
+                    var gar = JsonConvert.DeserializeObject<Model.Garbage>(Intent.GetStringExtra("objtopass"));
                     gar.traffic = selected;
                     FinalProject_PU.Control.DataOper.PutData<Garbage4>(this, gar);
 

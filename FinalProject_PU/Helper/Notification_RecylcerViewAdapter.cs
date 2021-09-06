@@ -53,7 +53,9 @@ namespace FinalProject_PU.Helper
             Notification_RecyclerViewHolder viewHolder = holder as Notification_RecyclerViewHolder;
 
             byte[] arr1 = Convert.FromBase64String(lstData[position].notification_image); //IssueImage
-            Android.Graphics.Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length);
+            Android.Graphics.Bitmap b1 = BitmapFactory.DecodeByteArray(arr1, 0, arr1.Length); 
+            //Java.Lang.OutOfMemoryError: 'Failed to allocate a 62436 byte allocation with 21600 free bytes and 21KB until OOM'
+
             viewHolder.IssueImage.SetImageBitmap(b1); //
             viewHolder.IssueDate.Text = lstData[position].notification_date.ToShortDateString();
             viewHolder.IssueStatement.Text = lstData[position].notification_text;

@@ -23,7 +23,7 @@ namespace FinalProject_PU
         ImageView createissue4_back, createissue4_next, createissue4_radio1,
                     createissue4_radio2, createissue4_radio3, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
         RadioButton createissue4_radiobtn1, createissue4_radiobtn2, createissue4_radiobtn3;
-        CircleImageView circleimageview4;
+        CircleImageView circleimageview24;
         User u;
         TextView create_issue_3_tvusername, create_issue_3_tv, tev1;
         Typeface tf;
@@ -35,33 +35,33 @@ namespace FinalProject_PU
             SetContentView(Resource.Layout.createissue4);
 
 
-            circleimageview4 = (CircleImageView)FindViewById(Resource.Id.circleImageView24);
-            create_issue_3_tvusername = (TextView)FindViewById(Resource.Id.create_issue_3_tvusername);
+          
+            create_issue_3_tvusername = FindViewById<TextView>(Resource.Id.create_issue_3_tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             create_issue_3_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
 
-            create_issue_3_tv = (TextView)FindViewById(Resource.Id.create_issue_3_tv);
+            create_issue_3_tv = FindViewById<TextView>(Resource.Id.create_issue_4_tv);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             create_issue_3_tv.SetTypeface(tf, TypefaceStyle.Bold);
             //runtime py profile change krna or name change krna 
             //start
-            circleimageview4 = (CircleImageView)FindViewById(Resource.Id.circleImageView3);
-          char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
+           
+            char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
             create_issue_3_tvusername.SetText(arr, 0, arr.Length);
             byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
 
-            ImageView img2 = FindViewById<ImageView>(Resource.Id.circleImageView2);
+            CircleImageView img2 = FindViewById<CircleImageView>(Resource.Id.circleImageView24);
             Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
             img2.SetImageBitmap(bitmapp);
             //end
 
-            tev1 = (TextView)FindViewById(Resource.Id.tev1);
+            tev1 = FindViewById<TextView>(Resource.Id.tev1);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tev1.SetTypeface(tf, TypefaceStyle.Bold);
 
 
           
-            createissue4_next = (ImageView)FindViewById(Resource.Id.imga2);
+            createissue4_next = FindViewById<ImageView>(Resource.Id.create_issue4_btnnext);
             createissue4_next.Click += Createissue4_next_Click;
 
             createissue4_radiobtn1 = (RadioButton)FindViewById(Resource.Id.create_issue4_radiobtn1);
@@ -146,7 +146,7 @@ namespace FinalProject_PU
 
                 await Task.Run(() =>
                 {
-                    var gar = JsonConvert.DeserializeObject<Model.Garbage>("objtopass");
+                    var gar = JsonConvert.DeserializeObject<Model.Garbage>(Intent.GetStringExtra("objtopass"));
                     gar.issuePositionwrtRoad = selected;
                     FinalProject_PU.Control.DataOper.PutData<Garbage3>(this, gar);
 
