@@ -135,21 +135,22 @@ namespace FYP_Web_API.Controllers
                             UserImage = user_table.profile_pic,
                             UserName = user_table.name,
                             IssueDate = issue_table.IssueDate,
-                            IssueStatement=issue_table.issueStatement,
-                            IssueLatitude=issue_table.locationLatitude,
-                            IssueLongitude=issue_table.locationLongitude,
-                            Issueflag=issue_table.issueFlag,
-                            IssueType=issue_table.issueType,
-                            estimatedCost=issue_table.estimated_cost,
-                            amountCollected=issue_table.amount_collected,
-                            isworkingstarted=issue_table.isWorkingStarted,
-                            isResolved=issue_table.isresolved,
-                            IssueId=issue_table.issue_id,
-                            location_name=issue_table.location_name
+                            IssueStatement = issue_table.issueStatement,
+                            IssueLatitude = issue_table.locationLatitude,
+                            IssueLongitude = issue_table.locationLongitude,
+                            Issueflag = issue_table.issueFlag,
+                            IssueType = issue_table.issueType,
+                            estimatedCost = issue_table.estimated_cost,
+                            amountCollected = issue_table.amount_collected,
+                            isworkingstarted = issue_table.isWorkingStarted,
+                            isResolved = issue_table.isresolved,
+                            IssueId = issue_table.issue_id,
+                            location_name = issue_table.location_name,
+                            Status = issue_table.Status
 
 
 
-                        }).ToList();
+                        }).Where(x => x.Status!="Resolved" && x.Status!="Conflict").ToList();
 
                 return Request.CreateResponse(HttpStatusCode.Accepted, data);
             }

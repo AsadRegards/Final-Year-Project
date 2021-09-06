@@ -78,6 +78,7 @@ namespace FYP_Web_API.Controllers
                 if(status=="Working")
                 {
                     issue.isWorkingStarted = 1;
+                    issue.isresolved = 0;
                 }
                 if(status=="Resolved")
                 {
@@ -86,6 +87,11 @@ namespace FYP_Web_API.Controllers
                 if(status=="Not Working")
                 {
                     issue.isWorkingStarted = 0;
+                    issue.isresolved = 0;
+                }
+                if(status=="Conflict")
+                {
+                    issue.isresolved = 0;
                 }
                 dbe.SaveChanges();
             }
