@@ -46,6 +46,7 @@ namespace FinalProject_PU
         private void Payments_Click(object sender, EventArgs e)
         {
             var intent = new Intent(Application.Context, typeof(ContributeFund));
+            intent.AddFlags(ActivityFlags.NewTask);
             Application.Context.StartActivity(intent);
 
         }
