@@ -12,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+
 namespace FinalProject_PU
 {
     [Activity(Label = "Rainwater",NoHistory =true)]
@@ -115,43 +117,32 @@ namespace FinalProject_PU
 
 
 
-        private void Rainwater_next_Click(object sender, EventArgs e)
+        private async void Rainwater_next_Click(object sender, EventArgs e)
         {
             Model.Rainwater m = new Model.Rainwater();
             m.Vehiclepassing = selected;
             m.IssueImage = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("objtopass"));
             Control.DataOper.PutData<Issuelocationpickup_Rainwater>(this, m);
+
+            //if (selected != "")
+            //{
+
+
+            //    await Task.Run(() =>
+            //    {
+            //        var gar = JsonConvert.DeserializeObject<Model.Rainwater>(Intent.GetStringExtra("objtopass"));
+            //        gar.Vehiclepassing = selected;
+            //        Control.DataOper.PutData<Issuelocationpickup_Rainwater>(this, gar);
+
+
+            //    });
+            //}
+            //else
+            //{
+            //    Toast.MakeText(this, "Please select any one from them", ToastLength.Long).Show();
+            //}
         }
 
 
-        private void IconHome_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconFunds_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconNotifications_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconMap_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconSettngs_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
     }
 }

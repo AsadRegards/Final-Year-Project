@@ -112,35 +112,6 @@ namespace FinalProject_PU
         }
 
       
-        private void IconHome_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconFunds_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(FundsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconNotifications_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(NotificationsActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconMap_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(MapActivity));
-            this.StartActivity(i);
-        }
-
-        private void IconSettngs_Click(object sender, EventArgs e)
-        {
-            var i = new Intent(this, typeof(SettingsActivity));
-            this.StartActivity(i);
-        }
-
+     
     }
 }

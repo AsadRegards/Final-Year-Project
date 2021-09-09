@@ -16,7 +16,7 @@ using FinalProject_PU.Model;
 namespace FinalProject_PU
 {
     [Activity(Label = "Location_pickup_home",NoHistory =true)]
-    public class Location_pickup_home : Activity, IOnMapReadyCallback, ILocationSourceOnLocationChangedListener
+    public class Location_pickup_home : Activity, IOnMapReadyCallback
     {
         private MapFragment map1;
         Button set_location;
@@ -110,17 +110,9 @@ namespace FinalProject_PU
                 //creating camera update options to move camera to the searched location
                 CameraUpdate cam = CameraUpdateFactory.NewLatLngZoom(loc, 17);
 
-                //create marker options
-                MarkerOptions markerOption = new MarkerOptions();
-                markerOption.SetPosition(loc);
-                markerOption.Draggable(true);
-                int id0 = (int)typeof(Resource.Drawable).GetField("locationpoint").GetValue(null);
-                BitmapDescriptor bmd0 = BitmapDescriptorFactory.FromResource(id0);
-                markerOption.SetIcon(bmd0);
-                //googleMap.Clear();
-                googleMap.AddMarker(markerOption);
-                googleMap.MoveCamera(cam);
-                googleMap.MarkerDragEnd += GoogleMap_MarkerDragEnd1;
+            
+                googleMap.AnimateCamera(cam);
+               
 
 
             }
@@ -136,11 +128,7 @@ namespace FinalProject_PU
 
         }
 
-        private void GoogleMap_MarkerDragEnd1(object sender, GoogleMap.MarkerDragEndEventArgs e)
-        {
-            Final_Position = e.Marker.Position;
-
-        }
+       
 
         private void Set_location_Click(object sender, EventArgs e)
         {
@@ -160,7 +148,7 @@ namespace FinalProject_PU
                 Android.App.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                 AlertDialog alert = dialog.Create();
                 alert.SetTitle("Select Location");
-                alert.SetMessage("Please select issue location by dragging pin on Issue Location");
+                alert.SetMessage("Please select a correct location");
                 alert.SetButton("OK", (c, ev) =>
                 {
                     alert.Dismiss();
@@ -175,6 +163,7 @@ namespace FinalProject_PU
         {
             googleMap = mapp;
             googleMap.MapType = GoogleMap.MapTypeNormal;
+            googleMap.CameraIdle += GoogleMap_CameraIdle;
 
             var location = await Geolocation.GetLocationAsync(new GeolocationRequest
             {
@@ -188,41 +177,16 @@ namespace FinalProject_PU
                 LatLng loc1 = new LatLng(location.Latitude, location.Longitude);
 
                 CameraUpdate cam = CameraUpdateFactory.NewLatLngZoom(loc1, 17);
-              
-
-
-                MarkerOptions mo2 = new MarkerOptions();
-                mo2.SetPosition(loc1);
-                mo2.Draggable(true);
-                int id = (int)typeof(Resource.Drawable).GetField("locationpin").GetValue(null);
-                BitmapDescriptor bmd = BitmapDescriptorFactory.FromResource(id);
-                mo2.SetIcon(bmd);
-                googleMap.MoveCamera(cam);
-                googleMap.AddMarker(mo2);
-                googleMap.MarkerDragEnd += GoogleMap_MarkerDragEnd;
-
+                googleMap.AnimateCamera(cam);
+ 
             }
 
 
         }
 
-        private void GoogleMap_MarkerDragEnd(object sender, GoogleMap.MarkerDragEndEventArgs e)
+        private void GoogleMap_CameraIdle(object sender, EventArgs e)
         {
-            Final_Position = e.Marker.Position;
-        }
-
-        public void OnLocationChanged(Android.Locations.Location location)
-        {
-
-            LatLng newloc = new LatLng(location.Latitude, location.Longitude);
-            MarkerOptions m = new MarkerOptions();
-            m.SetPosition(newloc);
-            int id0 = (int)typeof(Resource.Drawable).GetField("locationpoint").GetValue(null);
-            BitmapDescriptor bmd0 = BitmapDescriptorFactory.FromResource(id0);
-            m.SetIcon(bmd0);
-            googleMap.AddMarker(m);
-
-
+            Final_Position = googleMap.CameraPosition.Target;
         }
     }
 }

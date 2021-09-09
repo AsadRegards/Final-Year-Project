@@ -91,8 +91,8 @@ namespace FinalProject_PU
             {
                 MainThread.BeginInvokeOnMainThread(() => 
                 {
-                    //loader.Visibility = Android.Views.ViewStates.Visible;
-                    button_loader.Visibility = Android.Views.ViewStates.Visible;
+                    loader.Visibility = Android.Views.ViewStates.Visible;
+                    //button_loader.Visibility = Android.Views.ViewStates.Visible;
                     name.Enabled = false;
                     email.Enabled = false;
                     login.Enabled = false;

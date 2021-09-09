@@ -24,9 +24,12 @@ namespace FinalProject_PU.Control
             if(UserInfoHolder.Status=="blocked")
             {
                 Toast.MakeText(acc, "You have been blocked from problem update and cannot post any issue", ToastLength.Long).Show();
+                Intent i = new Intent(acc, typeof(FragmentHomeActivity));
+                acc.StartActivity(i);
                 return false;
             }
             var issueObj = (T)obj;
+            issueObj.isresolved = 0;
             
             HttpClient client = new HttpClient();
             var uri = baseuri + "/api/issue/postnewissue";

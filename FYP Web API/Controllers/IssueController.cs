@@ -146,11 +146,11 @@ namespace FYP_Web_API.Controllers
                             isResolved = issue_table.isresolved,
                             IssueId = issue_table.issue_id,
                             location_name = issue_table.location_name,
-                            Status = issue_table.Status
+                            WorkingStatus = issue_table.WorkingStatus
 
 
 
-                        }).Where(x => x.Status!="Resolved" && x.Status!="Conflict").ToList();
+                        }).Where(x => x.WorkingStatus!="Resolved" && x.WorkingStatus !="Conflict").ToList();
 
                 return Request.CreateResponse(HttpStatusCode.Accepted, data);
             }

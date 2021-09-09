@@ -88,6 +88,11 @@ namespace FinalProject_PU
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             var u = JsonConvert.DeserializeObject<User>(Intent.GetStringExtra("userb"));
+            if(string.IsNullOrEmpty(base64image))
+            {
+                Toast.MakeText(this, "Pleae upload an image", ToastLength.Long).Show();
+                return;
+            }
             u.profile_pic = base64image;
             MainThread.BeginInvokeOnMainThread(() => 
             {
@@ -104,30 +109,34 @@ namespace FinalProject_PU
 
         public async void UploadPhoto()
         {
-            await CrossMedia.Current.Initialize();
-            if (!CrossMedia.Current.IsPickPhotoSupported)
+            try
             {
-                Toast.MakeText(this, "upload not supported on this device", ToastLength.Short).Show();
+                await CrossMedia.Current.Initialize();
+                if (!CrossMedia.Current.IsPickPhotoSupported)
+                {
+                    Toast.MakeText(this, "upload not supported on this device", ToastLength.Short).Show();
 
+                }
+
+                var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                {
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Custom,
+                    CompressionQuality = 80
+
+                });
+
+                //convert file to byte array , to bitmap
+                byte[] imageArray = System.IO.File.ReadAllBytes(file.Path);
+                base64image = Convert.ToBase64String(imageArray);
+
+                //display photo
+                Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
+                newimage.SetImageBitmap(bitmap);
             }
-
-            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            catch(Exception ex)
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Custom,
-                CompressionQuality = 80
-
-            });
-
-            //convert file to byte array , to bitmap
-            byte[] imageArray = System.IO.File.ReadAllBytes(file.Path);
-            base64image = Convert.ToBase64String(imageArray);
-
-            //display photo
-            Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
-            newimage.SetImageBitmap(bitmap);
-
-
-
+                Toast.MakeText(this, "Pleae upload an image", ToastLength.Long).Show();
+            }
 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)

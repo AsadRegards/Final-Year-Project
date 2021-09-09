@@ -60,7 +60,7 @@ namespace FinalProject_PU
             //Setting up Map
             mapFragment = MapFragment.NewInstance();
             var ft = this.Activity.FragmentManager.BeginTransaction();
-            ft.Add(Resource.Id.map_placeholder, mapFragment).Commit();
+            ft.Add(Resource.Id.map_placeholder, mapFragment).CommitAllowingStateLoss();
             mapFragment.GetMapAsync(this);
 
             
@@ -81,7 +81,10 @@ namespace FinalProject_PU
             radioEnd.Checked = false;
         }
 
-        
+        public override void OnSaveInstanceState(Bundle outState)
+        {
+            
+        }
         private async void GetDirection_Click(object sender, EventArgs e)
         {
             char[] msg = "PLEASE WAIT....".ToCharArray();

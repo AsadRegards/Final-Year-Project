@@ -26,10 +26,12 @@ namespace FYP_Web_API.Controllers
                 if(user.Status=="active")
                 {
                     user.Status = "blocked";
+                    dbe.SaveChanges();
                 }
-                if(user.Status=="blocked")
+                else if(user.Status=="blocked")
                 {
                     user.Status = "active";
+                    dbe.SaveChanges();
                 }
 
                 return Request.CreateResponse(HttpStatusCode.Accepted, "");
