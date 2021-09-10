@@ -134,5 +134,5 @@
   <string name="EasyPaisa">EasyPaisa</string>
   <string name="JazzCash">JazzCash</string>
   <string name="BankAccount">Bank Account</string>
-  <string name="CardPayment">Card Payment</string>
+  <string name="CardPayment">Credit Card</string>
 </resources>

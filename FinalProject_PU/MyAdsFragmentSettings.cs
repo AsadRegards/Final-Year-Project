@@ -153,10 +153,10 @@ namespace FinalProject_PU
 
                 var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
                 {
-                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
-                    CompressionQuality = 90
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Custom,
+                    CompressionQuality = 80
 
-                });
+                }) ;
 
                 //convert file to byte array , to bitmap
                 byte[] imageArray = System.IO.File.ReadAllBytes(file.Path);
@@ -166,7 +166,9 @@ namespace FinalProject_PU
 
             }
             catch (Exception ex)
-            { Toast.MakeText(this, "Please select any image to represent the issue",ToastLength.Long).Show(); }
+            {
+                Toast.MakeText(this, "Please select any image to represent the issue",ToastLength.Long).Show();
+            }
 
 
 

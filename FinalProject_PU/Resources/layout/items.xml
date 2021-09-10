@@ -125,8 +125,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/icnstatushome2"
             android:layout_below="@id/tvinfo"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="45dp"
             android:id="@+id/ViewStatus"/>
         <TextView
             android:text="View Status"
@@ -150,7 +150,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewStatus"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="47dp"
             android:id="@+id/ViewOnMap"/>
         <TextView
             android:text="View On Map"
@@ -175,7 +175,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ViewOnMap"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="45dp"
             android:id="@+id/Report"/>
                 <TextView
             android:text="Report"
@@ -199,7 +199,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/Report"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="47dp"
             android:id="@+id/ContributeHome"/>
         <TextView
             android:text="Fund"
@@ -223,7 +223,7 @@
             android:layout_below="@id/tvinfo"
             android:layout_toRightOf="@+id/ContributeHome"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="45dp"
             android:id="@+id/GoLast"/>
                 <TextView
             android:text="Refresh"

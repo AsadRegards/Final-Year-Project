@@ -91,7 +91,7 @@
         android:layout_below="@+id/textView1"
         android:id="@+id/imgpass"/>
     
-     <EditText
+     <TextView
         android:inputType="datetime"
         android:layout_width="240dp"
         android:layout_marginTop="170dp"
@@ -103,6 +103,15 @@
         android:layout_height="50dp"
         
         android:id="@+id/edtDOB" />
+     <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="90dp"
+            android:background="#646464"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/imgpass"
+            android:id="@+id/lise"/>
     
     <ImageView
         android:src="@drawable/group237"

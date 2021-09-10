@@ -20,7 +20,7 @@ namespace FinalProject_PU
     {
         
         TextView tvusername, tvinfoproblem, tev1;
-        ImageView addLocation;
+        ImageView addLocation, iconback, close;
         CircleImageView circleImageViewplanting;
         Typeface tf;
         User u;
@@ -58,7 +58,10 @@ namespace FinalProject_PU
             tvinfoproblem = (TextView)FindViewById(Resource.Id.tvinfoproblem);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tvinfoproblem.SetTypeface(tf, TypefaceStyle.Bold);
-
+            iconback = (ImageView)FindViewById(Resource.Id.backbtn6);
+            iconback.Click += Iconback_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
         }
         long lastPress;
         public override void OnBackPressed()
@@ -78,6 +81,15 @@ namespace FinalProject_PU
                 FinishAffinity();
 
             }
+        }
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.OnBackPressed();
+        }
+
+        private void Iconback_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
         private void AddLocation_Click(object sender, EventArgs e)
         {

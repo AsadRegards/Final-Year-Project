@@ -25,11 +25,12 @@ namespace FinalProject_PU
     public class Register2Activity : Activity, Com.Wdullaer.Materialdatetimepicker.Date.DatePickerDialog.IOnDateSetListener
     {
 
-        EditText phone, dob;
+        EditText phone;
         ImageView login, back, go;
         Typeface tf;
         TextView RegisterHeading, tvDOB, tvContact;
         User u;
+        TextView dob;
         LoadingView loader, button_loader;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -56,7 +57,7 @@ namespace FinalProject_PU
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             phone.SetTypeface(tf, TypefaceStyle.Normal);
 
-            dob = (EditText)FindViewById(Resource.Id.edtDOB);
+            dob = (TextView)FindViewById(Resource.Id.edtDOB);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             dob.SetTypeface(tf, TypefaceStyle.Normal);
             dob.Click+=DateSelect_OnClick;

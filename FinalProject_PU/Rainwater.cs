@@ -21,9 +21,9 @@ namespace FinalProject_PU
     {
         static string selected;
         ImageView Rainwater_back, Rainwater_next, allVehicle, noVehicle,
-                  highVehicle, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome;
+                  highVehicle, close;
         RadioButton radiobtn1Rainwater, radiobtn2Rainwater, radiobtn3Rainwater;
-
+        CircleImageView circleImageView_Rainwater;
         TextView Rainwater_tvusername, Rainwater_tv, tev1;
         Typeface tf;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -46,13 +46,47 @@ namespace FinalProject_PU
             highVehicle.Click += HighVehicle_Click;
             noVehicle = (ImageView)FindViewById(Resource.Id.noVehicle);
             noVehicle.Click += NoVehicle_Click;
-          
+            Rainwater_back = (ImageView)FindViewById(Resource.Id.backbtn6);
+            Rainwater_back.Click += Rainwater_back_Click;
             Rainwater_next = (ImageView)FindViewById(Resource.Id.Rainwater_btnnext);
             Rainwater_next.Click += Rainwater_next_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
 
             Rainwater_tvusername = (TextView)FindViewById(Resource.Id.Rainwater_tvusername);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            Rainwater_tvusername.SetTypeface(tf, TypefaceStyle.Bold);
             Rainwater_tv = (TextView)FindViewById(Resource.Id.Rainwater_tv);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            Rainwater_tv.SetTypeface(tf, TypefaceStyle.Bold);
             tev1 = (TextView)FindViewById(Resource.Id.tev1);
+            tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
+            tev1.SetTypeface(tf, TypefaceStyle.Bold);
+
+            circleImageView_Rainwater = (CircleImageView)FindViewById(Resource.Id.circleImageView_Rainwater);
+
+            //runtime py profile change krna or name change krna 
+            //start
+
+            char[] arr = Control.UserInfoHolder.User_name.ToCharArray();
+            Rainwater_tvusername.SetText(arr, 0, arr.Length);
+            byte[] arra = Convert.FromBase64String(Control.UserInfoHolder.Profile_pic);
+
+
+            Android.Graphics.Bitmap bitmapp = BitmapFactory.DecodeByteArray(arra, 0, arra.Length);
+            circleImageView_Rainwater.SetImageBitmap(bitmapp);
+            //end //runtime py profile change krna or name change krna 
+
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.OnBackPressed();
+        }
+
+        private void Rainwater_back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Radiobtn3Rainwater_Click(object sender, EventArgs e)
