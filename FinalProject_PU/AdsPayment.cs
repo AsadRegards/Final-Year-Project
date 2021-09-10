@@ -88,7 +88,7 @@ namespace FinalProject_PU
 
         private async void Submit_Click(object sender, EventArgs e)
         {
-            var data = JsonConvert.DeserializeObject<AdsData>("adobject");
+            var data = JsonConvert.DeserializeObject<AdsData>(Intent.GetStringExtra("adobject"));
             if (radiobank.Checked)
             {
                 Intent i = new Intent(this, typeof(PayByCard));

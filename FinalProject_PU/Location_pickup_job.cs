@@ -15,7 +15,7 @@ using FinalProject_PU.Model;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "Location_pickup_job",NoHistory =true)]
+    [Activity(Label = "Location_pickup_job")]
     public class Location_pickup_job : Activity, IOnMapReadyCallback
     {
         private MapFragment map1;

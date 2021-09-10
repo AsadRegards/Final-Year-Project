@@ -2,8 +2,6 @@
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 using FinalProject_PU.Control;
@@ -11,13 +9,11 @@ using Newtonsoft.Json;
 using Plugin.Media;
 using Refractored.Controls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Xamarin.Essentials;
 
 namespace FinalProject_PU
 {
-    [Activity(Label = "MyAdsFragmentSettings",NoHistory =true)]
+    [Activity(Label = "MyAdsFragmentSettings")]
     public class MyAdsFragmentSettings : Activity
     {
         ImageView back, uploadimg, submit;
@@ -28,9 +24,13 @@ namespace FinalProject_PU
         private string base64image;
         private bool IsImageUploaded = false;
 
+     
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+          
+            Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.MyAds);
             uploadimg = (ImageView)FindViewById(Resource.Id.imguploadimg);
             uploadimg.Click += Uploadimg_Click;
@@ -134,10 +134,7 @@ namespace FinalProject_PU
             {
                 Toast.MakeText(this, "Image couldn't be selected at this time", ToastLength.Long).Show();
             }
-            finally
-            {
-               //uploaded.Visibility = ViewStates.Visible;
-            }
+           
         }
 
         public async void UploadPhoto()

@@ -213,6 +213,7 @@ namespace FinalProject_PU
                     mapFuncHelper = new MapFunctions.MapFunctionHelper(APIKEY, googleMap);
                     p.location_name = await mapFuncHelper.FindCordinateAddress(Final_Position);
                     p.location_name = p.location_name.Replace(", Karachi, Karachi City, Sindh, Pakistan", string.Empty);
+                    p.issueStatement = string.Format("Planting compaign started near {0}", p.location_name);
                     Control.DataOper.PutData<PlantingCampaign2>(this, p);
 
 
