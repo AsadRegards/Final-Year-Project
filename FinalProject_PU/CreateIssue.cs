@@ -133,7 +133,7 @@ namespace FinalProject_PU
                 var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                 {
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-                    CompressionQuality = 103,
+                    CompressionQuality = 90,
                     Name = "myimage.jpg",
                     Directory = "sample"
                 });
