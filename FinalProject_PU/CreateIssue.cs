@@ -149,8 +149,8 @@ namespace FinalProject_PU
                 i.PutExtra("issueimage", JsonConvert.SerializeObject(base64image));
                 this.StartActivity(i);
             }
-            catch(Exception ex)
-            { Toast.MakeText(this, "Please select any image to represent the issue"+ex, ToastLength.Long).Show(); }
+            catch(Exception)
+            { Toast.MakeText(this, "Please capture again!!",ToastLength.Long).Show(); }
            
         }
 
