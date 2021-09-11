@@ -79,21 +79,21 @@
         android:textSize="15dp"
         android:id="@+id/create_issue_4_tv"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="25dp"/>
 
     <ImageView
         android:src="@drawable/group325"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_below="@+id/create_issue_4_tv"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/crt_issue_6_radio1"
            />
     <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="35dp"
         android:layout_below="@+id/create_issue_4_tv"
         android:background="@drawable/ellipse1"
@@ -102,16 +102,16 @@
     <ImageView
         android:src="@drawable/group326"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_below="@+id/create_issue_4_tv"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="140dp"
         android:id="@+id/crt_issue_6_radio2"
            />
     <RadioButton
         
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="85dp"
         android:layout_marginStart="35dp"
         android:layout_below="@+id/create_issue6_radiobtn1"
         android:background="@drawable/ellipse1"
@@ -120,9 +120,9 @@
         <ImageView
         android:src="@drawable/group327"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_below="@+id/create_issue6_radiobtn1"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="195dp"
         android:id="@+id/crt_issue_6_radio3"
            />
     <RadioButton

@@ -41,7 +41,8 @@ namespace FinalProject_PU
             issueImg = FindViewById<ImageView>(Resource.Id.imgbtn9);
             //to change with pp on runtime
             circleimageview2 = FindViewById<CircleImageView>(Resource.Id.circleImageView2);
-
+            back = (ImageView)FindViewById(Resource.Id.backbtn6);
+            back.Click += Back_Click;
             //to change on runtime with user name
             tvusername = (TextView)FindViewById(Resource.Id.tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
@@ -104,6 +105,11 @@ namespace FinalProject_PU
             radiobtn8 = (RadioButton)FindViewById(Resource.Id.radioButton8);
             radiobtn8.Click += Radiobtn8_Click;
 
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Close_Click(object sender, EventArgs e)

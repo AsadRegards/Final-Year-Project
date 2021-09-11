@@ -113,7 +113,7 @@
         android:layout_width="97dp"
         android:layout_height="85dp"
         android:layout_marginTop="130dp"
-        android:layout_marginStart="230dp"
+        android:layout_marginStart="240dp"
         android:layout_below="@id/edtEmail"
         android:id="@+id/imglogin" />
      <!-- Loading Indicator for overall screen   -->
@@ -150,9 +150,9 @@
         android:layout_width="match_parent"
         android:layout_height="237dp"
        android:paddingBottom="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="145dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvForgotPass"
+        android:layout_below="@id/textInputLayout1"
         android:id="@+id/imageViewdown" />
     <ImageView
         android:src="@drawable/group251"

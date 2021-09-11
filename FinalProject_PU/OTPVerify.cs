@@ -15,7 +15,7 @@ namespace FinalProject_PU
     {
         EditText otp, eedt1;
         ImageView imgsubmit;
-        
+        ImageView back;
         TextView ttv2;
         Typeface tf;
 
@@ -39,6 +39,13 @@ namespace FinalProject_PU
             ttv2 = (TextView)FindViewById(Resource.Id.ttv2);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             ttv2.SetTypeface(tf, TypefaceStyle.Bold);
+            back = (ImageView)FindViewById(Resource.Id.iimg1);
+            back.Click += Back_Click;
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
         }
 
         private void Imgsubmit_Click(object sender, EventArgs e)

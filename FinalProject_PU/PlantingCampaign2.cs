@@ -24,7 +24,7 @@ namespace FinalProject_PU
         static string schedule;
         static DateTime timeToWater;
         TextView timeDisplay;
-        ImageView issueImg, iconSettngs, iconMap, iconNotifications, iconFunds, iconHome, iconback, iconnext;
+        ImageView issueImg,  iconback, iconnext, close;
         TextView tvusername, tvinfoproblem, tev1;
         CircleImageView circleImageViewplanting;
         Spinner spinner_PlantingCampign2;
@@ -38,19 +38,13 @@ namespace FinalProject_PU
             // Create your application here
             SetContentView(Resource.Layout.PlantingCampaign2);
 
-            iconSettngs = (ImageView)FindViewById(Resource.Id.iconSettings);
-            iconSettngs.Click += IconSettngs_Click;
-            iconMap = (ImageView)FindViewById(Resource.Id.iconMap);
-            iconMap.Click += IconMap_Click;
-            iconNotifications = (ImageView)FindViewById(Resource.Id.iconNotifications);
-            iconNotifications.Click += IconNotifications_Click;
-            iconFunds = (ImageView)FindViewById(Resource.Id.iconFunds);
-            iconFunds.Click += IconFunds_Click;
-            iconHome = (ImageView)FindViewById(Resource.Id.iconHome);
-            iconHome.Click += IconHome_Click;
            
             iconnext = (ImageView)FindViewById(Resource.Id.imga2);
             iconnext.Click += Iconnext_Click;
+            iconback = (ImageView)FindViewById(Resource.Id.backbtn6);
+            iconback.Click += Iconback_Click;
+            close = (ImageView)FindViewById(Resource.Id.close);
+            close.Click += Close_Click;
             tvusername = (TextView)FindViewById(Resource.Id.tvusername);
             tf = Typeface.CreateFromAsset(Assets, "Quicksand-Bold.otf");
             tvusername.SetTypeface(tf, TypefaceStyle.Bold);
@@ -85,6 +79,17 @@ namespace FinalProject_PU
             timeDisplay = FindViewById<TextView>(Resource.Id.time_display);
             timeDisplay.Click += TimeSelectOnClick;
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.OnBackPressed();
+        }
+
+        private void Iconback_Click(object sender, EventArgs e)
+        {
+            base.OnBackPressed();
+        }
+
         long lastPress;
         public override void OnBackPressed()
         {

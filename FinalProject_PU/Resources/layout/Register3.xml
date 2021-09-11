@@ -136,6 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
+        android:paddingLeft="18dp"
         android:id="@+id/textInputLayout2" 
          >
 
@@ -159,6 +160,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="155dp"
+        android:paddingLeft="18dp"
+        
         android:layout_below="@+id/textView1"
         android:id="@+id/textInputLayout3" 
          >

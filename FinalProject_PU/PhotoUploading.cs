@@ -97,7 +97,7 @@ namespace FinalProject_PU
             MainThread.BeginInvokeOnMainThread(() => 
             {
                 loader.Visibility = Android.Views.ViewStates.Visible;
-                button_loader.Visibility = Android.Views.ViewStates.Visible;
+                //button_loader.Visibility = Android.Views.ViewStates.Visible;
                 gallery.Enabled = false;
                 go.Enabled = false;
                 var i = new Intent(this, typeof(EmailVerifyActivity));

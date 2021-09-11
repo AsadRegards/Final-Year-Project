@@ -54,7 +54,9 @@ namespace FinalProject_PU
         private void CrtNewAd_Click(object sender, EventArgs e)
         {
             var intent = new Intent(Application.Context, typeof(MyAdsFragmentSettings));
-            StartActivity(intent);
+            intent.AddFlags(ActivityFlags.NewTask);
+            Application.Context.StartActivity(intent);
+            
         }
 
         private void ManageAds_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace FinalProject_PU
         private void Back_Click(object sender, EventArgs e)
         {
             base.OnBackPressed();
-            this.Finish();
+            
         }
     }
 }
