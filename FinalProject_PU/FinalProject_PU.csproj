@@ -90,6 +90,7 @@
     <Compile Include="AdsFragmentSettings.cs" />
     <Compile Include="AdsPayment.cs" />
     <Compile Include="AdTitleandTextActivity.cs" />
+    <Compile Include="Bitmap_Transfere.cs" />
     <Compile Include="BrokenWires.cs" />
     <Compile Include="BrokenWires2.cs" />
     <Compile Include="BrokenWires3.cs" />

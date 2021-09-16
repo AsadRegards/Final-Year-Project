@@ -49,7 +49,7 @@ namespace FinalProject_PU
             tvusername.SetTypeface(tf, TypefaceStyle.Bold);
             close = (ImageView)FindViewById(Resource.Id.close);
             close.Click += Close_Click;
-            base64image = JsonConvert.DeserializeObject<string>(Intent.GetStringExtra("issueimage"));
+            base64image =  Bitmap_Transfere.ImageString;
             byte[] imageArray = Convert.FromBase64String(base64image);
             Android.Graphics.Bitmap bitmap = BitmapFactory.DecodeByteArray(imageArray, 0, imageArray.Length);
             issueImg.SetImageBitmap(bitmap);
