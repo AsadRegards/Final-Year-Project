@@ -115,7 +115,8 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/imgEasyPaisa"
         android:layout_below="@id/imgTextContribute"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="55dp"
+
         android:id="@id/imgBankTransfer"
         
        
@@ -124,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="30dp"        
+        android:layout_marginStart="60dp"        
         android:id="@+id/Radiobank"
         android:layout_toRightOf="@id/imgEasyPaisa"
         
@@ -137,7 +138,7 @@
         android:layout_below="@id/Radiobank"
         android:layout_toRightOf="@id/imgEasyPaisa"
         android:layout_marginTop="85dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="85dp"
         android:id="@+id/TextBank"
     />
 
@@ -147,7 +148,7 @@
         android:layout_height="wrap_content"   
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/imgEasyPaisa"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="55dp"
         android:id="@+id/CreditCard"
         android:layout_below="@+id/imgBankTransfer"
        
@@ -156,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="30dp"        
+        android:layout_marginStart="60dp"        
         android:id="@+id/Radiocard"
         android:layout_toRightOf="@id/imgEasyPaisa"
         
@@ -170,7 +171,7 @@
         android:layout_below="@id/Radiocard"
         android:layout_toRightOf="@id/imgEasyPaisa"
         android:layout_marginTop="85dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="85dp"
         android:id="@+id/TextCard"
     />
 
