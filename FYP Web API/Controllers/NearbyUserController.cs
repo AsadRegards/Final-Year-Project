@@ -78,7 +78,7 @@ namespace FYP_Web_API.Controllers
             
         }
 
-      
+        // To do this every time the admin login
         public async Task verifybynearbyusers()
         {
             await Task.Run(() =>

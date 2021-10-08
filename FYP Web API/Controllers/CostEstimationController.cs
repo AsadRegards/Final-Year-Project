@@ -23,9 +23,14 @@ namespace FYP_Web_API.Controllers
             var json = JsonConvert.SerializeObject(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync(uri, content);
-            var result = JsonConvert.DeserializeObject<int>(response.Content.ToString());
-            var cost = GetCost(result);
-            return cost;
+            if(response.Content!=null)
+            {
+                var result = JsonConvert.DeserializeObject<int>(response.Content.ToString());
+                var cost = GetCost(result);
+                return cost;
+            }
+            return 0;
+            
         }
 
         public int GetCost(int index)

@@ -84,7 +84,7 @@ namespace FYP_Web_API.Controllers
             dbe.SaveChanges();
             return Request.CreateResponse(HttpStatusCode.Accepted, "Saved");
         }
-
+        
         [HttpGet]
         [ActionName("estimateallcost")]
         public async Task<HttpResponseMessage> estimateallcost()
@@ -178,16 +178,31 @@ namespace FYP_Web_API.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound, "issue not found");
         }
 
+      
+
         [HttpGet]
         [ActionName("fetchallads")]
         public HttpResponseMessage fetchallads()
         {
             var list = dbe.ad_table.Where(x => x.Status == "approved").ToList();
+            var finalisedlist = new List<ad_table>();
             if(list!=null)
             {
-                list.Reverse();
+                foreach (var ad in list)
+                {
+                    var dateDiff = DateTime.Now.Subtract(ad.Date);
+                    if (dateDiff.TotalDays > ad.Elapsed_Days)
+                    {
+                        ad.Status = "completed";
+                        dbe.SaveChanges();
+                    }
+                    else
+                    {
+                        finalisedlist.Add(ad);
+                    }
+                }
             }
-            return Request.CreateResponse(HttpStatusCode.Accepted, list);
+            return Request.CreateResponse(HttpStatusCode.Accepted, finalisedlist);
         }
 
         [HttpPost]

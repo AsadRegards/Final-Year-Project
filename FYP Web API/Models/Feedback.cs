@@ -12,12 +12,10 @@ namespace FYP_Web_API.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NotificationTable
+    public partial class Feedback
     {
-        public int notification_id { get; set; }
-        public string notification_text { get; set; }
-        public string notification_image { get; set; }
-        public string notification_title { get; set; }
-        public System.DateTime notification_date { get; set; }
+        public int ID { get; set; }
+        public int User_ID { get; set; }
+        public string feedback_text { get; set; }
     }
 }

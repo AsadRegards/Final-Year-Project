@@ -235,6 +235,9 @@
     <Compile Include="Models\FCM_TOKEN.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Feedback.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\funds_table.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>

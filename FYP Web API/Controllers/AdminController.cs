@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mail;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -45,8 +47,23 @@ namespace FYP_Web_API.Controllers
 
         public async Task<HttpResponseMessage> adminlogin(string name, string password)
         {
-            //await new UserFundsController().CountAdvertismentDays();
-            //await new NearbyUserController().verifybynearbyusers();
+            var originalSynchronizationContext = SynchronizationContext.Current;
+            try 
+            {
+                SynchronizationContext.SetSynchronizationContext(null);
+                await new NearbyUserController().verifybynearbyusers();
+            } 
+            catch(Exception ex)
+            {
+                StreamWriter sw = new StreamWriter("D:\\WORK\\abcerror.txt");
+                sw.WriteLine("EXCEPTION::" + ex.ToString());
+                sw.Close();
+            }
+            finally
+            {
+                SynchronizationContext.SetSynchronizationContext(originalSynchronizationContext);
+            }
+            
          
             admin_table admin = dbe.admin_table.Where(x => x.name == name && x.password == password).FirstOrDefault();
             if (admin == null)
@@ -274,6 +291,25 @@ namespace FYP_Web_API.Controllers
         {
             var data = dbe.report_table.Where(x => x.issue_id == issueid).ToList();
             return Request.CreateResponse(HttpStatusCode.Accepted, data);
+        }
+
+        [HttpPost]
+        [ActionName("sendfeedback")]
+        public HttpResponseMessage sendfeedback([FromBody] Feedback feedback)
+        {
+            dbe.Feedback.Add(feedback);
+            dbe.SaveChanges();
+
+            return Request.CreateResponse(HttpStatusCode.Accepted, "Saved!");
+        }
+
+        [HttpGet]
+        [ActionName("getallfeedback")]
+        public HttpResponseMessage getallfeedback()
+        {
+            var FeedbackList = dbe.Feedback.ToList();
+
+            return Request.CreateResponse(HttpStatusCode.Accepted, FeedbackList);
         }
     }
     }

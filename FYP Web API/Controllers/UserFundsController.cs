@@ -143,24 +143,5 @@ namespace FYP_Web_API.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, "no updation");
 
         }
-
-
-        
-        public async Task CountAdvertismentDays()
-        {
-            await Task.Run(() =>
-            {
-                var list = dbe.ad_table.Where(x => x.Status == "approved").ToList();
-                foreach (var ad in list)
-                {
-                    var dateDiff = DateTime.Now.Subtract(ad.Date);
-                    if (dateDiff.TotalDays > ad.Elapsed_Days)
-                    {
-                        ad.Status = "completed";
-                        dbe.SaveChanges();
-                    }
-                }
-            }); 
-        }
     }
 }
