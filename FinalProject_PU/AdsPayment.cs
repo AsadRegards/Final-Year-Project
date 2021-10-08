@@ -101,7 +101,7 @@ namespace FinalProject_PU
                 
                 if (await data.StoreAd(data))
                 {
-                    Toast.MakeText(this, "Your ad has been posted", ToastLength.Long).Show();
+                    Toast.MakeText(this, "Your ad will be posted after admin approval!", ToastLength.Long).Show();
                     Intent i = new Intent(this, typeof(FragmentHomeActivity));
                     StartActivity(i);
                 }

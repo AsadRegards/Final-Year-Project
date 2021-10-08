@@ -15,7 +15,7 @@ namespace FinalProject_PU
 {
     public class Settings : AndroidX.Fragment.App.Fragment
     {
-        ImageView Accounts, Notifications, logout,myads,payments;
+        ImageView Accounts, Notifications, logout,myads,payments,help;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,8 +39,17 @@ namespace FinalProject_PU
             myads.Click += Myads_Click;
             payments = (ImageView)rootview.FindViewById(Resource.Id.imgpayments);
             payments.Click += Payments_Click;
+            help = (ImageView)rootview.FindViewById(Resource.Id.imghelp);
+            help.Click += Help_Click;
             
             return rootview;
+        }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(Application.Context, typeof(HelpActivity));
+            intent.AddFlags(ActivityFlags.NewTask);
+            Application.Context.StartActivity(intent);
         }
 
         private void Payments_Click(object sender, EventArgs e)

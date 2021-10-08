@@ -59,6 +59,13 @@
         android:id="@+id/imgpayments"
         android:layout_below="@+id/imgviewmyads"
          />
+      <ImageView
+        android:src="@drawable/helpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:id="@+id/imghelp"
+        android:layout_below="@+id/imgpayments"
+         />
     
 
 </RelativeLayout>

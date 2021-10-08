@@ -86,7 +86,9 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
        android:layout_marginTop="175dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="65dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:id="@+id/imgpass"/>

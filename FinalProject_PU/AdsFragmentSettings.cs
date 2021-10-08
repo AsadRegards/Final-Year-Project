@@ -21,7 +21,7 @@ namespace FinalProject_PU
         ImageView back, crtNewAd, manageAds;
         TextView Username;
 
-        public ImageView userimage { get; private set; }
+        public CircleImageView userimage { get; private set; }
 
         //CircleImageView userimage;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,7 +35,7 @@ namespace FinalProject_PU
             back.Click += Back_Click;
             Username = (TextView)FindViewById(Resource.Id.username);
 
-            userimage = (ImageView)FindViewById(Resource.Id.usericon);
+            userimage = (CircleImageView)FindViewById(Resource.Id.usericon);
             crtNewAd = (ImageView)FindViewById(Resource.Id.imgcrtnewads);
             crtNewAd.Click += CrtNewAd_Click;
             manageAds = (ImageView)FindViewById(Resource.Id.imgManageAds);

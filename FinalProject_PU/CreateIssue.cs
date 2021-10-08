@@ -133,7 +133,6 @@ namespace FinalProject_PU
                 var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                 {
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-                    CompressionQuality = 90,
                     Name = "myimage.jpg",
                     Directory = "sample"
                 });
@@ -146,10 +145,10 @@ namespace FinalProject_PU
                 }
 
                 var i = new Intent(this, typeof(createissue2));
-                i.PutExtra("issueimage", JsonConvert.SerializeObject(base64image));
+                Bitmap_Transfere.ImageString = base64image;
                 this.StartActivity(i);
             }
-            catch(Exception)
+            catch(Exception ex)
             { Toast.MakeText(this, "Please capture again!!",ToastLength.Long).Show(); }
            
         }
@@ -173,7 +172,7 @@ namespace FinalProject_PU
 
                 var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
                 {
-                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small,
+                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
                     CompressionQuality = 90
 
                 });
@@ -184,7 +183,7 @@ namespace FinalProject_PU
 
 
                 var i = new Intent(this, typeof(createissue2));
-                i.PutExtra("issueimage", JsonConvert.SerializeObject(base64image));
+                Bitmap_Transfere.ImageString = base64image;
                 this.StartActivity(i);
 
             }
