@@ -82,7 +82,7 @@ namespace FinalProject_PU
                 collected_amount.Text = IssueObj.amount_collected.ToString();
             }
 
-            if(IssueObj.estimated_cost!=0)
+            if(IssueObj.amount_collected!=0)
             {
                 Task.Run(async() =>
                 {
