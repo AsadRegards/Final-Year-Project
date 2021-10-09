@@ -182,15 +182,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Models\DbModel.Context.tt">
+    <Content Include="Models\dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
+      <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DbModel.tt">
+    <Content Include="Models\dbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.cs</LastGenOutput>
+      <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -209,83 +209,84 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\admin_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ad_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AssignedByAdmin.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbModel.Context.cs">
+    <Compile Include="Models\dbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.Context.tt</DependentUpon>
+      <DependentUpon>dbModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbModel.cs">
+    <Compile Include="Models\dbModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DbModel.Designer.cs">
+    <Compile Include="Models\dbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.edmx</DependentUpon>
+      <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\FCM_TOKEN.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\funds_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_images_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\issue_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nearby_user_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NotificationTable.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PaymentMethodInfo.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pushnotification.cs" />
     <Compile Include="Models\report_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VolunteerAdminMessages.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_Report.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Volunteer_table.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\DbModel.edmx">
+    <EntityDeploy Include="Models\dbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DbModel.edmx.diagram">
-      <DependentUpon>DbModel.edmx</DependentUpon>
+    <Content Include="Models\dbModel.edmx.diagram">
+      <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210526122739 - Web Deploy.pubxml" />
@@ -297,6 +298,9 @@
     <None Include="Properties\PublishProfiles\FYPWebAPI20210825062724 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI20210825074306 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FYPWebAPI6298563027 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FYPWebAPIappservice1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\fypwebapiappservice1 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\fypwebapiappservice1 - Web Deploy2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

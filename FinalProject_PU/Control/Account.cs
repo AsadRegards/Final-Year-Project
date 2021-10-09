@@ -32,9 +32,9 @@ namespace FinalProject_PU.Control
 
             return string.Empty;
         }
-
        
-        public static string BaseAddressUri = string.Format("http://{0}:8045","192.168.100.10"); //
+        //http://{0}:8045","192.168.100.10
+        public static string BaseAddressUri = string.Format("https://fypwebapiappservice1.azurewebsites.net"); //
 
     
         static public int verifyEmail(string emailp,Android.Content.Context acc)

@@ -61,7 +61,8 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidLinkSkip>Xamarin.Essentials</AndroidLinkSkip>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
@@ -132,6 +133,7 @@
     <Compile Include="Garbage2.cs" />
     <Compile Include="Garbage3.cs" />
     <Compile Include="Garbage4.cs" />
+    <Compile Include="HelpActivity.cs" />
     <Compile Include="Helper\Data.cs" />
     <Compile Include="Helper\Funds_RecylerViewAdapter.cs" />
     <Compile Include="Helper\Notification_RecylcerViewAdapter.cs" />
@@ -673,6 +675,7 @@
     <AndroidResource Include="Resources\drawable\GroupSubmit.png" />
     <AndroidResource Include="Resources\drawable\Group325.png" />
     <AndroidResource Include="Resources\drawable\destinationicon.png" />
+    <AndroidResource Include="Resources\drawable\Helpp.png" />
     <Content Include="Resources\drawable\icons8\606417-manholes-090417.jpg" />
     <Content Include="Resources\drawable\icons8\Abc.jpg" />
     <Content Include="Resources\drawable\icons8\Accountprofile.png" />
@@ -936,6 +939,8 @@
     <AndroidResource Include="Resources\drawable\Uploaded.png" />
     <AndroidResource Include="Resources\layout\AdsPayment.xml" />
     <AndroidResource Include="Resources\drawable\starticon.png" />
+    <AndroidResource Include="Resources\layout\Help.xml" />
+    <AndroidResource Include="Resources\drawable\SubmitBBTn.png" />
     <Content Include="Resources\screens\BACK.png" />
     <Content Include="Resources\screens\BelowBg.png" />
     <Content Include="Resources\screens\BGLOGIN.png" />

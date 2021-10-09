@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="problemupdatedbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="problemupdatedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ad_table">
           <Key>
             <PropertyRef Name="advertisment_id" />
@@ -367,7 +367,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="problemupdatedbModel1StoreContainer">
+        <EntityContainer Name="problemupdatedbModelStoreContainer">
           <EntitySet Name="ad_table" EntityType="Self.ad_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="admin_table" EntityType="Self.admin_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AssignedByAdmin" EntityType="Self.AssignedByAdmin" Schema="dbo" store:Type="Tables" />
@@ -453,7 +453,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="problemupdatedbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="problemupdatedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ad_table">
           <Key>
             <PropertyRef Name="advertisment_id" />
@@ -496,6 +496,14 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="Token_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Token" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="feedback_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="funds_table">
           <Key>
@@ -580,7 +588,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <Property Name="notification_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="notification_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="notification_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="notification_date" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="notification_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="report_table">
           <Key>
@@ -839,6 +847,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
           <EntitySet Name="admin_table" EntityType="Self.admin_table" />
           <EntitySet Name="AssignedByAdmin" EntityType="Self.AssignedByAdmin" />
           <EntitySet Name="FCM_TOKEN" EntityType="Self.FCM_TOKEN" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
           <EntitySet Name="funds_table" EntityType="Self.funds_table" />
           <EntitySet Name="issue_images_table" EntityType="Self.issue_images_table" />
           <EntitySet Name="issue_table" EntityType="Self.issue_table" />
@@ -906,24 +915,15 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             <End Role="Volunteer_table" EntitySet="Volunteer_table" />
             <End Role="Volunteer_Report" EntitySet="Volunteer_Report" />
           </AssociationSet>
-          <EntitySet Name="Feedback" EntityType="problemupdatedbModel1.Feedback" />
         </EntityContainer>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <Property Name="feedback_text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="problemupdatedbModel1StoreContainer" CdmEntityContainer="problemupdatedbEntities">
+        <EntityContainerMapping StorageEntityContainer="problemupdatedbModelStoreContainer" CdmEntityContainer="problemupdatedbEntities">
           <EntitySetMapping Name="ad_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.ad_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.ad_table">
               <MappingFragment StoreEntitySet="ad_table">
                 <ScalarProperty Name="advertisment_id" ColumnName="advertisment_id" />
                 <ScalarProperty Name="Adstitle" ColumnName="Adstitle" />
@@ -939,7 +939,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="admin_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.admin_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.admin_table">
               <MappingFragment StoreEntitySet="admin_table">
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -948,7 +948,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AssignedByAdmin">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.AssignedByAdmin">
+            <EntityTypeMapping TypeName="problemupdatedbModel.AssignedByAdmin">
               <MappingFragment StoreEntitySet="AssignedByAdmin">
                 <ScalarProperty Name="assigned_id" ColumnName="assigned_id" />
                 <ScalarProperty Name="volunteer_id" ColumnName="volunteer_id" />
@@ -958,7 +958,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FCM_TOKEN">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.FCM_TOKEN">
+            <EntityTypeMapping TypeName="problemupdatedbModel.FCM_TOKEN">
               <MappingFragment StoreEntitySet="FCM TOKEN">
                 <ScalarProperty Name="Token_ID" ColumnName="Token ID" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
@@ -966,8 +966,17 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Feedback">
+            <EntityTypeMapping TypeName="problemupdatedbModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User ID" />
+                <ScalarProperty Name="feedback_text" ColumnName="feedback text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="funds_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.funds_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.funds_table">
               <MappingFragment StoreEntitySet="funds_table">
                 <ScalarProperty Name="funds_id" ColumnName="funds_id" />
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
@@ -978,7 +987,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="issue_images_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.issue_images_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.issue_images_table">
               <MappingFragment StoreEntitySet="issue_images_table">
                 <ScalarProperty Name="image_id" ColumnName="image_id" />
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
@@ -987,7 +996,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="issue_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.issue_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.issue_table">
               <MappingFragment StoreEntitySet="issue_table">
                 <ScalarProperty Name="issue_id" ColumnName="issue_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -1021,7 +1030,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="nearby_user_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.nearby_user_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.nearby_user_table">
               <MappingFragment StoreEntitySet="nearby_user_table">
                 <ScalarProperty Name="ui_pair_id" ColumnName="ui_pair_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -1031,7 +1040,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NotificationTable">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.NotificationTable">
+            <EntityTypeMapping TypeName="problemupdatedbModel.NotificationTable">
               <MappingFragment StoreEntitySet="NotificationTable">
                 <ScalarProperty Name="notification_id" ColumnName="notification_id" />
                 <ScalarProperty Name="notification_text" ColumnName="notification_text" />
@@ -1042,7 +1051,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="report_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.report_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.report_table">
               <MappingFragment StoreEntitySet="report_table">
                 <ScalarProperty Name="report_id" ColumnName="report_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
@@ -1054,7 +1063,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.user_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.user_table">
               <MappingFragment StoreEntitySet="user_table">
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1072,7 +1081,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Volunteer_Report">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.Volunteer_Report">
+            <EntityTypeMapping TypeName="problemupdatedbModel.Volunteer_Report">
               <MappingFragment StoreEntitySet="Volunteer_Report">
                 <ScalarProperty Name="report_id" ColumnName="report_id" />
                 <ScalarProperty Name="volunteer_name" ColumnName="volunteer_name" />
@@ -1083,7 +1092,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Volunteer_table">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.Volunteer_table">
+            <EntityTypeMapping TypeName="problemupdatedbModel.Volunteer_table">
               <MappingFragment StoreEntitySet="Volunteer_table">
                 <ScalarProperty Name="volunteer_id" ColumnName="volunteer_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1095,7 +1104,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VolunteerAdminMessages">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.VolunteerAdminMessages">
+            <EntityTypeMapping TypeName="problemupdatedbModel.VolunteerAdminMessages">
               <MappingFragment StoreEntitySet="VolunteerAdminMessages">
                 <ScalarProperty Name="message_id" ColumnName="message_id" />
                 <ScalarProperty Name="message" ColumnName="message" />
@@ -1105,7 +1114,7 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PaymentMethodInfo">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.PaymentMethodInfo">
+            <EntityTypeMapping TypeName="problemupdatedbModel.PaymentMethodInfo">
               <MappingFragment StoreEntitySet="PaymentMethodInfo">
                 <ScalarProperty Name="easypaisanumber" ColumnName="easypaisanumber" />
                 <ScalarProperty Name="easypaisatitle" ColumnName="easypaisatitle" />
@@ -1113,15 +1122,6 @@ warning 6002: The table/view 'problemupdatedb.dbo.PaymentMethodInfo' does not ha
                 <ScalarProperty Name="jazzcashtitle" ColumnName="jazzcashtitle" />
                 <ScalarProperty Name="bankaccountnumber" ColumnName="bankaccountnumber" />
                 <ScalarProperty Name="bankaccounttitle" ColumnName="bankaccounttitle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Feedback">
-            <EntityTypeMapping TypeName="problemupdatedbModel1.Feedback">
-              <MappingFragment StoreEntitySet="Feedback">
-                <ScalarProperty Name="feedback_text" ColumnName="feedback text" />
-                <ScalarProperty Name="User_ID" ColumnName="User ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
